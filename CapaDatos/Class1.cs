@@ -9,5 +9,10 @@ namespace CapaDatos
     public class Class1
     {
         //Funcionaaaa
+        public void  mimetodo(){
+        
     }
+    
+    }
+    
 }
