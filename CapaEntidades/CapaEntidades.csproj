@@ -40,8 +40,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="GestionAsistencia\Asistencia.cs" />
+    <Compile Include="GestionAsistencia\Faltas.cs" />
+    <Compile Include="GestionAsistencia\Imprevistos.cs" />
+    <Compile Include="GestionAyuda\Ayuda.cs" />
+    <Compile Include="GestionPersonal\Huella.cs" />
+    <Compile Include="GestionPersonal\Personal.cs" />
+    <Compile Include="GestionPlanificacion\Calendario.cs" />
+    <Compile Include="GestionPlanificacion\DiasAdicionales.cs" />
+    <Compile Include="GestionPlanificacion\DiasNoLaborables.cs" />
+    <Compile Include="GestionSeguridad\Modulo.cs" />
+    <Compile Include="GestionSeguridad\Permisos.cs" />
+    <Compile Include="GestionSeguridad\Recurso.cs" />
+    <Compile Include="GestionSeguridad\Roles.cs" />
+    <Compile Include="GestionSeguridad\Usuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
