@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="ConexionBD">
+  <DataContextMoniker Name="/ConexionBDDataContext" />
+  <nestedChildShapes>
+    <classShape Id="5469af83-6b63-4319-ace1-ddc648181f6e" absoluteBounds="5.125, 1.375, 2, 3.1170068359375">
+      <DataClassMoniker Name="/ConexionBDDataContext/PERSONAL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="62e85ca2-583b-4c0b-8790-ce6418caad6d" absoluteBounds="5.14, 1.835, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="756404b6-10ac-45ea-b735-d073b147e739" absoluteBounds="2.375, 1.375, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/ConexionBDDataContext/HUELLA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7d751f93-750e-4802-9855-8596eb8f23d7" absoluteBounds="2.39, 1.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.125 : 2.16429768880208); (4.375 : 2.16429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ConexionBDDataContext/PERSONAL/PERSONAL_HUELLA" />
+      <nodes>
+        <classShapeMoniker Id="5469af83-6b63-4319-ace1-ddc648181f6e" />
+        <classShapeMoniker Id="756404b6-10ac-45ea-b735-d073b147e739" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
