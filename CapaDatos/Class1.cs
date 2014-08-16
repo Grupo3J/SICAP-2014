@@ -10,8 +10,8 @@ namespace CapaDatos
     {
         //Funcionaaaa
         public void  mimetodo(){
-        
-    }
+                           
+        }
     
     }
     
