@@ -145,8 +145,8 @@
             // skinEngine1
             // 
             this.skinEngine1.SerialNumber = "U4N2UjLguUZs33UR+Vy47JAZ81t2fjIFvut28vc5oHiVeivGb/NZMA==";
-            this.skinEngine1.SkinFile = "C:\\Users\\Jordi\\Desktop\\Componentes Graficos Vb2\\SKIN NET 2010 WIN 7\\SkinVS.NET\\Ma" +
-    "cOS\\MacOS.ssk";
+            this.skinEngine1.SkinFile = "C:\\Users\\Jordi\\Desktop\\Componentes Graficos Vb2\\SKIN NET 2010 WIN 7\\SkinVS.NET\\Em" +
+    "erald\\EmeraldColor1.ssk";
             this.skinEngine1.SkinStreamMain = ((System.IO.Stream)(resources.GetObject("skinEngine1.SkinStreamMain")));
             // 
             // button2

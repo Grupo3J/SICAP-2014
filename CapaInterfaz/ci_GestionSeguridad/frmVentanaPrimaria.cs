@@ -27,10 +27,10 @@ namespace CapaInterfaz.ci_GestionPersonal
         frmAdministrarPersonal frmap = new frmAdministrarPersonal();
         private void registrarPersonalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (frmap.Visible == true)
-            {
-                return;
-            }
+            //if (frmap.Visible == true)
+            //{
+            //    return;
+            //}
            // frmap.MdiParent = this;
             frmap.Show();
         }
@@ -47,6 +47,13 @@ namespace CapaInterfaz.ci_GestionPersonal
 
         private void frmVentanaPrimaria_Load(object sender, EventArgs e)
         {
+           // string usuario = "Jordi Duran";
+          //  toolStripStatusLabel1.Text = "Usuario: " + usuario;
+
+            string fecha = DateTime.Now.ToShortDateString();
+            toolStripStatusLabel2.Text = "Fecha: " + fecha;
+
+
 
         }
 
@@ -61,12 +68,44 @@ namespace CapaInterfaz.ci_GestionPersonal
 
         private void administrarPersonalToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
             if (frmap.Visible == true)
             {
                 return;
             }
-            frmap.MdiParent = this;
+            //frmap.MdiParent = this;
             frmap.Show();
         }
+
+        private void gestionDePersonalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void splitContainer1_Panel2_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void splitContainer2_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void toolStripStatusLabel3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            toolStripStatusLabel3.Text = "Hora: "+DateTime.Now.ToLongTimeString();
+        }
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
+        }
+
     }
 }
