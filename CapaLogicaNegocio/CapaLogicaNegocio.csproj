@@ -42,6 +42,13 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="cln_GestionAsistencia\" />
+    <Folder Include="cln_GestionAyuda\" />
+    <Folder Include="cln_GestionPersonal\" />
+    <Folder Include="cln_GestionPlanificacion\" />
+    <Folder Include="cln_GestionSeguridad\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -40,20 +40,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="GestionAsistencia\Asistencia.cs" />
-    <Compile Include="GestionAsistencia\Faltas.cs" />
-    <Compile Include="GestionAsistencia\Imprevistos.cs" />
-    <Compile Include="GestionAyuda\Ayuda.cs" />
-    <Compile Include="GestionPersonal\Huella.cs" />
-    <Compile Include="GestionPersonal\Personal.cs" />
-    <Compile Include="GestionPlanificacion\Calendario.cs" />
-    <Compile Include="GestionPlanificacion\DiasAdicionales.cs" />
-    <Compile Include="GestionPlanificacion\DiasNoLaborables.cs" />
-    <Compile Include="GestionSeguridad\Modulo.cs" />
-    <Compile Include="GestionSeguridad\Permisos.cs" />
-    <Compile Include="GestionSeguridad\Recurso.cs" />
-    <Compile Include="GestionSeguridad\Roles.cs" />
-    <Compile Include="GestionSeguridad\Usuarios.cs" />
+    <Compile Include="ce_GestionAsistencia\Asistencia.cs" />
+    <Compile Include="ce_GestionAsistencia\Faltas.cs" />
+    <Compile Include="ce_GestionAsistencia\Imprevistos.cs" />
+    <Compile Include="ce_GestionAyuda\Ayuda.cs" />
+    <Compile Include="ce_GestionPersonal\Huella.cs" />
+    <Compile Include="ce_GestionPersonal\Personal.cs" />
+    <Compile Include="ce_GestionPlanificacion\Calendario.cs" />
+    <Compile Include="ce_GestionPlanificacion\DiasAdicionales.cs" />
+    <Compile Include="ce_GestionPlanificacion\DiasNoLaborables.cs" />
+    <Compile Include="ce_GestionSeguridad\Modulo.cs" />
+    <Compile Include="ce_GestionSeguridad\Permisos.cs" />
+    <Compile Include="ce_GestionSeguridad\Recurso.cs" />
+    <Compile Include="ce_GestionSeguridad\Roles.cs" />
+    <Compile Include="ce_GestionSeguridad\Usuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
