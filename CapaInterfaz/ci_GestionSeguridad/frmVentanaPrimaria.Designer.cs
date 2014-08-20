@@ -39,20 +39,23 @@
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.butVerPerfil = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.butVerPerfil = new System.Windows.Forms.Button();
-            this.treeView1 = new System.Windows.Forms.TreeView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.gestionDePersonalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.administrarPersonalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.administrarHuellaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -71,7 +74,8 @@
             this.archivoToolStripMenuItem,
             this.acercaDeToolStripMenuItem,
             this.ayudaToolStripMenuItem,
-            this.salirToolStripMenuItem});
+            this.salirToolStripMenuItem,
+            this.gestionDePersonalToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Size = new System.Drawing.Size(1280, 24);
@@ -127,13 +131,13 @@
             // 
             this.toolStripStatusLabel2.Margin = new System.Windows.Forms.Padding(1162, 3, 0, 2);
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(118, 17);
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(118, 15);
             this.toolStripStatusLabel2.Text = "toolStripStatusLabel1";
             // 
             // toolStripStatusLabel3
             // 
             this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(118, 17);
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(118, 15);
             this.toolStripStatusLabel3.Text = "toolStripStatusLabel1";
             this.toolStripStatusLabel3.Click += new System.EventHandler(this.toolStripStatusLabel3_Click);
             // 
@@ -160,6 +164,51 @@
             this.splitContainer1.Size = new System.Drawing.Size(1280, 588);
             this.splitContainer1.SplitterDistance = 64;
             this.splitContainer1.TabIndex = 8;
+            // 
+            // butVerPerfil
+            // 
+            this.butVerPerfil.Location = new System.Drawing.Point(1162, 30);
+            this.butVerPerfil.Name = "butVerPerfil";
+            this.butVerPerfil.Size = new System.Drawing.Size(63, 23);
+            this.butVerPerfil.TabIndex = 5;
+            this.butVerPerfil.Text = "Ver Perfil";
+            this.butVerPerfil.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(957, 10);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(54, 13);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Habilitado";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(908, 10);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(43, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Estado:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(1167, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Jose Maza";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(1114, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Usuario:";
             // 
             // pictureBox1
             // 
@@ -194,91 +243,14 @@
             this.splitContainer2.SplitterDistance = 226;
             this.splitContainer2.TabIndex = 0;
             // 
-            // timer1
+            // button5
             // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 60;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1114, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Usuario:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1167, 10);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Jose Maza";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(908, 10);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Estado:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(957, 10);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Habilitado";
-            // 
-            // butVerPerfil
-            // 
-            this.butVerPerfil.Location = new System.Drawing.Point(1162, 30);
-            this.butVerPerfil.Name = "butVerPerfil";
-            this.butVerPerfil.Size = new System.Drawing.Size(63, 23);
-            this.butVerPerfil.TabIndex = 5;
-            this.butVerPerfil.Text = "Ver Perfil";
-            this.butVerPerfil.UseVisualStyleBackColor = true;
-            // 
-            // treeView1
-            // 
-            this.treeView1.Location = new System.Drawing.Point(3, 0);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(220, 520);
-            this.treeView1.TabIndex = 0;
-            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(55, 35);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(106, 39);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Gestion de Asistencia";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(55, 92);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(106, 39);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Gestion Planificacion";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(55, 151);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(106, 39);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Gestion de Seguridad";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button5.Location = new System.Drawing.Point(55, 270);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(106, 39);
+            this.button5.TabIndex = 5;
+            this.button5.Text = "Gestion de Personal";
+            this.button5.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
@@ -289,14 +261,68 @@
             this.button4.Text = "Gestion de Ayuda";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // button3
             // 
-            this.button5.Location = new System.Drawing.Point(55, 270);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(106, 39);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "Gestion de Personal";
-            this.button5.UseVisualStyleBackColor = true;
+            this.button3.Location = new System.Drawing.Point(55, 151);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(106, 39);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "Gestion de Seguridad";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(55, 92);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(106, 39);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Gestion Planificacion";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(55, 35);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(106, 39);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Gestion de Asistencia";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // treeView1
+            // 
+            this.treeView1.Location = new System.Drawing.Point(3, 0);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Size = new System.Drawing.Size(220, 520);
+            this.treeView1.TabIndex = 0;
+            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 60;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // gestionDePersonalToolStripMenuItem
+            // 
+            this.gestionDePersonalToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.administrarPersonalToolStripMenuItem,
+            this.administrarHuellaToolStripMenuItem});
+            this.gestionDePersonalToolStripMenuItem.Name = "gestionDePersonalToolStripMenuItem";
+            this.gestionDePersonalToolStripMenuItem.Size = new System.Drawing.Size(123, 20);
+            this.gestionDePersonalToolStripMenuItem.Text = "Gestion de Personal";
+            // 
+            // administrarPersonalToolStripMenuItem
+            // 
+            this.administrarPersonalToolStripMenuItem.Name = "administrarPersonalToolStripMenuItem";
+            this.administrarPersonalToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.administrarPersonalToolStripMenuItem.Text = "Administrar Personal";
+            this.administrarPersonalToolStripMenuItem.Click += new System.EventHandler(this.administrarPersonalToolStripMenuItem_Click_1);
+            // 
+            // administrarHuellaToolStripMenuItem
+            // 
+            this.administrarHuellaToolStripMenuItem.Name = "administrarHuellaToolStripMenuItem";
+            this.administrarHuellaToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.administrarHuellaToolStripMenuItem.Text = "Administrar Huella";
             // 
             // frmVentanaPrimaria
             // 
@@ -356,6 +382,9 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem gestionDePersonalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem administrarPersonalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem administrarHuellaToolStripMenuItem;
 
     }
 }

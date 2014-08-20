@@ -47,7 +47,7 @@
       <DependentUpon>Asistencia.dbml</DependentUpon>
     </Compile>
     <Compile Include="cd_GestionPersonal\PersonalCd.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="CapaDatosExcepciones.cs" />
     <Compile Include="cd_GestionAsistencia\ImprevistosFaltas.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -149,6 +149,12 @@
     <None Include="cd_GestionAsistencia\Asistencia.dbml.layout">
       <DependentUpon>Asistencia.dbml</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaEntidades\CapaEntidades.csproj">
+      <Project>{1305d457-e2f7-4fd7-91fa-50126d5f33d7}</Project>
+      <Name>CapaEntidades</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

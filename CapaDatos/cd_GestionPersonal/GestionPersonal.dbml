@@ -26,7 +26,7 @@
       <Association Name="PERSONAL_HUELLA" Member="PERSONAL" ThisKey="CEDULA" OtherKey="CEDULA" Type="PERSONAL" IsForeignKey="true" />
     </Type>
   </Table>
-  <Function Name="dbo.pa_InsertarPersonal" Method="pa_InsertarPersonal">
+  <Function Name="dbo.pa_RegistrarPersonal" Method="pa_RegistrarPersonal">
     <Parameter Name="Cedula" Parameter="cedula" Type="System.String" DbType="VarChar(10)" />
     <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(30)" />
     <Parameter Name="Apellido" Parameter="apellido" Type="System.String" DbType="VarChar(30)" />

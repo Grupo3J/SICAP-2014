@@ -30,9 +30,11 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button5 = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -51,7 +53,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.texCedula = new System.Windows.Forms.TextBox();
+            this.textCedula = new System.Windows.Forms.TextBox();
             this.textNombres = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.textApellidos = new System.Windows.Forms.TextBox();
@@ -66,18 +68,16 @@
             this.comboTipo = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.comboSexo = new System.Windows.Forms.ComboBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.butGuardar = new System.Windows.Forms.Button();
             this.butAtras = new System.Windows.Forms.Button();
             this.butCancelar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -106,6 +106,14 @@
             this.groupBox5.TabIndex = 25;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Huella Dactilar";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(50, 43);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(104, 129);
+            this.pictureBox2.TabIndex = 11;
+            this.pictureBox2.TabStop = false;
             // 
             // button5
             // 
@@ -140,6 +148,14 @@
             this.groupBox4.TabIndex = 24;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Cargar Foto";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(30, 39);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(133, 152);
+            this.pictureBox1.TabIndex = 23;
+            this.pictureBox1.TabStop = false;
             // 
             // label6
             // 
@@ -307,7 +323,7 @@
             // 
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.label20);
-            this.groupBox2.Controls.Add(this.texCedula);
+            this.groupBox2.Controls.Add(this.textCedula);
             this.groupBox2.Controls.Add(this.textNombres);
             this.groupBox2.Controls.Add(this.label18);
             this.groupBox2.Controls.Add(this.textApellidos);
@@ -352,14 +368,14 @@
             this.label20.TabIndex = 30;
             this.label20.Text = "*";
             // 
-            // texCedula
+            // textCedula
             // 
-            this.texCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.texCedula.ForeColor = System.Drawing.Color.SlateBlue;
-            this.texCedula.Location = new System.Drawing.Point(112, 20);
-            this.texCedula.Name = "texCedula";
-            this.texCedula.Size = new System.Drawing.Size(139, 26);
-            this.texCedula.TabIndex = 0;
+            this.textCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textCedula.ForeColor = System.Drawing.Color.SlateBlue;
+            this.textCedula.Location = new System.Drawing.Point(112, 20);
+            this.textCedula.Name = "textCedula";
+            this.textCedula.Size = new System.Drawing.Size(139, 26);
+            this.textCedula.TabIndex = 0;
             // 
             // textNombres
             // 
@@ -515,22 +531,6 @@
             this.comboSexo.Size = new System.Drawing.Size(139, 28);
             this.comboSexo.TabIndex = 16;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(50, 43);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(104, 129);
-            this.pictureBox2.TabIndex = 11;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(30, 39);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(133, 152);
-            this.pictureBox1.TabIndex = 23;
-            this.pictureBox1.TabStop = false;
-            // 
             // butGuardar
             // 
             this.butGuardar.Location = new System.Drawing.Point(93, 12);
@@ -539,6 +539,7 @@
             this.butGuardar.TabIndex = 2;
             this.butGuardar.Text = "Guardar";
             this.butGuardar.UseVisualStyleBackColor = true;
+            this.butGuardar.Click += new System.EventHandler(this.butGuardar_Click);
             // 
             // butAtras
             // 
@@ -573,14 +574,14 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -612,7 +613,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox texCedula;
+        private System.Windows.Forms.TextBox textCedula;
         private System.Windows.Forms.TextBox textNombres;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox textApellidos;

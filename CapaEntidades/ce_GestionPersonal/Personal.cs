@@ -28,13 +28,14 @@ namespace CapaEntidades.GestionPersonal
         private string cedula;
         private string ciudad;
         private string correo;
-        private byte dataFoto;
         private string direccion;
         private string nombre;
-        private Sexo sexo;
+        private char sexo;
         private string telefono;
-        private Tipo tipo;
+        private string tipo;
         private string titulo;
+        private byte[] dataFoto;
+
         /// <summary>
         /// ////////////////////////////77que es esto
         /// </summary>
@@ -74,7 +75,7 @@ namespace CapaEntidades.GestionPersonal
         /// <param name="cedula"></param>
         /// <param name="cargo"></param>
         /// <param name="apellido"></param>
-        public Personal(byte foto, Tipo tipo, string titulo, string telefono, Sexo sexo, string nombre, string direccion, string correo, string ciudad, string cedula, string cargo, string apellido)
+        public Personal(byte foto, string tipo, string titulo, string telefono, char sexo, string nombre, string direccion, string correo, string ciudad, string cedula, string cargo, string apellido)
         {
 
         }
@@ -139,7 +140,7 @@ namespace CapaEntidades.GestionPersonal
             }
         }
 
-        public byte DataFoto
+        public byte[] DataFoto
         {
             get
             {
@@ -175,7 +176,7 @@ namespace CapaEntidades.GestionPersonal
             }
         }
 
-        public Sexo Sexo
+        public char Sexo
         {
             get
             {
@@ -199,7 +200,7 @@ namespace CapaEntidades.GestionPersonal
             }
         }
 
-        public Tipo Tipo
+        public string Tipo
         {
             get
             {

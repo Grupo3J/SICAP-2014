@@ -107,5 +107,11 @@ namespace CapaInterfaz.ci_GestionPersonal
 
         }
 
+        private void administrarPersonalToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            frmAdministrarPersonal frmap = new frmAdministrarPersonal();
+            frmap.Show();
+        }
+
     }
 }

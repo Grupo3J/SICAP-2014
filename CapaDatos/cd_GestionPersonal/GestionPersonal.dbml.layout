@@ -14,7 +14,7 @@
         <elementListCompartment Id="7d751f93-750e-4802-9855-8596eb8f23d7" absoluteBounds="2.39, 1.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(5.125 : 2.16429768880208); (4.375 : 2.16429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.125 : 2.16429768880208); (4.375 : 2.16429768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/ConexionBDDataContext/PERSONAL/PERSONAL_HUELLA" />
       <nodes>
         <classShapeMoniker Id="5469af83-6b63-4319-ace1-ddc648181f6e" />
