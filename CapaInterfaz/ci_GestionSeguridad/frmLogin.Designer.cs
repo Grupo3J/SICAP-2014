@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -39,7 +38,6 @@
             this.textUsuario = new System.Windows.Forms.TextBox();
             this.textContraseña = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.skinEngine1 = new Sunisoft.IrisSkin.SkinEngine(((System.ComponentModel.Component)(this)));
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
@@ -142,13 +140,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // skinEngine1
-            // 
-            this.skinEngine1.SerialNumber = "U4N2UjLguUZs33UR+Vy47JAZ81t2fjIFvut28vc5oHiVeivGb/NZMA==";
-            this.skinEngine1.SkinFile = "C:\\Users\\Jordi\\Desktop\\Componentes Graficos Vb2\\SKIN NET 2010 WIN 7\\SkinVS.NET\\Em" +
-    "erald\\EmeraldColor1.ssk";
-            this.skinEngine1.SkinStreamMain = ((System.IO.Stream)(resources.GetObject("skinEngine1.SkinStreamMain")));
-            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(295, 241);
@@ -207,7 +198,6 @@
         private System.Windows.Forms.TextBox textContraseña;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBoxLogo;
-        private Sunisoft.IrisSkin.SkinEngine skinEngine1;
         private System.Windows.Forms.Button button2;
     }
 }
