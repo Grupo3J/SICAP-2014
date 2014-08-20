@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CapaDatos.GestionPlanificacion
+namespace CapaDatos.cd_GestionSeguridad
 {
 	using System.Data.Linq;
 	using System.Data.Linq.Mapping;
@@ -22,7 +22,7 @@ namespace CapaDatos.GestionPlanificacion
 	using System;
 	
 	
-	public partial class GestionPlanificacionDataContext : System.Data.Linq.DataContext
+	public partial class GestionSeguridadDataContext : System.Data.Linq.DataContext
 	{
 		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
@@ -31,25 +31,25 @@ namespace CapaDatos.GestionPlanificacion
     partial void OnCreated();
     #endregion
 		
-		public GestionPlanificacionDataContext(string connection) : 
+		public GestionSeguridadDataContext(string connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public GestionPlanificacionDataContext(System.Data.IDbConnection connection) : 
+		public GestionSeguridadDataContext(System.Data.IDbConnection connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public GestionPlanificacionDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public GestionSeguridadDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public GestionPlanificacionDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public GestionSeguridadDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();

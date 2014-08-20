@@ -41,33 +41,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GestionAsistencia\Asistencia.designer.cs">
+    <Compile Include="cd_GestionAsistencia\Asistencia.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Asistencia.dbml</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
-    <Compile Include="GestionAsistencia\ImprevistosFaltas.designer.cs">
+    <Compile Include="cd_GestionAsistencia\ImprevistosFaltas.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ImprevistosFaltas.dbml</DependentUpon>
     </Compile>
-    <Compile Include="GestionAyuda\GestionAyuda.designer.cs">
+    <Compile Include="cd_GestionAyuda\GestionAyuda.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GestionAyuda.dbml</DependentUpon>
     </Compile>
-    <Compile Include="GestionPersonal\GestionPersonal.designer.cs">
+    <Compile Include="cd_GestionPersonal\GestionPersonal.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GestionPersonal.dbml</DependentUpon>
     </Compile>
-    <Compile Include="GestionPlanificacion\GestionPlanificacion.designer.cs">
+    <Compile Include="cd_GestionPlanificacion\GestionPlanificacion.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GestionPlanificacion.dbml</DependentUpon>
     </Compile>
-    <Compile Include="GestionSeguridad\GestionSeguridad.designer.cs">
+    <Compile Include="cd_GestionSeguridad\GestionSeguridad.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GestionSeguridad.dbml</DependentUpon>
@@ -81,32 +81,32 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="GestionAsistencia\Asistencia.dbml">
+    <None Include="cd_GestionAsistencia\Asistencia.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>Asistencia.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="GestionAsistencia\ImprevistosFaltas.dbml">
+    <None Include="cd_GestionAsistencia\ImprevistosFaltas.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>ImprevistosFaltas.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="GestionAyuda\GestionAyuda.dbml">
+    <None Include="cd_GestionAyuda\GestionAyuda.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>GestionAyuda.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="GestionPersonal\GestionPersonal.dbml">
+    <None Include="cd_GestionPersonal\GestionPersonal.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>GestionPersonal.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="GestionPlanificacion\GestionPlanificacion.dbml">
+    <None Include="cd_GestionPlanificacion\GestionPlanificacion.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>GestionPlanificacion.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="GestionSeguridad\GestionSeguridad.dbml">
+    <None Include="cd_GestionSeguridad\GestionSeguridad.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>GestionSeguridad.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
@@ -120,32 +120,32 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="GestionPersonal\GestionPersonal.dbml.layout">
+    <None Include="cd_GestionPersonal\GestionPersonal.dbml.layout">
       <DependentUpon>GestionPersonal.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="GestionAyuda\GestionAyuda.dbml.layout">
+    <None Include="cd_GestionAyuda\GestionAyuda.dbml.layout">
       <DependentUpon>GestionAyuda.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="GestionPlanificacion\GestionPlanificacion.dbml.layout">
+    <None Include="cd_GestionPlanificacion\GestionPlanificacion.dbml.layout">
       <DependentUpon>GestionPlanificacion.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="GestionSeguridad\GestionSeguridad.dbml.layout">
+    <None Include="cd_GestionSeguridad\GestionSeguridad.dbml.layout">
       <DependentUpon>GestionSeguridad.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="GestionAsistencia\ImprevistosFaltas.dbml.layout">
+    <None Include="cd_GestionAsistencia\ImprevistosFaltas.dbml.layout">
       <DependentUpon>ImprevistosFaltas.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="GestionAsistencia\Asistencia.dbml.layout">
+    <None Include="cd_GestionAsistencia\Asistencia.dbml.layout">
       <DependentUpon>Asistencia.dbml</DependentUpon>
     </None>
   </ItemGroup>

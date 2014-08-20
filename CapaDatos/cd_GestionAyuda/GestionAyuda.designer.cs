@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CapaDatos.GestionAyuda
+namespace CapaDatos.cd_GestionAyuda
 {
 	using System.Data.Linq;
 	using System.Data.Linq.Mapping;
