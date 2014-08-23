@@ -90,6 +90,27 @@ namespace CapaDatos.cd_GestionPersonal
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula, nombre, apellido, cargo, titulo, correo, sexo, ciudad, direccion, telefono, tipo, foto);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_FiltrarPersonalValores")]
+		public ISingleResult<pa_FiltrarPersonalValoresResult> pa_FiltrarPersonalValores([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string valor)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), valor);
+			return ((ISingleResult<pa_FiltrarPersonalValoresResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_EliminarPersonalCedula")]
+		public int pa_EliminarPersonalCedula([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cedula", DbType="VarChar(10)")] string cedula)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_ModificarPersonalCedula")]
+		public int pa_ModificarPersonalCedula([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cedula", DbType="VarChar(10)")] string cedula, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nombre", DbType="VarChar(30)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Apellido", DbType="VarChar(30)")] string apellido, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cargo", DbType="VarChar(25)")] string cargo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Titulo", DbType="VarChar(15)")] string titulo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Correo", DbType="VarChar(30)")] string correo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Sexo", DbType="Char(1)")] System.Nullable<char> sexo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Ciudad", DbType="VarChar(15)")] string ciudad, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Direccion", DbType="VarChar(75)")] string direccion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Telefono", DbType="VarChar(10)")] string telefono, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Tipo", DbType="VarChar(20)")] string tipo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Foto", DbType="Image")] System.Data.Linq.Binary foto)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula, nombre, apellido, cargo, titulo, correo, sexo, ciudad, direccion, telefono, tipo, foto);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PERSONAL")]
@@ -617,6 +638,230 @@ namespace CapaDatos.cd_GestionPersonal
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	public partial class pa_FiltrarPersonalValoresResult
+	{
+		
+		private string _CEDULA;
+		
+		private string _NOMBRE;
+		
+		private string _APELLIDO;
+		
+		private string _CARGO;
+		
+		private string _TITULO;
+		
+		private string _CORREO;
+		
+		private char _SEXO;
+		
+		private string _CIUDAD;
+		
+		private string _DIRECCION;
+		
+		private string _TELEFONO;
+		
+		private string _TIPO;
+		
+		private System.Data.Linq.Binary _DATAFOTO;
+		
+		public pa_FiltrarPersonalValoresResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CEDULA", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string CEDULA
+		{
+			get
+			{
+				return this._CEDULA;
+			}
+			set
+			{
+				if ((this._CEDULA != value))
+				{
+					this._CEDULA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOMBRE", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string NOMBRE
+		{
+			get
+			{
+				return this._NOMBRE;
+			}
+			set
+			{
+				if ((this._NOMBRE != value))
+				{
+					this._NOMBRE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_APELLIDO", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string APELLIDO
+		{
+			get
+			{
+				return this._APELLIDO;
+			}
+			set
+			{
+				if ((this._APELLIDO != value))
+				{
+					this._APELLIDO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CARGO", DbType="VarChar(25) NOT NULL", CanBeNull=false)]
+		public string CARGO
+		{
+			get
+			{
+				return this._CARGO;
+			}
+			set
+			{
+				if ((this._CARGO != value))
+				{
+					this._CARGO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TITULO", DbType="VarChar(15)")]
+		public string TITULO
+		{
+			get
+			{
+				return this._TITULO;
+			}
+			set
+			{
+				if ((this._TITULO != value))
+				{
+					this._TITULO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CORREO", DbType="VarChar(30)")]
+		public string CORREO
+		{
+			get
+			{
+				return this._CORREO;
+			}
+			set
+			{
+				if ((this._CORREO != value))
+				{
+					this._CORREO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SEXO", DbType="Char(1) NOT NULL")]
+		public char SEXO
+		{
+			get
+			{
+				return this._SEXO;
+			}
+			set
+			{
+				if ((this._SEXO != value))
+				{
+					this._SEXO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CIUDAD", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string CIUDAD
+		{
+			get
+			{
+				return this._CIUDAD;
+			}
+			set
+			{
+				if ((this._CIUDAD != value))
+				{
+					this._CIUDAD = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIRECCION", DbType="VarChar(75)")]
+		public string DIRECCION
+		{
+			get
+			{
+				return this._DIRECCION;
+			}
+			set
+			{
+				if ((this._DIRECCION != value))
+				{
+					this._DIRECCION = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TELEFONO", DbType="VarChar(10)")]
+		public string TELEFONO
+		{
+			get
+			{
+				return this._TELEFONO;
+			}
+			set
+			{
+				if ((this._TELEFONO != value))
+				{
+					this._TELEFONO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TIPO", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string TIPO
+		{
+			get
+			{
+				return this._TIPO;
+			}
+			set
+			{
+				if ((this._TIPO != value))
+				{
+					this._TIPO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DATAFOTO", DbType="Image NOT NULL", CanBeNull=false)]
+		public System.Data.Linq.Binary DATAFOTO
+		{
+			get
+			{
+				return this._DATAFOTO;
+			}
+			set
+			{
+				if ((this._DATAFOTO != value))
+				{
+					this._DATAFOTO = value;
+				}
 			}
 		}
 	}

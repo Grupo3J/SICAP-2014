@@ -28,12 +28,13 @@ namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
             if (Abrir.ShowDialog() == DialogResult.OK)
             {
                 string Dir = Abrir.FileName;
-                Bitmap picture = new Bitmap(Dir);
+                picture = new Bitmap(Dir);
                 pictureBox1.Image = (Image)picture;
-
+               
             }
         }
         Bitmap picture2;
+        Bitmap picture;
         private void button5_Click(object sender, EventArgs e)
         {
             OpenFileDialog Abrir2 = new OpenFileDialog();
@@ -41,19 +42,23 @@ namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
             Abrir2.InitialDirectory = "C:/gerson";
             if (Abrir2.ShowDialog() == DialogResult.OK)
             {
+               
                 string Dir = Abrir2.FileName;
                 picture2 = new Bitmap(Dir);
                 pictureBox2.Image = (Image)picture2;
+               
             }
         }
         public static byte[] ImageToByte(Image img)
         {
             ImageConverter converter = new ImageConverter();
+            MessageBox.Show("metodo ImageToByte:" + "" + (byte[])converter.ConvertTo(img, typeof(byte[])));
+
             return (byte[])converter.ConvertTo(img, typeof(byte[]));
         }
         private void butGuardar_Click(object sender, EventArgs e)
         {
-            string sex = Convert.ToString(comboSexo.SelectedItem);
+            string sex =""+comboSexo.SelectedItem;
 
             Personal p = new Personal();
             p.Cedula = textCedula.Text;
@@ -66,11 +71,16 @@ namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
             p.Ciudad = textCiudad.Text;
             p.Direccion = textDireccion.Text;
             p.Telefono = textTelefono.Text;
-            p.Tipo = Convert.ToString(comboSexo.SelectedItem);
-            p.DataFoto = ImageToByte(picture2);
-
-
+            p.Tipo = Convert.ToString(comboTipo.SelectedItem);
+            p.DataFoto = ImageToByte(picture);
             PersonalCd.Create(p);
+
+            frmap.dataGridView1.Update();
+        }
+        frmAdministrarPersonal frmap = new frmAdministrarPersonal();
+        private void frmRegistrarPersonal_Load(object sender, EventArgs e)
+        {
+
         }
 
     }

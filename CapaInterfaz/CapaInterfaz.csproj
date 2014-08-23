@@ -68,6 +68,12 @@
     <Compile Include="ci_GestionPersonal\frmPersonal\frmAdministrarPersonal.Designer.cs">
       <DependentUpon>frmAdministrarPersonal.cs</DependentUpon>
     </Compile>
+    <Compile Include="ci_GestionPersonal\frmPersonal\frmModificarPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionPersonal\frmPersonal\frmModificarPersonal.Designer.cs">
+      <DependentUpon>frmModificarPersonal.cs</DependentUpon>
+    </Compile>
     <Compile Include="ci_GestionPersonal\frmPersonal\frmRegistrarPersonal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ci_GestionPersonal\frmPersonal\frmAdministrarPersonal.resx">
       <DependentUpon>frmAdministrarPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionPersonal\frmPersonal\frmModificarPersonal.resx">
+      <DependentUpon>frmModificarPersonal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ci_GestionPersonal\frmPersonal\frmRegistrarPersonal.resx">
       <DependentUpon>frmRegistrarPersonal.cs</DependentUpon>

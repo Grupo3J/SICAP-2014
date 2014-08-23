@@ -34,6 +34,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +47,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Asistencia.dbml</DependentUpon>
     </Compile>
+    <Compile Include="cd_GestionPersonal\Image.cs" />
     <Compile Include="cd_GestionPersonal\PersonalCd.cs" />
     <Compile Include="CapaDatosExcepciones.cs" />
     <Compile Include="cd_GestionAsistencia\ImprevistosFaltas.designer.cs">

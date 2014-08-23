@@ -1,6 +1,6 @@
 ﻿namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
 {
-    partial class frmRegistrarPersonal
+    partial class frmModificarPersonal
     {
         /// <summary>
         /// Required designer variable.
@@ -28,15 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.butCancelar = new System.Windows.Forms.Button();
+            this.butAtras = new System.Windows.Forms.Button();
+            this.butGuardar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.butCargarHuella = new System.Windows.Forms.Button();
+            this.butCargarImagen = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.butCargarFoto = new System.Windows.Forms.Button();
+            this.butCargaFoto = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -68,9 +71,7 @@
             this.comboTipo = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.comboSexo = new System.Windows.Forms.ComboBox();
-            this.butGuardar = new System.Windows.Forms.Button();
-            this.butAtras = new System.Windows.Forms.Button();
-            this.butCancelar = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -78,7 +79,36 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
+            // 
+            // butCancelar
+            // 
+            this.butCancelar.Location = new System.Drawing.Point(173, 10);
+            this.butCancelar.Name = "butCancelar";
+            this.butCancelar.Size = new System.Drawing.Size(75, 23);
+            this.butCancelar.TabIndex = 8;
+            this.butCancelar.Text = "Cancelar";
+            this.butCancelar.UseVisualStyleBackColor = true;
+            // 
+            // butAtras
+            // 
+            this.butAtras.Location = new System.Drawing.Point(11, 10);
+            this.butAtras.Name = "butAtras";
+            this.butAtras.Size = new System.Drawing.Size(75, 23);
+            this.butAtras.TabIndex = 7;
+            this.butAtras.Text = "Atras";
+            this.butAtras.UseVisualStyleBackColor = true;
+            // 
+            // butGuardar
+            // 
+            this.butGuardar.Location = new System.Drawing.Point(92, 10);
+            this.butGuardar.Name = "butGuardar";
+            this.butGuardar.Size = new System.Drawing.Size(75, 23);
+            this.butGuardar.TabIndex = 6;
+            this.butGuardar.Text = "Guardar";
+            this.butGuardar.UseVisualStyleBackColor = true;
+            this.butGuardar.Click += new System.EventHandler(this.butGuardar_Click);
             // 
             // groupBox1
             // 
@@ -87,17 +117,17 @@
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.ForeColor = System.Drawing.Color.Blue;
-            this.groupBox1.Location = new System.Drawing.Point(12, 41);
+            this.groupBox1.Location = new System.Drawing.Point(11, 39);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(613, 557);
-            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Personal";
             // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.pictureBox2);
-            this.groupBox5.Controls.Add(this.butCargarHuella);
+            this.groupBox5.Controls.Add(this.butCargarImagen);
             this.groupBox5.Controls.Add(this.label14);
             this.groupBox5.ForeColor = System.Drawing.Color.Blue;
             this.groupBox5.Location = new System.Drawing.Point(389, 307);
@@ -115,16 +145,16 @@
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
             // 
-            // butCargarHuella
+            // butCargarImagen
             // 
-            this.butCargarHuella.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.butCargarHuella.Location = new System.Drawing.Point(52, 192);
-            this.butCargarHuella.Name = "butCargarHuella";
-            this.butCargarHuella.Size = new System.Drawing.Size(98, 23);
-            this.butCargarHuella.TabIndex = 12;
-            this.butCargarHuella.Text = "Cargar Huella";
-            this.butCargarHuella.UseVisualStyleBackColor = true;
-            this.butCargarHuella.Click += new System.EventHandler(this.button5_Click);
+            this.butCargarImagen.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.butCargarImagen.Location = new System.Drawing.Point(52, 192);
+            this.butCargarImagen.Name = "butCargarImagen";
+            this.butCargarImagen.Size = new System.Drawing.Size(98, 23);
+            this.butCargarImagen.TabIndex = 12;
+            this.butCargarImagen.Text = "Cargar Huella";
+            this.butCargarImagen.UseVisualStyleBackColor = true;
+            this.butCargarImagen.Click += new System.EventHandler(this.button5_Click);
             // 
             // label14
             // 
@@ -140,7 +170,7 @@
             // 
             this.groupBox4.Controls.Add(this.pictureBox1);
             this.groupBox4.Controls.Add(this.label6);
-            this.groupBox4.Controls.Add(this.butCargarFoto);
+            this.groupBox4.Controls.Add(this.butCargaFoto);
             this.groupBox4.ForeColor = System.Drawing.Color.Blue;
             this.groupBox4.Location = new System.Drawing.Point(389, 29);
             this.groupBox4.Name = "groupBox4";
@@ -166,16 +196,16 @@
             this.label6.TabIndex = 9;
             this.label6.Text = "Foto:";
             // 
-            // butCargarFoto
+            // butCargaFoto
             // 
-            this.butCargarFoto.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.butCargarFoto.Location = new System.Drawing.Point(64, 212);
-            this.butCargarFoto.Name = "butCargarFoto";
-            this.butCargarFoto.Size = new System.Drawing.Size(75, 23);
-            this.butCargarFoto.TabIndex = 4;
-            this.butCargarFoto.Text = "Cargar Foto";
-            this.butCargarFoto.UseVisualStyleBackColor = true;
-            this.butCargarFoto.Click += new System.EventHandler(this.button4_Click);
+            this.butCargaFoto.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.butCargaFoto.Location = new System.Drawing.Point(64, 212);
+            this.butCargaFoto.Name = "butCargaFoto";
+            this.butCargaFoto.Size = new System.Drawing.Size(75, 23);
+            this.butCargaFoto.TabIndex = 4;
+            this.butCargaFoto.Text = "Cargar Foto";
+            this.butCargaFoto.UseVisualStyleBackColor = true;
+            this.butCargaFoto.Click += new System.EventHandler(this.butCargarFoto);
             // 
             // groupBox3
             // 
@@ -531,47 +561,28 @@
             this.comboSexo.Size = new System.Drawing.Size(139, 28);
             this.comboSexo.TabIndex = 16;
             // 
-            // butGuardar
+            // pictureBox3
             // 
-            this.butGuardar.Location = new System.Drawing.Point(93, 12);
-            this.butGuardar.Name = "butGuardar";
-            this.butGuardar.Size = new System.Drawing.Size(75, 23);
-            this.butGuardar.TabIndex = 2;
-            this.butGuardar.Text = "Guardar";
-            this.butGuardar.UseVisualStyleBackColor = true;
-            this.butGuardar.Click += new System.EventHandler(this.butGuardar_Click);
+            this.pictureBox3.Location = new System.Drawing.Point(707, 68);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox3.TabIndex = 9;
+            this.pictureBox3.TabStop = false;
             // 
-            // butAtras
-            // 
-            this.butAtras.Location = new System.Drawing.Point(12, 12);
-            this.butAtras.Name = "butAtras";
-            this.butAtras.Size = new System.Drawing.Size(75, 23);
-            this.butAtras.TabIndex = 3;
-            this.butAtras.Text = "Atras";
-            this.butAtras.UseVisualStyleBackColor = true;
-            // 
-            // butCancelar
-            // 
-            this.butCancelar.Location = new System.Drawing.Point(174, 12);
-            this.butCancelar.Name = "butCancelar";
-            this.butCancelar.Size = new System.Drawing.Size(75, 23);
-            this.butCancelar.TabIndex = 4;
-            this.butCancelar.Text = "Cancelar";
-            this.butCancelar.UseVisualStyleBackColor = true;
-            // 
-            // frmRegistrarPersonal
+            // frmModificarPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(634, 606);
+            this.ClientSize = new System.Drawing.Size(907, 606);
+            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.butCancelar);
             this.Controls.Add(this.butAtras);
             this.Controls.Add(this.butGuardar);
             this.Controls.Add(this.groupBox1);
-            this.Name = "frmRegistrarPersonal";
+            this.Name = "frmModificarPersonal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Registrar Personal";
-            this.Load += new System.EventHandler(this.frmRegistrarPersonal_Load);
+            this.Text = "Modificar Datos Personal";
+            this.Load += new System.EventHandler(this.frmModificarPersonal_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
@@ -583,21 +594,25 @@
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private System.Windows.Forms.Button butCancelar;
+        private System.Windows.Forms.Button butAtras;
+        private System.Windows.Forms.Button butGuardar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button butCargarHuella;
+        private System.Windows.Forms.Button butCargarImagen;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button butCargarFoto;
+        private System.Windows.Forms.Button butCargaFoto;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label19;
@@ -629,8 +644,6 @@
         private System.Windows.Forms.ComboBox comboTipo;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox comboSexo;
-        private System.Windows.Forms.Button butGuardar;
-        private System.Windows.Forms.Button butAtras;
-        private System.Windows.Forms.Button butCancelar;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
