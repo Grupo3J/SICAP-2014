@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaDatos.cd_GestionPersonal;
 using CapaInterfaz.ci_GestionPersonal.frmPersonal;
+using CapaLogicaNegocio.cln_GestionPersonal;
 namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
 {
     public partial class frmAdministrarPersonal : Form
@@ -31,15 +32,16 @@ namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
         {
 
         }
-
+        PersonalLN PLN = new PersonalLN();
         private void frmAdministrarPersonal_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = PersonalCd.ObtenerPresonal("");
+            dataGridView1.DataSource = PLN.ListarPersonal("");
+            //dataGridView1.DataSource = PersonalCd.ObtenerPresonal("");
         }
 
         private void textBuscar_TextChanged(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = PersonalCd.ObtenerPresonal(textBuscar.Text);
+            dataGridView1.DataSource = PLN.ListarPersonal("");
         }
 
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -49,8 +51,12 @@ namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
 
             if(dialog == DialogResult.Yes){
                 string cedula = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                PersonalCd.EliminarPersonalCedula(cedula);
-                dataGridView1.DataSource = PersonalCd.ObtenerPresonal("");           
+
+                PLN.EliminarPresonal(cedula);
+                //PersonalCd.EliminarPersonalCedula(cedula);
+
+                dataGridView1.DataSource = PLN.ListarPersonal("");
+                //dataGridView1.DataSource = PersonalCd.ObtenerPresonal("");           
             }
             
         }
@@ -72,6 +78,8 @@ namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
             string direccion = dataGridView1.CurrentRow.Cells[8].Value.ToString();
             string telefono = dataGridView1.CurrentRow.Cells[9].Value.ToString();
             string tipo = dataGridView1.CurrentRow.Cells[10].Value.ToString();
+
+            ///agragar primero a LN
             foto = PersonalCd.getImageById(dataGridView1.CurrentRow.Cells[0].Value.ToString());
 
             
@@ -89,7 +97,19 @@ namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
 
         private void listarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = PersonalCd.ObtenerPresonal("");  
+            //dataGridView1.DataSource = PersonalCd.ObtenerPresonal("");  
+            dataGridView1.DataSource = PLN.ListarPersonal("");
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void administrarHuellaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAdministrarHuella frmah = new frmAdministrarHuella();
+            frmah.Show();
         }
     }
     }

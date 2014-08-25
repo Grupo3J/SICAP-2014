@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaEntidades.GestionPersonal;
 using CapaDatos.cd_GestionPersonal;
+using CapaLogicaNegocio.cln_GestionPersonal;
 using System.IO;
 
 namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
@@ -27,6 +28,11 @@ namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
         public string tel;
         public string tip;
         public byte[] fot;
+
+        Bitmap picture;
+        Bitmap picture2;
+       
+        PersonalLN PLN = new PersonalLN();
 
         public frmModificarPersonal(string cedula, string nombre, string apellidos,string cargo,string titulo, string correo,
                 string sexo, string ciudad, string direccion, string telefono, string tipo, byte []foto){
@@ -64,10 +70,12 @@ namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
             p.Tipo = Convert.ToString(comboTipo.SelectedItem);
             p.DataFoto = ImageToByte(picture);
 
+            PLN.ModificarPersonal(p);
+           //PersonalCd.ModificarPersonalCedula(p);
+            frmap.dataGridView1.DataSource = PLN.ListarPersonal("");
+            //frmap.dataGridView1.DataSource = PersonalCd.ObtenerPresonal("");
 
-           PersonalCd.ModificarPersonalCedula(p);
-
-            frmap.dataGridView1.DataSource = PersonalCd.ObtenerPresonal("");
+            this.Close();
         }
         frmAdministrarPersonal frmdp = new frmAdministrarPersonal();
 
@@ -136,24 +144,6 @@ namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
 
             
         }
-
-        Bitmap picture;
-        Bitmap picture2;
-        
-        /*Método para convertir un array[]bytes a Imagen*/
-        //public Image byteArrayToImage(byte []byteArrayIn)
-        //{
-        //    MemoryStream ms = new MemoryStream(byteArrayIn);
-        //    Image returnImage = Image.FromStream(ms);
-        //    return returnImage;
-        //}
-
-        ///*Método para convertir un string a array[]bytes*/
-        //public byte[] GetBytes(string cadenadeBytes) { 
-        //    byte[] bytes = new byte[cadenadeBytes.Length * sizeof(char)];
-        //    System.Buffer.BlockCopy(cadenadeBytes.ToCharArray(), 0, bytes, 0, bytes.Length);
-        //    return bytes;
-        //}
 
         private void butCargarFoto(object sender, EventArgs e)
         {

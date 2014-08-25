@@ -77,4 +77,20 @@
     <Parameter Name="Foto" Parameter="foto" Type="System.Data.Linq.Binary" DbType="Image" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.pa_RegistrarHuella" Method="pa_RegistrarHuella">
+    <Parameter Name="IdHuella" Parameter="idHuella" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="Cedula" Parameter="cedula" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="DataHuella1" Parameter="dataHuella1" Type="System.Data.Linq.Binary" DbType="Binary(1)" />
+    <Parameter Name="DataHuella2" Parameter="dataHuella2" Type="System.Data.Linq.Binary" DbType="Binary(1)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.pa_ListarHuellaCedula" Method="pa_ListarHuellaCedula">
+    <Parameter Name="Cedula" Parameter="cedula" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="pa_ListarHuellaCedulaResult">
+      <Column Name="IDHUELLA" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="DATAHUELLA1" Type="System.Data.Linq.Binary" DbType="VarBinary(8000) NOT NULL" CanBeNull="false" />
+      <Column Name="DATAHUELLA2" Type="System.Data.Linq.Binary" DbType="VarBinary(8000) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
 </Database>

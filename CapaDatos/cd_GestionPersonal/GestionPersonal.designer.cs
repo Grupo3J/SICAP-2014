@@ -111,6 +111,20 @@ namespace CapaDatos.cd_GestionPersonal
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula, nombre, apellido, cargo, titulo, correo, sexo, ciudad, direccion, telefono, tipo, foto);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_RegistrarHuella")]
+		public int pa_RegistrarHuella([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdHuella", DbType="VarChar(8)")] string idHuella, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cedula", DbType="VarChar(10)")] string cedula, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DataHuella1", DbType="Binary(1)")] System.Data.Linq.Binary dataHuella1, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DataHuella2", DbType="Binary(1)")] System.Data.Linq.Binary dataHuella2)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idHuella, cedula, dataHuella1, dataHuella2);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_ListarHuellaCedula")]
+		public ISingleResult<pa_ListarHuellaCedulaResult> pa_ListarHuellaCedula([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cedula", DbType="VarChar(10)")] string cedula)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula);
+			return ((ISingleResult<pa_ListarHuellaCedulaResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PERSONAL")]
@@ -861,6 +875,86 @@ namespace CapaDatos.cd_GestionPersonal
 				if ((this._DATAFOTO != value))
 				{
 					this._DATAFOTO = value;
+				}
+			}
+		}
+	}
+	
+	public partial class pa_ListarHuellaCedulaResult
+	{
+		
+		private string _IDHUELLA;
+		
+		private string _CEDULA;
+		
+		private System.Data.Linq.Binary _DATAHUELLA1;
+		
+		private System.Data.Linq.Binary _DATAHUELLA2;
+		
+		public pa_ListarHuellaCedulaResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDHUELLA", DbType="VarChar(8) NOT NULL", CanBeNull=false)]
+		public string IDHUELLA
+		{
+			get
+			{
+				return this._IDHUELLA;
+			}
+			set
+			{
+				if ((this._IDHUELLA != value))
+				{
+					this._IDHUELLA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CEDULA", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string CEDULA
+		{
+			get
+			{
+				return this._CEDULA;
+			}
+			set
+			{
+				if ((this._CEDULA != value))
+				{
+					this._CEDULA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DATAHUELLA1", DbType="VarBinary(8000) NOT NULL", CanBeNull=false)]
+		public System.Data.Linq.Binary DATAHUELLA1
+		{
+			get
+			{
+				return this._DATAHUELLA1;
+			}
+			set
+			{
+				if ((this._DATAHUELLA1 != value))
+				{
+					this._DATAHUELLA1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DATAHUELLA2", DbType="VarBinary(8000) NOT NULL", CanBeNull=false)]
+		public System.Data.Linq.Binary DATAHUELLA2
+		{
+			get
+			{
+				return this._DATAHUELLA2;
+			}
+			set
+			{
+				if ((this._DATAHUELLA2 != value))
+				{
+					this._DATAHUELLA2 = value;
 				}
 			}
 		}

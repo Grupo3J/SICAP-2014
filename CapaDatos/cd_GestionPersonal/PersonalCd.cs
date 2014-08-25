@@ -76,7 +76,7 @@ namespace CapaDatos.cd_GestionPersonal
                 p.Tipo = not.Tipo;
                 p.DataFoto = not.DataFoto;
                string datos = Convert.ToString(p.DataFoto);
-                MessageBox.Show("p.datica:   " + "" +datos);
+                //MessageBox.Show("p.datica:   " + "" +datos);
                 bd.pa_RegistrarPersonal(p.Cedula, p.Nombre, p.Apellido, p.Cargo, p.Titulo, p.Correo, p.Sexo, p.Ciudad, p.Direccion, p.Telefono, p.Tipo, p.DataFoto);
                 bd.SubmitChanges();
 

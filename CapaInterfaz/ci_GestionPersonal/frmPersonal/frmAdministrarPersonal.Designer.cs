@@ -33,10 +33,11 @@
             this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.textBuscar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.listarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.administrarHuellaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -48,7 +49,8 @@
             this.modificarToolStripMenuItem,
             this.eliminarToolStripMenuItem,
             this.reporteToolStripMenuItem,
-            this.listarToolStripMenuItem});
+            this.listarToolStripMenuItem,
+            this.administrarHuellaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(792, 24);
@@ -83,6 +85,13 @@
             this.reporteToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.reporteToolStripMenuItem.Text = "Reporte";
             // 
+            // listarToolStripMenuItem
+            // 
+            this.listarToolStripMenuItem.Name = "listarToolStripMenuItem";
+            this.listarToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
+            this.listarToolStripMenuItem.Text = "Listar";
+            this.listarToolStripMenuItem.Click += new System.EventHandler(this.listarToolStripMenuItem_Click);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -90,10 +99,11 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(767, 449);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // textBuscar
             // 
-            this.textBuscar.Location = new System.Drawing.Point(419, 0);
+            this.textBuscar.Location = new System.Drawing.Point(505, 4);
             this.textBuscar.Name = "textBuscar";
             this.textBuscar.Size = new System.Drawing.Size(100, 20);
             this.textBuscar.TabIndex = 2;
@@ -102,18 +112,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(361, 7);
+            this.label1.Location = new System.Drawing.Point(456, 7);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Buscar:";
             // 
-            // listarToolStripMenuItem
+            // administrarHuellaToolStripMenuItem
             // 
-            this.listarToolStripMenuItem.Name = "listarToolStripMenuItem";
-            this.listarToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
-            this.listarToolStripMenuItem.Text = "Listar";
-            this.listarToolStripMenuItem.Click += new System.EventHandler(this.listarToolStripMenuItem_Click);
+            this.administrarHuellaToolStripMenuItem.Name = "administrarHuellaToolStripMenuItem";
+            this.administrarHuellaToolStripMenuItem.Size = new System.Drawing.Size(118, 20);
+            this.administrarHuellaToolStripMenuItem.Text = "Administrar Huella";
+            this.administrarHuellaToolStripMenuItem.Click += new System.EventHandler(this.administrarHuellaToolStripMenuItem_Click);
             // 
             // frmAdministrarPersonal
             // 
@@ -148,6 +158,7 @@
         private System.Windows.Forms.TextBox textBuscar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem administrarHuellaToolStripMenuItem;
 
     }
 }
