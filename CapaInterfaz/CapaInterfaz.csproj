@@ -63,6 +63,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ci_GestionAsistencia\frmAsistencia\frmAdministrarAsistencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionAsistencia\frmAsistencia\frmAdministrarAsistencia.Designer.cs">
+      <DependentUpon>frmAdministrarAsistencia.cs</DependentUpon>
+    </Compile>
     <Compile Include="ci_GestionPersonal\frmPersonal\frmAdministrarHuella.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ci_GestionAsistencia\frmAsistencia\frmAdministrarAsistencia.resx">
+      <DependentUpon>frmAdministrarAsistencia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ci_GestionPersonal\frmPersonal\frmAdministrarHuella.resx">
       <DependentUpon>frmAdministrarHuella.cs</DependentUpon>
     </EmbeddedResource>
@@ -142,7 +151,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ci_GestionAsistencia\" />
     <Folder Include="ci_GestionAyuda\" />
     <Folder Include="ci_GestionPersonal\frmHuella\" />
     <Folder Include="ci_GestionPlanificacion\" />

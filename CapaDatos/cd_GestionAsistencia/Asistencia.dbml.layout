@@ -1,1 +1,12 @@
-﻿
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Asistencia">
+  <DataContextMoniker Name="/AsistenciaDataContext" />
+  <nestedChildShapes>
+    <classShape Id="e5ccc929-89e6-4817-ad51-fe8a8fbfbb7d" absoluteBounds="2.125, 1.125, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/AsistenciaDataContext/ASISTENCIA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c3af2b69-be52-4b23-b72a-95f0c37d8ef4" absoluteBounds="2.14, 1.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

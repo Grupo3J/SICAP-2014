@@ -1,1 +1,61 @@
-﻿
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SICAP-2014" Class="AsistenciaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=JORGE-TORRES-PC\SQL2012;Initial Catalog=SICAP-2014;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="SICAP_2014ConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ASISTENCIA" Member="ASISTENCIA">
+    <Type Name="ASISTENCIA">
+      <Column Name="IDASISTENCIA" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDCALENDARIO" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="FECHAHORAENTRADA" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FECHAHORASALIDA" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Function Name="dbo.pa_RegistrarAsistencia" Method="pa_RegistrarAsistencia">
+    <Parameter Name="IDASISTENCIA" Parameter="iDASISTENCIA" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="IDCALENDARIO" Parameter="iDCALENDARIO" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="CEDULA" Parameter="cEDULA" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="FECHAHORAENTRADA" Parameter="fECHAHORAENTRADA" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="FECHAHORASALIDA" Parameter="fECHAHORASALIDA" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.pa_FiltrarAsistenciaRango" Method="pa_FiltrarAsistenciaRango">
+    <Parameter Name="IDCALENDARIO" Parameter="iDCALENDARIO" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="CEDULA" Parameter="cEDULA" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="fechainicio" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="fechafin" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="pa_FiltrarAsistenciaRangoResult">
+      <Column Name="IDASISTENCIA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="IDCALENDARIO" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="FECHAHORAENTRADA" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FECHAHORASALIDA" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.pa_FiltrarAsistenciaMes" Method="pa_FiltrarAsistenciaMes">
+    <Parameter Name="IDCALENDARIO" Parameter="iDCALENDARIO" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="CEDULA" Parameter="cEDULA" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="valor" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="pa_FiltrarAsistenciaMesResult">
+      <Column Name="IDASISTENCIA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="IDCALENDARIO" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="FECHAHORAENTRADA" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FECHAHORASALIDA" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.pa_FiltrarAsistenciaDia" Method="pa_FiltrarAsistenciaDia">
+    <Parameter Name="IDCALENDARIO" Parameter="iDCALENDARIO" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="CEDULA" Parameter="cEDULA" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="valor" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="pa_FiltrarAsistenciaDiaResult">
+      <Column Name="IDASISTENCIA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="IDCALENDARIO" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="FECHAHORAENTRADA" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FECHAHORASALIDA" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.pa_EliminarAsistenciaId" Method="pa_EliminarAsistenciaId">
+    <Parameter Name="IDASISTENCIA" Parameter="iDASISTENCIA" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>
