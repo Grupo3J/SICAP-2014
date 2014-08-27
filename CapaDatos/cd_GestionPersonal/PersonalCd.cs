@@ -13,10 +13,11 @@ namespace CapaDatos.cd_GestionPersonal
     {
         public static bool Existe(string ced)
         {
-            CapaDatos.cd_GestionPersonal.ConexionBDDataContext DB;
+            CapaDatos.cd_GestionPersonal.GestionPersonalDataContext
+                DB;
             try
             {
-                using (DB = new ConexionBDDataContext())
+                using (DB = new GestionPersonalDataContext())
                 {
                     var query = (from prov in DB.PERSONAL where prov.CEDULA == ced select prov).Count();
                     if (query == 0)
@@ -38,10 +39,10 @@ namespace CapaDatos.cd_GestionPersonal
 
         public static List<pa_FiltrarPersonalValoresResult> ObtenerPresonal(string valor)
         {
-            ConexionBDDataContext DB;
+            GestionPersonalDataContext DB;
             try
             {
-                using (DB = new ConexionBDDataContext())
+                using (DB = new GestionPersonalDataContext())
                 {
                     return DB.pa_FiltrarPersonalValores(valor).ToList();
                 }
@@ -58,7 +59,7 @@ namespace CapaDatos.cd_GestionPersonal
       
         public static Personal Create(Personal not)
         {
-            ConexionBDDataContext bd = new ConexionBDDataContext();
+            GestionPersonalDataContext bd = new GestionPersonalDataContext();
            try
             {
 
@@ -96,12 +97,12 @@ namespace CapaDatos.cd_GestionPersonal
 
         public static void EliminarPersonalCedula(string cedula)
         {
-            ConexionBDDataContext DB = new ConexionBDDataContext();
+            GestionPersonalDataContext DB = new GestionPersonalDataContext();
            try
             {
-               
-                DB.pa_EliminarPersonalCedula(cedula);
-                DB.SubmitChanges();
+                //HABILITAR
+                //DB.pa_EliminarPersonalCedula(cedula);
+                //DB.SubmitChanges();
 
 
                }
@@ -118,7 +119,7 @@ namespace CapaDatos.cd_GestionPersonal
     /////////////////////////////////////////////////////////modificar personal
         public static Personal ModificarPersonalCedula(Personal per)
         {
-            ConexionBDDataContext bd = new ConexionBDDataContext();
+            GestionPersonalDataContext bd = new GestionPersonalDataContext();
             try
             {
                 Personal p = new Personal();
@@ -134,7 +135,8 @@ namespace CapaDatos.cd_GestionPersonal
                 p.Telefono = per.Telefono;
                 p.Tipo = per.Tipo;
                 p.DataFoto = per.DataFoto;
-                bd.pa_ModificarPersonalCedula(p.Cedula, p.Nombre, p.Apellido, p.Cargo, p.Titulo, p.Correo, p.Sexo, p.Ciudad, p.Direccion, p.Telefono, p.Tipo, p.DataFoto);
+                //HABILITAR
+               // bd.pa_ModificarPersonalCedula(p.Cedula, p.Nombre, p.Apellido, p.Cargo, p.Titulo, p.Correo, p.Sexo, p.Ciudad, p.Direccion, p.Telefono, p.Tipo, p.DataFoto);
                 bd.SubmitChanges();
 
             }
@@ -155,7 +157,7 @@ namespace CapaDatos.cd_GestionPersonal
         public static byte[] getImageById(string id)
         {
 
-            ConexionBDDataContext bd = new ConexionBDDataContext();
+            GestionPersonalDataContext bd = new GestionPersonalDataContext();
             try
             {
                 //Categoria p = new Categoria();

@@ -109,7 +109,9 @@ namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
 
             try
             {
+
                 byte[] imageData = fot.ToArray();
+                
                 Image newImage;
                 using (MemoryStream ms = new MemoryStream(imageData, 0, imageData.Length))
                 {
@@ -119,8 +121,9 @@ namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
                 pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
                 pictureBox1.Image = newImage;
             }
-            catch (Exception)
+            catch (Exception er)
             {
+                MessageBox.Show("pasandofotocon error: "+er.GetBaseException());
 
             }
 

@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="SecuGen.FDxSDKPro.Windows">
+      <HintPath>..\CapaInterfaz\bin\i386\SecuGen.FDxSDKPro.Windows.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
@@ -47,6 +50,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Asistencia.dbml</DependentUpon>
     </Compile>
+    <Compile Include="cd_GestionPersonal\GestionPersonal.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GestionPersonal.dbml</DependentUpon>
+    </Compile>
     <Compile Include="cd_GestionPersonal\HuellaCD.cs" />
     <Compile Include="cd_GestionPersonal\Image.cs" />
     <Compile Include="cd_GestionPersonal\PersonalCd.cs" />
@@ -60,11 +68,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GestionAyuda.dbml</DependentUpon>
-    </Compile>
-    <Compile Include="cd_GestionPersonal\GestionPersonal.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GestionPersonal.dbml</DependentUpon>
     </Compile>
     <Compile Include="cd_GestionPlanificacion\GestionPlanificacion.designer.cs">
       <AutoGen>True</AutoGen>
@@ -82,6 +85,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Secugen.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -124,11 +128,6 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="cd_GestionPersonal\GestionPersonal.dbml.layout">
-      <DependentUpon>GestionPersonal.dbml</DependentUpon>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="cd_GestionAyuda\GestionAyuda.dbml.layout">
       <DependentUpon>GestionAyuda.dbml</DependentUpon>
     </None>
@@ -158,6 +157,11 @@
       <Project>{1305d457-e2f7-4fd7-91fa-50126d5f33d7}</Project>
       <Name>CapaEntidades</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cd_GestionPersonal\GestionPersonal.dbml.layout">
+      <DependentUpon>GestionPersonal.dbml</DependentUpon>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
