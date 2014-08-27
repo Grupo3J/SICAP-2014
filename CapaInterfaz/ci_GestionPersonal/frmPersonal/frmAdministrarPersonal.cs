@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using CapaDatos.cd_GestionPersonal;
 using CapaInterfaz.ci_GestionPersonal.frmPersonal;
 using CapaLogicaNegocio.cln_GestionPersonal;
+using System.IO;
 namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
 {
     public partial class frmAdministrarPersonal : Form
@@ -18,26 +19,29 @@ namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
         {
             InitializeComponent();
         }
-       
-
+   
         private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmRegistrarPersonal frmrp = new frmRegistrarPersonal();
             frmrp.ShowDialog();
-
-            
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
         }
+           
         PersonalLN PLN = new PersonalLN();
         private void frmAdministrarPersonal_Load(object sender, EventArgs e)
         {
+           
+
+           Image im = (Image)pictureBox1.Image;
+            pictureBox1.Image = im;
             dataGridView1.DataSource = PLN.ListarPersonal("");
-            //dataGridView1.DataSource = PersonalCd.ObtenerPresonal("");
+           
         }
+        
 
         private void textBuscar_TextChanged(object sender, EventArgs e)
         {
@@ -103,13 +107,116 @@ namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+           // presentarImagenEnPictureBox();
         }
 
         private void administrarHuellaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmAdministrarHuella frmah = new frmAdministrarHuella();
+            string cedula = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+
+            
+            frmAdministrarHuella frmah = new frmAdministrarHuella(cedula);
             frmah.Show();
         }
+
+        private void presentarImagenEnPictureBox(string id)
+        {
+            byte[] foto;
+           // foto = PersonalCd.getImageById(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+            foto = PersonalCd.getImageById(id);
+
+            byte[] imageData = foto.ToArray();
+
+            Image newImage;
+            using (MemoryStream ms = new MemoryStream(imageData, 0, imageData.Length))
+            {
+                ms.Write(imageData, 0, imageData.Length);
+                newImage = Image.FromStream(ms, true);
+            }
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.Image = newImage;
+        }
+
+        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            //presentarImagenEnPictureBox();
+
+        }
+
+        
+
+        private void frmAdministrarPersonal_MouseCaptureChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_MouseMove(object sender, MouseEventArgs e)
+        {
+            //presentarImagenEnPictureBox();
+
+        }
+
+        private void dataGridView1_CellLeave(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
+        {
+            //presentarImagenEnPictureBox();
+        }
+
+        private void dataGridView1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void down(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void hover(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void dataGridView1_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                label2.Text = (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
+                presentarImagenEnPictureBox(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+
+            }
+            catch (Exception)
+            {
+
+
+            }
+        }
+
+        private void downcell(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            
+        
+        }
+
+        private void leavecell(object sender, DataGridViewCellEventArgs e)
+        {
+            
+            }
+
+        private void mouseup(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+        }
+
+
     }
     }

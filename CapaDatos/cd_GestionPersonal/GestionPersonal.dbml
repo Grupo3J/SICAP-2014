@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SICAP-2014" Class="ConexionBDDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=JORDI-PC;Initial Catalog=SICAP-2014;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="SICAP_2014ConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="probando" Class="GestionPersonalDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=JORDI-PC;Initial Catalog=probando;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="probandoConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.PERSONAL" Member="PERSONAL">
     <Type Name="PERSONAL">
       <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -21,26 +21,11 @@
     <Type Name="HUELLA">
       <Column Name="IDHUELLA" Type="System.String" DbType="VarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="DATAHUELLA1" Type="System.Data.Linq.Binary" DbType="VarBinary(8000) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
-      <Column Name="DATAHUELLA2" Type="System.Data.Linq.Binary" DbType="VarBinary(8000) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="DATAHUELLA1" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="DATAHUELLA2" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" UpdateCheck="Never" />
       <Association Name="PERSONAL_HUELLA" Member="PERSONAL" ThisKey="CEDULA" OtherKey="CEDULA" Type="PERSONAL" IsForeignKey="true" />
     </Type>
   </Table>
-  <Function Name="dbo.pa_RegistrarPersonal" Method="pa_RegistrarPersonal">
-    <Parameter Name="Cedula" Parameter="cedula" Type="System.String" DbType="VarChar(10)" />
-    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="Apellido" Parameter="apellido" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="Cargo" Parameter="cargo" Type="System.String" DbType="VarChar(25)" />
-    <Parameter Name="Titulo" Parameter="titulo" Type="System.String" DbType="VarChar(15)" />
-    <Parameter Name="Correo" Parameter="correo" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="Sexo" Parameter="sexo" Type="System.Char" DbType="Char(1)" />
-    <Parameter Name="Ciudad" Parameter="ciudad" Type="System.String" DbType="VarChar(15)" />
-    <Parameter Name="Direccion" Parameter="direccion" Type="System.String" DbType="VarChar(75)" />
-    <Parameter Name="Telefono" Parameter="telefono" Type="System.String" DbType="VarChar(10)" />
-    <Parameter Name="Tipo" Parameter="tipo" Type="System.String" DbType="VarChar(20)" />
-    <Parameter Name="Foto" Parameter="foto" Type="System.Data.Linq.Binary" DbType="Image" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.pa_FiltrarPersonalValores" Method="pa_FiltrarPersonalValores">
     <Parameter Name="valor" Type="System.String" DbType="VarChar(15)" />
     <ElementType Name="pa_FiltrarPersonalValoresResult">
@@ -58,11 +43,23 @@
       <Column Name="DATAFOTO" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.pa_EliminarPersonalCedula" Method="pa_EliminarPersonalCedula">
+  <Function Name="dbo.pa_ListarHuellaCedula" Method="pa_ListarHuellaCedula">
     <Parameter Name="Cedula" Parameter="cedula" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="pa_ListarHuellaCedulaResult">
+      <Column Name="IDHUELLA" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="DATAHUELLA1" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" />
+      <Column Name="DATAHUELLA2" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.pa_RegistrarHuella" Method="pa_RegistrarHuella">
+    <Parameter Name="IdHuella" Parameter="idHuella" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="Cedula" Parameter="cedula" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="DataHuella1" Parameter="dataHuella1" Type="System.Data.Linq.Binary" DbType="Image" />
+    <Parameter Name="DataHuella2" Parameter="dataHuella2" Type="System.Data.Linq.Binary" DbType="Image" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.pa_ModificarPersonalCedula" Method="pa_ModificarPersonalCedula">
+  <Function Name="dbo.pa_RegistrarPersonal" Method="pa_RegistrarPersonal">
     <Parameter Name="Cedula" Parameter="cedula" Type="System.String" DbType="VarChar(10)" />
     <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(30)" />
     <Parameter Name="Apellido" Parameter="apellido" Type="System.String" DbType="VarChar(30)" />
@@ -76,21 +73,5 @@
     <Parameter Name="Tipo" Parameter="tipo" Type="System.String" DbType="VarChar(20)" />
     <Parameter Name="Foto" Parameter="foto" Type="System.Data.Linq.Binary" DbType="Image" />
     <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.pa_RegistrarHuella" Method="pa_RegistrarHuella">
-    <Parameter Name="IdHuella" Parameter="idHuella" Type="System.String" DbType="VarChar(8)" />
-    <Parameter Name="Cedula" Parameter="cedula" Type="System.String" DbType="VarChar(10)" />
-    <Parameter Name="DataHuella1" Parameter="dataHuella1" Type="System.Data.Linq.Binary" DbType="Binary(1)" />
-    <Parameter Name="DataHuella2" Parameter="dataHuella2" Type="System.Data.Linq.Binary" DbType="Binary(1)" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.pa_ListarHuellaCedula" Method="pa_ListarHuellaCedula">
-    <Parameter Name="Cedula" Parameter="cedula" Type="System.String" DbType="VarChar(10)" />
-    <ElementType Name="pa_ListarHuellaCedulaResult">
-      <Column Name="IDHUELLA" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
-      <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="DATAHUELLA1" Type="System.Data.Linq.Binary" DbType="VarBinary(8000) NOT NULL" CanBeNull="false" />
-      <Column Name="DATAHUELLA2" Type="System.Data.Linq.Binary" DbType="VarBinary(8000) NOT NULL" CanBeNull="false" />
-    </ElementType>
   </Function>
 </Database>

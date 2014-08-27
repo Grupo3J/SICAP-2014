@@ -22,8 +22,8 @@ namespace CapaDatos.cd_GestionPersonal
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="SICAP-2014")]
-	public partial class ConexionBDDataContext : System.Data.Linq.DataContext
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="probando")]
+	public partial class GestionPersonalDataContext : System.Data.Linq.DataContext
 	{
 		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
@@ -38,31 +38,31 @@ namespace CapaDatos.cd_GestionPersonal
     partial void DeleteHUELLA(HUELLA instance);
     #endregion
 		
-		public ConexionBDDataContext() : 
-				base(global::CapaDatos.Properties.Settings.Default.SICAP_2014ConnectionString, mappingSource)
+		public GestionPersonalDataContext() : 
+				base(global::CapaDatos.Properties.Settings.Default.probandoConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public ConexionBDDataContext(string connection) : 
+		public GestionPersonalDataContext(string connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public ConexionBDDataContext(System.Data.IDbConnection connection) : 
+		public GestionPersonalDataContext(System.Data.IDbConnection connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public ConexionBDDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public GestionPersonalDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public ConexionBDDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public GestionPersonalDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
@@ -84,13 +84,6 @@ namespace CapaDatos.cd_GestionPersonal
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_RegistrarPersonal")]
-		public int pa_RegistrarPersonal([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cedula", DbType="VarChar(10)")] string cedula, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nombre", DbType="VarChar(30)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Apellido", DbType="VarChar(30)")] string apellido, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cargo", DbType="VarChar(25)")] string cargo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Titulo", DbType="VarChar(15)")] string titulo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Correo", DbType="VarChar(30)")] string correo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Sexo", DbType="Char(1)")] System.Nullable<char> sexo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Ciudad", DbType="VarChar(15)")] string ciudad, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Direccion", DbType="VarChar(75)")] string direccion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Telefono", DbType="VarChar(10)")] string telefono, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Tipo", DbType="VarChar(20)")] string tipo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Foto", DbType="Image")] System.Data.Linq.Binary foto)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula, nombre, apellido, cargo, titulo, correo, sexo, ciudad, direccion, telefono, tipo, foto);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_FiltrarPersonalValores")]
 		public ISingleResult<pa_FiltrarPersonalValoresResult> pa_FiltrarPersonalValores([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string valor)
 		{
@@ -98,32 +91,25 @@ namespace CapaDatos.cd_GestionPersonal
 			return ((ISingleResult<pa_FiltrarPersonalValoresResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_EliminarPersonalCedula")]
-		public int pa_EliminarPersonalCedula([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cedula", DbType="VarChar(10)")] string cedula)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_ModificarPersonalCedula")]
-		public int pa_ModificarPersonalCedula([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cedula", DbType="VarChar(10)")] string cedula, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nombre", DbType="VarChar(30)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Apellido", DbType="VarChar(30)")] string apellido, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cargo", DbType="VarChar(25)")] string cargo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Titulo", DbType="VarChar(15)")] string titulo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Correo", DbType="VarChar(30)")] string correo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Sexo", DbType="Char(1)")] System.Nullable<char> sexo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Ciudad", DbType="VarChar(15)")] string ciudad, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Direccion", DbType="VarChar(75)")] string direccion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Telefono", DbType="VarChar(10)")] string telefono, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Tipo", DbType="VarChar(20)")] string tipo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Foto", DbType="Image")] System.Data.Linq.Binary foto)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula, nombre, apellido, cargo, titulo, correo, sexo, ciudad, direccion, telefono, tipo, foto);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_RegistrarHuella")]
-		public int pa_RegistrarHuella([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdHuella", DbType="VarChar(8)")] string idHuella, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cedula", DbType="VarChar(10)")] string cedula, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DataHuella1", DbType="Binary(1)")] System.Data.Linq.Binary dataHuella1, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DataHuella2", DbType="Binary(1)")] System.Data.Linq.Binary dataHuella2)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idHuella, cedula, dataHuella1, dataHuella2);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_ListarHuellaCedula")]
 		public ISingleResult<pa_ListarHuellaCedulaResult> pa_ListarHuellaCedula([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cedula", DbType="VarChar(10)")] string cedula)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula);
 			return ((ISingleResult<pa_ListarHuellaCedulaResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_RegistrarHuella")]
+		public int pa_RegistrarHuella([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdHuella", DbType="VarChar(8)")] string idHuella, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cedula", DbType="VarChar(10)")] string cedula, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DataHuella1", DbType="Image")] System.Data.Linq.Binary dataHuella1, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DataHuella2", DbType="Image")] System.Data.Linq.Binary dataHuella2)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idHuella, cedula, dataHuella1, dataHuella2);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_RegistrarPersonal")]
+		public int pa_RegistrarPersonal([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cedula", DbType="VarChar(10)")] string cedula, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nombre", DbType="VarChar(30)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Apellido", DbType="VarChar(30)")] string apellido, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cargo", DbType="VarChar(25)")] string cargo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Titulo", DbType="VarChar(15)")] string titulo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Correo", DbType="VarChar(30)")] string correo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Sexo", DbType="Char(1)")] System.Nullable<char> sexo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Ciudad", DbType="VarChar(15)")] string ciudad, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Direccion", DbType="VarChar(75)")] string direccion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Telefono", DbType="VarChar(10)")] string telefono, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Tipo", DbType="VarChar(20)")] string tipo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Foto", DbType="Image")] System.Data.Linq.Binary foto)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula, nombre, apellido, cargo, titulo, correo, sexo, ciudad, direccion, telefono, tipo, foto);
+			return ((int)(result.ReturnValue));
 		}
 	}
 	
@@ -561,7 +547,7 @@ namespace CapaDatos.cd_GestionPersonal
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DATAHUELLA1", DbType="VarBinary(8000) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DATAHUELLA1", DbType="Image NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary DATAHUELLA1
 		{
 			get
@@ -581,7 +567,7 @@ namespace CapaDatos.cd_GestionPersonal
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DATAHUELLA2", DbType="VarBinary(8000) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DATAHUELLA2", DbType="Image NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary DATAHUELLA2
 		{
 			get
@@ -927,7 +913,7 @@ namespace CapaDatos.cd_GestionPersonal
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DATAHUELLA1", DbType="VarBinary(8000) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DATAHUELLA1", DbType="Image NOT NULL", CanBeNull=false)]
 		public System.Data.Linq.Binary DATAHUELLA1
 		{
 			get
@@ -943,7 +929,7 @@ namespace CapaDatos.cd_GestionPersonal
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DATAHUELLA2", DbType="VarBinary(8000) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DATAHUELLA2", DbType="Image NOT NULL", CanBeNull=false)]
 		public System.Data.Linq.Binary DATAHUELLA2
 		{
 			get

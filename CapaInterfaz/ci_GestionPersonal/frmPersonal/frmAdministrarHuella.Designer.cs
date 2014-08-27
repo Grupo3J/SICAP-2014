@@ -32,9 +32,19 @@
             this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.butCargarHuella1 = new System.Windows.Forms.Button();
+            this.pictureBoxHuella2 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxHuella1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxPrueba = new System.Windows.Forms.PictureBox();
+            this.listarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHuella2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHuella1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPrueba)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -42,52 +52,116 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nuevoToolStripMenuItem,
             this.modificarToolStripMenuItem,
-            this.eliminarToolStripMenuItem});
+            this.eliminarToolStripMenuItem,
+            this.listarToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(532, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(769, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // nuevoToolStripMenuItem
             // 
             this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
-            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
-            this.nuevoToolStripMenuItem.Text = "Nuevo";
+            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.nuevoToolStripMenuItem.Text = "Guardar";
+            this.nuevoToolStripMenuItem.Click += new System.EventHandler(this.nuevoToolStripMenuItem_Click);
             // 
             // modificarToolStripMenuItem
             // 
             this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
             this.modificarToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
             this.modificarToolStripMenuItem.Text = "Modificar";
+            this.modificarToolStripMenuItem.Click += new System.EventHandler(this.modificarToolStripMenuItem_Click);
             // 
             // eliminarToolStripMenuItem
             // 
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
             this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
+            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
-            // pictureBox1
+            // dataGridView1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(119, 65);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(320, 53);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(430, 221);
+            this.dataGridView1.TabIndex = 2;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.butCargarHuella1);
+            this.groupBox1.Controls.Add(this.pictureBoxHuella2);
+            this.groupBox1.Controls.Add(this.pictureBoxHuella1);
+            this.groupBox1.Location = new System.Drawing.Point(21, 45);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(262, 229);
+            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Registrar Huella";
+            // 
+            // butCargarHuella1
+            // 
+            this.butCargarHuella1.Location = new System.Drawing.Point(84, 185);
+            this.butCargarHuella1.Name = "butCargarHuella1";
+            this.butCargarHuella1.Size = new System.Drawing.Size(87, 23);
+            this.butCargarHuella1.TabIndex = 2;
+            this.butCargarHuella1.Text = "Cargar Huella";
+            this.butCargarHuella1.UseVisualStyleBackColor = true;
+            this.butCargarHuella1.Click += new System.EventHandler(this.butCargarHuella1_Click);
+            // 
+            // pictureBoxHuella2
+            // 
+            this.pictureBoxHuella2.Location = new System.Drawing.Point(143, 32);
+            this.pictureBoxHuella2.Name = "pictureBoxHuella2";
+            this.pictureBoxHuella2.Size = new System.Drawing.Size(100, 129);
+            this.pictureBoxHuella2.TabIndex = 1;
+            this.pictureBoxHuella2.TabStop = false;
+            // 
+            // pictureBoxHuella1
+            // 
+            this.pictureBoxHuella1.Location = new System.Drawing.Point(15, 32);
+            this.pictureBoxHuella1.Name = "pictureBoxHuella1";
+            this.pictureBoxHuella1.Size = new System.Drawing.Size(100, 129);
+            this.pictureBoxHuella1.TabIndex = 0;
+            this.pictureBoxHuella1.TabStop = false;
+            // 
+            // pictureBoxPrueba
+            // 
+            this.pictureBoxPrueba.Location = new System.Drawing.Point(72, 313);
+            this.pictureBoxPrueba.Name = "pictureBoxPrueba";
+            this.pictureBoxPrueba.Size = new System.Drawing.Size(100, 81);
+            this.pictureBoxPrueba.TabIndex = 4;
+            this.pictureBoxPrueba.TabStop = false;
+            // 
+            // listarToolStripMenuItem
+            // 
+            this.listarToolStripMenuItem.Name = "listarToolStripMenuItem";
+            this.listarToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
+            this.listarToolStripMenuItem.Text = "Listar";
+            this.listarToolStripMenuItem.Click += new System.EventHandler(this.listarToolStripMenuItem_Click);
             // 
             // frmAdministrarHuella
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(532, 322);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(769, 406);
+            this.Controls.Add(this.pictureBoxPrueba);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmAdministrarHuella";
             this.Text = "Administrar Huella  Dactilar";
+            this.Load += new System.EventHandler(this.frmAdministrarHuella_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHuella2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHuella1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPrueba)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -99,7 +173,13 @@
         private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button butCargarHuella1;
+        private System.Windows.Forms.PictureBox pictureBoxHuella2;
+        private System.Windows.Forms.PictureBox pictureBoxHuella1;
+        private System.Windows.Forms.PictureBox pictureBoxPrueba;
+        private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem;
 
     }
 }

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 using SecuGen.FDxSDKPro.Windows;
 
+using CapaDatos;
 using CapaEntidades.GestionPersonal;
 using CapaDatos.cd_GestionPersonal;
 using CapaLogicaNegocio.cln_GestionPersonal;
@@ -47,21 +48,12 @@ namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
                
             }
         }
-        Bitmap picture2;
+        //Bitmap picture2;
         Bitmap picture;
+       Secugen sg = new Secugen();
         private void button5_Click(object sender, EventArgs e)
         {
-            //OpenFileDialog Abrir2 = new OpenFileDialog();
-            //Abrir2.Filter = "Archivos JPEG(*.JPG) |*.jpg";
-            //Abrir2.InitialDirectory = "C:/gerson";
-            //if (Abrir2.ShowDialog() == DialogResult.OK)
-            //{
-               
-            //    string Dir = Abrir2.FileName;
-            //    picture2 = new Bitmap(Dir);
-            //    pictureBox2.Image = (Image)picture2;
-               
-            //}
+
             Inicializar();
         }
 
