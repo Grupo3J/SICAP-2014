@@ -43,5 +43,15 @@ namespace CapaDatos.Properties {
                 return ((string)(this["SICAP_2014ConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=JORDI-PC;Initial Catalog=probando;Integrated Security=True")]
+        public string probandoConnectionString {
+            get {
+                return ((string)(this["probandoConnectionString"]));
+            }
+        }
     }
 }

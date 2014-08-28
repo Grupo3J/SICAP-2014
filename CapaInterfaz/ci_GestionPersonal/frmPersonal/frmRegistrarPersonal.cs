@@ -50,7 +50,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
         }
         //Bitmap picture2;
         Bitmap picture;
-       Secugen sg = new Secugen();
+       //Secugen sg = new Secugen();
         private void button5_Click(object sender, EventArgs e)
         {
 

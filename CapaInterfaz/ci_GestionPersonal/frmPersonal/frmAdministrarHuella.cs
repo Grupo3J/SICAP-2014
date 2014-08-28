@@ -182,7 +182,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
                 string idHuella = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 string cedula = dataGridView1.CurrentRow.Cells[1].Value.ToString();
 
-                hln.EliminarHuellaIdHuella(idHuella);
+                //hln.EliminarHuellaIdHuella(idHuella);
 
                 dataGridView1.DataSource = hln.ListarHuella(cedula);
             }
