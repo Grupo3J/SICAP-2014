@@ -47,8 +47,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="SecuGen.FDxSDKPro.Windows, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4c4e1bcde5201535, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="SecuGen.FDxSDKPro.Windows">
       <HintPath>bin\i386\SecuGen.FDxSDKPro.Windows.dll</HintPath>
     </Reference>
     <Reference Include="System" />

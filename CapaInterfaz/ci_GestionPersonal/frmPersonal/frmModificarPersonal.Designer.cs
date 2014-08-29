@@ -606,7 +606,7 @@
         private System.Windows.Forms.Button butGuardar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        public System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button butCargarImagen;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.GroupBox groupBox4;

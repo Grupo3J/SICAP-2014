@@ -33,6 +33,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
 
 
         PersonalLN PLN = new PersonalLN();
+        HuellaLN HLN = new HuellaLN();
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -50,7 +51,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
         }
         //Bitmap picture2;
         Bitmap picture;
-       //Secugen sg = new Secugen();
+       Secugen sg = new Secugen();
         private void button5_Click(object sender, EventArgs e)
         {
 
@@ -166,8 +167,15 @@ namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
             p.Tipo = Convert.ToString(comboTipo.SelectedItem);
             p.DataFoto = ImageToByte(picture);
 
+            Huella h = new Huella();
+            h.IdHuella =  HLN.GenerarIdHuella();
+            h.DataHuella1 = arrayHuella1;
+            h.DataHuella2 = arrayHuella2;
+            h.Cedula = textCedula.Text; ;
+                
+       
             PLN.InsertarPersonal(p);
-            //PersonalCd.Create(p);
+            HLN.InsertarHuella(h);
 
             frmap.dataGridView1.Update();
         }
@@ -176,6 +184,8 @@ namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
         {
 
         }
+
+        
 
     }
 }

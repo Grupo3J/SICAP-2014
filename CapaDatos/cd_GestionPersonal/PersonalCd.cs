@@ -13,11 +13,10 @@ namespace CapaDatos.cd_GestionPersonal
     {
         public static bool Existe(string ced)
         {
-            CapaDatos.cd_GestionPersonal.GestionPersonalDataContext
-                DB;
+            CapaDatosDataContext DB;
             try
             {
-                using (DB = new GestionPersonalDataContext())
+                using (DB = new CapaDatosDataContext())
                 {
                     var query = (from prov in DB.PERSONAL where prov.CEDULA == ced select prov).Count();
                     if (query == 0)
@@ -39,10 +38,10 @@ namespace CapaDatos.cd_GestionPersonal
 
         public static List<pa_FiltrarPersonalValoresResult> ObtenerPresonal(string valor)
         {
-            GestionPersonalDataContext DB;
+            CapaDatosDataContext DB;
             try
             {
-                using (DB = new GestionPersonalDataContext())
+                using (DB = new CapaDatosDataContext())
                 {
                     return DB.pa_FiltrarPersonalValores(valor).ToList();
                 }
@@ -59,7 +58,7 @@ namespace CapaDatos.cd_GestionPersonal
       
         public static Personal Create(Personal not)
         {
-            GestionPersonalDataContext bd = new GestionPersonalDataContext();
+            CapaDatosDataContext bd = new CapaDatosDataContext();
            try
             {
 
@@ -97,7 +96,7 @@ namespace CapaDatos.cd_GestionPersonal
 
         public static void EliminarPersonalCedula(string cedula)
         {
-            GestionPersonalDataContext DB = new GestionPersonalDataContext();
+            CapaDatosDataContext DB = new CapaDatosDataContext();
            try
             {
                 //HABILITAR
@@ -119,7 +118,7 @@ namespace CapaDatos.cd_GestionPersonal
     /////////////////////////////////////////////////////////modificar personal
         public static Personal ModificarPersonalCedula(Personal per)
         {
-            GestionPersonalDataContext bd = new GestionPersonalDataContext();
+            CapaDatosDataContext bd = new CapaDatosDataContext();
             try
             {
                 Personal p = new Personal();
@@ -157,7 +156,7 @@ namespace CapaDatos.cd_GestionPersonal
         public static byte[] getImageById(string id)
         {
 
-            GestionPersonalDataContext bd = new GestionPersonalDataContext();
+            CapaDatosDataContext bd = new CapaDatosDataContext();
             try
             {
                 //Categoria p = new Categoria();

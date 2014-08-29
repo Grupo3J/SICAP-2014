@@ -8,8 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using System.IO;
+using System.IO.MemoryMappedFiles;
 
+using System.IO;
 using SecuGen.FDxSDKPro.Windows;
 using CapaLogicaNegocio.cln_GestionPersonal;
 using CapaDatos.cd_GestionPersonal;
@@ -153,14 +154,14 @@ namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
                 }
                 MessageBox.Show(valor);
                 Image newImage;
-                using (MemoryStream ms = new MemoryStream(imageData, 0, imageData.Length))
+                using (MemoryStream ms2 = new MemoryStream(imageData, 0, imageData.Length))
                 {
-                    ms.Write(imageData, 0, imageData.Length);
-                    newImage = Image.FromStream(ms);
+                    ms2.Write(imageData, 0, imageData.Length);
+                    newImage = Image.FromStream(ms2, true);
                 }
                 pictureBoxPrueba.SizeMode = PictureBoxSizeMode.StretchImage;
                 pictureBoxPrueba.Image = newImage;
-                pictureBoxHuella1.Refresh();
+                pictureBoxPrueba.Refresh();
                 MessageBox.Show("no entro");
             }
             catch (Exception er)
@@ -182,7 +183,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
                 string idHuella = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 string cedula = dataGridView1.CurrentRow.Cells[1].Value.ToString();
 
-                //hln.EliminarHuellaIdHuella(idHuella);
+                hln.EliminarHuellaIdHuella(idHuella);
 
                 dataGridView1.DataSource = hln.ListarHuella(cedula);
             }
@@ -192,5 +193,45 @@ namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
         {
             dataGridView1.DataSource = hln.ListarHuella(cedula);
         }
+
+        private void dataGridView1_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                label1.Text = (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
+                presentarImagenEnPictureBox(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+
+            }
+            catch (Exception)
+            {
+
+
+            }
+        }
+
+        private void presentarImagenEnPictureBox(string id)
+        {
+            byte[] foto;
+            // foto = PersonalCd.getImageById(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+            foto = HuellaCD.getImageById(id);
+
+            byte[] imageData = foto.ToArray();
+            try
+            {
+                Image newImage;
+            using (MemoryStream ms = new MemoryStream(imageData, 0, imageData.Length))
+            {
+                ms.Write(imageData, 0, imageData.Length);
+                newImage = Image.FromStream(ms, true);
+            }
+            pictureBoxPrueba.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxPrueba.Image = newImage;
+            }
+            catch (Exception ex){
+                MessageBox.Show("Error: "+ex.GetBaseException());
+            }
+            
+        }
+
     }
 }

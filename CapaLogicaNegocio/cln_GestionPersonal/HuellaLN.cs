@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CapaDatos;
 using CapaDatos.cd_GestionPersonal;
 using CapaEntidades.GestionPersonal;
 
@@ -29,25 +30,32 @@ namespace CapaLogicaNegocio.cln_GestionPersonal
 
         }
 
-        //metodo para modificar huella
-        //public bool ModificarHuellaIdHuella(Huella hue)
-        //{
-        //    HuellaCD.ModificarHuellaIdHuella(hue);
-        //    return false;
+        public bool ModificarHuellaIdHuella(Huella hue)
+        {
+            HuellaCD.ModificarHuellaIdHuella(hue);
+            return false;
 
 
-        //}
+        }
 
-        //metodo para eliminar huella
-        //public bool EliminarHuellaIdHuella(String idHuella)
-        //{
-        //    HuellaCD.EliminarHuellaIdHuella(idHuella);
-        //    return false;
-
-
-        //}
-        
+        public bool EliminarHuellaIdHuella(String idHuella)
+        {
+            HuellaCD.EliminarHuellaIdHuella(idHuella);
+            return false;
 
 
+        }
+
+
+
+        public string GenerarIdHuella()
+        {
+            Random ran = new Random();
+            int num = ran.Next(0000, 1000);
+            int num2 = ran.Next(000, 100);
+
+            string idhuella = "I" + num.ToString() + num2.ToString();
+            return idhuella;
+        }
     }
 }

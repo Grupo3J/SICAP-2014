@@ -11,7 +11,7 @@ namespace CapaDatos.cd_GestionPersonal
         //metodo para insertar una nueva huella
         public static Huella Create(Huella not)
         {
-            GestionPersonalDataContext bd = new GestionPersonalDataContext();
+            CapaDatosDataContext bd = new CapaDatosDataContext();
             try
             {
 
@@ -39,10 +39,10 @@ namespace CapaDatos.cd_GestionPersonal
         //metodo para listar las huella de una  persona
         public static List<pa_ListarHuellaCedulaResult> ObtenerHuella(string cedula)
         {
-            GestionPersonalDataContext DB;
+            CapaDatosDataContext DB;
             try
             {
-                using (DB = new GestionPersonalDataContext())
+                using (DB = new CapaDatosDataContext())
                 {
                     return DB.pa_ListarHuellaCedula(cedula).ToList();
                 }
@@ -60,10 +60,10 @@ namespace CapaDatos.cd_GestionPersonal
         //metodo para saber si existe una determinada huella
         public static bool ExisteHuella(string idHuella)
         {
-            CapaDatos.cd_GestionPersonal.GestionPersonalDataContext DB;
+            CapaDatosDataContext DB;
             try
             {
-                using (DB = new GestionPersonalDataContext())
+                using (DB = new CapaDatosDataContext())
                 {
                     var query = (from hue in DB.HUELLA where hue.IDHUELLA == idHuella select hue).Count();
                     if (query == 0)
@@ -84,60 +84,60 @@ namespace CapaDatos.cd_GestionPersonal
         }
 
         //metodo para eliminar una huella de una persona
-        //public static void EliminarHuellaIdHuella(string idHuella)
-        //{
-        //    ConexionBDDataContext DB = new ConexionBDDataContext();
-        //    try
-        //    {
+        public static void EliminarHuellaIdHuella(string idHuella)
+        {
+            CapaDatosDataContext DB = new CapaDatosDataContext();
+            try
+            {
 
-        //        DB.pa_EliminarHuellaIdHuella(idHuella);
-        //        DB.SubmitChanges();
+                DB.pa_EliminarHuellaIdHuella(idHuella);
+                DB.SubmitChanges();
 
 
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new CapaDatosExcepciones("Error al Eliminar Huella", ex);
-        //    }
-        //    finally
-        //    {
-        //        DB = null;
-        //    }
-        //}
+            }
+            catch (Exception ex)
+            {
+                throw new CapaDatosExcepciones("Error al Eliminar Huella", ex);
+            }
+            finally
+            {
+                DB = null;
+            }
+        }
 
         //metodo para modificar huella
-        //public static Huella ModificarHuellaIdHuella(Huella hue)
-        //{
-        //    ConexionBDDataContext bd = new ConexionBDDataContext();
-        //    try
-        //    {
-        //        Huella h = new Huella();
+        public static Huella ModificarHuellaIdHuella(Huella hue)
+        {
+            CapaDatosDataContext bd = new CapaDatosDataContext();
+            try
+            {
+                Huella h = new Huella();
 
-        //        h.IdHuella = hue.IdHuella;
-        //        h.DataHuella1 = hue.DataHuella1;
-        //        h.DataHuella2 = hue.DataHuella2;
-        //        bd.pa_ModificarHuellaIdHuella(h.IdHuella, h.DataHuella1, h.DataHuella2);
-        //        bd.SubmitChanges();
+                h.IdHuella = hue.IdHuella;
+                h.DataHuella1 = hue.DataHuella1;
+                h.DataHuella2 = hue.DataHuella2;
+                bd.pa_ModificarHuellaIdHuella(h.IdHuella, h.DataHuella1, h.DataHuella2);
+                bd.SubmitChanges();
 
-        //    }
-        //    catch (CapaDatosExcepciones ex)
-        //    {
-        //        throw new CapaDatosExcepciones("Error al Modificar Huella.", ex);
-        //    }
-        //    finally
-        //    {
-        //        bd = null;
-        //    }
+            }
+            catch (CapaDatosExcepciones ex)
+            {
+                throw new CapaDatosExcepciones("Error al Modificar Huella.", ex);
+            }
+            finally
+            {
+                bd = null;
+            }
 
-        //    return hue;
-        //}
+            return hue;
+        }
 
 
         //metodo para la imagen
         public static byte[] getImageById(string id)
         {
 
-            GestionPersonalDataContext bd = new GestionPersonalDataContext();
+            CapaDatosDataContext bd = new CapaDatosDataContext();
             try
             {
                 HUELLA j = (from usu in bd.HUELLA where usu.IDHUELLA == id select usu).Single();
