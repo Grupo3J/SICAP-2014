@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaInterfaz.ci_GestionPersonal.frmPersonal;
 using CapaInterfaz.ci_GestionSeguridad;
+using CapaInterfaz.ci_GestionPersonal;
 
 namespace CapaInterfaz.ci_GestionSeguridad
 {
@@ -18,7 +19,7 @@ namespace CapaInterfaz.ci_GestionSeguridad
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmAdministrarPersonal());
+            Application.Run(new frmVentanaPrimaria());
            
         }
     }

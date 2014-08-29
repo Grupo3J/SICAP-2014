@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaInterfaz.ci_GestionAsistencia.frmAsistencia;
 
 using CapaInterfaz.ci_GestionPersonal.frmPersonal;
 
@@ -111,6 +112,12 @@ namespace CapaInterfaz.ci_GestionPersonal
         {
             frmAdministrarPersonal frmap = new frmAdministrarPersonal();
             frmap.Show();
+        }
+
+        private void gestionAsistenciaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAdministrarAsistencia frmaa = new frmAdministrarAsistencia();
+            frmaa.Show();
         }
 
     }
