@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cln_GestionAsistencia\AsistenciaLN.cs" />
     <Compile Include="cln_GestionPersonal\HuellaLN.cs" />
     <Compile Include="cln_GestionPersonal\PersonalLN.cs" />
     <Compile Include="cln_GestionPlanificacion\CalendarioLN.cs" />
@@ -47,7 +48,6 @@
     <Compile Include="Validacion.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="cln_GestionAsistencia\" />
     <Folder Include="cln_GestionAyuda\" />
     <Folder Include="cln_GestionSeguridad\" />
   </ItemGroup>

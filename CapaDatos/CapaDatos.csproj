@@ -54,9 +54,9 @@
       <DependentUpon>CapaDatos.dbml</DependentUpon>
     </Compile>
     <Compile Include="CapaDatosExcepciones.cs" />
+    <Compile Include="cd_GestionAsistencia\AsistenciaCD.cs" />
     <Compile Include="cd_GestionPersonal\HuellaCD.cs" />
     <Compile Include="cd_GestionPersonal\PersonalCd.cs" />
-    <Compile Include="cd_GestionPlanificacion\CalendarioCD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -92,8 +92,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="cd_GestionAsistencia\" />
     <Folder Include="cd_GestionAyuda\" />
+    <Folder Include="cd_GestionPlanificacion\" />
     <Folder Include="cd_GestionSeguridad\" />
   </ItemGroup>
   <ItemGroup>

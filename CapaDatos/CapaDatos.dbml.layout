@@ -119,7 +119,7 @@
         <classShapeMoniker Id="34a1d030-ce17-46b2-9daf-315afc2b7bf9" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(1.75 : 8.33467091878255); (1.75 : 11.3162790425618); (3.5 : 11.3162790425618)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(1.75 : 8.33467091878255); (1.75 : 11.3162790425618); (2.19791916666667 : 11.3162790425618 : JumpStart); (2.36458583333333 : 11.3162790425618 : JumpEnd); (3.5 : 11.3162790425618)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CapaDatosDataContext/CALENDARIO/CALENDARIO_DIASADICIONALES" />
       <nodes>
         <classShapeMoniker Id="6adddb13-7b8c-4d03-b06d-2a5bf60dbc1c" />
@@ -140,14 +140,14 @@
         <classShapeMoniker Id="b97d789d-633a-45e3-b5fd-b57efd4c150c" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 4.94127904256185); (6.25 : 4.94127904256185)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 4.91429768880208); (6.25 : 4.91429768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CapaDatosDataContext/IMPREVISTOS/IMPREVISTOS_DETALLE_IMPREVISTO_CALENDARIO" />
       <nodes>
         <classShapeMoniker Id="7d0a2c20-eaed-4558-838d-8e63ddbf30be" />
         <classShapeMoniker Id="e8b10014-18f9-41da-bdeb-e45a46143be1" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(9.45003026944674 : 3.30544525146484); (9.45003026944674 : 3.55544525146484); (10.0642540034367 : 3.55544525146484); (10.0642540034367 : 3.30544525146484)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(9.44931705603966 : 3.2612939453125); (9.44931705603966 : 3.5112939453125); (10.065001179387 : 3.5112939453125); (10.065001179387 : 3.2612939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CapaDatosDataContext/MODULOS/MODULOS_MODULOS" />
       <nodes>
         <classShapeMoniker Id="c626582b-7fe3-4736-8f66-e5c52fe34e5a" />
@@ -161,14 +161,14 @@
         <classShapeMoniker Id="34a1d030-ce17-46b2-9daf-315afc2b7bf9" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 2.06627904256185); (3.5 : 2.06627904256185)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.75 : 2.03929768880208); (3.5 : 2.03929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/CapaDatosDataContext/PERSONAL/PERSONAL_HUELLA" />
       <nodes>
         <classShapeMoniker Id="99807c87-c32b-4b72-9bfd-39fdee5058f0" />
         <classShapeMoniker Id="633198b8-9c13-47b0-99c4-335c7dfbba7c" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(13.5 : 2.59550470987956); (13.7916666666667 : 2.59550470987956 : JumpStart); (13.9583333333333 : 2.59550470987956 : JumpEnd); (14.25 : 2.59550470987956)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(13.5 : 2.59550470987956); (14.25 : 2.59550470987956)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CapaDatosDataContext/RECURSOS/RECURSOS_PERMISOS" />
       <nodes>
         <classShapeMoniker Id="c0a6316a-618e-4887-9aff-7b3c3ef21078" />
@@ -196,12 +196,18 @@
         <classShapeMoniker Id="c00fa020-35bf-4cf1-bac0-a7bb6725f71a" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 3.00377904256185); (8.5 : 3.00377904256185); (8.5 : 4.14312225341797); (15.25 : 4.14312225341797); (15.25 : 4.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.75 : 3.33255126953125); (8.5 : 3.33255126953125); (8.5 : 4.0401025390625); (13.7916666666667 : 4.0401025390625 : JumpStart); (13.9583333333333 : 4.0401025390625 : JumpEnd); (15.25 : 4.0401025390625); (15.25 : 4.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/CapaDatosDataContext/PERSONAL/PERSONAL_USUARIO" />
       <nodes>
         <classShapeMoniker Id="99807c87-c32b-4b72-9bfd-39fdee5058f0" />
         <classShapeMoniker Id="c00fa020-35bf-4cf1-bac0-a7bb6725f71a" />
       </nodes>
     </associationConnector>
+    <classShape Id="23e7082c-8202-455d-bd4d-e1f565801659" absoluteBounds="6, 0.5, 2, 2.5401025390625">
+      <DataClassMoniker Name="/CapaDatosDataContext/PersonalporAsistencia" />
+      <nestedChildShapes>
+        <elementListCompartment Id="374f85f8-05bc-4ebe-b4ea-27e0db54ca64" absoluteBounds="6.015, 0.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>
