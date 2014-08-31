@@ -119,7 +119,7 @@
         <classShapeMoniker Id="74c6f16f-9766-42d9-9c30-a312e87bf7a4" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(1.75 : 8.27089680989583); (1.75 : 11.2892976888021); (3.5 : 11.2892976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(1.75 : 8.27089680989583); (1.75 : 11.2892976888021); (2.19791916666667 : 11.2892976888021 : JumpStart); (2.36458583333333 : 11.2892976888021 : JumpEnd); (3.5 : 11.2892976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CapaDatosDataContext/CALENDARIO/CALENDARIO_DIASADICIONALES" />
       <nodes>
         <classShapeMoniker Id="71f5cbd9-19d6-4007-a4ea-851fbd59907d" />
@@ -168,7 +168,7 @@
         <classShapeMoniker Id="6aafeb80-55dc-4c5e-b41c-37be40769656" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(13.5 : 2.67390055338542); (14.25 : 2.67390055338542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(13.5 : 2.67390055338542); (13.7916666666667 : 2.67390055338542 : JumpStart); (13.9583333333333 : 2.67390055338542 : JumpEnd); (14.25 : 2.67390055338542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CapaDatosDataContext/RECURSOS/RECURSOS_PERMISOS" />
       <nodes>
         <classShapeMoniker Id="69293147-e10e-41d5-a44f-0196c4abc243" />
@@ -196,7 +196,7 @@
         <classShapeMoniker Id="fbae64af-c105-41ef-b8b9-c5ac2fd6ea43" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(1.718748 : 4.9920068359375); (1.718748 : 5.69314697265625); (3.04166666666667 : 5.69314697265625 : JumpStart); (3.20833333333333 : 5.69314697265625 : JumpEnd); (6 : 5.69314697265625); (6 : 6.3862939453125); (11.25 : 6.3862939453125); (11.25 : 5.4062505); (14.25 : 5.4062505)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(1.718748 : 4.9920068359375); (1.718748 : 5.69314697265625); (3.04166666666667 : 5.69314697265625 : JumpStart); (3.20833333333333 : 5.69314697265625 : JumpEnd); (6 : 5.69314697265625); (6 : 6.3862939453125); (11.25 : 6.3862939453125); (11.25 : 5.4062505); (13.7916666666667 : 5.4062505 : JumpStart); (13.9583333333333 : 5.4062505 : JumpEnd); (14.25 : 5.4062505)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CapaDatosDataContext/PERSONAL/PERSONAL_USUARIO" />
       <nodes>
         <classShapeMoniker Id="0039d9bf-b0de-46f3-a624-0fd13542bd0f" />
