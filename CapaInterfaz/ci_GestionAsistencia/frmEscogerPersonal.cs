@@ -31,8 +31,8 @@ namespace CapaInterfaz.ci_GestionAsistencia
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            FrmInsertarGuia.IdLocal = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-            Dispose();
+            //FrmInsertarGuia.IdLocal = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+            //Dispose();
         }
 
 
