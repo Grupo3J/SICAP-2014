@@ -68,6 +68,18 @@
     <Compile Include="ci_GestionAsistencia\frmAsistencia\frmAdministrarAsistencia.Designer.cs">
       <DependentUpon>frmAdministrarAsistencia.cs</DependentUpon>
     </Compile>
+    <Compile Include="ci_GestionAsistencia\frmAsistencia\frmEditAsistencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionAsistencia\frmAsistencia\frmEditAsistencia.Designer.cs">
+      <DependentUpon>frmEditAsistencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ci_GestionAsistencia\frmEscogerPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionAsistencia\frmEscogerPersonal.Designer.cs">
+      <DependentUpon>frmEscogerPersonal.cs</DependentUpon>
+    </Compile>
     <Compile Include="ci_GestionPersonal\frmPersonal\frmAdministrarHuella.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +138,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ci_GestionAsistencia\frmAsistencia\frmAdministrarAsistencia.resx">
       <DependentUpon>frmAdministrarAsistencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionAsistencia\frmAsistencia\frmEditAsistencia.resx">
+      <DependentUpon>frmEditAsistencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionAsistencia\frmEscogerPersonal.resx">
+      <DependentUpon>frmEscogerPersonal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ci_GestionPersonal\frmPersonal\frmAdministrarHuella.resx">
       <DependentUpon>frmAdministrarHuella.cs</DependentUpon>
