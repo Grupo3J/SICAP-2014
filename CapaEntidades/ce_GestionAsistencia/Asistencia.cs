@@ -23,7 +23,7 @@ namespace CapaEntidades.GestionAsistencia
         private string idCalendario;
         private string cedula;
 
-        
+
 
 
 

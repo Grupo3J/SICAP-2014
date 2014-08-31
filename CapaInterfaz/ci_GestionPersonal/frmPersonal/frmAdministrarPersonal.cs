@@ -45,7 +45,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
 
         private void textBuscar_TextChanged(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = PLN.ListarPersonal("");
+            dataGridView1.DataSource = PLN.ListarPersonal(textBuscar.Text);
         }
 
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
