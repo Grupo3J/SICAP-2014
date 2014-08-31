@@ -54,8 +54,11 @@ namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
        Secugen sg = new Secugen();
         private void button5_Click(object sender, EventArgs e)
         {
-
-            Inicializar();
+            try { 
+                Inicializar();
+            }catch(Exception error){
+                MessageBox.Show("Error, no se ha encontrado el dispositivo");
+            }
         }
 
         //metodo para capturar huella

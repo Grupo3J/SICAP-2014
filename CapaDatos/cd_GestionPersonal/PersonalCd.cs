@@ -99,15 +99,14 @@ namespace CapaDatos.cd_GestionPersonal
             CapaDatosDataContext DB = new CapaDatosDataContext();
            try
             {
-                //HABILITAR
-                //DB.pa_EliminarPersonalCedula(cedula);
-                //DB.SubmitChanges();
+                DB.pa_EliminarPersonalCedula(cedula);
+                DB.SubmitChanges();
 
 
                }
             catch (Exception ex)
             {
-                throw new CapaDatosExcepciones("Error al Eliminar Personal", ex);
+                throw new CapaDatosExcepciones("Error al Eliminar Personal", ex.GetBaseException());
             }
             finally
             {
@@ -134,14 +133,14 @@ namespace CapaDatos.cd_GestionPersonal
                 p.Telefono = per.Telefono;
                 p.Tipo = per.Tipo;
                 p.DataFoto = per.DataFoto;
-                //HABILITAR
-               // bd.pa_ModificarPersonalCedula(p.Cedula, p.Nombre, p.Apellido, p.Cargo, p.Titulo, p.Correo, p.Sexo, p.Ciudad, p.Direccion, p.Telefono, p.Tipo, p.DataFoto);
+                
+                bd.pa_ModificarPersonalCedula(p.Cedula, p.Nombre, p.Apellido, p.Cargo, p.Titulo, p.Correo, p.Sexo, p.Ciudad, p.Direccion, p.Telefono, p.Tipo, p.DataFoto);
                 bd.SubmitChanges();
 
             }
             catch (CapaDatosExcepciones ex)
             {
-                throw new CapaDatosExcepciones("Error al Modificar Personal.", ex);
+                throw new CapaDatosExcepciones("Error al Modificar Personal.", ex.GetBaseException());
             }
             finally
             {
@@ -159,8 +158,6 @@ namespace CapaDatos.cd_GestionPersonal
             CapaDatosDataContext bd = new CapaDatosDataContext();
             try
             {
-                //Categoria p = new Categoria();
-                //p.Idcategoria = not.IdProveedor;
                 PERSONAL j = (from usu in bd.PERSONAL where usu.CEDULA == id select usu).Single();
                 if (j.DATAFOTO != null)
                 {

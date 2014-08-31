@@ -266,4 +266,33 @@
     <Parameter Name="Foto" Parameter="foto" Type="System.Data.Linq.Binary" DbType="Image" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.pa_RegistrarCalendario" Method="pa_RegistrarCalendario">
+    <Parameter Name="IdCalendario" Parameter="idCalendario" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="Text" />
+    <Parameter Name="FechaInicio" Parameter="fechaInicio" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="FechaFin" Parameter="fechaFin" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.pa_ModificarCalendario" Method="pa_ModificarCalendario">
+    <Parameter Name="IdCalendario" Parameter="idCalendario" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="Text" />
+    <Parameter Name="FechaInicio" Parameter="fechaInicio" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="FechaFin" Parameter="fechaFin" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.pa_ListarCalendario" Method="pa_ListarCalendario">
+    <ElementType Name="pa_ListarCalendarioResult">
+      <Column Name="IDCALENDARIO" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="FECHAINICIO" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FECHAFIN" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.pa_EliminarCalendario" Method="pa_EliminarCalendario">
+    <Parameter Name="IdCalendario" Parameter="idCalendario" Type="System.String" DbType="VarChar(5)" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

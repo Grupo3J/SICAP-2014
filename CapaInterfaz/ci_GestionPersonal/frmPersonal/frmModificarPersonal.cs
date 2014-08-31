@@ -79,6 +79,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
             p.DataFoto = ImageToByte(picture);
 
             PLN.ModificarPersonal(p);
+            //MessageBox.Show(p.Cedula);
            //PersonalCd.ModificarPersonalCedula(p);
             frmap.dataGridView1.DataSource = PLN.ListarPersonal("");
             //frmap.dataGridView1.DataSource = PersonalCd.ObtenerPresonal("");
@@ -118,6 +119,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
             comboTipo.Text = tip;
 
             presentarImagenEnPictureBox(ced);
+
 
         }
 
