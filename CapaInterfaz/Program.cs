@@ -20,9 +20,9 @@ namespace CapaInterfaz.ci_GestionSeguridad
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-           // Application.Run(new frmVentanaPrimaria());
+            Application.Run(new frmVentanaPrimaria());
             //Application.Run(new frmAdministracionCalendarioLaboral());
-            Application.Run(new frmAdministrarAsistencia());
+            //Application.Run(new frmAdministrarAsistencia());
         }
     }
 }

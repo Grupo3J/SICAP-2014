@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaLogicaNegocio.cln_GestionAsistencia;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,40 +17,44 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmAsistencia
         {
             InitializeComponent();
         }
-        
+
+        AsistenciaLN asistencia = new AsistenciaLN();
+
         private void frmAdministrarAsistencia_Load(object sender, EventArgs e)
         {
-            dataGridView1.Columns.Add("", "Ganó");
-            dataGridView1.Columns.Add("", "Perdió");
-            dataGridView1.Columns.Add("", "Ganó");
-            dataGridView1.Columns.Add("", "Perdió");
-            dataGridView1.Columns.Add("", "Ganó");
-            dataGridView1.Columns.Add("", "Perdió");
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridView1.ColumnHeadersHeight = dataGridView1.ColumnHeadersHeight * 2;
-            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomCenter;
+            toolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            toolStripcmbTipo.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            toolStripSeparator5.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            label2.Text = DateTime.Now.ToLongTimeString();
+            timer1.Start();
+            dataGridView1.DataSource = asistencia.ListarAsistenciaPersonal("123ab",DateTime.Parse("2012-11-12"));
+            dataGridView1.Columns[4].Visible = false;
+            dataGridView1.Columns[5].Visible = false;
+            dataGridView1.Columns[6].Visible = false;
+            dataGridView1.Columns[7].Visible = false;
+            dataGridView1.Columns[8].Visible = false;
+            
         }
 
 
         private void dataGridView1_Paint(object sender, PaintEventArgs e)
         {
-            string[] moths = { "Enero", "Febrero", "Marzo" };
-            int j = 0;
-            while(j<6)
-            {
-                Rectangle r1 = dataGridView1.GetCellDisplayRectangle(j, -1, true);
-                r1.X += 1;
-                r1.Y += 1;
-                r1.Width = r1.Width * 2 - 2;
-                r1.Height = r1.Height / 2 - 2;
 
-                e.Graphics.FillRectangle(new SolidBrush(dataGridView1.ColumnHeadersDefaultCellStyle.BackColor), r1);
-                StringFormat format = new StringFormat();
-                format.Alignment = StringAlignment.Center;
-                format.LineAlignment = StringAlignment.Center;
-                e.Graphics.DrawString(moths[j / 2], dataGridView1.ColumnHeadersDefaultCellStyle.Font, new SolidBrush(dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor), r1, format);
-                j += 2;
-            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label2.Text = DateTime.Now.ToLongTimeString(); 
+        }
+
+        private void toolStripComboBox1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }   
     }
 }

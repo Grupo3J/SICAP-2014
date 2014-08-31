@@ -45,12 +45,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CapaDatos.cs">
+      <DependentUpon>CapaDatos.dbml</DependentUpon>
+    </Compile>
     <Compile Include="CapaDatos.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CapaDatos.dbml</DependentUpon>
     </Compile>
     <Compile Include="CapaDatosExcepciones.cs" />
+    <Compile Include="cd_GestionAsistencia\AsistenciaCD.cs" />
     <Compile Include="cd_GestionPersonal\HuellaCD.cs" />
     <Compile Include="cd_GestionPersonal\PersonalCd.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -88,7 +92,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="cd_GestionAsistencia\" />
     <Folder Include="cd_GestionAyuda\" />
     <Folder Include="cd_GestionPlanificacion\" />
     <Folder Include="cd_GestionSeguridad\" />
