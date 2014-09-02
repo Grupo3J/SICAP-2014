@@ -57,7 +57,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
             try { 
                 Inicializar();
             }catch(Exception error){
-                MessageBox.Show("Error, no se ha encontrado el dispositivo");
+                MessageBox.Show("Error, no se ha encontrado el dispositivo"+"\t"+error.Message);
             }
         }
 

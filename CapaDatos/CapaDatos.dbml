@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SICAP-2014" Class="CapaDatosDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=JORGE-PC\SQL2012;Initial Catalog=SICAP-2014;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="SICAP_2014ConnectionString2" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=JORGE-TORRES-PC\SQL2012;Initial Catalog=SICAP-2014;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="SICAP_2014ConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.ASISTENCIA" Member="ASISTENCIA">
     <Type Name="ASISTENCIA">
       <Column Name="IDASISTENCIA" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />

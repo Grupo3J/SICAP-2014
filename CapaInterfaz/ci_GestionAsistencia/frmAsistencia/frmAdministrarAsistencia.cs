@@ -10,6 +10,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SecuGen.FDxSDKPro.Windows;
+using CapaLogicaNegocio.cln_GestionPersonal;
+using CapaEntidades.GestionAsistencia;
 
 namespace CapaInterfaz.ci_GestionAsistencia.frmAsistencia
 {
@@ -18,8 +21,10 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmAsistencia
         public frmAdministrarAsistencia()
         {
             InitializeComponent();
+            secugen.Inicializar();
+            secugen.AutoOn(true,(int)this.Handle);
         }
-
+        Secugen secugen = new Secugen();
         AsistenciaLN asistencia = new AsistenciaLN();
         CalendarioLN calendario = new CalendarioLN();
 
@@ -76,6 +81,70 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmAsistencia
             frmasis.ShowDialog();           
         }              
         
+        protected override void WndProc(ref Message message)
+        {
+            if (message.Msg == (int)SGFPMMessages.DEV_AUTOONEVENT)
+            {
+                if (message.WParam.ToInt32() == (Int32)SGFPMAutoOnEvent.FINGER_ON)
+                {
+                    //StatusBar.Text = "Device Message: Finger On";
+                    HuellaLN huella = new HuellaLN();
+                    bool matched = false;
+                    using(CapaDatosDataContext DB = new CapaDatosDataContext())
+                    {
+                        var linq = (from lq in DB.PERSONAL select lq.CEDULA).ToList();
+                        foreach(string temp in linq)
+                        {
+                            if (matched == true)
+                                break;
+                            List<pa_ListarHuellaCedulaResult> list = huella.ListarHuella(temp);
+                            foreach(pa_ListarHuellaCedulaResult huell in list)
+                            {
+                                if (secugen.MatchTemplate(huell.DATAHUELLA1.ToArray(), huell.DATAHUELLA2.ToArray())) 
+                                {
+                                    matched = true;
+                                    AsistenciaperReader(temp);
+                                    break;
+                                }
+                            }
+
+                        }
+                    }
+                    if (matched == false)
+                        MessageBox.Show("Not Matched");
+                }
+                else if (message.WParam.ToInt32() == (Int32)SGFPMAutoOnEvent.FINGER_OFF) 
+                {
+                    //StatusBar.Text = "Device Message: Finger Off";
+                    MessageBox.Show("Here");
+                }
+            }
+            base.WndProc(ref message);
+        }
+
+        private void AsistenciaperReader(string cedula) 
+        {
+            AsistenciaLN asistencia = new AsistenciaLN();
+            var linq = (from lp in calendario.ListarCalendario() select lp).ToList();
+            Asistencia temp = new Asistencia();
+            temp.IdAsistencia = GenerarIdAsistencia();
+            temp.FechaHoraEntrada = DateTime.Now;
+            temp.FechaHoraSalida = DateTime.Now;
+            temp.IdCalendario = linq[toolStripcmbCalendario.SelectedIndex].IDCALENDARIO;
+            temp.Cedula = cedula;
+            asistencia.InsertarAsistencia(temp);
+            MessageBox.Show("Asistencia Ingresada..");
+        }
+
+        private string GenerarIdAsistencia()
+        {
+            Random ran = new Random();
+            int num = ran.Next(0000, 1000);
+            int num2 = ran.Next(000, 100);
+
+            string idhuella = "A" + num.ToString() + num2.ToString();
+            return idhuella;
+        }
         
     }
 }
