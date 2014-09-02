@@ -1,4 +1,6 @@
-﻿using CapaLogicaNegocio.cln_GestionAsistencia;
+﻿using CapaDatos;
+using CapaLogicaNegocio.cln_GestionAsistencia;
+using CapaLogicaNegocio.cln_GestionPlanificacion;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,21 +21,31 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmAsistencia
         }
 
         AsistenciaLN asistencia = new AsistenciaLN();
+        CalendarioLN calendario = new CalendarioLN();
 
         private void frmAdministrarAsistencia_Load(object sender, EventArgs e)
         {
+            //Cargar calendarios en combo
+            var linq = (from lp in calendario.ListarCalendario() select lp).ToList();
+            foreach(pa_ListarCalendarioResult temp in linq)
+            {
+                if (!toolStripcmbCalendario.Items.Contains(temp.NOMBRE))
+                    toolStripcmbCalendario.Items.Add(temp.NOMBRE);
+            }
+
+            toolStripcmbCalendario.SelectedIndex = 0;
             toolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             toolStripcmbTipo.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             toolStripSeparator5.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             label2.Text = DateTime.Now.ToLongTimeString();
             timer1.Start();
-            dataGridView1.DataSource = asistencia.ListarAsistenciaPersonal("123ab",DateTime.Parse("2012-11-12"));
+
+            dataGridView1.DataSource = asistencia.ListarAsistenciaPersonal(linq[0].IDCALENDARIO,DateTime.Now);
             dataGridView1.Columns[4].Visible = false;
             dataGridView1.Columns[5].Visible = false;
             dataGridView1.Columns[6].Visible = false;
             dataGridView1.Columns[7].Visible = false;
             dataGridView1.Columns[8].Visible = false;
-            
         }
 
 
@@ -55,6 +67,15 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmAsistencia
         private void label2_Click(object sender, EventArgs e)
         {
 
-        }   
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            var linq = (from lp in calendario.ListarCalendario() select lp).ToList();
+            frmEditAsistencia frmasis = new frmEditAsistencia(linq[toolStripcmbCalendario.SelectedIndex].IDCALENDARIO);
+            frmasis.ShowDialog();           
+        }              
+        
+        
     }
 }

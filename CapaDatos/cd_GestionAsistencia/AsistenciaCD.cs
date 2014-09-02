@@ -45,7 +45,7 @@ namespace CapaDatos.cd_GestionAsistencia
                 p.IdCalendario = not.IdCalendario;
                 p.FechaHoraEntrada = not.FechaHoraEntrada;
                 p.FechaHoraSalida = not.FechaHoraSalida;
-                bd.pa_RegistrarAsistencia(p.IdAsistencia, p.Cedula, p.IdCalendario, p.FechaHoraEntrada,p.FechaHoraSalida);
+                bd.pa_RegistrarAsistencia(p.IdAsistencia, p.IdCalendario, p.Cedula, p.FechaHoraEntrada,p.FechaHoraSalida);
                 bd.SubmitChanges();
             }
             catch (CapaDatosExcepciones ex)
