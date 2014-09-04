@@ -274,6 +274,20 @@ namespace CapaDatos
 			return ((int)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_EliminarDiasAdicionales")]
+		public int sp_EliminarDiasAdicionales([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdDiaAdicional", DbType="VarChar(6)")] string idDiaAdicional)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idDiaAdicional);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_EliminarDiasNoLaborables")]
+		public int sp_EliminarDiasNoLaborables([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdDiaNoLab", DbType="VarChar(6)")] string idDiaNoLab)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idDiaNoLab);
+			return ((int)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_EliminarFaltaId")]
 		public int sp_EliminarFaltaId([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDFALTA", DbType="VarChar(10)")] string iDFALTA)
 		{
@@ -365,6 +379,20 @@ namespace CapaDatos
 			return ((ISingleResult<sp_ListarCalendarioResult>)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ListarDiaAdicional")]
+		public ISingleResult<sp_ListarDiaAdicionalResult> sp_ListarDiaAdicional()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<sp_ListarDiaAdicionalResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ListarDiaNoLaborables")]
+		public ISingleResult<sp_ListarDiaNoLaborablesResult> sp_ListarDiaNoLaborables()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<sp_ListarDiaNoLaborablesResult>)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ListarHuellaCedula")]
 		public ISingleResult<sp_ListarHuellaCedulaResult> sp_ListarHuellaCedula([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cedula", DbType="VarChar(10)")] string cedula)
 		{
@@ -376,6 +404,20 @@ namespace CapaDatos
 		public int sp_ModificarCalendario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdCalendario", DbType="VarChar(5)")] string idCalendario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nombre", DbType="VarChar(20)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="Text")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FechaInicio", DbType="DateTime")] System.Nullable<System.DateTime> fechaInicio, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FechaFin", DbType="DateTime")] System.Nullable<System.DateTime> fechaFin)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idCalendario, nombre, descripcion, fechaInicio, fechaFin);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ModificarDiaAdicional")]
+		public int sp_ModificarDiaAdicional([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdDiaAdicional", DbType="VarChar(6)")] string idDiaAdicional, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdCalendario", DbType="VarChar(5)")] string idCalendario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Fecha", DbType="DateTime")] System.Nullable<System.DateTime> fecha, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="Text")] string descripcion)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idDiaAdicional, idCalendario, fecha, descripcion);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ModificarDiaNoLaborable")]
+		public int sp_ModificarDiaNoLaborable([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdDiaNoLAb", DbType="VarChar(6)")] string idDiaNoLAb, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdCalendario", DbType="VarChar(5)")] string idCalendario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Fecha", DbType="DateTime")] System.Nullable<System.DateTime> fecha, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="Text")] string descripcion)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idDiaNoLAb, idCalendario, fecha, descripcion);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -425,6 +467,20 @@ namespace CapaDatos
 		public int sp_RegistrarCalendario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdCalendario", DbType="VarChar(5)")] string idCalendario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nombre", DbType="VarChar(20)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="Text")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FechaInicio", DbType="DateTime")] System.Nullable<System.DateTime> fechaInicio, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FechaFin", DbType="DateTime")] System.Nullable<System.DateTime> fechaFin)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idCalendario, nombre, descripcion, fechaInicio, fechaFin);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_RegistrarDiaAdicional")]
+		public int sp_RegistrarDiaAdicional([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdDiaAdicional", DbType="VarChar(6)")] string idDiaAdicional, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdCalendario", DbType="VarChar(5)")] string idCalendario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Fecha", DbType="DateTime")] System.Nullable<System.DateTime> fecha, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="Text")] string descripcion)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idDiaAdicional, idCalendario, fecha, descripcion);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_RegistrarDiaNoLab")]
+		public int sp_RegistrarDiaNoLab([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdDiaNoLab", DbType="VarChar(6)")] string idDiaNoLab, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdCalendario", DbType="VarChar(5)")] string idCalendario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Fecha", DbType="DateTime")] System.Nullable<System.DateTime> fecha, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="Text")] string descripcion)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idDiaNoLab, idCalendario, fecha, descripcion);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -5566,6 +5622,166 @@ namespace CapaDatos
 				if ((this._FECHAFIN != value))
 				{
 					this._FECHAFIN = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_ListarDiaAdicionalResult
+	{
+		
+		private string _IDDIASADICIONALES;
+		
+		private string _IDCALENDARIO;
+		
+		private System.DateTime _FECHA;
+		
+		private string _DESCRIPCION;
+		
+		public sp_ListarDiaAdicionalResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDDIASADICIONALES", DbType="VarChar(6) NOT NULL", CanBeNull=false)]
+		public string IDDIASADICIONALES
+		{
+			get
+			{
+				return this._IDDIASADICIONALES;
+			}
+			set
+			{
+				if ((this._IDDIASADICIONALES != value))
+				{
+					this._IDDIASADICIONALES = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDCALENDARIO", DbType="VarChar(5) NOT NULL", CanBeNull=false)]
+		public string IDCALENDARIO
+		{
+			get
+			{
+				return this._IDCALENDARIO;
+			}
+			set
+			{
+				if ((this._IDCALENDARIO != value))
+				{
+					this._IDCALENDARIO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHA", DbType="DateTime NOT NULL")]
+		public System.DateTime FECHA
+		{
+			get
+			{
+				return this._FECHA;
+			}
+			set
+			{
+				if ((this._FECHA != value))
+				{
+					this._FECHA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DESCRIPCION", DbType="Text NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string DESCRIPCION
+		{
+			get
+			{
+				return this._DESCRIPCION;
+			}
+			set
+			{
+				if ((this._DESCRIPCION != value))
+				{
+					this._DESCRIPCION = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_ListarDiaNoLaborablesResult
+	{
+		
+		private string _IDDIASNOLABORABLES;
+		
+		private string _IDCALENDARIO;
+		
+		private System.DateTime _FECHA;
+		
+		private string _DESCRIPCION;
+		
+		public sp_ListarDiaNoLaborablesResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDDIASNOLABORABLES", DbType="VarChar(6) NOT NULL", CanBeNull=false)]
+		public string IDDIASNOLABORABLES
+		{
+			get
+			{
+				return this._IDDIASNOLABORABLES;
+			}
+			set
+			{
+				if ((this._IDDIASNOLABORABLES != value))
+				{
+					this._IDDIASNOLABORABLES = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDCALENDARIO", DbType="VarChar(5) NOT NULL", CanBeNull=false)]
+		public string IDCALENDARIO
+		{
+			get
+			{
+				return this._IDCALENDARIO;
+			}
+			set
+			{
+				if ((this._IDCALENDARIO != value))
+				{
+					this._IDCALENDARIO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHA", DbType="DateTime NOT NULL")]
+		public System.DateTime FECHA
+		{
+			get
+			{
+				return this._FECHA;
+			}
+			set
+			{
+				if ((this._FECHA != value))
+				{
+					this._FECHA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DESCRIPCION", DbType="Text NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string DESCRIPCION
+		{
+			get
+			{
+				return this._DESCRIPCION;
+			}
+			set
+			{
+				if ((this._DESCRIPCION != value))
+				{
+					this._DESCRIPCION = value;
 				}
 			}
 		}

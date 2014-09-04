@@ -227,6 +227,14 @@
     <Parameter Name="IdCalendario" Parameter="idCalendario" Type="System.String" DbType="VarChar(5)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.sp_EliminarDiasAdicionales" Method="sp_EliminarDiasAdicionales">
+    <Parameter Name="IdDiaAdicional" Parameter="idDiaAdicional" Type="System.String" DbType="VarChar(6)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_EliminarDiasNoLaborables" Method="sp_EliminarDiasNoLaborables">
+    <Parameter Name="IdDiaNoLab" Parameter="idDiaNoLab" Type="System.String" DbType="VarChar(6)" />
+    <Return Type="System.Int32" />
+  </Function>
   <Function Name="dbo.sp_EliminarFaltaId" Method="sp_EliminarFaltaId">
     <Parameter Name="IDFALTA" Parameter="iDFALTA" Type="System.String" DbType="VarChar(10)" />
     <Return Type="System.Int32" />
@@ -358,6 +366,22 @@
       <Column Name="FECHAFIN" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
+  <Function Name="dbo.sp_ListarDiaAdicional" Method="sp_ListarDiaAdicional">
+    <ElementType Name="sp_ListarDiaAdicionalResult">
+      <Column Name="IDDIASADICIONALES" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="IDCALENDARIO" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="FECHA" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_ListarDiaNoLaborables" Method="sp_ListarDiaNoLaborables">
+    <ElementType Name="sp_ListarDiaNoLaborablesResult">
+      <Column Name="IDDIASNOLABORABLES" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="IDCALENDARIO" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="FECHA" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+    </ElementType>
+  </Function>
   <Function Name="dbo.sp_ListarHuellaCedula" Method="sp_ListarHuellaCedula">
     <Parameter Name="Cedula" Parameter="cedula" Type="System.String" DbType="VarChar(10)" />
     <ElementType Name="sp_ListarHuellaCedulaResult">
@@ -375,6 +399,20 @@
     <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="Text" />
     <Parameter Name="FechaInicio" Parameter="fechaInicio" Type="System.DateTime" DbType="DateTime" />
     <Parameter Name="FechaFin" Parameter="fechaFin" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_ModificarDiaAdicional" Method="sp_ModificarDiaAdicional">
+    <Parameter Name="IdDiaAdicional" Parameter="idDiaAdicional" Type="System.String" DbType="VarChar(6)" />
+    <Parameter Name="IdCalendario" Parameter="idCalendario" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="Fecha" Parameter="fecha" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="Text" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_ModificarDiaNoLaborable" Method="sp_ModificarDiaNoLaborable">
+    <Parameter Name="IdDiaNoLAb" Parameter="idDiaNoLAb" Type="System.String" DbType="VarChar(6)" />
+    <Parameter Name="IdCalendario" Parameter="idCalendario" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="Fecha" Parameter="fecha" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="Text" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.sp_ModificarFaltaJustificacion" Method="sp_ModificarFaltaJustificacion">
@@ -442,6 +480,20 @@
     <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="Text" />
     <Parameter Name="FechaInicio" Parameter="fechaInicio" Type="System.DateTime" DbType="DateTime" />
     <Parameter Name="FechaFin" Parameter="fechaFin" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_RegistrarDiaAdicional" Method="sp_RegistrarDiaAdicional">
+    <Parameter Name="IdDiaAdicional" Parameter="idDiaAdicional" Type="System.String" DbType="VarChar(6)" />
+    <Parameter Name="IdCalendario" Parameter="idCalendario" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="Fecha" Parameter="fecha" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="Text" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_RegistrarDiaNoLab" Method="sp_RegistrarDiaNoLab">
+    <Parameter Name="IdDiaNoLab" Parameter="idDiaNoLab" Type="System.String" DbType="VarChar(6)" />
+    <Parameter Name="IdCalendario" Parameter="idCalendario" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="Fecha" Parameter="fecha" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="Text" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.sp_RegistrarFalta" Method="sp_RegistrarFalta">
