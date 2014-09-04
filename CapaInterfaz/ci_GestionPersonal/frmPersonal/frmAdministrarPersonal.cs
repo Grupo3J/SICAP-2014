@@ -121,20 +121,25 @@ namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
 
         private void presentarImagenEnPictureBox(string id)
         {
-            byte[] foto;
-           // foto = PersonalCd.getImageById(dataGridView1.CurrentRow.Cells[0].Value.ToString());
-            foto = PersonalCd.getImageById(id);
-
-            byte[] imageData = foto.ToArray();
-
-            Image newImage;
-            using (MemoryStream ms = new MemoryStream(imageData, 0, imageData.Length))
+            try
             {
-                ms.Write(imageData, 0, imageData.Length);
-                newImage = Image.FromStream(ms, true);
+                byte[] foto;
+                foto = PersonalCd.getImageById(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+
+                byte[] imageData = foto.ToArray();
+
+                Image newImage;
+                using (MemoryStream ms = new MemoryStream(imageData, 0, imageData.Length))
+                {
+                    ms.Write(imageData, 0, imageData.Length);
+                    newImage = Image.FromStream(ms, true);
+                }
+                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBox1.Image = newImage;
             }
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.Image = newImage;
+            catch (Exception error) {
+                MessageBox.Show("Error: "+error.GetBaseException());
+            }
         }
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -213,6 +218,11 @@ namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
             }
 
         private void mouseup(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
         }

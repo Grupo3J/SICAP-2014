@@ -139,7 +139,6 @@ namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
             }
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.Image = newImage;
-            MessageBox.Show("presentando");
         }
 
 
@@ -160,7 +159,9 @@ namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Inicializar();
+            //Inicializar();
+            frmAdministrarHuella frmah = new frmAdministrarHuella(textCedula.Text);
+            frmah.Show();
         }
 
         //metodo para capturar huella
@@ -214,6 +215,49 @@ namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
             m_FPM.CloseDevice();
 
 
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+
+            string sex = "" + comboSexo.SelectedItem;
+
+            Personal p = new Personal();
+            p.Cedula = textCedula.Text;
+            p.Nombre = textNombres.Text;
+            p.Apellido = textApellidos.Text;
+            p.Cargo = textCargo.Text;
+            p.Titulo = textTitulo.Text;
+            p.Correo = textCorreo.Text;
+            p.Sexo = sex[0];
+            p.Ciudad = textCiudad.Text;
+            p.Direccion = textDireccion.Text;
+            p.Telefono = textTelefono.Text;
+            p.Tipo = Convert.ToString(comboTipo.SelectedItem);
+            p.DataFoto = ImageToByte(picture);
+
+            PLN.ModificarPersonal(p);
+            //MessageBox.Show(p.Cedula);
+            //PersonalCd.ModificarPersonalCedula(p);
+            frmap.dataGridView1.DataSource = PLN.ListarPersonal("");
+            //frmap.dataGridView1.DataSource = PersonalCd.ObtenerPresonal("");
+
+            this.Close();
+        }
+
+        private void butAtras_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void butCancelar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
 

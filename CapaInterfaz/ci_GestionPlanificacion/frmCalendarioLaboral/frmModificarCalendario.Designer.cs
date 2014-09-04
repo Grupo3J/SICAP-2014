@@ -63,7 +63,7 @@
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(67, 22);
+            this.toolStripButton1.Size = new System.Drawing.Size(69, 22);
             this.toolStripButton1.Text = "Guardar";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
@@ -77,7 +77,7 @@
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(70, 22);
+            this.toolStripButton2.Size = new System.Drawing.Size(73, 22);
             this.toolStripButton2.Text = "Cancelar";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
@@ -170,6 +170,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.groupBoxCaledario);
             this.Name = "frmModificarCalendario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificar Calendario Laboral";
             this.Load += new System.EventHandler(this.frmModificarCalendario_Load);
             this.toolStrip1.ResumeLayout(false);

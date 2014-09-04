@@ -37,6 +37,11 @@
             this.gestionDePersonalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administrarPersonalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administrarHuellaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionAsistenciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionDePlanificacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.administrarCalendarioLaboralToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.administrarDiasAdicionalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.administrarDiasNoLaborablesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miniToolStrip = new System.Windows.Forms.MenuStrip();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -56,7 +61,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.gestionAsistenciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -77,7 +81,8 @@
             this.ayudaToolStripMenuItem,
             this.salirToolStripMenuItem,
             this.gestionDePersonalToolStripMenuItem,
-            this.gestionAsistenciaToolStripMenuItem});
+            this.gestionAsistenciaToolStripMenuItem,
+            this.gestionDePlanificacionToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Size = new System.Drawing.Size(1280, 24);
@@ -93,19 +98,19 @@
             // acercaDeToolStripMenuItem
             // 
             this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
             this.acercaDeToolStripMenuItem.Text = "Acerca De";
             // 
             // ayudaToolStripMenuItem
             // 
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
             this.salirToolStripMenuItem.Text = "Salir";
             // 
             // gestionDePersonalToolStripMenuItem
@@ -114,21 +119,60 @@
             this.administrarPersonalToolStripMenuItem,
             this.administrarHuellaToolStripMenuItem});
             this.gestionDePersonalToolStripMenuItem.Name = "gestionDePersonalToolStripMenuItem";
-            this.gestionDePersonalToolStripMenuItem.Size = new System.Drawing.Size(116, 20);
+            this.gestionDePersonalToolStripMenuItem.Size = new System.Drawing.Size(123, 20);
             this.gestionDePersonalToolStripMenuItem.Text = "Gestion de Personal";
             // 
             // administrarPersonalToolStripMenuItem
             // 
             this.administrarPersonalToolStripMenuItem.Name = "administrarPersonalToolStripMenuItem";
-            this.administrarPersonalToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.administrarPersonalToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.administrarPersonalToolStripMenuItem.Text = "Administrar Personal";
             this.administrarPersonalToolStripMenuItem.Click += new System.EventHandler(this.administrarPersonalToolStripMenuItem_Click_1);
             // 
             // administrarHuellaToolStripMenuItem
             // 
             this.administrarHuellaToolStripMenuItem.Name = "administrarHuellaToolStripMenuItem";
-            this.administrarHuellaToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.administrarHuellaToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.administrarHuellaToolStripMenuItem.Text = "Administrar Huella";
+            // 
+            // gestionAsistenciaToolStripMenuItem
+            // 
+            this.gestionAsistenciaToolStripMenuItem.Name = "gestionAsistenciaToolStripMenuItem";
+            this.gestionAsistenciaToolStripMenuItem.Size = new System.Drawing.Size(115, 20);
+            this.gestionAsistenciaToolStripMenuItem.Text = "Gestion Asistencia";
+            this.gestionAsistenciaToolStripMenuItem.Click += new System.EventHandler(this.gestionAsistenciaToolStripMenuItem_Click);
+            // 
+            // gestionDePlanificacionToolStripMenuItem
+            // 
+            this.gestionDePlanificacionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.administrarCalendarioLaboralToolStripMenuItem,
+            this.administrarDiasAdicionalesToolStripMenuItem,
+            this.administrarDiasNoLaborablesToolStripMenuItem});
+            this.gestionDePlanificacionToolStripMenuItem.Name = "gestionDePlanificacionToolStripMenuItem";
+            this.gestionDePlanificacionToolStripMenuItem.Size = new System.Drawing.Size(146, 20);
+            this.gestionDePlanificacionToolStripMenuItem.Text = "Gestion de Planificación";
+            this.gestionDePlanificacionToolStripMenuItem.Click += new System.EventHandler(this.gestionDePlanificacionToolStripMenuItem_Click);
+            // 
+            // administrarCalendarioLaboralToolStripMenuItem
+            // 
+            this.administrarCalendarioLaboralToolStripMenuItem.Name = "administrarCalendarioLaboralToolStripMenuItem";
+            this.administrarCalendarioLaboralToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
+            this.administrarCalendarioLaboralToolStripMenuItem.Text = "Administrar Calendario Laboral";
+            this.administrarCalendarioLaboralToolStripMenuItem.Click += new System.EventHandler(this.administrarCalendarioLaboralToolStripMenuItem_Click);
+            // 
+            // administrarDiasAdicionalesToolStripMenuItem
+            // 
+            this.administrarDiasAdicionalesToolStripMenuItem.Name = "administrarDiasAdicionalesToolStripMenuItem";
+            this.administrarDiasAdicionalesToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
+            this.administrarDiasAdicionalesToolStripMenuItem.Text = "Administrar Dias Adicionales";
+            this.administrarDiasAdicionalesToolStripMenuItem.Click += new System.EventHandler(this.administrarDiasAdicionalesToolStripMenuItem_Click);
+            // 
+            // administrarDiasNoLaborablesToolStripMenuItem
+            // 
+            this.administrarDiasNoLaborablesToolStripMenuItem.Name = "administrarDiasNoLaborablesToolStripMenuItem";
+            this.administrarDiasNoLaborablesToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
+            this.administrarDiasNoLaborablesToolStripMenuItem.Text = "Administrar Dias No Laborables";
+            this.administrarDiasNoLaborablesToolStripMenuItem.Click += new System.EventHandler(this.administrarDiasNoLaborablesToolStripMenuItem_Click);
             // 
             // miniToolStrip
             // 
@@ -155,13 +199,13 @@
             // 
             this.toolStripStatusLabel2.Margin = new System.Windows.Forms.Padding(1162, 3, 0, 2);
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(109, 14);
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(118, 15);
             this.toolStripStatusLabel2.Text = "toolStripStatusLabel1";
             // 
             // toolStripStatusLabel3
             // 
             this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(109, 14);
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(118, 15);
             this.toolStripStatusLabel3.Text = "toolStripStatusLabel1";
             this.toolStripStatusLabel3.Click += new System.EventHandler(this.toolStripStatusLabel3_Click);
             // 
@@ -326,13 +370,6 @@
             this.timer1.Interval = 60;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // gestionAsistenciaToolStripMenuItem
-            // 
-            this.gestionAsistenciaToolStripMenuItem.Name = "gestionAsistenciaToolStripMenuItem";
-            this.gestionAsistenciaToolStripMenuItem.Size = new System.Drawing.Size(109, 20);
-            this.gestionAsistenciaToolStripMenuItem.Text = "Gestion Asistencia";
-            this.gestionAsistenciaToolStripMenuItem.Click += new System.EventHandler(this.gestionAsistenciaToolStripMenuItem_Click);
-            // 
             // frmVentanaPrimaria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -395,6 +432,10 @@
         private System.Windows.Forms.ToolStripMenuItem administrarPersonalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem administrarHuellaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionAsistenciaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionDePlanificacionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem administrarCalendarioLaboralToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem administrarDiasAdicionalesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem administrarDiasNoLaborablesToolStripMenuItem;
 
     }
 }

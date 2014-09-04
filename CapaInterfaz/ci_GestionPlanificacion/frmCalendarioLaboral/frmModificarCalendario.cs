@@ -31,6 +31,7 @@ namespace CapaInterfaz.ci_GestionPlanificacion.frmCalendarioLaboral
             InitializeComponent();
         }
 
+
         CalendarioLN CLN = new CalendarioLN();
 
 
@@ -54,10 +55,14 @@ namespace CapaInterfaz.ci_GestionPlanificacion.frmCalendarioLaboral
 
         private void frmModificarCalendario_Load(object sender, EventArgs e)
         {
+            MessageBox.Show("nom: "+nom);
             textNombre.Text = nom;
             textDescripcion.Text = desc;
             dateTimePInicio.Value = fechI;
             dateTimePFin.Value = fechF;
+
+            //textNombre.Text = idcalendl;
+
         }
     }
 }

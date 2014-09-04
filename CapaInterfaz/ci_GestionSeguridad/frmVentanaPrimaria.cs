@@ -8,8 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaInterfaz.ci_GestionAsistencia.frmAsistencia;
-
 using CapaInterfaz.ci_GestionPersonal.frmPersonal;
+using CapaInterfaz.ci_GestionPlanificacion.frmCalendarioLaboral;
+using CapaInterfaz.ci_GestionPlanificacion.frmDiasAdicionales;
+using CapaInterfaz.ci_GestionPlanificacion.frmDiasNoLaborables;
+
 
 
 namespace CapaInterfaz.ci_GestionPersonal
@@ -118,6 +121,30 @@ namespace CapaInterfaz.ci_GestionPersonal
         {
             frmAdministrarAsistencia frmaa = new frmAdministrarAsistencia();
             frmaa.Show();
+        }
+
+        private void gestionDePlanificacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+   
+        }
+
+        private void administrarCalendarioLaboralToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAdministracionCalendarioLaboral frmcl = new frmAdministracionCalendarioLaboral();
+            frmcl.Show();
+
+        }
+
+        private void administrarDiasAdicionalesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAdministracionDiasAdicionales frmda = new frmAdministracionDiasAdicionales();
+            frmda.Show();
+        }
+
+        private void administrarDiasNoLaborablesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAdministracionDiasNoLaborables frmdnl = new frmAdministracionDiasNoLaborables();
+            frmdnl.Show();
         }
 
     }

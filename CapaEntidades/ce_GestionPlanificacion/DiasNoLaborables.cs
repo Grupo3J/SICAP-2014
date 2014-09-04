@@ -94,5 +94,16 @@ namespace CapaEntidades.GestionPlanificacion
             get { return idCalendario; }
             set { idCalendario = value; }
         }
+
+        //public string IdDiasNoLaborables()
+        //{
+        //    get { return idDiasNoLaborables; }
+        //    set { idDiasNoLaborables = value; }
+        //}        
+
+        //public string IdDiasNoLaborables()
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }//end DiasNoLaborables

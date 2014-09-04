@@ -27,6 +27,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
             InitializeComponent();
         }
 
+
         HuellaLN hln = new HuellaLN();
 
         private SGFingerPrintManager m_FPM;
@@ -95,6 +96,38 @@ namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
             MessageBox.Show(iError.ToString());
             m_FPM.CloseDevice();
 
+
+            //byte[] huella2;
+
+            //huella2 = (byte[])HuellaCD.getImageById("i64262");
+            
+            ////comparando huellas
+            //string sumatoria = null;
+            //string sumatoria2 = null;
+            //string sumatoria3 = null;
+
+            //for (int d = 0; d < arrayHuella1.Length; d++) {
+            //    sumatoria = sumatoria + arrayHuella1[d];
+            //}
+
+            //for (int e = 0; e < arrayHuella2.Length; e++)
+            //{
+            //    sumatoria2 = sumatoria2 + arrayHuella2[e];
+            //}
+
+            ////for (int f = 0; f < huella2.Length; f++)
+            ////{
+            ////    sumatoria3 = sumatoria3 + huella2[f];
+            ////}
+
+            //MessageBox.Show("huella1: " + sumatoria + "\n"+
+            //    "   huella2: " + sumatoria2 + "\n"+"   huellaBD: " + sumatoria3);
+          
+
+
+
+            
+
         }
 
         private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -104,17 +137,9 @@ namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
             h.DataHuella1 = arrayHuella1;
             h.DataHuella2 = arrayHuella2;
             h.Cedula = cedula;
-            string acum = null;
-            string acum2 = null;
-
-            for (int f = 0; f < arrayHuella1.Length;f++ ) {
-                acum = acum + arrayHuella1[f];
-                acum2 = acum2 + arrayHuella2[f];
-            }
-
-            MessageBox.Show("acumsito: " + acum + "   acumsito2: " + acum);
 
             hln.InsertarHuella(h);
+
         }
 
         private string GenerarIdHuella()
@@ -159,10 +184,10 @@ namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
                     ms2.Write(imageData, 0, imageData.Length);
                     newImage = Image.FromStream(ms2, true);
                 }
-                pictureBoxPrueba.SizeMode = PictureBoxSizeMode.StretchImage;
-                pictureBoxPrueba.Image = newImage;
-                pictureBoxPrueba.Refresh();
-                MessageBox.Show("no entro");
+                //pictureBoxPrueba.SizeMode = PictureBoxSizeMode.StretchImage;
+                //pictureBoxPrueba.Image = newImage;
+                //pictureBoxPrueba.Refresh();
+                //MessageBox.Show("no entro");
             }
             catch (Exception er)
             {
@@ -195,6 +220,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
         }
 
         private void dataGridView1_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+
         {
             try
             {
@@ -212,8 +238,8 @@ namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
         private void presentarImagenEnPictureBox(string id)
         {
             byte[] foto;
-            // foto = PersonalCd.getImageById(dataGridView1.CurrentRow.Cells[0].Value.ToString());
-            foto = HuellaCD.getImageById(id);
+            foto = HuellaCD.getImageById(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+           // foto = HuellaCD.getImageById(id);
 
             byte[] imageData = foto.ToArray();
             try
@@ -224,13 +250,18 @@ namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
                 ms.Write(imageData, 0, imageData.Length);
                 newImage = Image.FromStream(ms, true);
             }
-            pictureBoxPrueba.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxPrueba.Image = newImage;
+            //pictureBoxPrueba.SizeMode = PictureBoxSizeMode.StretchImage;
+            //pictureBoxPrueba.Image = newImage;
             }
             catch (Exception ex){
                 MessageBox.Show("Error: "+ex.GetBaseException());
             }
             
+        }
+
+        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
         }
 
     }

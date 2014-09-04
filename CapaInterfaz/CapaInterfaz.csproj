@@ -47,11 +47,52 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar.Keyboard, Version=11.8.0.14, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\DotNetBar for Windows Forms\DevComponents.DotNetBar.Keyboard.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Layout, Version=11.8.0.14, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\DotNetBar for Windows Forms\DevComponents.DotNetBar.Layout.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Layout.Design, Version=11.8.0.14, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\DotNetBar for Windows Forms\DevComponents.DotNetBar.Layout.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Schedule, Version=11.8.0.14, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\DotNetBar for Windows Forms\DevComponents.DotNetBar.Schedule.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.SuperGrid, Version=11.8.0.14, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\DotNetBar for Windows Forms\DevComponents.DotNetBar.SuperGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2, Version=11.8.0.14, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.Instrumentation, Version=11.8.0.14, Culture=neutral, PublicKeyToken=f90dc37c26666a67, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\DotNetBar for Windows Forms\DevComponents.Instrumentation.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.SuperGrid.Design, Version=11.8.0.14, Culture=neutral, PublicKeyToken=26d81176cfa2b486, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\DotNetBar for Windows Forms\DevComponents.SuperGrid.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.TreeGX, Version=11.8.0.14, Culture=neutral, PublicKeyToken=055db68f670cfeab, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\DotNetBar for Windows Forms\DevComponents.TreeGX.dll</HintPath>
+    </Reference>
+    <Reference Include="DnbTBReg, Version=1.0.2324.16110, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\DotNetBar for Windows Forms\DnbTBReg.exe</HintPath>
+    </Reference>
+    <Reference Include="IrisSkin2">
+      <HintPath>..\..\..\..\Desktop\Componentes Graficos Vb2\SKIN NET 2010 WIN 7\SkinVS.NET\IrisSkin2.dll</HintPath>
+    </Reference>
     <Reference Include="SecuGen.FDxSDKPro.Windows">
       <HintPath>bin\i386\SecuGen.FDxSDKPro.Windows.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -80,6 +121,18 @@
     <Compile Include="ci_GestionAsistencia\frmEscogerPersonal.Designer.cs">
       <DependentUpon>frmEscogerPersonal.cs</DependentUpon>
     </Compile>
+    <Compile Include="ci_GestionPersonal\frmHuella\frmhuellaadminis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionPersonal\frmHuella\frmhuellaadminis.Designer.cs">
+      <DependentUpon>frmhuellaadminis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ci_GestionPersonal\frmPersonal\FrmAdministracionPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionPersonal\frmPersonal\FrmAdministracionPersonal.Designer.cs">
+      <DependentUpon>FrmAdministracionPersonal.cs</DependentUpon>
+    </Compile>
     <Compile Include="ci_GestionPersonal\frmPersonal\frmAdministrarHuella.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +144,12 @@
     </Compile>
     <Compile Include="ci_GestionPersonal\frmPersonal\frmAdministrarPersonal.Designer.cs">
       <DependentUpon>frmAdministrarPersonal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ci_GestionPersonal\frmPersonal\FrmInsertarPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionPersonal\frmPersonal\FrmInsertarPersonal.Designer.cs">
+      <DependentUpon>FrmInsertarPersonal.cs</DependentUpon>
     </Compile>
     <Compile Include="ci_GestionPersonal\frmPersonal\frmModificarPersonal.cs">
       <SubType>Form</SubType>
@@ -122,6 +181,30 @@
     <Compile Include="ci_GestionPlanificacion\frmCalendarioLaboral\frmRegistrarCalendario.Designer.cs">
       <DependentUpon>frmRegistrarCalendario.cs</DependentUpon>
     </Compile>
+    <Compile Include="ci_GestionPlanificacion\frmDiasAdicionales\frmAdministracionDiasAdicionales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionPlanificacion\frmDiasAdicionales\frmAdministracionDiasAdicionales.Designer.cs">
+      <DependentUpon>frmAdministracionDiasAdicionales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ci_GestionPlanificacion\frmDiasAdicionales\frmRegistrarDiasAdicionales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionPlanificacion\frmDiasAdicionales\frmRegistrarDiasAdicionales.Designer.cs">
+      <DependentUpon>frmRegistrarDiasAdicionales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ci_GestionPlanificacion\frmDiasNoLaborables\frmAdministracionDiasNoLaborables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionPlanificacion\frmDiasNoLaborables\frmAdministracionDiasNoLaborables.Designer.cs">
+      <DependentUpon>frmAdministracionDiasNoLaborables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ci_GestionPlanificacion\frmDiasNoLaborables\frmRegistrarDiasNoLaborables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionPlanificacion\frmDiasNoLaborables\frmRegistrarDiasNoLaborables.Designer.cs">
+      <DependentUpon>frmRegistrarDiasNoLaborables.cs</DependentUpon>
+    </Compile>
     <Compile Include="ci_GestionSeguridad\frmVentanaPrimaria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,11 +228,20 @@
     <EmbeddedResource Include="ci_GestionAsistencia\frmEscogerPersonal.resx">
       <DependentUpon>frmEscogerPersonal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionPersonal\frmHuella\frmhuellaadminis.resx">
+      <DependentUpon>frmhuellaadminis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionPersonal\frmPersonal\FrmAdministracionPersonal.resx">
+      <DependentUpon>FrmAdministracionPersonal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ci_GestionPersonal\frmPersonal\frmAdministrarHuella.resx">
       <DependentUpon>frmAdministrarHuella.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ci_GestionPersonal\frmPersonal\frmAdministrarPersonal.resx">
       <DependentUpon>frmAdministrarPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionPersonal\frmPersonal\FrmInsertarPersonal.resx">
+      <DependentUpon>FrmInsertarPersonal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ci_GestionPersonal\frmPersonal\frmModificarPersonal.resx">
       <DependentUpon>frmModificarPersonal.cs</DependentUpon>
@@ -166,6 +258,18 @@
     <EmbeddedResource Include="ci_GestionPlanificacion\frmCalendarioLaboral\frmRegistrarCalendario.resx">
       <DependentUpon>frmRegistrarCalendario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionPlanificacion\frmDiasAdicionales\frmAdministracionDiasAdicionales.resx">
+      <DependentUpon>frmAdministracionDiasAdicionales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionPlanificacion\frmDiasAdicionales\frmRegistrarDiasAdicionales.resx">
+      <DependentUpon>frmRegistrarDiasAdicionales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionPlanificacion\frmDiasNoLaborables\frmAdministracionDiasNoLaborables.resx">
+      <DependentUpon>frmAdministracionDiasNoLaborables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionPlanificacion\frmDiasNoLaborables\frmRegistrarDiasNoLaborables.resx">
+      <DependentUpon>frmRegistrarDiasNoLaborables.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ci_GestionSeguridad\frmVentanaPrimaria.resx">
       <DependentUpon>frmVentanaPrimaria.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,6 +279,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -196,7 +301,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ci_GestionAyuda\" />
-    <Folder Include="ci_GestionPersonal\frmHuella\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logoSICAP.png" />
@@ -243,6 +347,9 @@
       <Project>{010180ef-f484-4ef4-8913-911ef44e8033}</Project>
       <Name>CapaLogicaNegocio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imaMano.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

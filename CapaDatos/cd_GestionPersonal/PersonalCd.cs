@@ -36,14 +36,14 @@ namespace CapaDatos.cd_GestionPersonal
 
         }
 
-        public static List<pa_FiltrarPersonalValoresResult> ObtenerPresonal(string valor)
+        public static List<sp_FiltrarPersonalValoresResult> ObtenerPresonal(string valor)
         {
             CapaDatosDataContext DB;
             try
             {
                 using (DB = new CapaDatosDataContext())
                 {
-                    return DB.pa_FiltrarPersonalValores(valor).ToList();
+                    return DB.sp_FiltrarPersonalValores(valor).ToList();
                 }
             }
             catch (Exception ex)
@@ -77,7 +77,7 @@ namespace CapaDatos.cd_GestionPersonal
                 p.DataFoto = not.DataFoto;
                string datos = Convert.ToString(p.DataFoto);
                 //MessageBox.Show("p.datica:   " + "" +datos);
-                bd.pa_RegistrarPersonal(p.Cedula, p.Nombre, p.Apellido, p.Cargo, p.Titulo, p.Correo, p.Sexo, p.Ciudad, p.Direccion, p.Telefono, p.Tipo, p.DataFoto);
+                bd.sp_RegistrarPersonal(p.Cedula, p.Nombre, p.Apellido, p.Cargo, p.Titulo, p.Correo, p.Sexo, p.Ciudad, p.Direccion, p.Telefono, p.Tipo, p.DataFoto);
                 bd.SubmitChanges();
 
 
@@ -99,7 +99,7 @@ namespace CapaDatos.cd_GestionPersonal
             CapaDatosDataContext DB = new CapaDatosDataContext();
            try
             {
-                DB.pa_EliminarPersonalCedula(cedula);
+                DB.sp_EliminarPersonalCedula(cedula);
                 DB.SubmitChanges();
 
 
@@ -134,7 +134,7 @@ namespace CapaDatos.cd_GestionPersonal
                 p.Tipo = per.Tipo;
                 p.DataFoto = per.DataFoto;
                 
-                bd.pa_ModificarPersonalCedula(p.Cedula, p.Nombre, p.Apellido, p.Cargo, p.Titulo, p.Correo, p.Sexo, p.Ciudad, p.Direccion, p.Telefono, p.Tipo, p.DataFoto);
+                bd.sp_ModificarPersonalCedula(p.Cedula, p.Nombre, p.Apellido, p.Cargo, p.Titulo, p.Correo, p.Sexo, p.Ciudad, p.Direccion, p.Telefono, p.Tipo, p.DataFoto);
                 bd.SubmitChanges();
 
             }
@@ -171,7 +171,7 @@ namespace CapaDatos.cd_GestionPersonal
             }
             catch (CapaDatosExcepciones ex)
             {
-                throw new CapaDatosExcepciones("Error al  Eliminar Usuario.", ex);
+                throw new CapaDatosExcepciones("Error al  Recuperar Foto.", ex);
             }
             finally
             {

@@ -15,12 +15,23 @@ namespace CapaDatos.cd_GestionPersonal
             try
             {
 
-                Huella p = new Huella();
-                p.IdHuella = not.IdHuella;
-                p.Cedula = not.Cedula;
-                p.DataHuella1 = not.DataHuella1;
-                p.DataHuella2 = not.DataHuella2;
-                bd.pa_RegistrarHuella(p.IdHuella, p.Cedula, p.DataHuella1, p.DataHuella2);
+                //Huella p = new Huella();
+                //p.IdHuella = not.IdHuella;
+                //p.Cedula = not.Cedula;
+                //p.DataHuella1 = not.DataHuella1;
+                //p.DataHuella2 = not.DataHuella2;
+
+                HUELLA H = new HUELLA
+                {
+                    IDHUELLA = not.IdHuella,
+                    CEDULA = not.Cedula,
+                    DATAHUELLA1 = not.DataHuella1,
+                    DATAHUELLA2 = not.DataHuella2
+                };
+
+                //bd.pa_RegistrarHuella(p.IdHuella, p.Cedula, p.DataHuella1, p.DataHuella2);
+                bd.HUELLA.InsertOnSubmit(H);
+
                 bd.SubmitChanges();
 
             }
@@ -37,14 +48,14 @@ namespace CapaDatos.cd_GestionPersonal
         }
         
         //metodo para listar las huella de una  persona
-        public static List<pa_ListarHuellaCedulaResult> ObtenerHuella(string cedula)
+        public static List<sp_ListarHuellaCedulaResult> ObtenerHuella(string cedula)
         {
             CapaDatosDataContext DB;
             try
             {
                 using (DB = new CapaDatosDataContext())
                 {
-                    return DB.pa_ListarHuellaCedula(cedula).ToList();
+                    return DB.sp_ListarHuellaCedula(cedula).ToList();
                 }
             }
             catch (Exception ex)
@@ -90,7 +101,7 @@ namespace CapaDatos.cd_GestionPersonal
             try
             {
 
-                DB.pa_EliminarHuellaIdHuella(idHuella);
+                DB.sp_EliminarHuellaIdHuella(idHuella);
                 DB.SubmitChanges();
 
 
@@ -116,7 +127,7 @@ namespace CapaDatos.cd_GestionPersonal
                 h.IdHuella = hue.IdHuella;
                 h.DataHuella1 = hue.DataHuella1;
                 h.DataHuella2 = hue.DataHuella2;
-                bd.pa_ModificarHuellaIdHuella(h.IdHuella, h.DataHuella1, h.DataHuella2);
+                bd.sp_ModificarHuellaIdHuella(h.IdHuella, h.DataHuella1, h.DataHuella2);
                 bd.SubmitChanges();
 
             }

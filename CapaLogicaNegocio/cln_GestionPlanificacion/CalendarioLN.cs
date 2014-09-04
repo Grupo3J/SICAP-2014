@@ -14,13 +14,13 @@ namespace CapaLogicaNegocio.cln_GestionPlanificacion
 {
     public class CalendarioLN
     {
-        //metodo para listar las huellas de una persona
-        public List<pa_ListarCalendarioResult> ListarCalendario()
+        //metodo para listar los calendario
+        public List<sp_ListarCalendarioResult> ListarCalendario()
         {
             return CalendarioCD.ObtenerCalendario();
         }
 
-        //metodo para insertar huella
+        //metodo para insertar calendario laboral
         public bool InsertarCalendario(Calendario p)
         {
             if (CalendarioCD.ExisteCalendario(p.IdCalendario))

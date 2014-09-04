@@ -55,6 +55,8 @@
     <Compile Include="cd_GestionPersonal\HuellaCD.cs" />
     <Compile Include="cd_GestionPersonal\PersonalCd.cs" />
     <Compile Include="cd_GestionPlanificacion\CalendarioCD.cs" />
+    <Compile Include="cd_GestionPlanificacion\DiasAdicionalesCD.cs" />
+    <Compile Include="cd_GestionPlanificacion\DiasNoLaborablesCD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>

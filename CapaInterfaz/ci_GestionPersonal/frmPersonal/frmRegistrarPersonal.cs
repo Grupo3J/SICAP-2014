@@ -14,6 +14,7 @@ using CapaDatos;
 using CapaEntidades.GestionPersonal;
 using CapaDatos.cd_GestionPersonal;
 using CapaLogicaNegocio.cln_GestionPersonal;
+using CapaInterfaz.ci_GestionPersonal.frmPersonal;
 
 namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
 {
@@ -54,11 +55,13 @@ namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
        Secugen sg = new Secugen();
         private void button5_Click(object sender, EventArgs e)
         {
-            try { 
-                Inicializar();
-            }catch(Exception error){
-                MessageBox.Show("Error, no se ha encontrado el dispositivo");
-            }
+            frmAdministrarHuella frmah = new frmAdministrarHuella(textCedula.Text);
+            frmah.Show();
+            //try { 
+            //    Inicializar();
+            //}catch(Exception error){
+            //    MessageBox.Show("Error, no se ha encontrado el dispositivo: "+error.GetBaseException());
+            //}
         }
 
         //metodo para capturar huella
@@ -186,6 +189,66 @@ namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
         private void frmRegistrarPersonal_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void butAtras_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            this.errorProvider1.Clear();
+
+            if (this.textCedula.Text == "")
+            {
+                errorProvider1.SetError(this.textCedula, "Ingrese el Número de Cédula");
+                return;
+            }
+            else
+            {
+                //ubicar bien la ubicacion del this.Close();
+                OPTION = "OK";
+                this.Close();
+            }
+
+            string sex = "" + comboSexo.SelectedItem;
+
+            Personal p = new Personal();
+            p.Cedula = textCedula.Text;
+            p.Nombre = textNombres.Text;
+            p.Apellido = textApellidos.Text;
+            p.Cargo = textCargo.Text;
+            p.Titulo = textTitulo.Text;
+            p.Correo = textCorreo.Text;
+            p.Sexo = sex[0];
+            p.Ciudad = textCiudad.Text;
+            p.Direccion = textDireccion.Text;
+            p.Telefono = textTelefono.Text;
+            p.Tipo = Convert.ToString(comboTipo.SelectedItem);
+            p.DataFoto = ImageToByte(picture);
+
+            Huella h = new Huella();
+            h.IdHuella = HLN.GenerarIdHuella();
+            h.DataHuella1 = arrayHuella1;
+            h.DataHuella2 = arrayHuella2;
+            h.Cedula = textCedula.Text; ;
+
+
+            PLN.InsertarPersonal(p);
+            HLN.InsertarHuella(h);
+
+            frmap.dataGridView1.Update();
+        }
+
+        private void butCancelar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         
