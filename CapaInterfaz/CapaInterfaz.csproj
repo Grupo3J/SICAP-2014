@@ -47,6 +47,54 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar.Design, Version=11.8.0.8, Culture=neutral, PublicKeyToken=2c9ff1fddc42653c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\DotNetBar for Windows Forms\DevComponents.DotNetBar.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Keyboard, Version=11.8.0.14, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\DotNetBar for Windows Forms\DevComponents.DotNetBar.Keyboard.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Layout, Version=11.8.0.14, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\DotNetBar for Windows Forms\DevComponents.DotNetBar.Layout.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Layout.Design, Version=11.8.0.14, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\DotNetBar for Windows Forms\DevComponents.DotNetBar.Layout.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Schedule, Version=11.8.0.14, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\DotNetBar for Windows Forms\DevComponents.DotNetBar.Schedule.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.SuperGrid, Version=11.8.0.14, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\DotNetBar for Windows Forms\DevComponents.DotNetBar.SuperGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2, Version=11.8.0.8, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\DotNetBar for Windows Forms\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.Instrumentation, Version=11.8.0.14, Culture=neutral, PublicKeyToken=f90dc37c26666a67, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\DotNetBar for Windows Forms\DevComponents.Instrumentation.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.Instrumentation.Design, Version=11.8.0.8, Culture=neutral, PublicKeyToken=30cefae8f341f577, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\DotNetBar for Windows Forms\DevComponents.Instrumentation.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.SuperGrid.Design, Version=11.8.0.14, Culture=neutral, PublicKeyToken=26d81176cfa2b486, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\DotNetBar for Windows Forms\DevComponents.SuperGrid.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.TreeGX, Version=11.8.0.14, Culture=neutral, PublicKeyToken=055db68f670cfeab, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\DotNetBar for Windows Forms\DevComponents.TreeGX.dll</HintPath>
+    </Reference>
+    <Reference Include="DnbTBReg, Version=1.0.2324.16110, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\DotNetBar for Windows Forms\DnbTBReg.exe</HintPath>
+    </Reference>
     <Reference Include="SecuGen.FDxSDKPro.Windows">
       <HintPath>bin\i386\SecuGen.FDxSDKPro.Windows.dll</HintPath>
     </Reference>
@@ -75,6 +123,12 @@
     </Compile>
     <Compile Include="ci_GestionAsistencia\frmAsistencia\frmEditAsistencia.Designer.cs">
       <DependentUpon>frmEditAsistencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ci_GestionAsistencia\frmAsistencia\frmEscogerPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionAsistencia\frmAsistencia\frmEscogerPersonal.Designer.cs">
+      <DependentUpon>frmEscogerPersonal.cs</DependentUpon>
     </Compile>
     <Compile Include="ci_GestionPersonal\frmHuella\frmhuellaadminis.cs">
       <SubType>Form</SubType>
@@ -174,11 +228,16 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Secugen.cs" />
+    <Compile Include="Utilities.cs" />
     <EmbeddedResource Include="ci_GestionAsistencia\frmAsistencia\frmAdministrarAsistencia.resx">
       <DependentUpon>frmAdministrarAsistencia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ci_GestionAsistencia\frmAsistencia\frmEditAsistencia.resx">
       <DependentUpon>frmEditAsistencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionAsistencia\frmAsistencia\frmEscogerPersonal.resx">
+      <DependentUpon>frmEscogerPersonal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ci_GestionPersonal\frmHuella\frmhuellaadminis.resx">
       <DependentUpon>frmhuellaadminis.cs</DependentUpon>
