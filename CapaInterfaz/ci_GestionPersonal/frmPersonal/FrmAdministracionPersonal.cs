@@ -6,13 +6,13 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DevComponents.DotNetBar;
+//using DevComponents.DotNetBar;
 using System.Windows.Forms;
 using CapaLogicaNegocio.cln_GestionPersonal;
 
 namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
 {
-    public partial class FrmAdministracionPersonal : Office2007Form
+    public partial class FrmAdministracionPersonal : Form
     {
         public FrmAdministracionPersonal()
         {
