@@ -43,7 +43,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmAsistencia
                     var linq = from p in personal.ListarPersonal("")
                                where p.CEDULA == Cedula
                                select p;
-                    foreach(pa_FiltrarPersonalValoresResult temp in linq.ToList())
+                    foreach(sp_FiltrarPersonalValoresResult temp in linq.ToList())
                     {
                         txtcedula.Text = temp.CEDULA;
                         txtcargo.Text = temp.CARGO;
@@ -66,7 +66,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmAsistencia
             dtphorasalida.ShowUpDown = true;
             var linq = (from p in personal.ListarPersonal("")
                        select p).Distinct();
-            foreach (pa_FiltrarPersonalValoresResult temp in linq.ToList())
+            foreach (sp_FiltrarPersonalValoresResult temp in linq.ToList())
             {
                 if(!cmbTipo.Items.Contains(temp.TIPO))
                 cmbTipo.Items.Add(temp.TIPO);

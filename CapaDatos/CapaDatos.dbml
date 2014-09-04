@@ -6,7 +6,7 @@
       <Column Name="IDCALENDARIO" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
       <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="FECHAHORAENTRADA" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="FECHAHORASALIDA" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FECHAHORASALIDA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Association Name="DETALLE_PERSONAL_CALENDARIO_ASISTENCIA" Member="DETALLE_PERSONAL_CALENDARIO" ThisKey="IDCALENDARIO,CEDULA" OtherKey="IDCALENDARIO,CEDULA" Type="DETALLE_PERSONAL_CALENDARIO" IsForeignKey="true" />
     </Type>
   </Table>
@@ -83,6 +83,8 @@
       <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="DATAHUELLA1" Type="System.Data.Linq.Binary" DbType="VarBinary(8000) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
       <Column Name="DATAHUELLA2" Type="System.Data.Linq.Binary" DbType="VarBinary(8000) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="IMAGEN" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" UpdateCheck="Never" />
       <Association Name="PERSONAL_HUELLA" Member="PERSONAL" ThisKey="CEDULA" OtherKey="CEDULA" Type="PERSONAL" IsForeignKey="true" />
     </Type>
   </Table>
@@ -185,7 +187,7 @@
       <Column Name="IDASISTENCIA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
-  <Function Name="dbo.pa_ActualizarPersonal" Method="pa_ActualizarPersonal">
+  <Function Name="dbo.sp_ActualizarPersonal" Method="sp_ActualizarPersonal">
     <Parameter Name="Cedula" Parameter="cedula" Type="System.String" DbType="VarChar(10)" />
     <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(30)" />
     <Parameter Name="Apellido" Parameter="apellido" Type="System.String" DbType="VarChar(30)" />
@@ -200,9 +202,9 @@
     <Parameter Name="Foto" Parameter="foto" Type="System.Data.Linq.Binary" DbType="Image" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.pa_BuscarPersonalCedula" Method="pa_BuscarPersonalCedula">
+  <Function Name="dbo.sp_BuscarPersonalCedula" Method="sp_BuscarPersonalCedula">
     <Parameter Name="Cedula" Parameter="cedula" Type="System.String" DbType="VarChar(10)" />
-    <ElementType Name="pa_BuscarPersonalCedulaResult">
+    <ElementType Name="sp_BuscarPersonalCedulaResult">
       <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="NOMBRE" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="APELLIDO" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
@@ -217,35 +219,35 @@
       <Column Name="DATAFOTO" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.pa_EliminarAsistenciaId" Method="pa_EliminarAsistenciaId">
+  <Function Name="dbo.sp_EliminarAsistenciaId" Method="sp_EliminarAsistenciaId">
     <Parameter Name="IDASISTENCIA" Parameter="iDASISTENCIA" Type="System.String" DbType="VarChar(10)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.pa_EliminarCalendario" Method="pa_EliminarCalendario">
+  <Function Name="dbo.sp_EliminarCalendario" Method="sp_EliminarCalendario">
     <Parameter Name="IdCalendario" Parameter="idCalendario" Type="System.String" DbType="VarChar(5)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.pa_EliminarFaltaId" Method="pa_EliminarFaltaId">
+  <Function Name="dbo.sp_EliminarFaltaId" Method="sp_EliminarFaltaId">
     <Parameter Name="IDFALTA" Parameter="iDFALTA" Type="System.String" DbType="VarChar(10)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.pa_EliminarHuellaIdHuella" Method="pa_EliminarHuellaIdHuella">
+  <Function Name="dbo.sp_EliminarHuellaIdHuella" Method="sp_EliminarHuellaIdHuella">
     <Parameter Name="idHuella" Type="System.String" DbType="VarChar(8)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.pa_EliminarImprevistoId" Method="pa_EliminarImprevistoId">
+  <Function Name="dbo.sp_EliminarImprevistoId" Method="sp_EliminarImprevistoId">
     <Parameter Name="IDIMPREVISTO" Parameter="iDIMPREVISTO" Type="System.String" DbType="VarChar(10)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.pa_EliminarPersonalCedula" Method="pa_EliminarPersonalCedula">
+  <Function Name="dbo.sp_EliminarPersonalCedula" Method="sp_EliminarPersonalCedula">
     <Parameter Name="Cedula" Parameter="cedula" Type="System.String" DbType="VarChar(10)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.pa_FiltrarAsistenciaDia" Method="pa_FiltrarAsistenciaDia">
+  <Function Name="dbo.sp_FiltrarAsistenciaDia" Method="sp_FiltrarAsistenciaDia">
     <Parameter Name="IDCALENDARIO" Parameter="iDCALENDARIO" Type="System.String" DbType="VarChar(5)" />
     <Parameter Name="CEDULA" Parameter="cEDULA" Type="System.String" DbType="VarChar(10)" />
     <Parameter Name="valor" Type="System.String" DbType="VarChar(10)" />
-    <ElementType Name="pa_FiltrarAsistenciaDiaResult">
+    <ElementType Name="sp_FiltrarAsistenciaDiaResult">
       <Column Name="IDASISTENCIA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="IDCALENDARIO" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
       <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
@@ -253,11 +255,11 @@
       <Column Name="FECHAHORASALIDA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.pa_FiltrarAsistenciaMes" Method="pa_FiltrarAsistenciaMes">
+  <Function Name="dbo.sp_FiltrarAsistenciaMes" Method="sp_FiltrarAsistenciaMes">
     <Parameter Name="IDCALENDARIO" Parameter="iDCALENDARIO" Type="System.String" DbType="VarChar(5)" />
     <Parameter Name="CEDULA" Parameter="cEDULA" Type="System.String" DbType="VarChar(10)" />
     <Parameter Name="valor" Type="System.String" DbType="VarChar(10)" />
-    <ElementType Name="pa_FiltrarAsistenciaMesResult">
+    <ElementType Name="sp_FiltrarAsistenciaMesResult">
       <Column Name="IDASISTENCIA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="IDCALENDARIO" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
       <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
@@ -265,12 +267,12 @@
       <Column Name="FECHAHORASALIDA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.pa_FiltrarAsistenciaRango" Method="pa_FiltrarAsistenciaRango">
+  <Function Name="dbo.sp_FiltrarAsistenciaRango" Method="sp_FiltrarAsistenciaRango">
     <Parameter Name="IDCALENDARIO" Parameter="iDCALENDARIO" Type="System.String" DbType="VarChar(5)" />
     <Parameter Name="CEDULA" Parameter="cEDULA" Type="System.String" DbType="VarChar(10)" />
     <Parameter Name="fechainicio" Type="System.DateTime" DbType="DateTime" />
     <Parameter Name="fechafin" Type="System.DateTime" DbType="DateTime" />
-    <ElementType Name="pa_FiltrarAsistenciaRangoResult">
+    <ElementType Name="sp_FiltrarAsistenciaRangoResult">
       <Column Name="IDASISTENCIA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="IDCALENDARIO" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
       <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
@@ -278,11 +280,11 @@
       <Column Name="FECHAHORASALIDA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.pa_FiltrarFaltaDia" Method="pa_FiltrarFaltaDia">
+  <Function Name="dbo.sp_FiltrarFaltaDia" Method="sp_FiltrarFaltaDia">
     <Parameter Name="IDCALENDARIO" Parameter="iDCALENDARIO" Type="System.String" DbType="VarChar(5)" />
     <Parameter Name="CEDULA" Parameter="cEDULA" Type="System.String" DbType="VarChar(10)" />
     <Parameter Name="valor" Type="System.String" DbType="VarChar(10)" />
-    <ElementType Name="pa_FiltrarFaltaDiaResult">
+    <ElementType Name="sp_FiltrarFaltaDiaResult">
       <Column Name="IDFALTA" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
       <Column Name="IDCALENDARIO" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
       <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
@@ -290,10 +292,10 @@
       <Column Name="JUSTIFICACION" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.pa_FiltrarFaltaMes" Method="pa_FiltrarFaltaMes">
+  <Function Name="dbo.sp_FiltrarFaltaMes" Method="sp_FiltrarFaltaMes">
     <Parameter Name="CEDULA" Parameter="cEDULA" Type="System.String" DbType="VarChar(10)" />
     <Parameter Name="valor" Type="System.String" DbType="VarChar(10)" />
-    <ElementType Name="pa_FiltrarFaltaMesResult">
+    <ElementType Name="sp_FiltrarFaltaMesResult">
       <Column Name="IDFALTA" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
       <Column Name="IDCALENDARIO" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
       <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
@@ -301,11 +303,11 @@
       <Column Name="JUSTIFICACION" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.pa_FiltrarFaltaRango" Method="pa_FiltrarFaltaRango">
+  <Function Name="dbo.sp_FiltrarFaltaRango" Method="sp_FiltrarFaltaRango">
     <Parameter Name="CEDULA" Parameter="cEDULA" Type="System.String" DbType="VarChar(10)" />
     <Parameter Name="fechainicio" Type="System.DateTime" DbType="DateTime" />
     <Parameter Name="fechafin" Type="System.DateTime" DbType="DateTime" />
-    <ElementType Name="pa_FiltrarFaltaRangoResult">
+    <ElementType Name="sp_FiltrarFaltaRangoResult">
       <Column Name="IDFALTA" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
       <Column Name="IDCALENDARIO" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
       <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
@@ -313,9 +315,9 @@
       <Column Name="JUSTIFICACION" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.pa_FiltrarPersonalValor" Method="pa_FiltrarPersonalValor">
+  <Function Name="dbo.sp_FiltrarPersonalValor" Method="sp_FiltrarPersonalValor">
     <Parameter Name="valor" Type="System.String" DbType="VarChar(15)" />
-    <ElementType Name="pa_FiltrarPersonalValorResult">
+    <ElementType Name="sp_FiltrarPersonalValorResult">
       <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="NOMBRE" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="APELLIDO" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
@@ -330,9 +332,9 @@
       <Column Name="DATAFOTO" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.pa_FiltrarPersonalValores" Method="pa_FiltrarPersonalValores">
+  <Function Name="dbo.sp_FiltrarPersonalValores" Method="sp_FiltrarPersonalValores">
     <Parameter Name="valor" Type="System.String" DbType="VarChar(15)" />
-    <ElementType Name="pa_FiltrarPersonalValoresResult">
+    <ElementType Name="sp_FiltrarPersonalValoresResult">
       <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="NOMBRE" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="APELLIDO" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
@@ -347,8 +349,8 @@
       <Column Name="DATAFOTO" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.pa_ListarCalendario" Method="pa_ListarCalendario">
-    <ElementType Name="pa_ListarCalendarioResult">
+  <Function Name="dbo.sp_ListarCalendario" Method="sp_ListarCalendario">
+    <ElementType Name="sp_ListarCalendarioResult">
       <Column Name="IDCALENDARIO" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
       <Column Name="NOMBRE" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="DESCRIPCION" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
@@ -356,16 +358,18 @@
       <Column Name="FECHAFIN" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.pa_ListarHuellaCedula" Method="pa_ListarHuellaCedula">
+  <Function Name="dbo.sp_ListarHuellaCedula" Method="sp_ListarHuellaCedula">
     <Parameter Name="Cedula" Parameter="cedula" Type="System.String" DbType="VarChar(10)" />
-    <ElementType Name="pa_ListarHuellaCedulaResult">
+    <ElementType Name="sp_ListarHuellaCedulaResult">
       <Column Name="IDHUELLA" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
       <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="DATAHUELLA1" Type="System.Data.Linq.Binary" DbType="VarBinary(8000) NOT NULL" CanBeNull="false" />
       <Column Name="DATAHUELLA2" Type="System.Data.Linq.Binary" DbType="VarBinary(8000) NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="IMAGEN" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.pa_ModificarCalendario" Method="pa_ModificarCalendario">
+  <Function Name="dbo.sp_ModificarCalendario" Method="sp_ModificarCalendario">
     <Parameter Name="IdCalendario" Parameter="idCalendario" Type="System.String" DbType="VarChar(5)" />
     <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(20)" />
     <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="Text" />
@@ -373,25 +377,25 @@
     <Parameter Name="FechaFin" Parameter="fechaFin" Type="System.DateTime" DbType="DateTime" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.pa_ModificarFaltaJustificacion" Method="pa_ModificarFaltaJustificacion">
+  <Function Name="dbo.sp_ModificarFaltaJustificacion" Method="sp_ModificarFaltaJustificacion">
     <Parameter Name="IDFALTA" Parameter="iDFALTA" Type="System.String" DbType="VarChar(10)" />
     <Parameter Name="JUSTIFICACION" Parameter="jUSTIFICACION" Type="System.Boolean" DbType="Bit" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.pa_ModificarHuellaIdHuella" Method="pa_ModificarHuellaIdHuella">
+  <Function Name="dbo.sp_ModificarHuellaIdHuella" Method="sp_ModificarHuellaIdHuella">
     <Parameter Name="IdHuella" Parameter="idHuella" Type="System.String" DbType="VarChar(8)" />
     <Parameter Name="DataHuella1" Parameter="dataHuella1" Type="System.Data.Linq.Binary" DbType="Binary(1)" />
     <Parameter Name="DataHuella2" Parameter="dataHuella2" Type="System.Data.Linq.Binary" DbType="Binary(1)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.pa_ModificarImprevistoId" Method="pa_ModificarImprevistoId">
+  <Function Name="dbo.sp_ModificarImprevistoId" Method="sp_ModificarImprevistoId">
     <Parameter Name="IDIMPREVISTO" Parameter="iDIMPREVISTO" Type="System.String" DbType="VarChar(6)" />
     <Parameter Name="FECHAINICIO" Parameter="fECHAINICIO" Type="System.DateTime" DbType="DateTime" />
     <Parameter Name="FECHAFINAL" Parameter="fECHAFINAL" Type="System.DateTime" DbType="DateTime" />
     <Parameter Name="DESCRIPCION" Parameter="dESCRIPCION" Type="System.String" DbType="Text" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.pa_ModificarPersonalCedula" Method="pa_ModificarPersonalCedula">
+  <Function Name="dbo.sp_ModificarPersonalCedula" Method="sp_ModificarPersonalCedula">
     <Parameter Name="Cedula" Parameter="cedula" Type="System.String" DbType="VarChar(10)" />
     <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(30)" />
     <Parameter Name="Apellido" Parameter="apellido" Type="System.String" DbType="VarChar(30)" />
@@ -406,10 +410,10 @@
     <Parameter Name="Foto" Parameter="foto" Type="System.Data.Linq.Binary" DbType="Image" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.pa_Obtener_Personas_Imprevisto" Method="pa_Obtener_Personas_Imprevisto">
+  <Function Name="dbo.sp_Obtener_Personas_Imprevisto" Method="sp_Obtener_Personas_Imprevisto">
     <Parameter Name="IdImprevisto" Parameter="idImprevisto" Type="System.String" DbType="VarChar(6)" />
     <Parameter Name="IdCalendario" Parameter="idCalendario" Type="System.String" DbType="VarChar(5)" />
-    <ElementType Name="pa_Obtener_Personas_ImprevistoResult">
+    <ElementType Name="sp_Obtener_Personas_ImprevistoResult">
       <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="NOMBRE" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="APELLIDO" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
@@ -424,7 +428,7 @@
       <Column Name="DATAFOTO" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.pa_RegistrarAsistencia" Method="pa_RegistrarAsistencia">
+  <Function Name="dbo.sp_RegistrarAsistencia" Method="sp_RegistrarAsistencia">
     <Parameter Name="IDASISTENCIA" Parameter="iDASISTENCIA" Type="System.String" DbType="VarChar(10)" />
     <Parameter Name="IDCALENDARIO" Parameter="iDCALENDARIO" Type="System.String" DbType="VarChar(5)" />
     <Parameter Name="CEDULA" Parameter="cEDULA" Type="System.String" DbType="VarChar(10)" />
@@ -432,7 +436,7 @@
     <Parameter Name="FECHAHORASALIDA" Parameter="fECHAHORASALIDA" Type="System.DateTime" DbType="DateTime" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.pa_RegistrarCalendario" Method="pa_RegistrarCalendario">
+  <Function Name="dbo.sp_RegistrarCalendario" Method="sp_RegistrarCalendario">
     <Parameter Name="IdCalendario" Parameter="idCalendario" Type="System.String" DbType="VarChar(5)" />
     <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(20)" />
     <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="Text" />
@@ -440,7 +444,7 @@
     <Parameter Name="FechaFin" Parameter="fechaFin" Type="System.DateTime" DbType="DateTime" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.pa_RegistrarFalta" Method="pa_RegistrarFalta">
+  <Function Name="dbo.sp_RegistrarFalta" Method="sp_RegistrarFalta">
     <Parameter Name="IDFALTA" Parameter="iDFALTA" Type="System.String" DbType="VarChar(10)" />
     <Parameter Name="IDCALENDARIO" Parameter="iDCALENDARIO" Type="System.String" DbType="VarChar(5)" />
     <Parameter Name="CEDULA" Parameter="cEDULA" Type="System.String" DbType="VarChar(10)" />
@@ -448,21 +452,21 @@
     <Parameter Name="JUSTIFICACION" Parameter="jUSTIFICACION" Type="System.Boolean" DbType="Bit" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.pa_RegistrarHuella" Method="pa_RegistrarHuella">
+  <Function Name="dbo.sp_RegistrarHuella" Method="sp_RegistrarHuella">
     <Parameter Name="IdHuella" Parameter="idHuella" Type="System.String" DbType="VarChar(8)" />
     <Parameter Name="Cedula" Parameter="cedula" Type="System.String" DbType="VarChar(10)" />
     <Parameter Name="DataHuella1" Parameter="dataHuella1" Type="System.Data.Linq.Binary" DbType="Binary(1)" />
     <Parameter Name="DataHuella2" Parameter="dataHuella2" Type="System.Data.Linq.Binary" DbType="Binary(1)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.pa_RegistrarImprevistos" Method="pa_RegistrarImprevistos">
+  <Function Name="dbo.sp_RegistrarImprevistos" Method="sp_RegistrarImprevistos">
     <Parameter Name="IDIMPREVISTO" Parameter="iDIMPREVISTO" Type="System.String" DbType="VarChar(6)" />
     <Parameter Name="FECHAINICIO" Parameter="fECHAINICIO" Type="System.DateTime" DbType="DateTime" />
     <Parameter Name="FECHAFINAL" Parameter="fECHAFINAL" Type="System.DateTime" DbType="DateTime" />
     <Parameter Name="DESCRIPCION" Parameter="dESCRIPCION" Type="System.String" DbType="Text" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.pa_RegistrarPersonal" Method="pa_RegistrarPersonal">
+  <Function Name="dbo.sp_RegistrarPersonal" Method="sp_RegistrarPersonal">
     <Parameter Name="Cedula" Parameter="cedula" Type="System.String" DbType="VarChar(10)" />
     <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(30)" />
     <Parameter Name="Apellido" Parameter="apellido" Type="System.String" DbType="VarChar(30)" />

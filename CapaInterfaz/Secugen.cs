@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SecuGen.FDxSDKPro.Windows;
 using System.Windows.Forms;
+using CapaInterfaz.ci_GestionAsistencia.frmAsistencia;
 
 namespace CapaDatos
 {
@@ -119,13 +120,21 @@ namespace CapaDatos
             }
             else
                 MessageBox.Show("Error en inicializar SecuGen: " + iError);
+            //Obtener Informacion del dispositivo inicializado
+            SGFPMDeviceInfoParam pInfo = new SGFPMDeviceInfoParam();
+            iError = m_FPM.GetDeviceInfo(pInfo);
+            if (iError == (Int32)SGFPMError.ERROR_NONE)
+            {
+                // This should be done GetDeviceInfo();
+                m_ImageWidth = pInfo.ImageWidth;
+                m_ImageHeight = pInfo.ImageHeight;
+            }
             Byte[] fp_image = new Byte[m_ImageWidth * m_ImageHeight];
             SGFPMSecurityLevel secu_level = SGFPMSecurityLevel.NORMAL; // Adjust this value according to application type
             bool matched1 = false;
             bool matched2 = false;
             //Step 1: Capture Image
             m_FPM.GetImage(fp_image);
-
             Int32 max_template_size = 0;
             //Obtiene el maximo tamaño que posee el buffer.
             m_FPM.GetMaxTemplateSize(ref max_template_size);

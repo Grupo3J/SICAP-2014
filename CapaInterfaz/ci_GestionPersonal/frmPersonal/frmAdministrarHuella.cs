@@ -104,15 +104,6 @@ namespace CapaInterfaz.ci_GestionPersonal.frmPersonal
             h.DataHuella1 = arrayHuella1;
             h.DataHuella2 = arrayHuella2;
             h.Cedula = cedula;
-            string acum = null;
-            string acum2 = null;
-
-            for (int f = 0; f < arrayHuella1.Length;f++ ) {
-                acum = acum + arrayHuella1[f];
-                acum2 = acum2 + arrayHuella2[f];
-            }
-
-            MessageBox.Show("acumsito: " + acum + "   acumsito2: " + acum);
 
             hln.InsertarHuella(h);
         }

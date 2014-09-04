@@ -12,7 +12,7 @@ namespace CapaLogicaNegocio.cln_GestionPersonal
     public class HuellaLN
     {
         //metodo para listar las huellas de una persona
-        public List<pa_ListarHuellaCedulaResult> ListarHuella(string cedula)
+        public List<sp_ListarHuellaCedulaResult> ListarHuella(string cedula)
         {
             return HuellaCD.ObtenerHuella(cedula);
         }

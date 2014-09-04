@@ -22,7 +22,7 @@ namespace CapaDatos.cd_GestionPlanificacion
                 c.FechaInicio = cal.FechaInicio;
                 c.FechaFin = cal.FechaFin;
                 
-                bd.pa_RegistrarCalendario(c.IdCalendario, c.Nombre, c.Descripcion, c.FechaInicio, c.FechaFin);
+                bd.sp_RegistrarCalendario(c.IdCalendario, c.Nombre, c.Descripcion, c.FechaInicio, c.FechaFin);
                 bd.SubmitChanges();
 
             }
@@ -38,14 +38,14 @@ namespace CapaDatos.cd_GestionPlanificacion
             return cal;
         }
 
-        public static List<pa_ListarCalendarioResult> ObtenerCalendario()
+        public static List<sp_ListarCalendarioResult> ObtenerCalendario()
         {
             CapaDatosDataContext DB;
             try
             {
                 using (DB = new CapaDatosDataContext())
                 {
-                    return DB.pa_ListarCalendario().ToList();
+                    return DB.sp_ListarCalendario().ToList();
                 }
             }
             catch (Exception ex)
@@ -89,7 +89,7 @@ namespace CapaDatos.cd_GestionPlanificacion
             try
             {
 
-                DB.pa_EliminarCalendario(idCaledario);
+                DB.sp_EliminarCalendario(idCaledario);
                 DB.SubmitChanges();
 
 
@@ -118,7 +118,7 @@ namespace CapaDatos.cd_GestionPlanificacion
                 c.FechaInicio = cal.FechaInicio;
                 c.FechaFin = cal.FechaFin;
 
-                bd.pa_ModificarCalendario(c.IdCalendario, c.Nombre, c.Descripcion, c.FechaInicio, c.FechaFin);
+                bd.sp_ModificarCalendario(c.IdCalendario, c.Nombre, c.Descripcion, c.FechaInicio, c.FechaFin);
                 bd.SubmitChanges();
 
             }

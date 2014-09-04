@@ -11,7 +11,7 @@ namespace CapaLogicaNegocio.cln_GestionPersonal
 {
     public class PersonalLN
     {
-        public List<pa_FiltrarPersonalValoresResult> ListarPersonal(string val)
+        public List<sp_FiltrarPersonalValoresResult> ListarPersonal(string val)
         {
             return PersonalCd.ObtenerPresonal(val);
         }

@@ -246,211 +246,211 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_ActualizarPersonal")]
-		public int pa_ActualizarPersonal([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cedula", DbType="VarChar(10)")] string cedula, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nombre", DbType="VarChar(30)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Apellido", DbType="VarChar(30)")] string apellido, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cargo", DbType="VarChar(25)")] string cargo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Titulo", DbType="VarChar(15)")] string titulo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Correo", DbType="VarChar(30)")] string correo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Sexo", DbType="Char(1)")] System.Nullable<char> sexo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Ciudad", DbType="VarChar(15)")] string ciudad, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Direccion", DbType="VarChar(75)")] string direccion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Telefono", DbType="VarChar(10)")] string telefono, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Tipo", DbType="VarChar(20)")] string tipo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Foto", DbType="Image")] System.Data.Linq.Binary foto)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ActualizarPersonal")]
+		public int sp_ActualizarPersonal([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cedula", DbType="VarChar(10)")] string cedula, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nombre", DbType="VarChar(30)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Apellido", DbType="VarChar(30)")] string apellido, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cargo", DbType="VarChar(25)")] string cargo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Titulo", DbType="VarChar(15)")] string titulo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Correo", DbType="VarChar(30)")] string correo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Sexo", DbType="Char(1)")] System.Nullable<char> sexo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Ciudad", DbType="VarChar(15)")] string ciudad, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Direccion", DbType="VarChar(75)")] string direccion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Telefono", DbType="VarChar(10)")] string telefono, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Tipo", DbType="VarChar(20)")] string tipo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Foto", DbType="Image")] System.Data.Linq.Binary foto)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula, nombre, apellido, cargo, titulo, correo, sexo, ciudad, direccion, telefono, tipo, foto);
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_BuscarPersonalCedula")]
-		public ISingleResult<pa_BuscarPersonalCedulaResult> pa_BuscarPersonalCedula([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cedula", DbType="VarChar(10)")] string cedula)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_BuscarPersonalCedula")]
+		public ISingleResult<sp_BuscarPersonalCedulaResult> sp_BuscarPersonalCedula([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cedula", DbType="VarChar(10)")] string cedula)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula);
-			return ((ISingleResult<pa_BuscarPersonalCedulaResult>)(result.ReturnValue));
+			return ((ISingleResult<sp_BuscarPersonalCedulaResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_EliminarAsistenciaId")]
-		public int pa_EliminarAsistenciaId([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDASISTENCIA", DbType="VarChar(10)")] string iDASISTENCIA)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_EliminarAsistenciaId")]
+		public int sp_EliminarAsistenciaId([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDASISTENCIA", DbType="VarChar(10)")] string iDASISTENCIA)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDASISTENCIA);
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_EliminarCalendario")]
-		public int pa_EliminarCalendario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdCalendario", DbType="VarChar(5)")] string idCalendario)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_EliminarCalendario")]
+		public int sp_EliminarCalendario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdCalendario", DbType="VarChar(5)")] string idCalendario)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idCalendario);
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_EliminarFaltaId")]
-		public int pa_EliminarFaltaId([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDFALTA", DbType="VarChar(10)")] string iDFALTA)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_EliminarFaltaId")]
+		public int sp_EliminarFaltaId([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDFALTA", DbType="VarChar(10)")] string iDFALTA)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDFALTA);
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_EliminarHuellaIdHuella")]
-		public int pa_EliminarHuellaIdHuella([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(8)")] string idHuella)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_EliminarHuellaIdHuella")]
+		public int sp_EliminarHuellaIdHuella([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(8)")] string idHuella)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idHuella);
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_EliminarImprevistoId")]
-		public int pa_EliminarImprevistoId([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDIMPREVISTO", DbType="VarChar(10)")] string iDIMPREVISTO)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_EliminarImprevistoId")]
+		public int sp_EliminarImprevistoId([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDIMPREVISTO", DbType="VarChar(10)")] string iDIMPREVISTO)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDIMPREVISTO);
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_EliminarPersonalCedula")]
-		public int pa_EliminarPersonalCedula([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cedula", DbType="VarChar(10)")] string cedula)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_EliminarPersonalCedula")]
+		public int sp_EliminarPersonalCedula([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cedula", DbType="VarChar(10)")] string cedula)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula);
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_FiltrarAsistenciaDia")]
-		public ISingleResult<pa_FiltrarAsistenciaDiaResult> pa_FiltrarAsistenciaDia([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDCALENDARIO", DbType="VarChar(5)")] string iDCALENDARIO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CEDULA", DbType="VarChar(10)")] string cEDULA, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string valor)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_FiltrarAsistenciaDia")]
+		public ISingleResult<sp_FiltrarAsistenciaDiaResult> sp_FiltrarAsistenciaDia([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDCALENDARIO", DbType="VarChar(5)")] string iDCALENDARIO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CEDULA", DbType="VarChar(10)")] string cEDULA, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string valor)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDCALENDARIO, cEDULA, valor);
-			return ((ISingleResult<pa_FiltrarAsistenciaDiaResult>)(result.ReturnValue));
+			return ((ISingleResult<sp_FiltrarAsistenciaDiaResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_FiltrarAsistenciaMes")]
-		public ISingleResult<pa_FiltrarAsistenciaMesResult> pa_FiltrarAsistenciaMes([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDCALENDARIO", DbType="VarChar(5)")] string iDCALENDARIO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CEDULA", DbType="VarChar(10)")] string cEDULA, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string valor)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_FiltrarAsistenciaMes")]
+		public ISingleResult<sp_FiltrarAsistenciaMesResult> sp_FiltrarAsistenciaMes([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDCALENDARIO", DbType="VarChar(5)")] string iDCALENDARIO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CEDULA", DbType="VarChar(10)")] string cEDULA, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string valor)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDCALENDARIO, cEDULA, valor);
-			return ((ISingleResult<pa_FiltrarAsistenciaMesResult>)(result.ReturnValue));
+			return ((ISingleResult<sp_FiltrarAsistenciaMesResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_FiltrarAsistenciaRango")]
-		public ISingleResult<pa_FiltrarAsistenciaRangoResult> pa_FiltrarAsistenciaRango([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDCALENDARIO", DbType="VarChar(5)")] string iDCALENDARIO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CEDULA", DbType="VarChar(10)")] string cEDULA, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> fechainicio, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> fechafin)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_FiltrarAsistenciaRango")]
+		public ISingleResult<sp_FiltrarAsistenciaRangoResult> sp_FiltrarAsistenciaRango([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDCALENDARIO", DbType="VarChar(5)")] string iDCALENDARIO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CEDULA", DbType="VarChar(10)")] string cEDULA, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> fechainicio, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> fechafin)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDCALENDARIO, cEDULA, fechainicio, fechafin);
-			return ((ISingleResult<pa_FiltrarAsistenciaRangoResult>)(result.ReturnValue));
+			return ((ISingleResult<sp_FiltrarAsistenciaRangoResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_FiltrarFaltaDia")]
-		public ISingleResult<pa_FiltrarFaltaDiaResult> pa_FiltrarFaltaDia([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDCALENDARIO", DbType="VarChar(5)")] string iDCALENDARIO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CEDULA", DbType="VarChar(10)")] string cEDULA, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string valor)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_FiltrarFaltaDia")]
+		public ISingleResult<sp_FiltrarFaltaDiaResult> sp_FiltrarFaltaDia([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDCALENDARIO", DbType="VarChar(5)")] string iDCALENDARIO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CEDULA", DbType="VarChar(10)")] string cEDULA, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string valor)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDCALENDARIO, cEDULA, valor);
-			return ((ISingleResult<pa_FiltrarFaltaDiaResult>)(result.ReturnValue));
+			return ((ISingleResult<sp_FiltrarFaltaDiaResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_FiltrarFaltaMes")]
-		public ISingleResult<pa_FiltrarFaltaMesResult> pa_FiltrarFaltaMes([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CEDULA", DbType="VarChar(10)")] string cEDULA, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string valor)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_FiltrarFaltaMes")]
+		public ISingleResult<sp_FiltrarFaltaMesResult> sp_FiltrarFaltaMes([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CEDULA", DbType="VarChar(10)")] string cEDULA, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string valor)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cEDULA, valor);
-			return ((ISingleResult<pa_FiltrarFaltaMesResult>)(result.ReturnValue));
+			return ((ISingleResult<sp_FiltrarFaltaMesResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_FiltrarFaltaRango")]
-		public ISingleResult<pa_FiltrarFaltaRangoResult> pa_FiltrarFaltaRango([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CEDULA", DbType="VarChar(10)")] string cEDULA, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> fechainicio, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> fechafin)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_FiltrarFaltaRango")]
+		public ISingleResult<sp_FiltrarFaltaRangoResult> sp_FiltrarFaltaRango([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CEDULA", DbType="VarChar(10)")] string cEDULA, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> fechainicio, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> fechafin)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cEDULA, fechainicio, fechafin);
-			return ((ISingleResult<pa_FiltrarFaltaRangoResult>)(result.ReturnValue));
+			return ((ISingleResult<sp_FiltrarFaltaRangoResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_FiltrarPersonalValor")]
-		public ISingleResult<pa_FiltrarPersonalValorResult> pa_FiltrarPersonalValor([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string valor)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_FiltrarPersonalValor")]
+		public ISingleResult<sp_FiltrarPersonalValorResult> sp_FiltrarPersonalValor([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string valor)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), valor);
-			return ((ISingleResult<pa_FiltrarPersonalValorResult>)(result.ReturnValue));
+			return ((ISingleResult<sp_FiltrarPersonalValorResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_FiltrarPersonalValores")]
-		public ISingleResult<pa_FiltrarPersonalValoresResult> pa_FiltrarPersonalValores([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string valor)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_FiltrarPersonalValores")]
+		public ISingleResult<sp_FiltrarPersonalValoresResult> sp_FiltrarPersonalValores([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string valor)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), valor);
-			return ((ISingleResult<pa_FiltrarPersonalValoresResult>)(result.ReturnValue));
+			return ((ISingleResult<sp_FiltrarPersonalValoresResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_ListarCalendario")]
-		public ISingleResult<pa_ListarCalendarioResult> pa_ListarCalendario()
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ListarCalendario")]
+		public ISingleResult<sp_ListarCalendarioResult> sp_ListarCalendario()
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<pa_ListarCalendarioResult>)(result.ReturnValue));
+			return ((ISingleResult<sp_ListarCalendarioResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_ListarHuellaCedula")]
-		public ISingleResult<pa_ListarHuellaCedulaResult> pa_ListarHuellaCedula([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cedula", DbType="VarChar(10)")] string cedula)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ListarHuellaCedula")]
+		public ISingleResult<sp_ListarHuellaCedulaResult> sp_ListarHuellaCedula([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cedula", DbType="VarChar(10)")] string cedula)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula);
-			return ((ISingleResult<pa_ListarHuellaCedulaResult>)(result.ReturnValue));
+			return ((ISingleResult<sp_ListarHuellaCedulaResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_ModificarCalendario")]
-		public int pa_ModificarCalendario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdCalendario", DbType="VarChar(5)")] string idCalendario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nombre", DbType="VarChar(20)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="Text")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FechaInicio", DbType="DateTime")] System.Nullable<System.DateTime> fechaInicio, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FechaFin", DbType="DateTime")] System.Nullable<System.DateTime> fechaFin)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ModificarCalendario")]
+		public int sp_ModificarCalendario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdCalendario", DbType="VarChar(5)")] string idCalendario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nombre", DbType="VarChar(20)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="Text")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FechaInicio", DbType="DateTime")] System.Nullable<System.DateTime> fechaInicio, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FechaFin", DbType="DateTime")] System.Nullable<System.DateTime> fechaFin)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idCalendario, nombre, descripcion, fechaInicio, fechaFin);
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_ModificarFaltaJustificacion")]
-		public int pa_ModificarFaltaJustificacion([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDFALTA", DbType="VarChar(10)")] string iDFALTA, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="JUSTIFICACION", DbType="Bit")] System.Nullable<bool> jUSTIFICACION)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ModificarFaltaJustificacion")]
+		public int sp_ModificarFaltaJustificacion([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDFALTA", DbType="VarChar(10)")] string iDFALTA, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="JUSTIFICACION", DbType="Bit")] System.Nullable<bool> jUSTIFICACION)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDFALTA, jUSTIFICACION);
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_ModificarHuellaIdHuella")]
-		public int pa_ModificarHuellaIdHuella([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdHuella", DbType="VarChar(8)")] string idHuella, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DataHuella1", DbType="Binary(1)")] System.Data.Linq.Binary dataHuella1, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DataHuella2", DbType="Binary(1)")] System.Data.Linq.Binary dataHuella2)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ModificarHuellaIdHuella")]
+		public int sp_ModificarHuellaIdHuella([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdHuella", DbType="VarChar(8)")] string idHuella, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DataHuella1", DbType="Binary(1)")] System.Data.Linq.Binary dataHuella1, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DataHuella2", DbType="Binary(1)")] System.Data.Linq.Binary dataHuella2)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idHuella, dataHuella1, dataHuella2);
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_ModificarImprevistoId")]
-		public int pa_ModificarImprevistoId([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDIMPREVISTO", DbType="VarChar(6)")] string iDIMPREVISTO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FECHAINICIO", DbType="DateTime")] System.Nullable<System.DateTime> fECHAINICIO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FECHAFINAL", DbType="DateTime")] System.Nullable<System.DateTime> fECHAFINAL, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DESCRIPCION", DbType="Text")] string dESCRIPCION)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ModificarImprevistoId")]
+		public int sp_ModificarImprevistoId([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDIMPREVISTO", DbType="VarChar(6)")] string iDIMPREVISTO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FECHAINICIO", DbType="DateTime")] System.Nullable<System.DateTime> fECHAINICIO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FECHAFINAL", DbType="DateTime")] System.Nullable<System.DateTime> fECHAFINAL, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DESCRIPCION", DbType="Text")] string dESCRIPCION)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDIMPREVISTO, fECHAINICIO, fECHAFINAL, dESCRIPCION);
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_ModificarPersonalCedula")]
-		public int pa_ModificarPersonalCedula([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cedula", DbType="VarChar(10)")] string cedula, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nombre", DbType="VarChar(30)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Apellido", DbType="VarChar(30)")] string apellido, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cargo", DbType="VarChar(25)")] string cargo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Titulo", DbType="VarChar(15)")] string titulo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Correo", DbType="VarChar(30)")] string correo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Sexo", DbType="Char(1)")] System.Nullable<char> sexo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Ciudad", DbType="VarChar(15)")] string ciudad, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Direccion", DbType="VarChar(75)")] string direccion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Telefono", DbType="VarChar(10)")] string telefono, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Tipo", DbType="VarChar(20)")] string tipo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Foto", DbType="Image")] System.Data.Linq.Binary foto)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ModificarPersonalCedula")]
+		public int sp_ModificarPersonalCedula([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cedula", DbType="VarChar(10)")] string cedula, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nombre", DbType="VarChar(30)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Apellido", DbType="VarChar(30)")] string apellido, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cargo", DbType="VarChar(25)")] string cargo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Titulo", DbType="VarChar(15)")] string titulo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Correo", DbType="VarChar(30)")] string correo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Sexo", DbType="Char(1)")] System.Nullable<char> sexo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Ciudad", DbType="VarChar(15)")] string ciudad, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Direccion", DbType="VarChar(75)")] string direccion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Telefono", DbType="VarChar(10)")] string telefono, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Tipo", DbType="VarChar(20)")] string tipo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Foto", DbType="Image")] System.Data.Linq.Binary foto)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula, nombre, apellido, cargo, titulo, correo, sexo, ciudad, direccion, telefono, tipo, foto);
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_Obtener_Personas_Imprevisto")]
-		public ISingleResult<pa_Obtener_Personas_ImprevistoResult> pa_Obtener_Personas_Imprevisto([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdImprevisto", DbType="VarChar(6)")] string idImprevisto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdCalendario", DbType="VarChar(5)")] string idCalendario)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_Obtener_Personas_Imprevisto")]
+		public ISingleResult<sp_Obtener_Personas_ImprevistoResult> sp_Obtener_Personas_Imprevisto([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdImprevisto", DbType="VarChar(6)")] string idImprevisto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdCalendario", DbType="VarChar(5)")] string idCalendario)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idImprevisto, idCalendario);
-			return ((ISingleResult<pa_Obtener_Personas_ImprevistoResult>)(result.ReturnValue));
+			return ((ISingleResult<sp_Obtener_Personas_ImprevistoResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_RegistrarAsistencia")]
-		public int pa_RegistrarAsistencia([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDASISTENCIA", DbType="VarChar(10)")] string iDASISTENCIA, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDCALENDARIO", DbType="VarChar(5)")] string iDCALENDARIO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CEDULA", DbType="VarChar(10)")] string cEDULA, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FECHAHORAENTRADA", DbType="DateTime")] System.Nullable<System.DateTime> fECHAHORAENTRADA, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FECHAHORASALIDA", DbType="DateTime")] System.Nullable<System.DateTime> fECHAHORASALIDA)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_RegistrarAsistencia")]
+		public int sp_RegistrarAsistencia([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDASISTENCIA", DbType="VarChar(10)")] string iDASISTENCIA, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDCALENDARIO", DbType="VarChar(5)")] string iDCALENDARIO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CEDULA", DbType="VarChar(10)")] string cEDULA, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FECHAHORAENTRADA", DbType="DateTime")] System.Nullable<System.DateTime> fECHAHORAENTRADA, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FECHAHORASALIDA", DbType="DateTime")] System.Nullable<System.DateTime> fECHAHORASALIDA)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDASISTENCIA, iDCALENDARIO, cEDULA, fECHAHORAENTRADA, fECHAHORASALIDA);
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_RegistrarCalendario")]
-		public int pa_RegistrarCalendario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdCalendario", DbType="VarChar(5)")] string idCalendario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nombre", DbType="VarChar(20)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="Text")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FechaInicio", DbType="DateTime")] System.Nullable<System.DateTime> fechaInicio, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FechaFin", DbType="DateTime")] System.Nullable<System.DateTime> fechaFin)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_RegistrarCalendario")]
+		public int sp_RegistrarCalendario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdCalendario", DbType="VarChar(5)")] string idCalendario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nombre", DbType="VarChar(20)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="Text")] string descripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FechaInicio", DbType="DateTime")] System.Nullable<System.DateTime> fechaInicio, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FechaFin", DbType="DateTime")] System.Nullable<System.DateTime> fechaFin)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idCalendario, nombre, descripcion, fechaInicio, fechaFin);
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_RegistrarFalta")]
-		public int pa_RegistrarFalta([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDFALTA", DbType="VarChar(10)")] string iDFALTA, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDCALENDARIO", DbType="VarChar(5)")] string iDCALENDARIO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CEDULA", DbType="VarChar(10)")] string cEDULA, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FECHA", DbType="DateTime")] System.Nullable<System.DateTime> fECHA, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="JUSTIFICACION", DbType="Bit")] System.Nullable<bool> jUSTIFICACION)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_RegistrarFalta")]
+		public int sp_RegistrarFalta([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDFALTA", DbType="VarChar(10)")] string iDFALTA, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDCALENDARIO", DbType="VarChar(5)")] string iDCALENDARIO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CEDULA", DbType="VarChar(10)")] string cEDULA, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FECHA", DbType="DateTime")] System.Nullable<System.DateTime> fECHA, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="JUSTIFICACION", DbType="Bit")] System.Nullable<bool> jUSTIFICACION)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDFALTA, iDCALENDARIO, cEDULA, fECHA, jUSTIFICACION);
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_RegistrarHuella")]
-		public int pa_RegistrarHuella([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdHuella", DbType="VarChar(8)")] string idHuella, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cedula", DbType="VarChar(10)")] string cedula, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DataHuella1", DbType="Binary(1)")] System.Data.Linq.Binary dataHuella1, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DataHuella2", DbType="Binary(1)")] System.Data.Linq.Binary dataHuella2)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_RegistrarHuella")]
+		public int sp_RegistrarHuella([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdHuella", DbType="VarChar(8)")] string idHuella, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cedula", DbType="VarChar(10)")] string cedula, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DataHuella1", DbType="Binary(1)")] System.Data.Linq.Binary dataHuella1, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DataHuella2", DbType="Binary(1)")] System.Data.Linq.Binary dataHuella2)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idHuella, cedula, dataHuella1, dataHuella2);
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_RegistrarImprevistos")]
-		public int pa_RegistrarImprevistos([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDIMPREVISTO", DbType="VarChar(6)")] string iDIMPREVISTO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FECHAINICIO", DbType="DateTime")] System.Nullable<System.DateTime> fECHAINICIO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FECHAFINAL", DbType="DateTime")] System.Nullable<System.DateTime> fECHAFINAL, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DESCRIPCION", DbType="Text")] string dESCRIPCION)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_RegistrarImprevistos")]
+		public int sp_RegistrarImprevistos([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDIMPREVISTO", DbType="VarChar(6)")] string iDIMPREVISTO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FECHAINICIO", DbType="DateTime")] System.Nullable<System.DateTime> fECHAINICIO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FECHAFINAL", DbType="DateTime")] System.Nullable<System.DateTime> fECHAFINAL, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DESCRIPCION", DbType="Text")] string dESCRIPCION)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDIMPREVISTO, fECHAINICIO, fECHAFINAL, dESCRIPCION);
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_RegistrarPersonal")]
-		public int pa_RegistrarPersonal([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cedula", DbType="VarChar(10)")] string cedula, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nombre", DbType="VarChar(30)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Apellido", DbType="VarChar(30)")] string apellido, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cargo", DbType="VarChar(25)")] string cargo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Titulo", DbType="VarChar(15)")] string titulo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Correo", DbType="VarChar(30)")] string correo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Sexo", DbType="Char(1)")] System.Nullable<char> sexo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Ciudad", DbType="VarChar(15)")] string ciudad, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Direccion", DbType="VarChar(75)")] string direccion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Telefono", DbType="VarChar(10)")] string telefono, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Tipo", DbType="VarChar(20)")] string tipo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Foto", DbType="Image")] System.Data.Linq.Binary foto)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_RegistrarPersonal")]
+		public int sp_RegistrarPersonal([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cedula", DbType="VarChar(10)")] string cedula, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nombre", DbType="VarChar(30)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Apellido", DbType="VarChar(30)")] string apellido, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cargo", DbType="VarChar(25)")] string cargo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Titulo", DbType="VarChar(15)")] string titulo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Correo", DbType="VarChar(30)")] string correo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Sexo", DbType="Char(1)")] System.Nullable<char> sexo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Ciudad", DbType="VarChar(15)")] string ciudad, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Direccion", DbType="VarChar(75)")] string direccion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Telefono", DbType="VarChar(10)")] string telefono, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Tipo", DbType="VarChar(20)")] string tipo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Foto", DbType="Image")] System.Data.Linq.Binary foto)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula, nombre, apellido, cargo, titulo, correo, sexo, ciudad, direccion, telefono, tipo, foto);
 			return ((int)(result.ReturnValue));
@@ -471,7 +471,7 @@ namespace CapaDatos
 		
 		private System.DateTime _FECHAHORAENTRADA;
 		
-		private System.DateTime _FECHAHORASALIDA;
+		private System.Nullable<System.DateTime> _FECHAHORASALIDA;
 		
 		private EntityRef<DETALLE_PERSONAL_CALENDARIO> _DETALLE_PERSONAL_CALENDARIO;
 		
@@ -487,7 +487,7 @@ namespace CapaDatos
     partial void OnCEDULAChanged();
     partial void OnFECHAHORAENTRADAChanging(System.DateTime value);
     partial void OnFECHAHORAENTRADAChanged();
-    partial void OnFECHAHORASALIDAChanging(System.DateTime value);
+    partial void OnFECHAHORASALIDAChanging(System.Nullable<System.DateTime> value);
     partial void OnFECHAHORASALIDAChanged();
     #endregion
 		
@@ -585,8 +585,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHAHORASALIDA", DbType="DateTime NOT NULL")]
-		public System.DateTime FECHAHORASALIDA
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHAHORASALIDA", DbType="DateTime")]
+		public System.Nullable<System.DateTime> FECHAHORASALIDA
 		{
 			get
 			{
@@ -2033,6 +2033,10 @@ namespace CapaDatos
 		
 		private System.Data.Linq.Binary _DATAHUELLA2;
 		
+		private string _NOMBRE;
+		
+		private System.Data.Linq.Binary _IMAGEN;
+		
 		private EntityRef<PERSONAL> _PERSONAL;
 		
     #region Definiciones de métodos de extensibilidad
@@ -2047,6 +2051,10 @@ namespace CapaDatos
     partial void OnDATAHUELLA1Changed();
     partial void OnDATAHUELLA2Changing(System.Data.Linq.Binary value);
     partial void OnDATAHUELLA2Changed();
+    partial void OnNOMBREChanging(string value);
+    partial void OnNOMBREChanged();
+    partial void OnIMAGENChanging(System.Data.Linq.Binary value);
+    partial void OnIMAGENChanged();
     #endregion
 		
 		public HUELLA()
@@ -2135,6 +2143,46 @@ namespace CapaDatos
 					this._DATAHUELLA2 = value;
 					this.SendPropertyChanged("DATAHUELLA2");
 					this.OnDATAHUELLA2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOMBRE", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string NOMBRE
+		{
+			get
+			{
+				return this._NOMBRE;
+			}
+			set
+			{
+				if ((this._NOMBRE != value))
+				{
+					this.OnNOMBREChanging(value);
+					this.SendPropertyChanging();
+					this._NOMBRE = value;
+					this.SendPropertyChanged("NOMBRE");
+					this.OnNOMBREChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IMAGEN", DbType="Image NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary IMAGEN
+		{
+			get
+			{
+				return this._IMAGEN;
+			}
+			set
+			{
+				if ((this._IMAGEN != value))
+				{
+					this.OnIMAGENChanging(value);
+					this.SendPropertyChanging();
+					this._IMAGEN = value;
+					this.SendPropertyChanged("IMAGEN");
+					this.OnIMAGENChanged();
 				}
 			}
 		}
@@ -4165,7 +4213,7 @@ namespace CapaDatos
 		}
 	}
 	
-	public partial class pa_BuscarPersonalCedulaResult
+	public partial class sp_BuscarPersonalCedulaResult
 	{
 		
 		private string _CEDULA;
@@ -4192,7 +4240,7 @@ namespace CapaDatos
 		
 		private System.Data.Linq.Binary _DATAFOTO;
 		
-		public pa_BuscarPersonalCedulaResult()
+		public sp_BuscarPersonalCedulaResult()
 		{
 		}
 		
@@ -4389,7 +4437,7 @@ namespace CapaDatos
 		}
 	}
 	
-	public partial class pa_FiltrarAsistenciaDiaResult
+	public partial class sp_FiltrarAsistenciaDiaResult
 	{
 		
 		private string _IDASISTENCIA;
@@ -4402,7 +4450,7 @@ namespace CapaDatos
 		
 		private System.Nullable<System.DateTime> _FECHAHORASALIDA;
 		
-		public pa_FiltrarAsistenciaDiaResult()
+		public sp_FiltrarAsistenciaDiaResult()
 		{
 		}
 		
@@ -4487,7 +4535,7 @@ namespace CapaDatos
 		}
 	}
 	
-	public partial class pa_FiltrarAsistenciaMesResult
+	public partial class sp_FiltrarAsistenciaMesResult
 	{
 		
 		private string _IDASISTENCIA;
@@ -4500,7 +4548,7 @@ namespace CapaDatos
 		
 		private System.Nullable<System.DateTime> _FECHAHORASALIDA;
 		
-		public pa_FiltrarAsistenciaMesResult()
+		public sp_FiltrarAsistenciaMesResult()
 		{
 		}
 		
@@ -4585,7 +4633,7 @@ namespace CapaDatos
 		}
 	}
 	
-	public partial class pa_FiltrarAsistenciaRangoResult
+	public partial class sp_FiltrarAsistenciaRangoResult
 	{
 		
 		private string _IDASISTENCIA;
@@ -4598,7 +4646,7 @@ namespace CapaDatos
 		
 		private System.Nullable<System.DateTime> _FECHAHORASALIDA;
 		
-		public pa_FiltrarAsistenciaRangoResult()
+		public sp_FiltrarAsistenciaRangoResult()
 		{
 		}
 		
@@ -4683,7 +4731,7 @@ namespace CapaDatos
 		}
 	}
 	
-	public partial class pa_FiltrarFaltaDiaResult
+	public partial class sp_FiltrarFaltaDiaResult
 	{
 		
 		private string _IDFALTA;
@@ -4696,7 +4744,7 @@ namespace CapaDatos
 		
 		private bool _JUSTIFICACION;
 		
-		public pa_FiltrarFaltaDiaResult()
+		public sp_FiltrarFaltaDiaResult()
 		{
 		}
 		
@@ -4781,7 +4829,7 @@ namespace CapaDatos
 		}
 	}
 	
-	public partial class pa_FiltrarFaltaMesResult
+	public partial class sp_FiltrarFaltaMesResult
 	{
 		
 		private string _IDFALTA;
@@ -4794,7 +4842,7 @@ namespace CapaDatos
 		
 		private bool _JUSTIFICACION;
 		
-		public pa_FiltrarFaltaMesResult()
+		public sp_FiltrarFaltaMesResult()
 		{
 		}
 		
@@ -4879,7 +4927,7 @@ namespace CapaDatos
 		}
 	}
 	
-	public partial class pa_FiltrarFaltaRangoResult
+	public partial class sp_FiltrarFaltaRangoResult
 	{
 		
 		private string _IDFALTA;
@@ -4892,7 +4940,7 @@ namespace CapaDatos
 		
 		private bool _JUSTIFICACION;
 		
-		public pa_FiltrarFaltaRangoResult()
+		public sp_FiltrarFaltaRangoResult()
 		{
 		}
 		
@@ -4977,7 +5025,7 @@ namespace CapaDatos
 		}
 	}
 	
-	public partial class pa_FiltrarPersonalValorResult
+	public partial class sp_FiltrarPersonalValorResult
 	{
 		
 		private string _CEDULA;
@@ -5004,7 +5052,7 @@ namespace CapaDatos
 		
 		private System.Data.Linq.Binary _DATAFOTO;
 		
-		public pa_FiltrarPersonalValorResult()
+		public sp_FiltrarPersonalValorResult()
 		{
 		}
 		
@@ -5201,7 +5249,7 @@ namespace CapaDatos
 		}
 	}
 	
-	public partial class pa_FiltrarPersonalValoresResult
+	public partial class sp_FiltrarPersonalValoresResult
 	{
 		
 		private string _CEDULA;
@@ -5228,7 +5276,7 @@ namespace CapaDatos
 		
 		private System.Data.Linq.Binary _DATAFOTO;
 		
-		public pa_FiltrarPersonalValoresResult()
+		public sp_FiltrarPersonalValoresResult()
 		{
 		}
 		
@@ -5425,7 +5473,7 @@ namespace CapaDatos
 		}
 	}
 	
-	public partial class pa_ListarCalendarioResult
+	public partial class sp_ListarCalendarioResult
 	{
 		
 		private string _IDCALENDARIO;
@@ -5438,7 +5486,7 @@ namespace CapaDatos
 		
 		private System.DateTime _FECHAFIN;
 		
-		public pa_ListarCalendarioResult()
+		public sp_ListarCalendarioResult()
 		{
 		}
 		
@@ -5523,7 +5571,7 @@ namespace CapaDatos
 		}
 	}
 	
-	public partial class pa_ListarHuellaCedulaResult
+	public partial class sp_ListarHuellaCedulaResult
 	{
 		
 		private string _IDHUELLA;
@@ -5534,7 +5582,11 @@ namespace CapaDatos
 		
 		private System.Data.Linq.Binary _DATAHUELLA2;
 		
-		public pa_ListarHuellaCedulaResult()
+		private string _NOMBRE;
+		
+		private System.Data.Linq.Binary _IMAGEN;
+		
+		public sp_ListarHuellaCedulaResult()
 		{
 		}
 		
@@ -5601,9 +5653,41 @@ namespace CapaDatos
 				}
 			}
 		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOMBRE", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string NOMBRE
+		{
+			get
+			{
+				return this._NOMBRE;
+			}
+			set
+			{
+				if ((this._NOMBRE != value))
+				{
+					this._NOMBRE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IMAGEN", DbType="Image NOT NULL", CanBeNull=false)]
+		public System.Data.Linq.Binary IMAGEN
+		{
+			get
+			{
+				return this._IMAGEN;
+			}
+			set
+			{
+				if ((this._IMAGEN != value))
+				{
+					this._IMAGEN = value;
+				}
+			}
+		}
 	}
 	
-	public partial class pa_Obtener_Personas_ImprevistoResult
+	public partial class sp_Obtener_Personas_ImprevistoResult
 	{
 		
 		private string _CEDULA;
@@ -5630,7 +5714,7 @@ namespace CapaDatos
 		
 		private System.Data.Linq.Binary _DATAFOTO;
 		
-		public pa_Obtener_Personas_ImprevistoResult()
+		public sp_Obtener_Personas_ImprevistoResult()
 		{
 		}
 		

@@ -15,7 +15,7 @@ namespace CapaLogicaNegocio.cln_GestionPlanificacion
     public class CalendarioLN
     {
         //metodo para listar las huellas de una persona
-        public List<pa_ListarCalendarioResult> ListarCalendario()
+        public List<sp_ListarCalendarioResult> ListarCalendario()
         {
             return CalendarioCD.ObtenerCalendario();
         }
