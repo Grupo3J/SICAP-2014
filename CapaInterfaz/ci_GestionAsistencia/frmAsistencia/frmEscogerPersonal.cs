@@ -1,4 +1,6 @@
-﻿using CapaLogicaNegocio.cln_GestionPersonal;
+﻿using CapaDatos;
+using CapaInterfaz.ci_GestionAsistencia.frmAsistencia;
+using CapaLogicaNegocio.cln_GestionPersonal;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,16 +25,31 @@ namespace CapaInterfaz.ci_GestionAsistencia
 
         private void frmEscogerPersonal_Load(object sender, EventArgs e)
         {
+            List<string> cedulasaencontrar = new List<string>();
+            using(CapaDatosDataContext DB = new CapaDatosDataContext())
+            {
+                var l = (from dt in DB.DETALLE_PERSONAL_CALENDARIO 
+                    where dt.IDCALENDARIO == frmEditAsistencia.IdCalendario
+                    select dt).ToList();
+                foreach(DETALLE_PERSONAL_CALENDARIO temp in l)
+                {
+                    cedulasaencontrar.Add(temp.CEDULA);
+                }
+            }
+            
             var linq = from p in personal.ListarPersonal("")
                         where p.TIPO == tipo
+                        join pet in cedulasaencontrar
+                        on p.CEDULA equals pet 
                         select p;
+
             dataGridView1.DataSource = linq.ToList();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //FrmInsertarGuia.IdLocal = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-            //Dispose();
+            frmEditAsistencia.Cedula = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            Dispose();
         }
 
 

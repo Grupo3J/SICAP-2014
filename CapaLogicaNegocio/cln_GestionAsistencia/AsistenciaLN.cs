@@ -1,5 +1,6 @@
 ﻿using CapaDatos;
 using CapaDatos.cd_GestionAsistencia;
+using CapaEntidades.GestionAsistencia;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,18 @@ namespace CapaLogicaNegocio.cln_GestionAsistencia
         public List<PersonalporAsistencia> ListarAsistenciaPersonal(string IdCalendario,DateTime Fecha) 
         {
             return AsistenciaCD.ObtenerPersonalporDia(IdCalendario,Fecha);
+        }
+
+        public bool InsertarAsistencia(Asistencia p)
+        {
+            if (AsistenciaCD.ExisteAsistencia(p.IdAsistencia))
+                return true;
+            else
+            {
+                AsistenciaCD.Create(p);
+                return false;
+            }
+
         }
     }
 }

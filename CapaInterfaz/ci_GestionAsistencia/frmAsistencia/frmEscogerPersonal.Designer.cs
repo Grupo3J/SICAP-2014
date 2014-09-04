@@ -49,6 +49,7 @@
             this.ClientSize = new System.Drawing.Size(652, 323);
             this.Controls.Add(this.dataGridView1);
             this.Name = "frmEscogerPersonal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Escoger Personal";
             this.Load += new System.EventHandler(this.frmEscogerPersonal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
