@@ -19,6 +19,11 @@ namespace CapaLogicaNegocio.cln_GestionAsistencia
         {
             return ImprevistoCD.ObtenerImprevistos(idcalendario);
         }
+        public List<sp_Obtener_Personas_ImprevistoResult> ListarPersonasporImprevisto(string idcalendario,string idimprevisto)
+        {
+            return ImprevistoCD.ObtenerPersonasporImprevisto(idcalendario,idimprevisto);
+        }
+
 
 
     }

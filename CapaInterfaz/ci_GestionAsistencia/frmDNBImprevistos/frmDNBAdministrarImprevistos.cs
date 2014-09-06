@@ -56,6 +56,27 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
             }
         }
 
+        private void dataGridViewX1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Ignore clicks that are not on button cells. 
+            if (e.RowIndex < 0 || e.ColumnIndex !=
+                dataGridViewX1.Columns["btnDescripcion"].Index && e.ColumnIndex !=
+                dataGridViewX1.Columns["btnPersonal"].Index) return;
+
+            var linq = imprevisto.ListarImprevistoporCalendario("123ab");
+
+            if (e.ColumnIndex == dataGridViewX1.Columns["btnDescripcion"].Index)
+            {    
+                frmDNBDescripcion descrip = new frmDNBDescripcion(linq[e.RowIndex].DESCRIPCION);
+                descrip.ShowDialog();
+            }
+            else 
+            {
+                frmDNBVerPersonal vpersonal = new frmDNBVerPersonal("123ab", linq[e.RowIndex].IDIMPREVISTO);
+                vpersonal.ShowDialog();
+            }
+        }
+
 
     }
 }

@@ -53,6 +53,26 @@ namespace CapaDatos.cd_GestionAsistencia
             }
         }
 
-        
+        public static List<sp_Obtener_Personas_ImprevistoResult> ObtenerPersonasporImprevisto(string idcalendario,string idimprevisto)
+        {
+            CapaDatosDataContext DB;
+            try
+            {
+                using (DB = new CapaDatosDataContext())
+                {
+                    var query = from prov in DB.sp_Obtener_Personas_Imprevisto(idcalendario,idimprevisto) select prov;
+                    return query.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new CapaDatosExcepciones("Error al Buscar el Id de Imprevisto.", ex);
+            }
+            finally
+            {
+                DB = null;
+            }
+        }
+
     }
 }

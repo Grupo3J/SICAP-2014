@@ -151,6 +151,12 @@
     <Compile Include="ci_GestionAsistencia\frmDNBAsistencia\frmDNBEditAsistencia.Designer.cs">
       <DependentUpon>frmDNBEditAsistencia.cs</DependentUpon>
     </Compile>
+    <Compile Include="ci_GestionAsistencia\frmDNBImprevistos\frmDNBDescripcion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionAsistencia\frmDNBImprevistos\frmDNBDescripcion.Designer.cs">
+      <DependentUpon>frmDNBDescripcion.cs</DependentUpon>
+    </Compile>
     <Compile Include="ci_GestionAsistencia\frmDNBImprevistos\frmDNBEditImprevisto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,12 @@
     </Compile>
     <Compile Include="ci_GestionAsistencia\frmDNBImprevistos\frmDNBAdministrarImprevistos.Designer.cs">
       <DependentUpon>frmDNBAdministrarImprevistos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ci_GestionAsistencia\frmDNBImprevistos\frmDNBVerPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionAsistencia\frmDNBImprevistos\frmDNBVerPersonal.Designer.cs">
+      <DependentUpon>frmDNBVerPersonal.cs</DependentUpon>
     </Compile>
     <Compile Include="ci_GestionPersonal\frmHuella\frmhuellaadminis.cs">
       <SubType>Form</SubType>
@@ -286,6 +298,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ci_GestionAsistencia\frmDNBImprevistos\frmDNBAdministrarImprevistos.resx">
       <DependentUpon>frmDNBAdministrarImprevistos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionAsistencia\frmDNBImprevistos\frmDNBDescripcion.resx">
+      <DependentUpon>frmDNBDescripcion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionAsistencia\frmDNBImprevistos\frmDNBVerPersonal.resx">
+      <DependentUpon>frmDNBVerPersonal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ci_GestionPersonal\frmHuella\frmhuellaadminis.resx">
       <DependentUpon>frmhuellaadminis.cs</DependentUpon>

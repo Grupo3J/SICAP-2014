@@ -448,24 +448,6 @@
     <Parameter Name="Foto" Parameter="foto" Type="System.Data.Linq.Binary" DbType="Image" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.sp_Obtener_Personas_Imprevisto" Method="sp_Obtener_Personas_Imprevisto">
-    <Parameter Name="IdImprevisto" Parameter="idImprevisto" Type="System.String" DbType="VarChar(6)" />
-    <Parameter Name="IdCalendario" Parameter="idCalendario" Type="System.String" DbType="VarChar(5)" />
-    <ElementType Name="sp_Obtener_Personas_ImprevistoResult">
-      <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="APELLIDO" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="CARGO" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
-      <Column Name="TITULO" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Column Name="CORREO" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="SEXO" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
-      <Column Name="CIUDAD" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
-      <Column Name="DIRECCION" Type="System.String" DbType="VarChar(75)" CanBeNull="true" />
-      <Column Name="TELEFONO" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="TIPO" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="DATAFOTO" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.sp_RegistrarAsistencia" Method="sp_RegistrarAsistencia">
     <Parameter Name="IDASISTENCIA" Parameter="iDASISTENCIA" Type="System.String" DbType="VarChar(10)" />
     <Parameter Name="IDCALENDARIO" Parameter="iDCALENDARIO" Type="System.String" DbType="VarChar(5)" />
@@ -540,6 +522,24 @@
       <Column Name="FECHAINICIO" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="FECHAFINAL" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="DESCRIPCION" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Obtener_Personas_Imprevisto" Method="sp_Obtener_Personas_Imprevisto">
+    <Parameter Name="IdCalendario" Parameter="idCalendario" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="IdImprevisto" Parameter="idImprevisto" Type="System.String" DbType="VarChar(6)" />
+    <ElementType Name="sp_Obtener_Personas_ImprevistoResult">
+      <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="APELLIDO" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="CARGO" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="TITULO" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="CORREO" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="SEXO" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="CIUDAD" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="DIRECCION" Type="System.String" DbType="VarChar(75)" CanBeNull="true" />
+      <Column Name="TELEFONO" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="TIPO" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="DATAFOTO" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
 </Database>
