@@ -47,6 +47,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="DevComponents.DotNetBar.Design, Version=11.8.0.8, Culture=neutral, PublicKeyToken=2c9ff1fddc42653c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\Program Files (x86)\DotNetBar for Windows Forms\DevComponents.DotNetBar.Design.dll</HintPath>
@@ -129,6 +132,36 @@
     </Compile>
     <Compile Include="ci_GestionAsistencia\frmAsistencia\frmEscogerPersonal.Designer.cs">
       <DependentUpon>frmEscogerPersonal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ci_GestionAsistencia\frmDNBAsistencia\frmDNBEscogerPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionAsistencia\frmDNBAsistencia\frmDNBEscogerPersonal.Designer.cs">
+      <DependentUpon>frmDNBEscogerPersonal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ci_GestionAsistencia\frmDNBAsistencia\frmDNBAdministrarAsistencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionAsistencia\frmDNBAsistencia\frmDNBAdministrarAsistencia.Designer.cs">
+      <DependentUpon>frmDNBAdministrarAsistencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ci_GestionAsistencia\frmDNBAsistencia\frmDNBEditAsistencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionAsistencia\frmDNBAsistencia\frmDNBEditAsistencia.Designer.cs">
+      <DependentUpon>frmDNBEditAsistencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ci_GestionAsistencia\frmDNBImprevistos\frmDNBEditImprevisto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionAsistencia\frmDNBImprevistos\frmDNBEditImprevisto.Designer.cs">
+      <DependentUpon>frmDNBEditImprevisto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ci_GestionAsistencia\frmDNBImprevistos\frmDNBAdministrarImprevistos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionAsistencia\frmDNBImprevistos\frmDNBAdministrarImprevistos.Designer.cs">
+      <DependentUpon>frmDNBAdministrarImprevistos.cs</DependentUpon>
     </Compile>
     <Compile Include="ci_GestionPersonal\frmHuella\frmhuellaadminis.cs">
       <SubType>Form</SubType>
@@ -238,6 +271,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ci_GestionAsistencia\frmAsistencia\frmEscogerPersonal.resx">
       <DependentUpon>frmEscogerPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionAsistencia\frmDNBAsistencia\frmDNBEscogerPersonal.resx">
+      <DependentUpon>frmDNBEscogerPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionAsistencia\frmDNBAsistencia\frmDNBAdministrarAsistencia.resx">
+      <DependentUpon>frmDNBAdministrarAsistencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionAsistencia\frmDNBAsistencia\frmDNBEditAsistencia.resx">
+      <DependentUpon>frmDNBEditAsistencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionAsistencia\frmDNBImprevistos\Edit Imprevisto.resx">
+      <DependentUpon>frmDNBEditImprevisto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionAsistencia\frmDNBImprevistos\frmDNBAdministrarImprevistos.resx">
+      <DependentUpon>frmDNBAdministrarImprevistos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ci_GestionPersonal\frmHuella\frmhuellaadminis.resx">
       <DependentUpon>frmhuellaadminis.cs</DependentUpon>
@@ -361,6 +409,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\imaMano.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buscar.bmp" />
+    <Content Include="Resources\buscar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

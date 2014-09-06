@@ -511,6 +511,13 @@ namespace CapaDatos
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula, nombre, apellido, cargo, titulo, correo, sexo, ciudad, direccion, telefono, tipo, foto);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ImprevistosporCalendario")]
+		public ISingleResult<sp_ImprevistosporCalendarioResult> sp_ImprevistosporCalendario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdCalendario", DbType="VarChar(5)")] string idCalendario)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idCalendario);
+			return ((ISingleResult<sp_ImprevistosporCalendarioResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ASISTENCIA")]
@@ -6122,6 +6129,86 @@ namespace CapaDatos
 				if ((this._DATAFOTO != value))
 				{
 					this._DATAFOTO = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_ImprevistosporCalendarioResult
+	{
+		
+		private string _IDIMPREVISTO;
+		
+		private System.DateTime _FECHAINICIO;
+		
+		private System.DateTime _FECHAFINAL;
+		
+		private string _DESCRIPCION;
+		
+		public sp_ImprevistosporCalendarioResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDIMPREVISTO", DbType="VarChar(6) NOT NULL", CanBeNull=false)]
+		public string IDIMPREVISTO
+		{
+			get
+			{
+				return this._IDIMPREVISTO;
+			}
+			set
+			{
+				if ((this._IDIMPREVISTO != value))
+				{
+					this._IDIMPREVISTO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHAINICIO", DbType="DateTime NOT NULL")]
+		public System.DateTime FECHAINICIO
+		{
+			get
+			{
+				return this._FECHAINICIO;
+			}
+			set
+			{
+				if ((this._FECHAINICIO != value))
+				{
+					this._FECHAINICIO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHAFINAL", DbType="DateTime NOT NULL")]
+		public System.DateTime FECHAFINAL
+		{
+			get
+			{
+				return this._FECHAFINAL;
+			}
+			set
+			{
+				if ((this._FECHAFINAL != value))
+				{
+					this._FECHAFINAL = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DESCRIPCION", DbType="Text NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string DESCRIPCION
+		{
+			get
+			{
+				return this._DESCRIPCION;
+			}
+			set
+			{
+				if ((this._DESCRIPCION != value))
+				{
+					this._DESCRIPCION = value;
 				}
 			}
 		}

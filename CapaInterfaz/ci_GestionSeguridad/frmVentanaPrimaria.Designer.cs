@@ -61,6 +61,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.administrarAsistenciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.administrarCalendarioLaboralToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.administrarFaltasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -137,6 +140,10 @@
             // 
             // gestionAsistenciaToolStripMenuItem
             // 
+            this.gestionAsistenciaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.administrarAsistenciaToolStripMenuItem,
+            this.administrarCalendarioLaboralToolStripMenuItem1,
+            this.administrarFaltasToolStripMenuItem});
             this.gestionAsistenciaToolStripMenuItem.Name = "gestionAsistenciaToolStripMenuItem";
             this.gestionAsistenciaToolStripMenuItem.Size = new System.Drawing.Size(115, 20);
             this.gestionAsistenciaToolStripMenuItem.Text = "Gestion Asistencia";
@@ -370,6 +377,26 @@
             this.timer1.Interval = 60;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // administrarAsistenciaToolStripMenuItem
+            // 
+            this.administrarAsistenciaToolStripMenuItem.Name = "administrarAsistenciaToolStripMenuItem";
+            this.administrarAsistenciaToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.administrarAsistenciaToolStripMenuItem.Text = "Administrar Asistencia";
+            this.administrarAsistenciaToolStripMenuItem.Click += new System.EventHandler(this.administrarAsistenciaToolStripMenuItem_Click);
+            // 
+            // administrarCalendarioLaboralToolStripMenuItem1
+            // 
+            this.administrarCalendarioLaboralToolStripMenuItem1.Name = "administrarCalendarioLaboralToolStripMenuItem1";
+            this.administrarCalendarioLaboralToolStripMenuItem1.Size = new System.Drawing.Size(200, 22);
+            this.administrarCalendarioLaboralToolStripMenuItem1.Text = "Administrar Imprevistos";
+            this.administrarCalendarioLaboralToolStripMenuItem1.Click += new System.EventHandler(this.administrarCalendarioLaboralToolStripMenuItem1_Click);
+            // 
+            // administrarFaltasToolStripMenuItem
+            // 
+            this.administrarFaltasToolStripMenuItem.Name = "administrarFaltasToolStripMenuItem";
+            this.administrarFaltasToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.administrarFaltasToolStripMenuItem.Text = "Administrar Faltas";
+            // 
             // frmVentanaPrimaria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -436,6 +463,9 @@
         private System.Windows.Forms.ToolStripMenuItem administrarCalendarioLaboralToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem administrarDiasAdicionalesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem administrarDiasNoLaborablesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem administrarAsistenciaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem administrarCalendarioLaboralToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem administrarFaltasToolStripMenuItem;
 
     }
 }

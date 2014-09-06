@@ -12,6 +12,8 @@ using CapaInterfaz.ci_GestionPersonal.frmPersonal;
 using CapaInterfaz.ci_GestionPlanificacion.frmCalendarioLaboral;
 using CapaInterfaz.ci_GestionPlanificacion.frmDiasAdicionales;
 using CapaInterfaz.ci_GestionPlanificacion.frmDiasNoLaborables;
+using CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia;
+using CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos;
 
 
 
@@ -119,8 +121,7 @@ namespace CapaInterfaz.ci_GestionPersonal
 
         private void gestionAsistenciaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmAdministrarAsistencia frmaa = new frmAdministrarAsistencia();
-            frmaa.Show();
+
         }
 
         private void gestionDePlanificacionToolStripMenuItem_Click(object sender, EventArgs e)
@@ -145,6 +146,18 @@ namespace CapaInterfaz.ci_GestionPersonal
         {
             frmAdministracionDiasNoLaborables frmdnl = new frmAdministracionDiasNoLaborables();
             frmdnl.Show();
+        }
+
+        private void administrarAsistenciaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDNBAdministrarAsistencia frmaa = new frmDNBAdministrarAsistencia();
+            frmaa.Show();
+        }
+
+        private void administrarCalendarioLaboralToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmDNBAdministrarImprevistos frmai = new frmDNBAdministrarImprevistos();
+            frmai.Show();
         }
 
     }
