@@ -196,7 +196,7 @@
         <classShapeMoniker Id="1b821989-77c5-4e68-883b-67e768d19461" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(1.718748 : 5.1170068359375); (1.718748 : 6.5112939453125); (3.04166666666667 : 6.5112939453125 : JumpStart); (3.20833333333333 : 6.5112939453125 : JumpEnd); (11.25 : 6.5112939453125); (11.25 : 5.5937505); (13.7916666666667 : 5.5937505 : JumpStart); (13.9583333333333 : 5.5937505 : JumpEnd); (14.25 : 5.5937505)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(1.718748 : 5.1170068359375); (1.718748 : 6.5112939453125); (11.25 : 6.5112939453125); (11.25 : 5.5937505); (14.25 : 5.5937505)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CapaDatosDataContext/PERSONAL/PERSONAL_USUARIO" />
       <nodes>
         <classShapeMoniker Id="b1fd9c73-e9d2-48cc-8f0e-8015511d83f4" />

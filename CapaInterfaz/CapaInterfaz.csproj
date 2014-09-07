@@ -293,14 +293,14 @@
     <EmbeddedResource Include="ci_GestionAsistencia\frmDNBAsistencia\frmDNBEditAsistencia.resx">
       <DependentUpon>frmDNBEditAsistencia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ci_GestionAsistencia\frmDNBImprevistos\Edit Imprevisto.resx">
-      <DependentUpon>frmDNBEditImprevisto.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ci_GestionAsistencia\frmDNBImprevistos\frmDNBAdministrarImprevistos.resx">
       <DependentUpon>frmDNBAdministrarImprevistos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ci_GestionAsistencia\frmDNBImprevistos\frmDNBDescripcion.resx">
       <DependentUpon>frmDNBDescripcion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionAsistencia\frmDNBImprevistos\frmDNBEditImprevisto.resx">
+      <DependentUpon>frmDNBEditImprevisto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ci_GestionAsistencia\frmDNBImprevistos\frmDNBVerPersonal.resx">
       <DependentUpon>frmDNBVerPersonal.cs</DependentUpon>

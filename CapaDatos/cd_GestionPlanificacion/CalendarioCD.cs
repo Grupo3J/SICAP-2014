@@ -21,10 +21,8 @@ namespace CapaDatos.cd_GestionPlanificacion
                 c.Descripcion = cal.Descripcion;
                 c.FechaInicio = cal.FechaInicio;
                 c.FechaFin = cal.FechaFin;
-                
                 bd.sp_RegistrarCalendario(c.IdCalendario, c.Nombre, c.Descripcion, c.FechaInicio, c.FechaFin);
                 bd.SubmitChanges();
-
             }
             catch (CapaDatosExcepciones ex)
             {
@@ -134,6 +132,79 @@ namespace CapaDatos.cd_GestionPlanificacion
             return cal;
         }
 
+        //obtener personal por calendario
+        public static List<sp_PersonalporCalendarioResult> PersonalporCalendario(string idcalendario) 
+        {
+            CapaDatosDataContext DB;
+            try
+            {
+                using (DB = new CapaDatosDataContext())
+                {
+                    return DB.sp_PersonalporCalendario(idcalendario).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new CapaDatosExcepciones("Error al Listar Personal", ex);
+            }
+            finally
+            {
+                DB = null;
+            }
+        }
 
+        //guardar personal en detalle_personal_calendario
+        public static List<sp_PersonalporCalendarioResult> IngresarPersonal(List<sp_PersonalporCalendarioResult> temp,string idcalendario,string idimprevisto) 
+        {
+            CapaDatosDataContext DB;
+            try
+            {
+                using (DB = new CapaDatosDataContext())
+                {
+                    foreach (sp_PersonalporCalendarioResult t in temp)
+                    {
+                        DETALLE_IMPREVISTO_CALENDARIO detpc = new DETALLE_IMPREVISTO_CALENDARIO
+                        {
+                            IDCALENDARIO = idcalendario,
+                            CEDULA = t.CEDULA,
+                            IDIMPREVISTO = idimprevisto
+                        };
+                        DB.DETALLE_IMPREVISTO_CALENDARIO.InsertOnSubmit(detpc);
+                    }
+                    DB.SubmitChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new CapaDatosExcepciones("Error al Insertar el Imprevisto", ex);
+            }
+            finally 
+            {
+                DB = null;
+            }
+            return temp;
+        }
+
+        public static void Eliminar_Personal_Detalle(string idcalendario,string idimprevisto) 
+        {
+            CapaDatosDataContext DB;
+            try
+            {
+                using (DB = new CapaDatosDataContext())
+                {
+ 
+                    DB.sp_Eliminar_Detalle_Imprevisto_Calendario(idcalendario,idimprevisto);
+                    DB.SubmitChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new CapaDatosExcepciones("Error al Eliminar el Personal de Imprevisto", ex);
+            }
+            finally
+            {
+                DB = null;
+            }
+        }
     }
 }

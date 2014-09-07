@@ -8,7 +8,6 @@ using CapaInterfaz.ci_GestionSeguridad;
 using CapaInterfaz.ci_GestionPersonal;
 using CapaInterfaz.ci_GestionPlanificacion.frmCalendarioLaboral;
 using CapaInterfaz.ci_GestionPlanificacion.frmDiasAdicionales;
-
 using CapaInterfaz.ci_GestionAsistencia.frmAsistencia;
 using CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia;
 using CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos;
@@ -24,12 +23,12 @@ namespace CapaInterfaz.ci_GestionSeguridad
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-           // Application.Run(new frmVentanaPrimaria());
+            Application.Run(new frmVentanaPrimaria());
             //Application.Run(new frmAdministracionCalendarioLaboral());
             //Application.Run(new frmDNBAdministrarAsistencia());
             //Application.Run(new frmAdministracionDiasAdicionales());
             //Application.Run(new frmLogin());
-            Application.Run(new frmDNBAdministrarImprevistos());
+            //Application.Run(new frmDNBAdministrarImprevistos());
             //Application.Run(new FrmAdministracionPersonal());
 
 

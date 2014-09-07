@@ -1,5 +1,6 @@
 ﻿using CapaDatos;
 using CapaDatos.cd_GestionAsistencia;
+using CapaEntidades.GestionAsistencia;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +25,22 @@ namespace CapaLogicaNegocio.cln_GestionAsistencia
             return ImprevistoCD.ObtenerPersonasporImprevisto(idcalendario,idimprevisto);
         }
 
+        public bool InsertarImprevisto(Imprevistos p)
+        {
+            if (ImprevistoCD.Existe(p.IdImprevisto))
+                return true;
+            else
+            {
+                ImprevistoCD.Create(p);
+                return false;
+            }
+        }
 
+        public bool ModificarImprevisto(Imprevistos p) 
+        {
+            ImprevistoCD.ModificarImprevisto(p);
+            return false;
+        }
 
     }
 }

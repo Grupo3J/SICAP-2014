@@ -41,7 +41,7 @@ namespace CapaLogicaNegocio.cln_GestionPlanificacion
 
         }
 
-        public bool EliminarCalendario(String idCalendario)
+        public bool EliminarCalendario(string idCalendario)
         {
             CalendarioCD.EliminarCalendario(idCalendario);
             return false;
@@ -49,7 +49,20 @@ namespace CapaLogicaNegocio.cln_GestionPlanificacion
 
         }
 
+        public List<sp_PersonalporCalendarioResult> PersonalporCalendario(string idcalendario) 
+        {
+            return CalendarioCD.PersonalporCalendario(idcalendario);
+        }
 
+        public List<sp_PersonalporCalendarioResult> IngresarPersonalDet(List<sp_PersonalporCalendarioResult> temp,string idcalendario,string idimprevisto) 
+        {
+            return CalendarioCD.IngresarPersonal(temp,idcalendario,idimprevisto);
+        }
+
+        public void EliminarDetallePersonal(string idcalendario,string idimprevisto) 
+        {
+            CalendarioCD.Eliminar_Personal_Detalle(idcalendario,idimprevisto);
+        }
 
         public string GenerarIdCalendario()
         {

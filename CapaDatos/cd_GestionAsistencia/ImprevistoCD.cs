@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaEntidades.GestionAsistencia;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -74,5 +75,57 @@ namespace CapaDatos.cd_GestionAsistencia
             }
         }
 
+        //metodo para insertar una nueva asistencia
+        public static Imprevistos Create(Imprevistos not)
+        {
+            CapaDatosDataContext bd = new CapaDatosDataContext();
+            try
+            {
+                Imprevistos p = new Imprevistos();
+                p.IdImprevisto = not.IdImprevisto;
+                p.FechaInicio = not.FechaInicio;
+                p.FechaFinal = not.FechaFinal;
+                p.Descripcion = not.Descripcion;
+                bd.sp_RegistrarImprevistos(p.IdImprevisto, p.FechaInicio, p.FechaFinal, p.Descripcion);
+                bd.SubmitChanges();
+            }
+            catch (CapaDatosExcepciones ex)
+            {
+                throw new CapaDatosExcepciones("Error al  Insertar Imprevisto", ex);
+            }
+            finally
+            {
+                bd = null;
+            }
+
+            return not;
+        }
+
+        public static Imprevistos ModificarImprevisto(Imprevistos cal)
+        {
+            CapaDatosDataContext bd = new CapaDatosDataContext();
+            try
+            {
+                Imprevistos c = new Imprevistos();
+
+                c.IdImprevisto = cal.IdImprevisto;
+                c.Descripcion = cal.Descripcion;
+                c.FechaInicio = cal.FechaInicio;
+                c.FechaFinal = cal.FechaFinal;
+                bd.sp_ModificarImprevistoId(c.IdImprevisto, c.FechaInicio, c.FechaFinal, c.Descripcion);
+                bd.SubmitChanges();
+
+            }
+            catch (CapaDatosExcepciones ex)
+            {
+                throw new CapaDatosExcepciones("Error al Modificar Imprevistos", ex);
+            }
+            finally
+            {
+                bd = null;
+            }
+
+            return cal;
+        }
     }
 }

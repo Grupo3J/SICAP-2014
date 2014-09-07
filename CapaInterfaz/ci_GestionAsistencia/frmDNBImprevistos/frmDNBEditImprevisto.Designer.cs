@@ -28,30 +28,30 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.dataGridViewX1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.dataGridViewX2 = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.btnAgregar = new DevComponents.DotNetBar.ButtonX();
-            this.btnEliminar = new DevComponents.DotNetBar.ButtonX();
-            this.btnAgregarTodos = new DevComponents.DotNetBar.ButtonX();
             this.btnEliminarTodos = new DevComponents.DotNetBar.ButtonX();
+            this.btnAgregarTodos = new DevComponents.DotNetBar.ButtonX();
+            this.btnEliminar = new DevComponents.DotNetBar.ButtonX();
+            this.btnAgregar = new DevComponents.DotNetBar.ButtonX();
+            this.dataGridViewX2 = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.dataGridViewX1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.dtifechainicio = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.dtifechafin = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.dtifechainicio = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.groupPanel3 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.groupPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).BeginInit();
             this.groupPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtifechainicio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtifechafin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtifechainicio)).BeginInit();
             this.groupPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,6 +65,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
             this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.buttonX1.TabIndex = 0;
             this.buttonX1.Text = "Guardar";
+            this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
             // 
             // buttonX2
             // 
@@ -76,6 +77,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
             this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.buttonX2.TabIndex = 1;
             this.buttonX2.Text = "Regresar";
+            this.buttonX2.Click += new System.EventHandler(this.buttonX2_Click);
             // 
             // groupPanel1
             // 
@@ -123,61 +125,17 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
             this.groupPanel1.TabIndex = 2;
             this.groupPanel1.Text = "Personal";
             // 
-            // dataGridViewX1
+            // btnEliminarTodos
             // 
-            this.dataGridViewX1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridViewX1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.dataGridViewX1.Location = new System.Drawing.Point(4, 4);
-            this.dataGridViewX1.Name = "dataGridViewX1";
-            this.dataGridViewX1.Size = new System.Drawing.Size(325, 215);
-            this.dataGridViewX1.TabIndex = 0;
-            // 
-            // dataGridViewX2
-            // 
-            this.dataGridViewX2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewX2.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewX2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.dataGridViewX2.Location = new System.Drawing.Point(395, 4);
-            this.dataGridViewX2.Name = "dataGridViewX2";
-            this.dataGridViewX2.Size = new System.Drawing.Size(326, 215);
-            this.dataGridViewX2.TabIndex = 1;
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnAgregar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnAgregar.Location = new System.Drawing.Point(335, 17);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(54, 23);
-            this.btnAgregar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnAgregar.TabIndex = 2;
-            this.btnAgregar.Text = ">";
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnEliminar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnEliminar.Location = new System.Drawing.Point(336, 92);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(53, 23);
-            this.btnEliminar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnEliminar.TabIndex = 3;
-            this.btnEliminar.Text = "<";
+            this.btnEliminarTodos.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnEliminarTodos.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnEliminarTodos.Location = new System.Drawing.Point(335, 122);
+            this.btnEliminarTodos.Name = "btnEliminarTodos";
+            this.btnEliminarTodos.Size = new System.Drawing.Size(54, 23);
+            this.btnEliminarTodos.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnEliminarTodos.TabIndex = 5;
+            this.btnEliminarTodos.Text = "<<";
+            this.btnEliminarTodos.Click += new System.EventHandler(this.btnEliminarTodos_Click);
             // 
             // btnAgregarTodos
             // 
@@ -189,17 +147,69 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
             this.btnAgregarTodos.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnAgregarTodos.TabIndex = 4;
             this.btnAgregarTodos.Text = ">>";
+            this.btnAgregarTodos.Click += new System.EventHandler(this.btnAgregarTodos_Click);
             // 
-            // btnEliminarTodos
+            // btnEliminar
             // 
-            this.btnEliminarTodos.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnEliminarTodos.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnEliminarTodos.Location = new System.Drawing.Point(335, 122);
-            this.btnEliminarTodos.Name = "btnEliminarTodos";
-            this.btnEliminarTodos.Size = new System.Drawing.Size(54, 23);
-            this.btnEliminarTodos.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnEliminarTodos.TabIndex = 5;
-            this.btnEliminarTodos.Text = ">>";
+            this.btnEliminar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnEliminar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnEliminar.Location = new System.Drawing.Point(336, 92);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(53, 23);
+            this.btnEliminar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnEliminar.TabIndex = 3;
+            this.btnEliminar.Text = "<";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnAgregar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnAgregar.Location = new System.Drawing.Point(335, 17);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(54, 23);
+            this.btnAgregar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnAgregar.TabIndex = 2;
+            this.btnAgregar.Text = ">";
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // dataGridViewX2
+            // 
+            this.dataGridViewX2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewX2.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewX2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.dataGridViewX2.Location = new System.Drawing.Point(395, 4);
+            this.dataGridViewX2.Name = "dataGridViewX2";
+            this.dataGridViewX2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewX2.Size = new System.Drawing.Size(326, 215);
+            this.dataGridViewX2.TabIndex = 1;
+            // 
+            // dataGridViewX1
+            // 
+            this.dataGridViewX1.AllowUserToAddRows = false;
+            this.dataGridViewX1.AllowUserToDeleteRows = false;
+            this.dataGridViewX1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewX1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.dataGridViewX1.Location = new System.Drawing.Point(4, 4);
+            this.dataGridViewX1.Name = "dataGridViewX1";
+            this.dataGridViewX1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewX1.Size = new System.Drawing.Size(325, 215);
+            this.dataGridViewX1.TabIndex = 0;
             // 
             // groupPanel2
             // 
@@ -245,17 +255,65 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
             this.groupPanel2.TabIndex = 3;
             this.groupPanel2.Text = "Fecha";
             // 
-            // labelX1
+            // dtifechafin
             // 
             // 
             // 
             // 
-            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.Location = new System.Drawing.Point(14, 4);
-            this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(68, 23);
-            this.labelX1.TabIndex = 0;
-            this.labelX1.Text = "Fecha Inicio";
+            this.dtifechafin.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.dtifechafin.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dtifechafin.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
+            this.dtifechafin.ButtonDropDown.Visible = true;
+            this.dtifechafin.IsPopupCalendarOpen = false;
+            this.dtifechafin.Location = new System.Drawing.Point(476, 5);
+            // 
+            // 
+            // 
+            this.dtifechafin.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dtifechafin.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dtifechafin.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
+            this.dtifechafin.MonthCalendar.ClearButtonVisible = true;
+            // 
+            // 
+            // 
+            this.dtifechafin.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.dtifechafin.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
+            this.dtifechafin.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.dtifechafin.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.dtifechafin.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.dtifechafin.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
+            this.dtifechafin.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dtifechafin.MonthCalendar.DisplayMonth = new System.DateTime(2014, 9, 1, 0, 0, 0, 0);
+            this.dtifechafin.MonthCalendar.MarkedDates = new System.DateTime[0];
+            this.dtifechafin.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dtifechafin.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.dtifechafin.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
+            this.dtifechafin.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.dtifechafin.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dtifechafin.MonthCalendar.TodayButtonVisible = true;
+            this.dtifechafin.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
+            this.dtifechafin.Name = "dtifechafin";
+            this.dtifechafin.Size = new System.Drawing.Size(200, 22);
+            this.dtifechafin.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.dtifechafin.TabIndex = 3;
+            // 
+            // labelX2
+            // 
+            // 
+            // 
+            // 
+            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX2.Location = new System.Drawing.Point(394, 3);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(75, 23);
+            this.labelX2.TabIndex = 2;
+            this.labelX2.Text = "Fecha Fin";
             // 
             // dtifechainicio
             // 
@@ -305,65 +363,17 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
             this.dtifechainicio.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.dtifechainicio.TabIndex = 1;
             // 
-            // labelX2
+            // labelX1
             // 
             // 
             // 
             // 
-            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX2.Location = new System.Drawing.Point(394, 3);
-            this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(75, 23);
-            this.labelX2.TabIndex = 2;
-            this.labelX2.Text = "Fecha Fin";
-            // 
-            // dtifechafin
-            // 
-            // 
-            // 
-            // 
-            this.dtifechafin.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.dtifechafin.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dtifechafin.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
-            this.dtifechafin.ButtonDropDown.Visible = true;
-            this.dtifechafin.IsPopupCalendarOpen = false;
-            this.dtifechafin.Location = new System.Drawing.Point(476, 5);
-            // 
-            // 
-            // 
-            this.dtifechafin.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.dtifechafin.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dtifechafin.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
-            this.dtifechafin.MonthCalendar.ClearButtonVisible = true;
-            // 
-            // 
-            // 
-            this.dtifechafin.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.dtifechafin.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
-            this.dtifechafin.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.dtifechafin.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.dtifechafin.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.dtifechafin.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
-            this.dtifechafin.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dtifechafin.MonthCalendar.DisplayMonth = new System.DateTime(2014, 9, 1, 0, 0, 0, 0);
-            this.dtifechafin.MonthCalendar.MarkedDates = new System.DateTime[0];
-            this.dtifechafin.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.dtifechafin.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.dtifechafin.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
-            this.dtifechafin.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.dtifechafin.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dtifechafin.MonthCalendar.TodayButtonVisible = true;
-            this.dtifechafin.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
-            this.dtifechafin.Name = "dtifechafin";
-            this.dtifechafin.Size = new System.Drawing.Size(200, 22);
-            this.dtifechafin.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dtifechafin.TabIndex = 3;
+            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX1.Location = new System.Drawing.Point(14, 4);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.Size = new System.Drawing.Size(68, 23);
+            this.labelX1.TabIndex = 0;
+            this.labelX1.Text = "Fecha Inicio";
             // 
             // groupPanel3
             // 
@@ -423,7 +433,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
             this.textBoxX1.Size = new System.Drawing.Size(710, 94);
             this.textBoxX1.TabIndex = 0;
             // 
-            // Edit_Imprevisto
+            // frmDNBEditImprevisto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -435,15 +445,16 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
             this.Controls.Add(this.buttonX1);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "Edit_Imprevisto";
+            this.Name = "frmDNBEditImprevisto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Imprevisto";
+            this.Load += new System.EventHandler(this.frmDNBEditImprevisto_Load);
             this.groupPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).EndInit();
             this.groupPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtifechainicio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtifechafin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtifechainicio)).EndInit();
             this.groupPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -454,18 +465,18 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
         private DevComponents.DotNetBar.ButtonX buttonX1;
         private DevComponents.DotNetBar.ButtonX buttonX2;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
-        private DevComponents.DotNetBar.Controls.DataGridViewX dataGridViewX2;
-        private DevComponents.DotNetBar.Controls.DataGridViewX dataGridViewX1;
         private DevComponents.DotNetBar.ButtonX btnAgregarTodos;
         private DevComponents.DotNetBar.ButtonX btnEliminar;
         private DevComponents.DotNetBar.ButtonX btnAgregar;
         private DevComponents.DotNetBar.ButtonX btnEliminarTodos;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel2;
-        private DevComponents.Editors.DateTimeAdv.DateTimeInput dtifechafin;
         private DevComponents.DotNetBar.LabelX labelX2;
-        private DevComponents.Editors.DateTimeAdv.DateTimeInput dtifechainicio;
         private DevComponents.DotNetBar.LabelX labelX1;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel3;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
+        public DevComponents.Editors.DateTimeAdv.DateTimeInput dtifechainicio;
+        public DevComponents.DotNetBar.Controls.DataGridViewX dataGridViewX2;
+        public DevComponents.DotNetBar.Controls.DataGridViewX dataGridViewX1;
+        public DevComponents.Editors.DateTimeAdv.DateTimeInput dtifechafin;
+        public DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
     }
 }
