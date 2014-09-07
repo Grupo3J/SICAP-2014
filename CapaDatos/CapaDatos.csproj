@@ -52,6 +52,7 @@
     </Compile>
     <Compile Include="CapaDatosExcepciones.cs" />
     <Compile Include="cd_GestionAsistencia\AsistenciaCD.cs" />
+    <Compile Include="cd_GestionAsistencia\FaltaCD.cs" />
     <Compile Include="cd_GestionAsistencia\ImprevistoCD.cs" />
     <Compile Include="cd_GestionPersonal\HuellaCD.cs" />
     <Compile Include="cd_GestionPersonal\PersonalCd.cs" />

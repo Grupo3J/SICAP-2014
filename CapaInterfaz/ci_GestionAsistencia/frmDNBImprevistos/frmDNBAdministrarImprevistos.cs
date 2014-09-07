@@ -191,5 +191,26 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
                 }
             }
         }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewX1.Rows.Count > 0) 
+            {
+                DialogResult dialogResult = MessageBox.Show("Deseea Eliminar el Imprevisto\n", "Administración de Imprevistos", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    //do something
+                    calendario.EliminarDetallePersonal(idcalendario, dataGridViewX1.CurrentRow.Cells[0].Value.ToString());
+                    imprevisto.EliminarImprevisto(dataGridViewX1.CurrentRow.Cells[0].Value.ToString());
+                    MostrarImprevistos(idcalendario);
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    //do something else
+                    return;
+                }
+                
+            }
+        }
     }
 }

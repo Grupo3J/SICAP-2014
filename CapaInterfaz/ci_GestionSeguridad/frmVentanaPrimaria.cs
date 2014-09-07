@@ -14,6 +14,7 @@ using CapaInterfaz.ci_GestionPlanificacion.frmDiasAdicionales;
 using CapaInterfaz.ci_GestionPlanificacion.frmDiasNoLaborables;
 using CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia;
 using CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos;
+using CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas;
 
 
 
@@ -158,6 +159,12 @@ namespace CapaInterfaz.ci_GestionPersonal
         {
             frmDNBAdministrarImprevistos frmai = new frmDNBAdministrarImprevistos();
             frmai.Show();
+        }
+
+        private void administrarFaltasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDNBAdministrarFaltas frmaf = new frmDNBAdministrarFaltas();
+            frmaf.Show();
         }
 
     }

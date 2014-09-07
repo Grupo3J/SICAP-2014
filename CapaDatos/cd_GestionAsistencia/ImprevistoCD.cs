@@ -127,5 +127,23 @@ namespace CapaDatos.cd_GestionAsistencia
 
             return cal;
         }
+
+        public static void EliminarImprevisto(string idimprevisto)
+        {
+            CapaDatosDataContext DB = new CapaDatosDataContext();
+            try
+            {
+                DB.sp_EliminarImprevistoId(idimprevisto);
+                DB.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new CapaDatosExcepciones("Error al Eliminar Imprevisto", ex.GetBaseException());
+            }
+            finally
+            {
+                DB = null;
+            }
+        }
     }
 }

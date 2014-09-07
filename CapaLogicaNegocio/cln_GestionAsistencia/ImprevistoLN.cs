@@ -42,5 +42,9 @@ namespace CapaLogicaNegocio.cln_GestionAsistencia
             return false;
         }
 
+        public void EliminarImprevisto(string idimprevisto) 
+        {
+            ImprevistoCD.EliminarImprevisto(idimprevisto);
+        }
     }
 }

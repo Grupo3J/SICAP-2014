@@ -1,6 +1,6 @@
-namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
+namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
 {
-    partial class frmDNBAdministrarImprevistos
+    partial class frmDNBAdministrarFaltas
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDNBAdministrarImprevistos));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDNBAdministrarFaltas));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
@@ -37,10 +37,16 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripcmbcalendario = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.superTabControl1 = new DevComponents.DotNetBar.SuperTabControl();
+            this.superTabControlPanel1 = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.groupbox1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.dataGridViewX1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.superTabItem1 = new DevComponents.DotNetBar.SuperTabItem();
             this.toolStrip1.SuspendLayout();
-            this.groupPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).BeginInit();
+            this.superTabControl1.SuspendLayout();
+            this.superTabControlPanel1.SuspendLayout();
+            this.groupbox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +61,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
             this.toolStripLabel1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(625, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(704, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -66,7 +72,6 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(62, 22);
             this.toolStripButton1.Text = "Nuevo";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripButton2
             // 
@@ -75,7 +80,6 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(70, 22);
             this.toolStripButton2.Text = "Eliminar";
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // toolStripButton3
             // 
@@ -84,7 +88,6 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
             this.toolStripButton3.Name = "toolStripButton3";
             this.toolStripButton3.Size = new System.Drawing.Size(78, 22);
             this.toolStripButton3.Text = "Modificar";
-            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // toolStripButton4
             // 
@@ -98,7 +101,6 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
             // 
             this.toolStripcmbcalendario.Name = "toolStripcmbcalendario";
             this.toolStripcmbcalendario.Size = new System.Drawing.Size(121, 25);
-            this.toolStripcmbcalendario.SelectedIndexChanged += new System.EventHandler(this.toolStripcmbcalendario_SelectedIndexChanged);
             // 
             // toolStripLabel1
             // 
@@ -106,51 +108,92 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
             this.toolStripLabel1.Size = new System.Drawing.Size(64, 22);
             this.toolStripLabel1.Text = "Calendario";
             // 
-            // groupPanel1
+            // superTabControl1
             // 
-            this.groupPanel1.BackColor = System.Drawing.Color.White;
-            this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
-            this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.groupPanel1.Controls.Add(this.dataGridViewX1);
-            this.groupPanel1.DisabledBackColor = System.Drawing.Color.Empty;
-            this.groupPanel1.Location = new System.Drawing.Point(13, 43);
-            this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(600, 341);
+            this.superTabControl1.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
-            this.groupPanel1.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.groupPanel1.Style.BackColorGradientAngle = 90;
-            this.groupPanel1.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.groupPanel1.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel1.Style.BorderBottomWidth = 1;
-            this.groupPanel1.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.groupPanel1.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel1.Style.BorderLeftWidth = 1;
-            this.groupPanel1.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel1.Style.BorderRightWidth = 1;
-            this.groupPanel1.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel1.Style.BorderTopWidth = 1;
-            this.groupPanel1.Style.CornerDiameter = 4;
-            this.groupPanel1.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.groupPanel1.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
-            this.groupPanel1.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             // 
             // 
             // 
-            this.groupPanel1.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.superTabControl1.ControlBox.CloseBox.Name = "";
             // 
             // 
             // 
-            this.groupPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.groupPanel1.TabIndex = 1;
-            this.groupPanel1.Text = "Imprevistos";
+            this.superTabControl1.ControlBox.MenuBox.Name = "";
+            this.superTabControl1.ControlBox.Name = "";
+            this.superTabControl1.ControlBox.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.superTabControl1.ControlBox.MenuBox,
+            this.superTabControl1.ControlBox.CloseBox});
+            this.superTabControl1.Controls.Add(this.superTabControlPanel1);
+            this.superTabControl1.ForeColor = System.Drawing.Color.Black;
+            this.superTabControl1.Location = new System.Drawing.Point(12, 28);
+            this.superTabControl1.Name = "superTabControl1";
+            this.superTabControl1.ReorderTabsEnabled = true;
+            this.superTabControl1.SelectedTabFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.superTabControl1.SelectedTabIndex = 0;
+            this.superTabControl1.Size = new System.Drawing.Size(680, 402);
+            this.superTabControl1.TabFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.superTabControl1.TabIndex = 1;
+            this.superTabControl1.Tabs.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.superTabItem1});
+            this.superTabControl1.Text = "superTabControl1";
+            this.superTabControl1.SelectedTabChanged += new System.EventHandler<DevComponents.DotNetBar.SuperTabStripSelectedTabChangedEventArgs>(this.superTabControl1_SelectedTabChanged);
+            // 
+            // superTabControlPanel1
+            // 
+            this.superTabControlPanel1.Controls.Add(this.groupbox1);
+            this.superTabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superTabControlPanel1.Location = new System.Drawing.Point(0, 27);
+            this.superTabControlPanel1.Name = "superTabControlPanel1";
+            this.superTabControlPanel1.Size = new System.Drawing.Size(680, 375);
+            this.superTabControlPanel1.TabIndex = 1;
+            this.superTabControlPanel1.TabItem = this.superTabItem1;
+            // 
+            // groupbox1
+            // 
+            this.groupbox1.BackColor = System.Drawing.Color.White;
+            this.groupbox1.CanvasColor = System.Drawing.SystemColors.Control;
+            this.groupbox1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2013;
+            this.groupbox1.Controls.Add(this.dataGridViewX1);
+            this.groupbox1.DisabledBackColor = System.Drawing.Color.Empty;
+            this.groupbox1.Location = new System.Drawing.Point(4, 43);
+            this.groupbox1.Name = "groupbox1";
+            this.groupbox1.Size = new System.Drawing.Size(673, 329);
+            // 
+            // 
+            // 
+            this.groupbox1.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.groupbox1.Style.BackColorGradientAngle = 90;
+            this.groupbox1.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.groupbox1.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupbox1.Style.BorderBottomWidth = 1;
+            this.groupbox1.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.groupbox1.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupbox1.Style.BorderLeftWidth = 1;
+            this.groupbox1.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupbox1.Style.BorderRightWidth = 1;
+            this.groupbox1.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupbox1.Style.BorderTopWidth = 1;
+            this.groupbox1.Style.CornerDiameter = 4;
+            this.groupbox1.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.groupbox1.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
+            this.groupbox1.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.groupbox1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
+            // 
+            // 
+            // 
+            this.groupbox1.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.groupbox1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.groupbox1.TabIndex = 0;
+            this.groupbox1.Text = "Faltas por Día";
             // 
             // dataGridViewX1
             // 
-            this.dataGridViewX1.AllowUserToAddRows = false;
-            this.dataGridViewX1.AllowUserToDeleteRows = false;
             this.dataGridViewX1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
@@ -161,30 +204,37 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewX1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.dataGridViewX1.Location = new System.Drawing.Point(3, 4);
+            this.dataGridViewX1.Location = new System.Drawing.Point(4, 4);
             this.dataGridViewX1.Name = "dataGridViewX1";
-            this.dataGridViewX1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewX1.Size = new System.Drawing.Size(587, 311);
+            this.dataGridViewX1.Size = new System.Drawing.Size(660, 299);
             this.dataGridViewX1.TabIndex = 0;
-            this.dataGridViewX1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewX1_CellClick);
-            this.dataGridViewX1.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataGridViewX1_CellPainting);
             // 
-            // frmDNBAdministrarImprevistos
+            // superTabItem1
+            // 
+            this.superTabItem1.AttachedControl = this.superTabControlPanel1;
+            this.superTabItem1.GlobalItem = false;
+            this.superTabItem1.Name = "superTabItem1";
+            this.superTabItem1.Text = "Faltas por Día";
+            // 
+            // frmDNBAdministrarFaltas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(625, 396);
-            this.Controls.Add(this.groupPanel1);
+            this.ClientSize = new System.Drawing.Size(704, 442);
+            this.Controls.Add(this.superTabControl1);
             this.Controls.Add(this.toolStrip1);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "frmDNBAdministrarImprevistos";
+            this.Name = "frmDNBAdministrarFaltas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Administrar Imprevistos";
-            this.Load += new System.EventHandler(this.frmDNBAdministrarImprevistos_Load);
+            this.Text = "Administrar Faltas";
+            this.Load += new System.EventHandler(this.frmDNBAdministrarFaltas_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            this.groupPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).EndInit();
+            this.superTabControl1.ResumeLayout(false);
+            this.superTabControlPanel1.ResumeLayout(false);
+            this.groupbox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -200,7 +250,10 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
         private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.ToolStripComboBox toolStripcmbcalendario;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
+        private DevComponents.DotNetBar.SuperTabControl superTabControl1;
+        private DevComponents.DotNetBar.SuperTabControlPanel superTabControlPanel1;
+        private DevComponents.DotNetBar.SuperTabItem superTabItem1;
+        private DevComponents.DotNetBar.Controls.GroupPanel groupbox1;
         private DevComponents.DotNetBar.Controls.DataGridViewX dataGridViewX1;
     }
 }
