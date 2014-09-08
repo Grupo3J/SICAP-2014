@@ -157,6 +157,12 @@
     <Compile Include="ci_GestionAsistencia\frmDNBFaltas\frmDNBAdministrarFaltas.Designer.cs">
       <DependentUpon>frmDNBAdministrarFaltas.cs</DependentUpon>
     </Compile>
+    <Compile Include="ci_GestionAsistencia\frmDNBFaltas\frmDNBEditFalta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionAsistencia\frmDNBFaltas\frmDNBEditFalta.Designer.cs">
+      <DependentUpon>frmDNBEditFalta.cs</DependentUpon>
+    </Compile>
     <Compile Include="ci_GestionAsistencia\frmDNBImprevistos\frmDNBDescripcion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -301,6 +307,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ci_GestionAsistencia\frmDNBFaltas\frmDNBAdministrarFaltas.resx">
       <DependentUpon>frmDNBAdministrarFaltas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionAsistencia\frmDNBFaltas\frmDNBEditFalta.resx">
+      <DependentUpon>frmDNBEditFalta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ci_GestionAsistencia\frmDNBImprevistos\frmDNBAdministrarImprevistos.resx">
       <DependentUpon>frmDNBAdministrarImprevistos.cs</DependentUpon>

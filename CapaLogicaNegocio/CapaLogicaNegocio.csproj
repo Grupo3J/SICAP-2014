@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="cln_GestionAsistencia\AsistenciaLN.cs" />
+    <Compile Include="cln_GestionAsistencia\FaltasLN.cs" />
     <Compile Include="cln_GestionAsistencia\ImprevistoLN.cs" />
     <Compile Include="cln_GestionPersonal\HuellaLN.cs" />
     <Compile Include="cln_GestionPersonal\PersonalLN.cs" />
