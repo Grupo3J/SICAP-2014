@@ -338,6 +338,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\images.jpg" />
+    <Content Include="Resources\personal.png" />
     <Content Include="Resources\SICAPLOGO.png" />
     <Content Include="Resources\Snapshot_20140812_33.JPG" />
     <None Include="Resources\buscar.bmp" />
