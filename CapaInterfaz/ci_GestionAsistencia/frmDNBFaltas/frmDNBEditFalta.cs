@@ -37,6 +37,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
                 if (!cmbTipo.Items.Contains(temp.TIPO))
                     cmbTipo.Items.Add(temp.TIPO);
             }
+            dtifecha.AllowEmptyState = true;
         }
 
         private void buttonX3_Click(object sender, EventArgs e)
@@ -94,7 +95,16 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
 
         private void buttonX1_Click(object sender, EventArgs e)
         {
-
+            if (cmbTipo.SelectedIndex == -1 || txtcedula.Text == "" || dtifecha.IsEmpty == true)
+            {
+                MessageBoxEx.Show("Ingrese los campos obligatorios", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            else
+            {
+                OPTION = "OK";
+                this.Close();
+            }
         }
 
     }

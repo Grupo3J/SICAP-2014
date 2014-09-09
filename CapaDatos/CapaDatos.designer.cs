@@ -572,13 +572,6 @@ namespace CapaDatos
 			return ((ISingleResult<sp_FiltrarPersonalValoresResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ImprevistosporCalendario")]
-		public ISingleResult<sp_ImprevistosporCalendarioResult> sp_ImprevistosporCalendario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdCalendario", DbType="VarChar(5)")] string idCalendario)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idCalendario);
-			return ((ISingleResult<sp_ImprevistosporCalendarioResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ListarCalendario")]
 		public ISingleResult<sp_ListarCalendarioResult> sp_ListarCalendario()
 		{
@@ -787,6 +780,13 @@ namespace CapaDatos
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula, fecha, idCalendario);
 			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ImprevistosporCalendario")]
+		public ISingleResult<sp_ImprevistosporCalendarioResult> sp_ImprevistosporCalendario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdCalendario", DbType="VarChar(5)")] string idCalendario)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idCalendario);
+			return ((ISingleResult<sp_ImprevistosporCalendarioResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -7908,86 +7908,6 @@ namespace CapaDatos
 		}
 	}
 	
-	public partial class sp_ImprevistosporCalendarioResult
-	{
-		
-		private string _IDIMPREVISTO;
-		
-		private System.DateTime _FECHAINICIO;
-		
-		private System.DateTime _FECHAFINAL;
-		
-		private string _DESCRIPCION;
-		
-		public sp_ImprevistosporCalendarioResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDIMPREVISTO", DbType="VarChar(6) NOT NULL", CanBeNull=false)]
-		public string IDIMPREVISTO
-		{
-			get
-			{
-				return this._IDIMPREVISTO;
-			}
-			set
-			{
-				if ((this._IDIMPREVISTO != value))
-				{
-					this._IDIMPREVISTO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHAINICIO", DbType="DateTime NOT NULL")]
-		public System.DateTime FECHAINICIO
-		{
-			get
-			{
-				return this._FECHAINICIO;
-			}
-			set
-			{
-				if ((this._FECHAINICIO != value))
-				{
-					this._FECHAINICIO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHAFINAL", DbType="DateTime NOT NULL")]
-		public System.DateTime FECHAFINAL
-		{
-			get
-			{
-				return this._FECHAFINAL;
-			}
-			set
-			{
-				if ((this._FECHAFINAL != value))
-				{
-					this._FECHAFINAL = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DESCRIPCION", DbType="Text NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public string DESCRIPCION
-		{
-			get
-			{
-				return this._DESCRIPCION;
-			}
-			set
-			{
-				if ((this._DESCRIPCION != value))
-				{
-					this._DESCRIPCION = value;
-				}
-			}
-		}
-	}
-	
 	public partial class sp_ListarCalendarioResult
 	{
 		
@@ -9081,6 +9001,104 @@ namespace CapaDatos
 				if ((this._NO_JUSTIFICADAS != value))
 				{
 					this._NO_JUSTIFICADAS = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_ImprevistosporCalendarioResult
+	{
+		
+		private string _IDIMPREVISTO;
+		
+		private System.Nullable<System.DateTime> _FECHA;
+		
+		private string _HORA_ENTRADA;
+		
+		private string _HORA_SALIDA;
+		
+		private string _DESCRIPCION;
+		
+		public sp_ImprevistosporCalendarioResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDIMPREVISTO", DbType="VarChar(6) NOT NULL", CanBeNull=false)]
+		public string IDIMPREVISTO
+		{
+			get
+			{
+				return this._IDIMPREVISTO;
+			}
+			set
+			{
+				if ((this._IDIMPREVISTO != value))
+				{
+					this._IDIMPREVISTO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHA", DbType="DateTime")]
+		public System.Nullable<System.DateTime> FECHA
+		{
+			get
+			{
+				return this._FECHA;
+			}
+			set
+			{
+				if ((this._FECHA != value))
+				{
+					this._FECHA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HORA_ENTRADA", DbType="VarChar(30)")]
+		public string HORA_ENTRADA
+		{
+			get
+			{
+				return this._HORA_ENTRADA;
+			}
+			set
+			{
+				if ((this._HORA_ENTRADA != value))
+				{
+					this._HORA_ENTRADA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HORA_SALIDA", DbType="VarChar(30)")]
+		public string HORA_SALIDA
+		{
+			get
+			{
+				return this._HORA_SALIDA;
+			}
+			set
+			{
+				if ((this._HORA_SALIDA != value))
+				{
+					this._HORA_SALIDA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DESCRIPCION", DbType="Text NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string DESCRIPCION
+		{
+			get
+			{
+				return this._DESCRIPCION;
+			}
+			set
+			{
+				if ((this._DESCRIPCION != value))
+				{
+					this._DESCRIPCION = value;
 				}
 			}
 		}

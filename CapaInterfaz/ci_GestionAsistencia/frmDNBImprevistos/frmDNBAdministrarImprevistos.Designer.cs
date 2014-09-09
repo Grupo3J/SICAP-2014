@@ -113,9 +113,9 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.groupPanel1.Controls.Add(this.dataGridViewX1);
             this.groupPanel1.DisabledBackColor = System.Drawing.Color.Empty;
-            this.groupPanel1.Location = new System.Drawing.Point(45, 65);
+            this.groupPanel1.Location = new System.Drawing.Point(12, 65);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(600, 341);
+            this.groupPanel1.Size = new System.Drawing.Size(680, 341);
             // 
             // 
             // 
@@ -164,7 +164,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
             this.dataGridViewX1.Location = new System.Drawing.Point(3, 4);
             this.dataGridViewX1.Name = "dataGridViewX1";
             this.dataGridViewX1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewX1.Size = new System.Drawing.Size(587, 311);
+            this.dataGridViewX1.Size = new System.Drawing.Size(668, 311);
             this.dataGridViewX1.TabIndex = 0;
             this.dataGridViewX1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewX1_CellClick);
             this.dataGridViewX1.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataGridViewX1_CellPainting);

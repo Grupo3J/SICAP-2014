@@ -90,8 +90,8 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
                 try
                 {
                     imp.IdImprevisto = GenerarIdImprevisto();
-                    imp.FechaInicio = impr.dtifechainicio.Value;
-                    imp.FechaFinal = impr.dtifechafin.Value;
+                    imp.FechaInicio = impr.dtifechainicio.Value.Add(TimeSpan.Parse(impr.dtihoraentrada.Value.TimeOfDay.ToString()));
+                    imp.FechaFinal = impr.dtifechainicio.Value.Add(TimeSpan.Parse(impr.dtihorafin.Value.TimeOfDay.ToString()));
                     imp.Descripcion = impr.textBoxX1.Text;
                     imprevisto.InsertarImprevisto(imp);
                     calendario.IngresarPersonalDet(impr.listader, idcalendario, imp.IdImprevisto);
@@ -109,7 +109,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
             //dataGridViewX1.DataSource = null;
             dataGridViewX1.Columns.Clear();
             dataGridViewX1.DataSource = imprevisto.ListarImprevistoporCalendario(idcalendario);
-            dataGridViewX1.Columns[3].Visible = false;
+            dataGridViewX1.Columns[4].Visible = false;
             coldescrip.Name = "btnDescripcion";
             coldescrip.HeaderText = "DESCRIPCION";
             coldescrip.Text = "...";
@@ -168,17 +168,18 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
             impr.dataGridViewX1.DataSource = l.ToList();
             impr.listaizq = l.ToList();
             impr.dataGridViewX2.DataSource = impr.listader;
-            impr.textBoxX1.Text = dataGridViewX1.CurrentRow.Cells[3].Value.ToString();
+            impr.textBoxX1.Text = dataGridViewX1.CurrentRow.Cells[4].Value.ToString();
             impr.dtifechainicio.Value = Convert.ToDateTime(dataGridViewX1.CurrentRow.Cells[1].Value);
-            impr.dtifechafin.Value = Convert.ToDateTime(dataGridViewX1.CurrentRow.Cells[2].Value);
+            impr.dtihoraentrada.Value = Convert.ToDateTime(dataGridViewX1.CurrentRow.Cells[2].Value);
+            impr.dtihorafin.Value = Convert.ToDateTime(dataGridViewX1.CurrentRow.Cells[3].Value);
             impr.ShowDialog();
             if (impr.OPTION == "OK")
             {
                 try
                 {
                     imp.IdImprevisto = dataGridViewX1.CurrentRow.Cells[0].Value.ToString();
-                    imp.FechaInicio = impr.dtifechainicio.Value;
-                    imp.FechaFinal = impr.dtifechafin.Value;
+                    imp.FechaInicio = impr.dtifechainicio.Value.Add(TimeSpan.Parse(impr.dtihoraentrada.Value.TimeOfDay.ToString()));
+                    imp.FechaFinal = impr.dtifechainicio.Value.Add(TimeSpan.Parse(impr.dtihorafin.Value.TimeOfDay.ToString()));
                     imp.Descripcion = impr.textBoxX1.Text;
                     imprevisto.ModificarImprevisto(imp);
                     calendario.EliminarDetallePersonal(idcalendario,imp.IdImprevisto);

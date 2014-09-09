@@ -70,6 +70,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
                 MostrarFaltasDia(idcalendario, dtidia.Value);
                 Meses = CultureInfo.CurrentCulture.DateTimeFormat.MonthNames;
                 int cuentameses = Math.Abs((temp.FECHAINICIO.Month - temp.FECHAFIN.Month) + 12 * (temp.FECHAINICIO.Year - temp.FECHAFIN.Year));
+                cmbmes.Items.Clear();
                 for (int i = 0; i <= cuentameses; i++)
                 {
                     DateTime currentfecha = temp.FECHAINICIO.AddMonths(i);

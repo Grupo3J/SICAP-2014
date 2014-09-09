@@ -43,7 +43,7 @@ namespace CapaDatos.cd_GestionAsistencia
                 p.IdCalendario = not.IdCalendario;
                 p.Justificacion = not.Justificacion;
                 p.Fecha = not.Fecha;
-                p.Cedula = p.Cedula;
+                p.Cedula = not.Cedula;
                 bd.sp_RegistrarFalta(p.IdFaltas, p.IdCalendario, p.Cedula, p.Fecha, p.Justificacion);
                 bd.SubmitChanges();
             }

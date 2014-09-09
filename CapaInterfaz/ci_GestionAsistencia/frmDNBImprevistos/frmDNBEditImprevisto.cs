@@ -24,7 +24,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
         public List<sp_PersonalporCalendarioResult> listaizq = new List<sp_PersonalporCalendarioResult>();
         private void buttonX1_Click(object sender, EventArgs e)
         {
-            if (textBoxX1.Text == "" || dataGridViewX2.Rows.Count == 0 || dtifechainicio.IsEmpty == true || dtifechafin.IsEmpty == true)
+            if (textBoxX1.Text == "" || dataGridViewX2.Rows.Count == 0 || dtifechainicio.IsEmpty == true || dtihorafin.IsEmpty == true)
             {
                 MessageBox.Show("Ingrese los campos obligatorios","Alerta",MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;

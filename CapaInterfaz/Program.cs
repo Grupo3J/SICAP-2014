@@ -18,6 +18,7 @@ namespace CapaInterfaz
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new CapaInterfaz.ci_GestionPersonal.frmDNBPersonal.frmAdministrarPersonal());
             Application.Run(new CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas.frmDNBAdministrarFaltas());
+            //Application.Run(new CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos.frmDNBAdministrarImprevistos());
             //Application.Run(new CapaInterfaz.ci_GestionSeguridad.frmLog_In());
         }
     }
