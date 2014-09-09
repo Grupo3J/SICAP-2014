@@ -50,6 +50,7 @@
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="DevComponents.DotNetBar.Design, Version=11.8.0.8, Culture=neutral, PublicKeyToken=2c9ff1fddc42653c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\Program Files (x86)\DotNetBar for Windows Forms\DevComponents.DotNetBar.Design.dll</HintPath>
@@ -187,6 +188,78 @@
     <Compile Include="ci_GestionAsistencia\frmDNBImprevistos\frmDNBVerPersonal.Designer.cs">
       <DependentUpon>frmDNBVerPersonal.cs</DependentUpon>
     </Compile>
+    <Compile Include="ci_GestionAyuda\frmAcercaDe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionAyuda\frmAcercaDe.Designer.cs">
+      <DependentUpon>frmAcercaDe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ci_GestionAyuda\frmAyuda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionAyuda\frmAyuda.Designer.cs">
+      <DependentUpon>frmAyuda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ci_GestionPersonal\frmDNBHuella\frmAdministrarHuella.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionPersonal\frmDNBHuella\frmAdministrarHuella.designer.cs">
+      <DependentUpon>frmAdministrarHuella.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ci_GestionPersonal\frmDNBPersonal\frmActualizarPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionPersonal\frmDNBPersonal\frmActualizarPersonal.Designer.cs">
+      <DependentUpon>frmActualizarPersonal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ci_GestionPersonal\frmDNBPersonal\frmAdministrarPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionPersonal\frmDNBPersonal\frmAdministrarPersonal.Designer.cs">
+      <DependentUpon>frmAdministrarPersonal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ci_GestionPersonal\frmDNBPersonal\frmNuevoPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionPersonal\frmDNBPersonal\frmNuevoPersonal.Designer.cs">
+      <DependentUpon>frmNuevoPersonal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ci_GestionPlanificacion\frmDNBACalendarioLaboral\frmAdministrarCalendarioLaboral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionPlanificacion\frmDNBACalendarioLaboral\frmAdministrarCalendarioLaboral.Designer.cs">
+      <DependentUpon>frmAdministrarCalendarioLaboral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ci_GestionPlanificacion\frmDNBACalendarioLaboral\frmNuevoCalendarioLaboral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionPlanificacion\frmDNBACalendarioLaboral\frmNuevoCalendarioLaboral.Designer.cs">
+      <DependentUpon>frmNuevoCalendarioLaboral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ci_GestionPlanificacion\frmDNBDiasAdicionales\frmAdministrarDiasAdicionales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionPlanificacion\frmDNBDiasAdicionales\frmAdministrarDiasAdicionales.Designer.cs">
+      <DependentUpon>frmAdministrarDiasAdicionales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ci_GestionPlanificacion\frmDNBDiasAdicionales\frmNuevoDiaAdicional.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionPlanificacion\frmDNBDiasAdicionales\frmNuevoDiaAdicional.Designer.cs">
+      <DependentUpon>frmNuevoDiaAdicional.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ci_GestionPlanificacion\frmDNBDiasNoLaborables\frmAdministrarDiasNoLaborables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionPlanificacion\frmDNBDiasNoLaborables\frmAdministrarDiasNoLaborables.Designer.cs">
+      <DependentUpon>frmAdministrarDiasNoLaborables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ci_GestionPlanificacion\frmDNBDiasNoLaborables\frmNuevoDiaNoLaborable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionPlanificacion\frmDNBDiasNoLaborables\frmNuevoDiaNoLaborable.Designer.cs">
+      <DependentUpon>frmNuevoDiaNoLaborable.cs</DependentUpon>
+    </Compile>
     <Compile Include="ci_GestionReportes\CRUsers.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -197,6 +270,84 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DSSeguridad.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ci_GestionReportes\frmReporteUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionReportes\frmReporteUsers.Designer.cs">
+      <DependentUpon>frmReporteUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ci_GestionSeguridad\frmEditRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionSeguridad\frmEditRol.Designer.cs">
+      <DependentUpon>frmEditRol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ci_GestionSeguridad\frmEditUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionSeguridad\frmEditUser.Designer.cs">
+      <DependentUpon>frmEditUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ci_GestionSeguridad\frmHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionSeguridad\frmHome.Designer.cs">
+      <DependentUpon>frmHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ci_GestionSeguridad\frmLog_In.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionSeguridad\frmLog_In.Designer.cs">
+      <DependentUpon>frmLog_In.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ci_GestionSeguridad\frmMiPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionSeguridad\frmMiPerfil.Designer.cs">
+      <DependentUpon>frmMiPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ci_GestionSeguridad\frmPermiso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionSeguridad\frmPermiso.Designer.cs">
+      <DependentUpon>frmPermiso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ci_GestionSeguridad\frmPermisos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionSeguridad\frmPermisos.Designer.cs">
+      <DependentUpon>frmPermisos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ci_GestionSeguridad\frmPersonalselect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionSeguridad\frmPersonalselect.Designer.cs">
+      <DependentUpon>frmPersonalselect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ci_GestionSeguridad\frmRoles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionSeguridad\frmRoles.Designer.cs">
+      <DependentUpon>frmRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ci_GestionSeguridad\frmSICAP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionSeguridad\frmSICAP.Designer.cs">
+      <DependentUpon>frmSICAP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ci_GestionSeguridad\frmSICAP2014.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionSeguridad\frmSICAP2014.Designer.cs">
+      <DependentUpon>frmSICAP2014.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ci_GestionSeguridad\frmUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionSeguridad\frmUsuario.Designer.cs">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -238,9 +389,84 @@
     <EmbeddedResource Include="ci_GestionAsistencia\frmDNBImprevistos\frmDNBVerPersonal.resx">
       <DependentUpon>frmDNBVerPersonal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionAyuda\frmAcercaDe.resx">
+      <DependentUpon>frmAcercaDe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionAyuda\frmAyuda.resx">
+      <DependentUpon>frmAyuda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionPersonal\frmDNBHuella\frmAdministrarHuella.resx">
+      <DependentUpon>frmAdministrarHuella.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionPersonal\frmDNBPersonal\frmActualizarPersonal.resx">
+      <DependentUpon>frmActualizarPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionPersonal\frmDNBPersonal\frmAdministrarPersonal.resx">
+      <DependentUpon>frmAdministrarPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionPersonal\frmDNBPersonal\frmNuevoPersonal.resx">
+      <DependentUpon>frmNuevoPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionPlanificacion\frmDNBACalendarioLaboral\frmAdministrarCalendarioLaboral.resx">
+      <DependentUpon>frmAdministrarCalendarioLaboral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionPlanificacion\frmDNBACalendarioLaboral\frmNuevoCalendarioLaboral.resx">
+      <DependentUpon>frmNuevoCalendarioLaboral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionPlanificacion\frmDNBDiasAdicionales\frmAdministrarDiasAdicionales.resx">
+      <DependentUpon>frmAdministrarDiasAdicionales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionPlanificacion\frmDNBDiasAdicionales\frmNuevoDiaAdicional.resx">
+      <DependentUpon>frmNuevoDiaAdicional.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionPlanificacion\frmDNBDiasNoLaborables\frmAdministrarDiasNoLaborables.resx">
+      <DependentUpon>frmAdministrarDiasNoLaborables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionPlanificacion\frmDNBDiasNoLaborables\frmNuevoDiaNoLaborable.resx">
+      <DependentUpon>frmNuevoDiaNoLaborable.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ci_GestionReportes\CRUsers.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CRUsers.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionReportes\frmReporteUsers.resx">
+      <DependentUpon>frmReporteUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionSeguridad\frmEditRol.resx">
+      <DependentUpon>frmEditRol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionSeguridad\frmEditUser.resx">
+      <DependentUpon>frmEditUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionSeguridad\frmHome.resx">
+      <DependentUpon>frmHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionSeguridad\frmLog_In.resx">
+      <DependentUpon>frmLog_In.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionSeguridad\frmMiPerfil.resx">
+      <DependentUpon>frmMiPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionSeguridad\frmPermiso.resx">
+      <DependentUpon>frmPermiso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionSeguridad\frmPermisos.resx">
+      <DependentUpon>frmPermisos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionSeguridad\frmPersonalselect.resx">
+      <DependentUpon>frmPersonalselect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionSeguridad\frmRoles.resx">
+      <DependentUpon>frmRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionSeguridad\frmSICAP.resx">
+      <DependentUpon>frmSICAP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionSeguridad\frmSICAP2014.resx">
+      <DependentUpon>frmSICAP2014.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionSeguridad\frmUsuario.resx">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -276,12 +502,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ci_GestionAyuda\" />
-    <Folder Include="ci_GestionPersonal\" />
-    <Folder Include="ci_GestionPlanificacion\" />
-    <Folder Include="ci_GestionSeguridad\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\chm.chm" />
     <None Include="Resources\chm.chw" />

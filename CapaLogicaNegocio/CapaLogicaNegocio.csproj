@@ -50,6 +50,7 @@
     <Compile Include="cln_GestionPlanificacion\CalendarioLN.cs" />
     <Compile Include="cln_GestionPlanificacion\DiaNoLAborableLN.cs" />
     <Compile Include="cln_GestionPlanificacion\DiasAdicionalesLN.cs" />
+    <Compile Include="cln_GestionReportes\ReportesLN.cs" />
     <Compile Include="cln_GestionSeguridad\ModuloLN.cs" />
     <Compile Include="cln_GestionSeguridad\PermisoLN.cs" />
     <Compile Include="cln_GestionSeguridad\RecursoLN.cs" />
