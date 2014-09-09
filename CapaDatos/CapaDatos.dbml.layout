@@ -128,7 +128,7 @@
         <elementListCompartment Id="bbdc17c4-af07-4ed3-a9c3-9a6d43ce65df" absoluteBounds="14.89, 9.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(11.125 : 10.2219962565104); (11.875 : 10.2219962565104)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(11.125 : 10.2219962565104); (11.875 : 10.2219962565104)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CapaDatosDataContext/DETALLE_PERSONAL_CALENDARIO/DETALLE_PERSONAL_CALENDARIO_ASISTENCIA" />
       <nodes>
         <classShapeMoniker Id="204f146a-34fd-4843-a432-ee0bf6cd3eed" />
@@ -142,35 +142,35 @@
         <classShapeMoniker Id="d9ad617f-7076-4188-9384-f77ab4368293" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.375 : 9.97199625651042); (9.125 : 9.97199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.375 : 9.97199625651042); (9.125 : 9.97199625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CapaDatosDataContext/CALENDARIO/CALENDARIO_DETALLE_PERSONAL_CALENDARIO" />
       <nodes>
         <classShapeMoniker Id="fc4b115b-ede1-4290-a704-ad14dc4b7785" />
         <classShapeMoniker Id="204f146a-34fd-4843-a432-ee0bf6cd3eed" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.375 : 10.7109577640224); (8.75357443490112 : 11.0895321989236 : JumpStart); (8.87142556509888 : 11.2073833291213 : JumpEnd); (8.90625 : 11.2422077640224); (8.90625 : 13.7892976888021); (9.125 : 13.7892976888021)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.375 : 10.7109577640224); (8.90625 : 11.2422077640224); (8.90625 : 13.7892976888021); (9.125 : 13.7892976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CapaDatosDataContext/CALENDARIO/CALENDARIO_DIASADICIONALES" />
       <nodes>
         <classShapeMoniker Id="fc4b115b-ede1-4290-a704-ad14dc4b7785" />
         <classShapeMoniker Id="19957f3b-0a34-4e41-92dc-f75190df9c0d" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.34639320537861 : 10.7708968098958); (8.75 : 11.1745036045172); (8.75 : 16.1642976888021); (9.125 : 16.1642976888021)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.34639320537861 : 10.7708968098958); (8.75 : 11.1745036045172); (8.75 : 16.1642976888021); (9.125 : 16.1642976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CapaDatosDataContext/CALENDARIO/CALENDARIO_DIASNOLABORABLES" />
       <nodes>
         <classShapeMoniker Id="fc4b115b-ede1-4290-a704-ad14dc4b7785" />
         <classShapeMoniker Id="136a6b1c-2340-4917-9c3a-e8227eec3941" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(11.125 : 10.5689925130208); (11.5 : 10.9439925130208); (11.5 : 13.2604484049479); (11.875 : 13.2604484049479)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(11.125 : 10.5689925130208); (11.5 : 10.9439925130208); (11.5 : 13.2604484049479); (11.875 : 13.2604484049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CapaDatosDataContext/DETALLE_PERSONAL_CALENDARIO/DETALLE_PERSONAL_CALENDARIO_FALTAS" />
       <nodes>
         <classShapeMoniker Id="204f146a-34fd-4843-a432-ee0bf6cd3eed" />
         <classShapeMoniker Id="f8a469ea-5d17-4880-9abf-9420529f81c5" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(11.125 : 7.47679768880208); (11.875 : 7.47679768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(11.125 : 7.47679768880208); (11.875 : 7.47679768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CapaDatosDataContext/IMPREVISTOS/IMPREVISTOS_DETALLE_IMPREVISTO_CALENDARIO" />
       <nodes>
         <classShapeMoniker Id="d1430de7-a16f-4f0e-9e0d-35ead973c10b" />
@@ -184,49 +184,49 @@
         <classShapeMoniker Id="da79fd78-3439-445f-a204-fa3be7e12fc0" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.375 : 12.4365374615385); (8.69107443490112 : 12.1204630266373 : JumpStart); (8.80892556509888 : 12.0026118964396 : JumpEnd); (8.8125 : 11.9990374615385); (8.8125 : 10.3017463847656); (9.125 : 10.3017463847656)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.375 : 12.4365374615385); (8.8125 : 11.9990374615385); (8.8125 : 10.3017463847656); (9.125 : 10.3017463847656)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CapaDatosDataContext/PERSONAL/PERSONAL_DETALLE_PERSONAL_CALENDARIO" />
       <nodes>
         <classShapeMoniker Id="f103227d-d86d-4c75-868a-8f3ab283ec45" />
         <classShapeMoniker Id="204f146a-34fd-4843-a432-ee0bf6cd3eed" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(7.375 : 15.4920068359375); (7.375 : 19.2315991210938); (9.125 : 19.2315991210938)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(7.375 : 15.4920068359375); (7.375 : 19.2315991210938); (9.125 : 19.2315991210938)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CapaDatosDataContext/PERSONAL/PERSONAL_HUELLA" />
       <nodes>
         <classShapeMoniker Id="f103227d-d86d-4c75-868a-8f3ab283ec45" />
         <classShapeMoniker Id="6b22c956-ffd3-47d3-9121-eb690e42474a" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(14.125 : 2.17390055338542); (14.875 : 2.17390055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(14.125 : 2.17390055338542); (14.875 : 2.17390055338542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CapaDatosDataContext/RECURSOS/RECURSOS_PERMISOS" />
       <nodes>
         <classShapeMoniker Id="39d1d3b0-b665-4b9e-8098-cda5067e9dec" />
         <classShapeMoniker Id="ef138536-b918-4e3d-be18-1326e048c9f3" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(11.375 : 2.19314697265625); (12.125 : 2.19314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(11.375 : 2.19314697265625); (12.125 : 2.19314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CapaDatosDataContext/MODULOS/MODULOS_RECURSOS" />
       <nodes>
         <classShapeMoniker Id="da79fd78-3439-445f-a204-fa3be7e12fc0" />
         <classShapeMoniker Id="39d1d3b0-b665-4b9e-8098-cda5067e9dec" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(14.125 : 5.16429768880208); (15.875 : 5.16429768880208); (15.875 : 3.5401025390625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(14.125 : 5.16429768880208); (15.875 : 5.16429768880208); (15.875 : 3.5401025390625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CapaDatosDataContext/ROLES/ROLES_PERMISOS" />
       <nodes>
         <classShapeMoniker Id="aa16128c-3e6c-4998-99b3-678bd59330c3" />
         <classShapeMoniker Id="ef138536-b918-4e3d-be18-1326e048c9f3" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(14.03125 : 5.95359537760417); (14.03125 : 9.46875); (14.875 : 9.46875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(14.03125 : 5.95359537760417); (14.03125 : 9.46875); (14.875 : 9.46875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CapaDatosDataContext/ROLES/ROLES_USUARIO" />
       <nodes>
         <classShapeMoniker Id="aa16128c-3e6c-4998-99b3-678bd59330c3" />
         <classShapeMoniker Id="a4859f9e-60b5-4e28-bf9f-40c27ad58127" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.375 : 14.9767976888021); (8.66666666666667 : 14.9767976888021 : JumpStart); (8.83333333333333 : 14.9767976888021 : JumpEnd); (15.875 : 14.9767976888021); (15.875 : 10.7035953776042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.375 : 14.9767976888021); (15.875 : 14.9767976888021); (15.875 : 10.7035953776042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CapaDatosDataContext/PERSONAL/PERSONAL_USUARIO" />
       <nodes>
         <classShapeMoniker Id="f103227d-d86d-4c75-868a-8f3ab283ec45" />

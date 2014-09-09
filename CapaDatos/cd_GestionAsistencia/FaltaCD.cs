@@ -85,7 +85,7 @@ namespace CapaDatos.cd_GestionAsistencia
             }
         }
 
-        public static List<sp_PersonalporFaltaMesResult> ObtenerPersonalFaltaDia(string IdCalendario,DateTime Fecha) 
+        public static List<sp_PersonalporFaltaMesResult> ObtenerPersonalFaltaMes(string IdCalendario,DateTime Fecha) 
         {
             CapaDatosDataContext DB;
             try
@@ -104,5 +104,46 @@ namespace CapaDatos.cd_GestionAsistencia
                 DB = null;
             }
         }
+
+        public static List<sp_PersonalporFaltaRangoResult> ObtenerPersonalFaltaRango(string IdCalendario,DateTime Fechainicio,DateTime Fechafin) 
+        {
+            CapaDatosDataContext DB;
+            try
+            {
+                using (DB = new CapaDatosDataContext())
+                {
+                    return DB.sp_PersonalporFaltaRango(IdCalendario, Fechainicio,Fechafin).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new CapaDatosExcepciones("Error al Listar Faltas por Rango de Fechas", ex);
+            }
+            finally
+            {
+                DB = null;
+            }
+        }
+
+        public static void EliminarAsistenciainterfFalta(string cedula,DateTime fecha,string idcalendario)
+        {
+            CapaDatosDataContext DB;
+            try
+            {
+                using (DB = new CapaDatosDataContext())
+                {
+                    DB.sp_EliminarAsistenciainterfFalta(cedula, fecha,idcalendario);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new CapaDatosExcepciones("Error Eliminar Asistencia Interfiere Fecha", ex);
+            }
+            finally
+            {
+                DB = null;
+            }
+        }
+
     }
 }

@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using DevComponents.DotNetBar;
 using CapaDatos;
 using CapaLogicaNegocio.cln_GestionPersonal;
+using CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas;
 
 namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
 {
@@ -28,7 +29,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
             using (CapaDatosDataContext DB = new CapaDatosDataContext())
             {
                 var l = (from dt in DB.DETALLE_PERSONAL_CALENDARIO
-                         where dt.IDCALENDARIO == frmDNBEditAsistencia.IdCalendario
+                         where dt.IDCALENDARIO == frmDNBEditAsistencia.IdCalendario || dt.IDCALENDARIO == frmDNBEditFalta.IdCalendario
                          select dt).ToList();
                 foreach (DETALLE_PERSONAL_CALENDARIO temp in l)
                 {
@@ -48,6 +49,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
         private void dataGridViewX1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             frmDNBEditAsistencia.Cedula = dataGridViewX1.CurrentRow.Cells[0].Value.ToString();
+            frmDNBEditFalta.Cedula = dataGridViewX1.CurrentRow.Cells[0].Value.ToString();
             Dispose();
         }
     }

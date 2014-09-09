@@ -11,6 +11,7 @@ using CapaDatos;
 using System.Linq;
 using CapaLogicaNegocio.cln_GestionAsistencia;
 using System.Globalization;
+using CapaEntidades.GestionAsistencia;
 
 namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
 {
@@ -21,11 +22,25 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             InitializeComponent();
         }
         private string idcalendario;
+        private String[] Meses;
         CalendarioLN calendario = new CalendarioLN();
         FaltasLN faltas = new FaltasLN();
+        Faltas falta = new Faltas();
+
         private void superTabControl1_SelectedTabChanged(object sender, SuperTabStripSelectedTabChangedEventArgs e)
         {
-
+            if (superTabControl1.SelectedTabIndex != 0)
+            {
+                toolStripButton1.Visible = false;
+                toolStripButton2.Visible = false;
+                toolStripButton3.Visible = false;
+            }
+            else
+            {
+                toolStripButton1.Visible = true;
+                toolStripButton2.Visible = true;
+                toolStripButton3.Visible = true;
+            }
         }
 
         private void frmDNBAdministrarFaltas_Load(object sender, EventArgs e)
@@ -35,6 +50,8 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
 
             //Cargar calendarios en combo
             var linq = (from lp in calendario.ListarCalendario() select lp).ToList();
+            dtiinicio.AllowEmptyState = true;
+            dtifin.AllowEmptyState = true;
             foreach (sp_ListarCalendarioResult temp in linq)
             {
                 if (!toolStripcmbcalendario.Items.Contains(temp.NOMBRE))
@@ -47,25 +64,31 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
         {
             if (toolStripcmbcalendario.SelectedIndex >= 0)
             {
-                sp_ListarCalendarioResult temp = calendario.ListarCalendario()[toolStripcmbcalendario.SelectedIndex]; 
+                sp_ListarCalendarioResult temp = calendario.ListarCalendario()[toolStripcmbcalendario.SelectedIndex];
                 idcalendario = temp.IDCALENDARIO;
                 dtidia.Value = DateTime.Now;
-                MostrarFaltasDia(idcalendario,dtidia.Value);
-                String[] Meses = CultureInfo.CurrentCulture.DateTimeFormat.MonthNames;
+                MostrarFaltasDia(idcalendario, dtidia.Value);
+                Meses = CultureInfo.CurrentCulture.DateTimeFormat.MonthNames;
                 int cuentameses = Math.Abs((temp.FECHAINICIO.Month - temp.FECHAFIN.Month) + 12 * (temp.FECHAINICIO.Year - temp.FECHAFIN.Year));
-                for(int i=0;i <= cuentameses ;i++)
+                for (int i = 0; i <= cuentameses; i++)
                 {
                     DateTime currentfecha = temp.FECHAINICIO.AddMonths(i);
-                    cmbmes.Items.Add(Meses[currentfecha.Month-1]+" "+currentfecha.Year);
+                    cmbmes.Items.Add(Meses[currentfecha.Month - 1] + " " + currentfecha.Year);
                 }
             }
+            else 
+                MessageBoxEx.Show("Por favor escoja un Calendario");
         }
 
         private void dtidia_ValueChanged(object sender, EventArgs e)
         {
-            if (!idcalendario.Equals(null)) 
+            if (toolStripcmbcalendario.SelectedIndex >= 0)
             {
                 MostrarFaltasDia(idcalendario, dtidia.Value);
+            }
+            else 
+            {
+                MessageBoxEx.Show("Por favor escoja un Calendario");
             }
         }
 
@@ -78,10 +101,9 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             dgvfaltasdia.Columns[6].Visible = false;
         }
 
-        private void MostrarFaltasMes(string idcalendario,DateTime fechainicio,DateTime fechafin) 
+        private void MostrarFaltasMes(string idcalendario,DateTime fecha) 
         {
-            dgvfaltasmes.Columns.Clear();
-            //dgvfaltasmes.DataSource = fa
+            dgvfaltasmes.DataSource = faltas.ListarFaltasPersonalMes(idcalendario,fecha);
         }
 
         private void superTabControlPanel3_Click(object sender, EventArgs e)
@@ -105,7 +127,77 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
 
         private void cmbmes_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (toolStripcmbcalendario.SelectedIndex >= 0)
+            {
+                char[] delimiterChar = { ' ' };
+                string[] words = cmbmes.SelectedItem.ToString().Split(delimiterChar);
+                int index = 0;
+                foreach (var temp in Meses)
+                {
+                    index++;
+                    if (words[0].Equals(temp))
+                        break;
+                }
+                DateTime date = Convert.ToDateTime("1" + "/" + index.ToString() + "/" + words[1]);
+                MostrarFaltasMes(idcalendario, date);
+            }
+            else 
+            {
+                MessageBoxEx.Show("Por favor escoja un Calendario");
+            }
+        }
 
+        private void buttonX1_Click(object sender, EventArgs e)
+        {
+            if (toolStripcmbcalendario.SelectedIndex < 0)
+                MessageBoxEx.Show("Por favor escoja un Calendario..");
+            else
+            {
+                if (dtiinicio.IsEmpty || dtifin.IsEmpty)
+                    MessageBoxEx.Show("Seleccione un Rango de Fechas");
+                else
+                {
+                    MostrarPersonalFaltasRango(idcalendario, dtiinicio.Value, dtifin.Value);
+                }
+
+            }
+        }
+
+        private void MostrarPersonalFaltasRango(string idcalendario,DateTime fechainicio,DateTime fechafin) 
+        {
+            dgvfaltasrango.DataSource = faltas.ListarFaltasPersonalRango(idcalendario,fechainicio,fechafin);
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            frmDNBEditFalta impr = new frmDNBEditFalta(idcalendario);
+            impr.ShowDialog();
+            if (impr.OPTION == "OK" && toolStripcmbcalendario.SelectedIndex >= 0)
+            {
+                try
+                {
+                    falta.IdFaltas= GenerarIdFalta();
+                    falta.Fecha  = impr.dtifecha.Value;
+                    falta.Cedula = impr.txtcedula.Text;
+                    falta.IdCalendario = idcalendario;
+                    falta.Justificacion = impr.checkBoxX1.Checked = false?false:true;
+                    faltas.InsertarFaltas(falta);
+                    faltas.EliminarAsistenciainterfFalta(impr.txtcedula.Text,impr.dtifecha.Value,idcalendario);
+                    MostrarFaltasDia(idcalendario,dtidia.Value);
+                }
+                catch (Exception mes)
+                {
+                    MessageBox.Show(mes.Message);
+                }
+            }
+        }
+
+        private string GenerarIdFalta()
+        {
+            Random ran = new Random();
+            int num = ran.Next(0000, 1000);
+            int num2 = ran.Next(000, 100);
+            return "I" + num.ToString() + num2.ToString();
         }
 
     }

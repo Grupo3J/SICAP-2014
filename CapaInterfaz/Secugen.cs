@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using SecuGen.FDxSDKPro.Windows;
 using System.Windows.Forms;
-using CapaInterfaz.ci_GestionAsistencia.frmAsistencia;
 
 namespace CapaDatos
 {

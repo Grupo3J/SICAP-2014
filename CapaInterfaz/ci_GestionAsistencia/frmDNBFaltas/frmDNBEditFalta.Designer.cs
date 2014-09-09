@@ -38,6 +38,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             this.txtnombre = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtcedula = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.checkBoxX1 = new DevComponents.DotNetBar.Controls.CheckBoxX();
             this.dtifecha = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
@@ -46,7 +47,6 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
             this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
-            this.checkBoxX1 = new DevComponents.DotNetBar.Controls.CheckBoxX();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtifecha)).BeginInit();
@@ -83,6 +83,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             this.buttonX4.Size = new System.Drawing.Size(23, 23);
             this.buttonX4.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.buttonX4.TabIndex = 6;
+            this.buttonX4.Click += new System.EventHandler(this.buttonX4_Click);
             // 
             // buttonX3
             // 
@@ -94,6 +95,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             this.buttonX3.Size = new System.Drawing.Size(23, 23);
             this.buttonX3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.buttonX3.TabIndex = 5;
+            this.buttonX3.Click += new System.EventHandler(this.buttonX3_Click);
             // 
             // cmbTipo
             // 
@@ -197,6 +199,19 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             this.groupPanel2.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel2.TabIndex = 7;
             this.groupPanel2.Text = "Falta";
+            // 
+            // checkBoxX1
+            // 
+            // 
+            // 
+            // 
+            this.checkBoxX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.checkBoxX1.Location = new System.Drawing.Point(343, 14);
+            this.checkBoxX1.Name = "checkBoxX1";
+            this.checkBoxX1.Size = new System.Drawing.Size(100, 23);
+            this.checkBoxX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.checkBoxX1.TabIndex = 2;
+            this.checkBoxX1.Text = "Justificación";
             // 
             // dtifecha
             // 
@@ -355,6 +370,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.buttonX2.TabIndex = 5;
             this.buttonX2.Text = "Regresar";
+            this.buttonX2.Click += new System.EventHandler(this.buttonX2_Click);
             // 
             // buttonX1
             // 
@@ -366,19 +382,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.buttonX1.TabIndex = 4;
             this.buttonX1.Text = "Guardar";
-            // 
-            // checkBoxX1
-            // 
-            // 
-            // 
-            // 
-            this.checkBoxX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.checkBoxX1.Location = new System.Drawing.Point(343, 14);
-            this.checkBoxX1.Name = "checkBoxX1";
-            this.checkBoxX1.Size = new System.Drawing.Size(100, 23);
-            this.checkBoxX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.checkBoxX1.TabIndex = 2;
-            this.checkBoxX1.Text = "Justificación";
+            this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
             // 
             // frmDNBEditFalta
             // 
@@ -392,6 +396,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmDNBEditFalta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Falta";
             this.Load += new System.EventHandler(this.frmDNBEditFalta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -405,15 +410,9 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
         #endregion
 
         private DevComponents.DotNetBar.LabelX labelX5;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private DevComponents.DotNetBar.ButtonX buttonX4;
         private DevComponents.DotNetBar.ButtonX buttonX3;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx cmbTipo;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtcargo;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtnombre;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtcedula;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel2;
-        private DevComponents.Editors.DateTimeAdv.DateTimeInput dtifecha;
         private DevComponents.DotNetBar.LabelX labelX4;
         private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.LabelX labelX2;
@@ -421,6 +420,12 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
         private DevComponents.DotNetBar.LabelX labelX1;
         private DevComponents.DotNetBar.ButtonX buttonX2;
         private DevComponents.DotNetBar.ButtonX buttonX1;
-        private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxX1;
+        public System.Windows.Forms.PictureBox pictureBox1;
+        public DevComponents.DotNetBar.Controls.ComboBoxEx cmbTipo;
+        public DevComponents.DotNetBar.Controls.TextBoxX txtcargo;
+        public DevComponents.DotNetBar.Controls.TextBoxX txtnombre;
+        public DevComponents.DotNetBar.Controls.TextBoxX txtcedula;
+        public DevComponents.Editors.DateTimeAdv.DateTimeInput dtifecha;
+        public DevComponents.DotNetBar.Controls.CheckBoxX checkBoxX1;
     }
 }

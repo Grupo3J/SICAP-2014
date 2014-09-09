@@ -116,24 +116,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ci_GestionAsistencia\frmAsistencia\frmAdministrarAsistencia.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ci_GestionAsistencia\frmAsistencia\frmAdministrarAsistencia.Designer.cs">
-      <DependentUpon>frmAdministrarAsistencia.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ci_GestionAsistencia\frmAsistencia\frmEditAsistencia.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ci_GestionAsistencia\frmAsistencia\frmEditAsistencia.Designer.cs">
-      <DependentUpon>frmEditAsistencia.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ci_GestionAsistencia\frmAsistencia\frmEscogerPersonal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ci_GestionAsistencia\frmAsistencia\frmEscogerPersonal.Designer.cs">
-      <DependentUpon>frmEscogerPersonal.cs</DependentUpon>
-    </Compile>
     <Compile Include="ci_GestionAsistencia\frmDNBAsistencia\frmDNBEscogerPersonal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -353,15 +335,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Secugen.cs" />
     <Compile Include="Utilities.cs" />
-    <EmbeddedResource Include="ci_GestionAsistencia\frmAsistencia\frmAdministrarAsistencia.resx">
-      <DependentUpon>frmAdministrarAsistencia.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ci_GestionAsistencia\frmAsistencia\frmEditAsistencia.resx">
-      <DependentUpon>frmEditAsistencia.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ci_GestionAsistencia\frmAsistencia\frmEscogerPersonal.resx">
-      <DependentUpon>frmEscogerPersonal.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ci_GestionAsistencia\frmDNBAsistencia\frmDNBEscogerPersonal.resx">
       <DependentUpon>frmDNBEscogerPersonal.cs</DependentUpon>
     </EmbeddedResource>

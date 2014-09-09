@@ -51,7 +51,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
             this.dataGridViewX1.TabIndex = 0;
             this.dataGridViewX1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewX1_CellClick);
             // 
-            // frmBNBEscogerPersonal
+            // frmDNBEscogerPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -59,7 +59,8 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
             this.Controls.Add(this.dataGridViewX1);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "frmBNBEscogerPersonal";
+            this.Name = "frmDNBEscogerPersonal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Escoger Personal";
             this.Load += new System.EventHandler(this.frmBNBEscogerPersonal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).EndInit();

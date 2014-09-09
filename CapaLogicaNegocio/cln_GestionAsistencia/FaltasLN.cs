@@ -33,5 +33,19 @@ namespace CapaLogicaNegocio.cln_GestionAsistencia
             return FaltaCD.ObtenerPersonalporFaltaDia(IdCalendario, Fecha);
         }
 
+        public List<sp_PersonalporFaltaMesResult> ListarFaltasPersonalMes(string IdCalendario,DateTime Fecha) 
+        {
+            return FaltaCD.ObtenerPersonalFaltaMes(IdCalendario, Fecha);
+        }
+
+        public List<sp_PersonalporFaltaRangoResult> ListarFaltasPersonalRango(string IdCalendario,DateTime fechainicio,DateTime fechafin) 
+        {
+            return FaltaCD.ObtenerPersonalFaltaRango(IdCalendario,fechainicio,fechafin);
+        }
+
+        public void EliminarAsistenciainterfFalta(string cedula,DateTime fecha,string idcalendario) 
+        {
+            FaltaCD.EliminarAsistenciainterfFalta(cedula,fecha,idcalendario);
+        }
     }
 }

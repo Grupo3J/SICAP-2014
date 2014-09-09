@@ -910,4 +910,10 @@
     <Parameter Name="Tipo" Parameter="tipo" Type="System.String" DbType="VarChar(20)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.sp_EliminarAsistenciainterfFalta" Method="sp_EliminarAsistenciainterfFalta">
+    <Parameter Name="Cedula" Parameter="cedula" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="Fecha" Parameter="fecha" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="IdCalendario" Parameter="idCalendario" Type="System.String" DbType="VarChar(5)" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>
