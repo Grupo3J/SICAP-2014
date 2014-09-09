@@ -28,11 +28,7 @@ namespace CapaEntidades.GestionSeguridad
         private bool modificacion;
         private string idRol;
         private string idRecurso;
-
-        
-
-
-
+                
         ~Permisos()
         {
 
@@ -161,6 +157,17 @@ namespace CapaEntidades.GestionSeguridad
         {
             get { return idRecurso; }
             set { idRecurso = value; }
+        }
+
+        public override string ToString()
+        {
+            return "Idpermiso:"+IdPermiso+"\n"+
+                "IdRol:"+idRol+"\n"+
+                "IdRecurso:"+idRecurso+"\n"+
+                "Estado:"+estado+"\n"+
+                "Lectura:"+lectura+"\n"+
+                "Escritura:"+escritura+"\n"+
+                "Eliminacion:"+eliminacion ;
         }
 
     }

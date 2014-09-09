@@ -24,8 +24,6 @@ namespace CapaEntidades.GestionSeguridad
         private string nombre;
         
 
-
-
         ~Modulo()
         {
 

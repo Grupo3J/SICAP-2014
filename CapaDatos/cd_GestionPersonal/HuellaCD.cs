@@ -26,10 +26,12 @@ namespace CapaDatos.cd_GestionPersonal
                     IDHUELLA = not.IdHuella,
                     CEDULA = not.Cedula,
                     DATAHUELLA1 = not.DataHuella1,
-                    DATAHUELLA2 = not.DataHuella2
+                    DATAHUELLA2 = not.DataHuella2,
+                    NOMBRE = not.Nombre,
+                    IMAGEN = not.Imagen
                 };
 
-                //bd.pa_RegistrarHuella(p.IdHuella, p.Cedula, p.DataHuella1, p.DataHuella2);
+                //bd.sp_RegistrarHuella(idHuella, p.Cedula, p.DataHuella1, p.DataHuella2);
                 bd.HUELLA.InsertOnSubmit(H);
 
                 bd.SubmitChanges();
@@ -49,12 +51,16 @@ namespace CapaDatos.cd_GestionPersonal
         
         //metodo para listar las huella de una  persona
         public static List<sp_ListarHuellaCedulaResult> ObtenerHuella(string cedula)
+        
+        
+        
         {
             CapaDatosDataContext DB;
             try
             {
                 using (DB = new CapaDatosDataContext())
                 {
+                   
                     return DB.sp_ListarHuellaCedula(cedula).ToList();
                 }
             }
@@ -69,14 +75,15 @@ namespace CapaDatos.cd_GestionPersonal
         }
       
         //metodo para saber si existe una determinada huella
-        public static bool ExisteHuella(string idHuella)
+        public static bool ExisteHuella(string idHuella, string nombre, string cedula)
         {
             CapaDatosDataContext DB;
             try
             {
                 using (DB = new CapaDatosDataContext())
                 {
-                    var query = (from hue in DB.HUELLA where hue.IDHUELLA == idHuella select hue).Count();
+                    var query = (from hue in DB.HUELLA where (((hue.IDHUELLA == idHuella))||((hue.NOMBRE.Equals(nombre)) && hue.CEDULA.Equals(cedula))) select hue).Count();
+
                     if (query == 0)
                         return false;
                     else
@@ -152,9 +159,9 @@ namespace CapaDatos.cd_GestionPersonal
             try
             {
                 HUELLA j = (from usu in bd.HUELLA where usu.IDHUELLA == id select usu).Single();
-                if (j.DATAHUELLA1 != null)
+                if (j.IMAGEN != null)
                 {
-                    return j.DATAHUELLA1.ToArray();
+                    return j.IMAGEN.ToArray();
                 }
                 else
                 {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaDatos
 {
-    public class CapaDatosExcepciones:ApplicationException
+    public class CapaDatosExcepciones : ApplicationException
     {
         /// Construye una instancia en base a un mensaje de error y la una excepción original.
         /// <param name="mensaje">El mensaje de error.</param>
@@ -22,7 +22,5 @@ namespace CapaDatos
             : base(mensaje)
         {
         }
-    
     }
-    
 }

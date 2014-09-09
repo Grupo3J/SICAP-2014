@@ -84,5 +84,25 @@ namespace CapaDatos.cd_GestionAsistencia
                 DB = null;
             }
         }
+
+        public static List<sp_PersonalporFaltaMesResult> ObtenerPersonalFaltaDia(string IdCalendario,DateTime Fecha) 
+        {
+            CapaDatosDataContext DB;
+            try
+            {
+                using (DB = new CapaDatosDataContext())
+                {
+                    return DB.sp_PersonalporFaltaMes(IdCalendario,Fecha).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new CapaDatosExcepciones("Error al Listar Faltas por Mes", ex);
+            }
+            finally
+            {
+                DB = null;
+            }
+        }
     }
 }

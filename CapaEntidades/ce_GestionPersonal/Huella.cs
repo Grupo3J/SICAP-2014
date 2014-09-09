@@ -21,6 +21,20 @@ namespace CapaEntidades.GestionPersonal
         private byte[] dataHuella2;
         private string idHuella;
         private string cedula;
+        private byte[] imagen;
+
+        public byte[] Imagen
+        {
+            get { return imagen; }
+            set { imagen = value; }
+        }
+        private string nombre;
+
+        public string Nombre
+        {
+            get { return nombre; }
+            set { nombre = value; }
+        }
 
         ~Huella()
         {
@@ -41,12 +55,14 @@ namespace CapaEntidades.GestionPersonal
         /// <param name="datahuella1"></param>
         /// <param name="datahuella2"></param>
         /// <param name="idHuella"></param>
-        public Huella(byte[] datahuella1, byte[] datahuella2, string idHuella, string cedula)
+        public Huella(byte[] datahuella1, byte[] datahuella2, string idHuella, string cedula, string nombre, byte[]imagen)
         {
             DataHuella1 = datahuella1;
             DataHuella2 = datahuella2;
             IdHuella = idHuella;
             Cedula = cedula;
+            Nombre = nombre;
+            Imagen = imagen;
         }
 
         public byte[] DataHuella1

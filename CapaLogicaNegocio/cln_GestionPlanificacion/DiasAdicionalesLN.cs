@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CapaDatos;
-using CapaDatos.cd_GestionPlanificacion;
 using CapaEntidades;
 using CapaEntidades.GestionPlanificacion;
+using CapaDatos.cd_GestionPlanificacion;
 
 
 namespace CapaLogicaNegocio.cln_GestionPlanificacion

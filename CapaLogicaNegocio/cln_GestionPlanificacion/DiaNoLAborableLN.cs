@@ -5,8 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using CapaDatos;
 using CapaEntidades;
-using CapaDatos.cd_GestionPlanificacion;
+
 using CapaEntidades.GestionPlanificacion;
+using CapaDatos.cd_GestionPlanificacion;
+
 
 namespace CapaLogicaNegocio.cln_GestionPlanificacion
 {
@@ -53,10 +55,9 @@ namespace CapaLogicaNegocio.cln_GestionPlanificacion
         public string GenerarIdDiasNoLaborables()
         {
             Random ran = new Random();
-            int num = ran.Next(11, 22);
-            int num2 = ran.Next(3, 4);
-
-            string idCalendario = "DNL" + num.ToString() + num2.ToString();
+            int num = ran.Next(111, 222);
+            int num2 = ran.Next(33, 44);
+            string idCalendario = "DN" + num.ToString() + num2.ToString();
             return idCalendario;
         }
 

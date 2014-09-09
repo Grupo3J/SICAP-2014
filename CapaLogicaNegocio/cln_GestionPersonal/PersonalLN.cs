@@ -33,6 +33,53 @@ namespace CapaLogicaNegocio.cln_GestionPersonal
 
         }
 
+        public bool InsertarPersonalCalendario(string ced, string idcal)
+        {
+            if (PersonalCd.ExistePersonalEnCalendario(ced))
+                return true;
+            else
+            {
+                PersonalCd.CreatePersonalCalendario(ced, idcal);
+                return false;
+            }
+
+        }
+
+        public bool ModificarPersonal(Personal p, int v)
+        {
+            PersonalCd.ModificarPersonalCedula(p, v);
+            return false;
+
+
+        }
+
+        //public bool ModificarPersonalSinFoto(Personal p)
+        //{
+        //    PersonalCd.ModificarPersonalSinFoto(p);
+        //    return false;
+
+
+        //}
+
+        public bool ModificarDetallePersonalCalendario(string idcal, string ced)
+        {
+            PersonalCd.ModificarDetallePersonalCalendario(idcal, ced);
+            return false;
+
+
+        }
+
+
+        public bool EliminarPresonal(String cedula)
+        {
+            PersonalCd.EliminarPersonalCedula(cedula);
+            return false;
+        }
+
+        public Personal getPersonalByced(string cedula)
+        {
+            return PersonalCd.getPersonalByced(cedula);
+        }
         public bool ModificarPersonal(Personal p)
         {
             PersonalCd.ModificarPersonalCedula(p);
@@ -40,13 +87,6 @@ namespace CapaLogicaNegocio.cln_GestionPersonal
 
 
         }
-
-        public bool EliminarPresonal(String cedula)
-        {
-            PersonalCd.EliminarPersonalCedula(cedula);
-            return false;
-
-
-        }
+        
     }
 }

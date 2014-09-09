@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CapaEntidades.GestionPlanificacion;
-using System.Windows.Forms;
+
 
 
 namespace CapaDatos.cd_GestionPlanificacion
@@ -30,7 +30,7 @@ namespace CapaDatos.cd_GestionPlanificacion
             }
             catch (CapaDatosExcepciones ex)
             {
-                throw new CapaDatosExcepciones("Error al  Registrar Día No Laborable ", ex);
+                throw new CapaDatosExcepciones("Error al  Registrar Día No Laborable ", ex.InnerException.GetBaseException());
             }
             finally
             {

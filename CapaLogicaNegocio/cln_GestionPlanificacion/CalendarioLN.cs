@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CapaDatos;
-using CapaDatos.cd_GestionPlanificacion;
+
 using CapaEntidades;
+using CapaDatos.cd_GestionSeguridad;
+using CapaDatos.cd_GestionPlanificacion;
 using CapaEntidades.GestionPlanificacion;
+
 
 
 
@@ -41,7 +44,7 @@ namespace CapaLogicaNegocio.cln_GestionPlanificacion
 
         }
 
-        public bool EliminarCalendario(string idCalendario)
+        public bool EliminarCalendario(String idCalendario)
         {
             CalendarioCD.EliminarCalendario(idCalendario);
             return false;
@@ -49,20 +52,21 @@ namespace CapaLogicaNegocio.cln_GestionPlanificacion
 
         }
 
-        public List<sp_PersonalporCalendarioResult> PersonalporCalendario(string idcalendario) 
+        public List<sp_PersonalporCalendarioResult> PersonalporCalendario(string idcalendario)
         {
             return CalendarioCD.PersonalporCalendario(idcalendario);
         }
 
-        public List<sp_PersonalporCalendarioResult> IngresarPersonalDet(List<sp_PersonalporCalendarioResult> temp,string idcalendario,string idimprevisto) 
+        public List<sp_PersonalporCalendarioResult> IngresarPersonalDet(List<sp_PersonalporCalendarioResult> temp, string idcalendario, string idimprevisto)
         {
-            return CalendarioCD.IngresarPersonal(temp,idcalendario,idimprevisto);
+            return CalendarioCD.IngresarPersonal(temp, idcalendario, idimprevisto);
         }
 
-        public void EliminarDetallePersonal(string idcalendario,string idimprevisto) 
+        public void EliminarDetallePersonal(string idcalendario, string idimprevisto)
         {
-            CalendarioCD.Eliminar_Personal_Detalle(idcalendario,idimprevisto);
+            CalendarioCD.Eliminar_Personal_Detalle(idcalendario, idimprevisto);
         }
+
 
         public string GenerarIdCalendario()
         {
@@ -72,6 +76,12 @@ namespace CapaLogicaNegocio.cln_GestionPlanificacion
 
             string idCalendario = "C" + num.ToString() + num2.ToString();
             return idCalendario;
+        }
+
+        //metodo para listar los detalleCalendarioPersonal
+        public List<sp_ListarDetallePersonalCalendarioResult> ListarDetalleCalendarioPersnal(string ced)
+        {
+            return CalendarioCD.ObtenerDetalleCalendarioPersonal(ced);
         }
     }
 }

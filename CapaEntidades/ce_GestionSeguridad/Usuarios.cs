@@ -19,7 +19,9 @@ namespace CapaEntidades.GestionSeguridad
 
     public class Usuarios : Personal
     {
+        private string nick;
 
+        
         private string clave;
         private string idRol;
 
@@ -46,7 +48,11 @@ namespace CapaEntidades.GestionSeguridad
             IdRol = idRol;
             base.Cedula = cedula;
         }
-
+        public string Nick
+        {
+            get { return nick; }
+            set { nick = value; }
+        }
         public string Clave
         {
             get
@@ -62,6 +68,10 @@ namespace CapaEntidades.GestionSeguridad
         {
             get { return idRol; }
             set { idRol = value; }
+        }
+        public override string ToString()
+        {
+            return this.Cedula+" - "+this.Nombre+"  "+this.Apellido+" - "+this.nick+" - "+this.clave+" - ";
         }
     }
 }//end Usuarios

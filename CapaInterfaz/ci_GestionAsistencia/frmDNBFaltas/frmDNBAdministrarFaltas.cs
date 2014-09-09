@@ -78,10 +78,17 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             dgvfaltasdia.Columns[6].Visible = false;
         }
 
+        private void MostrarFaltasMes(string idcalendario,DateTime fechainicio,DateTime fechafin) 
+        {
+            dgvfaltasmes.Columns.Clear();
+            //dgvfaltasmes.DataSource = fa
+        }
+
         private void superTabControlPanel3_Click(object sender, EventArgs e)
         {
 
         }
+
 
         private void frmDNBAdministrarFaltas_Shown(object sender, EventArgs e)
         {
@@ -94,6 +101,11 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             men.IsBalloon = true;
             men.Show("Para empezar Seleccione un Calendario...",dtidia,3000);
             //superTooltip1.SetSuperTooltip(toolStripcmbcalendario, superTooltip);
+        }
+
+        private void cmbmes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
     }

@@ -24,9 +24,7 @@ namespace CapaEntidades.GestionSeguridad
         private string idRol;
         private string nombre;
         public Permisos m_Permisos;
-
-
-
+                
         ~Roles()
         {
 

@@ -20,7 +20,7 @@ namespace CapaLogicaNegocio.cln_GestionPersonal
         //metodo para insertar huella
         public bool InsertarHuella(Huella p)
         {
-            if (HuellaCD.ExisteHuella(p.IdHuella))
+            if (HuellaCD.ExisteHuella(p.IdHuella, p.Nombre, p.Cedula))
                 return true;
             else
             {
@@ -51,10 +51,10 @@ namespace CapaLogicaNegocio.cln_GestionPersonal
         public string GenerarIdHuella()
         {
             Random ran = new Random();
-            int num = ran.Next(0000, 1000);
-            int num2 = ran.Next(000, 100);
+            int num = ran.Next(11, 22);
+            int num2 = ran.Next(22, 33);
 
-            string idhuella = "I" + num.ToString() + num2.ToString();
+            string idhuella = "H" + num.ToString() + num2.ToString();
             return idhuella;
         }
     }
