@@ -28,6 +28,16 @@ namespace CapaLogicaNegocio.cln_GestionAsistencia
             }
         }
 
+        public void ModificarFaltasJustificacion(Faltas p) 
+        {
+            FaltaCD.Modificar(p);
+        }
+
+        public void EliminarFaltaId(string idfalta) 
+        {
+            FaltaCD.Eliminar(idfalta);
+        }
+
         public List<PersonalporFaltaDia> ListarFaltasPersonalDia(string IdCalendario, DateTime Fecha)
         {
             return FaltaCD.ObtenerPersonalporFaltaDia(IdCalendario, Fecha);

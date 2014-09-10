@@ -59,6 +59,51 @@ namespace CapaDatos.cd_GestionAsistencia
             return not;
         }
 
+        public static Faltas Modificar(Faltas not) 
+        {
+            CapaDatosDataContext bd = new CapaDatosDataContext();
+            try
+            {
+                Faltas p = new Faltas();
+                p.IdFaltas = not.IdFaltas;
+                p.IdCalendario = not.IdCalendario;
+                p.Justificacion = not.Justificacion;
+                p.Fecha = not.Fecha;
+                p.Cedula = not.Cedula;
+                bd.sp_ModificarFaltaJustificacion(p.IdFaltas, p.Justificacion);
+                bd.SubmitChanges();
+            }
+            catch (CapaDatosExcepciones ex)
+            {
+                throw new CapaDatosExcepciones("Error al  Modificar Falta", ex);
+            }
+            finally
+            {
+                bd = null;
+            }
+
+            return not;
+        }
+
+        public static void Eliminar(string f) 
+        {
+            CapaDatosDataContext bd = new CapaDatosDataContext();
+            try
+            {
+                bd.sp_EliminarFaltaId(f);
+                bd.SubmitChanges();
+            }
+            catch (CapaDatosExcepciones ex)
+            {
+                throw new CapaDatosExcepciones("Error al  Eliminar Falta", ex);
+            }
+            finally
+            {
+                bd = null;
+            }
+
+        }
+
         public static List<PersonalporFaltaDia> ObtenerPersonalporFaltaDia(string IdCalendario,DateTime Fecha) 
         {
             CapaDatosDataContext DB;
@@ -144,6 +189,8 @@ namespace CapaDatos.cd_GestionAsistencia
                 DB = null;
             }
         }
+
+        
 
     }
 }

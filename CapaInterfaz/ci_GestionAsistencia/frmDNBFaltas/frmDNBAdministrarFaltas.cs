@@ -12,6 +12,7 @@ using System.Linq;
 using CapaLogicaNegocio.cln_GestionAsistencia;
 using System.Globalization;
 using CapaEntidades.GestionAsistencia;
+using CapaLogicaNegocio.cln_GestionPersonal;
 
 namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
 {
@@ -26,6 +27,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
         CalendarioLN calendario = new CalendarioLN();
         FaltasLN faltas = new FaltasLN();
         Faltas falta = new Faltas();
+        PersonalLN personal = new PersonalLN();
 
         private void superTabControl1_SelectedTabChanged(object sender, SuperTabStripSelectedTabChangedEventArgs e)
         {
@@ -181,7 +183,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
                     falta.Fecha  = impr.dtifecha.Value;
                     falta.Cedula = impr.txtcedula.Text;
                     falta.IdCalendario = idcalendario;
-                    falta.Justificacion = impr.checkBoxX1.Checked = false?false:true;
+                    falta.Justificacion = impr.checkBoxX1.Checked == true?true:false;
                     faltas.InsertarFaltas(falta);
                     faltas.EliminarAsistenciainterfFalta(impr.txtcedula.Text,impr.dtifecha.Value,idcalendario);
                     MostrarFaltasDia(idcalendario,dtidia.Value);
@@ -199,6 +201,61 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             int num = ran.Next(0000, 1000);
             int num2 = ran.Next(000, 100);
             return "I" + num.ToString() + num2.ToString();
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            frmDNBEditFalta impr = new frmDNBEditFalta(idcalendario);
+            var linq = personal.getPersonalByced(dgvfaltasdia.CurrentRow.Cells[6].Value.ToString());
+            impr.cmbTipo.SelectedText = linq.Tipo;
+            impr.txtcedula.Text = linq.Cedula;
+            impr.txtcedula.ReadOnly = true;
+            impr.txtnombre.Text = linq.Nombre;
+            impr.txtnombre.ReadOnly = true;
+            impr.txtcargo.Text = linq.Cargo;
+            impr.txtcargo.ReadOnly = true;
+            impr.dtifecha.Value = Convert.ToDateTime(dgvfaltasdia.CurrentRow.Cells[3].Value.ToString());
+            impr.dtifecha.IsInputReadOnly = true;
+            impr.checkBoxX1.Checked = dgvfaltasdia.CurrentRow.Cells[4].Value.ToString().ToLower() == "false" ? false : true;
+            impr.pictureBox1.Image = Utilities.convertByteToImage(linq.DataFoto.ToArray());
+            impr.ShowDialog();
+            if (impr.OPTION == "OK" && toolStripcmbcalendario.SelectedIndex >= 0)
+            {
+                try
+                {
+                    falta.IdFaltas = dgvfaltasdia.CurrentRow.Cells[0].Value.ToString();
+                    falta.Fecha = impr.dtifecha.Value;
+                    falta.Cedula = impr.txtcedula.Text;
+                    falta.IdCalendario = idcalendario;
+                    falta.Justificacion = impr.checkBoxX1.Checked == false ? false : true;
+                    faltas.ModificarFaltasJustificacion(falta);
+                    MostrarFaltasDia(idcalendario, dtidia.Value);
+                }
+                catch (Exception mes)
+                {
+                    MessageBox.Show(mes.Message);
+                }
+            }
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            if (dgvfaltasdia.Rows.Count > 0)
+            {
+                DialogResult dialogResult = MessageBox.Show("Deseea Eliminar la Falta\n", "Administración de Faltas", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    //do something
+                    faltas.EliminarFaltaId(dgvfaltasdia.CurrentRow.Cells[0].Value.ToString());
+                    MostrarFaltasDia(idcalendario,dtidia.Value);
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    //do something else
+                    return;
+                }
+
+            }
         }
 
     }

@@ -145,5 +145,7 @@ namespace CapaDatos.cd_GestionAsistencia
                 DB = null;
             }
         }
+
+        
     }
 }
