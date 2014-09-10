@@ -13,6 +13,7 @@ using CapaLogicaNegocio.cln_GestionPersonal;
 using CapaLogicaNegocio.cln_GestionPlanificacion;
 using CapaEntidades.GestionAsistencia;
 using CapaDatos;
+using CapaEntidades.GestionSeguridad;
 
 namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
 {
@@ -31,6 +32,12 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
         DataGridViewButtonColumn colpers = new DataGridViewButtonColumn();
         private string idcalendario;
 
+        public void setUser(Usuarios s, Permisos per)
+        {
+            user = s;
+            permiso = per;
+        }
+
         private void frmDNBAdministrarImprevistos_Load(object sender, EventArgs e)
         {
             toolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -39,6 +46,9 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
             {
                 toolStripcmbcalendario.Items.Add(temp.NOMBRE);
             }
+            if (!permiso.Escritura) { toolStrip1.Items.Remove(toolnuevo); }
+            if (!permiso.Eliminacion) { toolStrip1.Items.Remove(tooleliminar); }
+            if (!permiso.Modificacion) { toolStrip1.Items.Remove(toolmodificar); }
         }
 
         private void dataGridViewX1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -379,5 +389,9 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
                 
             }
         }
+
+        public Usuarios user { get; set; }
+
+        public Permisos permiso { get; set; }
     }
 }

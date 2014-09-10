@@ -13,6 +13,7 @@ using SecuGen.FDxSDKPro.Windows;
 using CapaEntidades.GestionAsistencia;
 using CapaDatos;
 using CapaLogicaNegocio.cln_GestionPersonal;
+using CapaEntidades.GestionSeguridad;
 
 namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
 {
@@ -31,6 +32,11 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
         private int m_ImageWidth;
         private int m_ImageHeight;
         private Byte[] arrayHuella1;
+        public void setUser(Usuarios s, Permisos per)
+        {
+            user = s;
+            permiso = per;
+        }
 
         private void frmDNBAdministrarAsistencia_Load(object sender, EventArgs e)
         {
@@ -54,6 +60,9 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
             dataGridViewX1.Columns[6].Visible = false;
             dataGridViewX1.Columns[7].Visible = false;
             dataGridViewX1.Columns[8].Visible = false;
+
+            if (!permiso.Escritura) { toolStrip1.Items.Remove(toolnuevo); }
+            if (!permiso.Eliminacion) { toolStrip1.Items.Remove(tooleliminar); }
 
         }
 
@@ -201,7 +210,14 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
             frmDNBEditAsistencia frmasis = new frmDNBEditAsistencia(linq[toolStripcmbcalendario.SelectedIndex].IDCALENDARIO);
             frmasis.ShowDialog();       
         }
+        public Usuarios user { get; set; }
 
+        public Permisos permiso { get; set; }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+
+        }
 
     }
 }

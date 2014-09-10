@@ -29,17 +29,25 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDNBAdministrarFaltas));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolnuevo = new System.Windows.Forms.ToolStripButton();
+            this.tooleliminar = new System.Windows.Forms.ToolStripButton();
+            this.toolmodificar = new System.Windows.Forms.ToolStripButton();
+            this.toolreporte = new System.Windows.Forms.ToolStripButton();
             this.toolStripcmbcalendario = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.superTabControl1 = new DevComponents.DotNetBar.SuperTabControl();
+            this.superTabControlPanel1 = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.dtidia = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.txtbuscar = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.groupbox1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.dgvfaltasdia = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.superTabItem1 = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel3 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.dgvfaltasrango = new DevComponents.DotNetBar.Controls.DataGridViewX();
@@ -51,14 +59,6 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             this.dtiinicio = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.dtifin = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.superTabItem3 = new DevComponents.DotNetBar.SuperTabItem();
-            this.superTabControlPanel1 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.dtidia = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.labelX2 = new DevComponents.DotNetBar.LabelX();
-            this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.txtbuscar = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.groupbox1 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.dgvfaltasdia = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.superTabItem1 = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel2 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.dgvfaltasmes = new DevComponents.DotNetBar.Controls.DataGridViewX();
@@ -71,15 +71,15 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).BeginInit();
             this.superTabControl1.SuspendLayout();
+            this.superTabControlPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtidia)).BeginInit();
+            this.groupbox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvfaltasdia)).BeginInit();
             this.superTabControlPanel3.SuspendLayout();
             this.groupPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvfaltasrango)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtiinicio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtifin)).BeginInit();
-            this.superTabControlPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtidia)).BeginInit();
-            this.groupbox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvfaltasdia)).BeginInit();
             this.superTabControlPanel2.SuspendLayout();
             this.groupPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvfaltasmes)).BeginInit();
@@ -88,10 +88,10 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton2,
-            this.toolStripButton3,
-            this.toolStripButton4,
+            this.toolnuevo,
+            this.tooleliminar,
+            this.toolmodificar,
+            this.toolreporte,
             this.toolStripcmbcalendario,
             this.toolStripLabel1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
@@ -100,40 +100,40 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButton1
+            // toolnuevo
             // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(62, 22);
-            this.toolStripButton1.Text = "Nuevo";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            this.toolnuevo.Image = ((System.Drawing.Image)(resources.GetObject("toolnuevo.Image")));
+            this.toolnuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolnuevo.Name = "toolnuevo";
+            this.toolnuevo.Size = new System.Drawing.Size(62, 22);
+            this.toolnuevo.Text = "Nuevo";
+            this.toolnuevo.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
-            // toolStripButton2
+            // tooleliminar
             // 
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(70, 22);
-            this.toolStripButton2.Text = "Eliminar";
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            this.tooleliminar.Image = ((System.Drawing.Image)(resources.GetObject("tooleliminar.Image")));
+            this.tooleliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tooleliminar.Name = "tooleliminar";
+            this.tooleliminar.Size = new System.Drawing.Size(70, 22);
+            this.tooleliminar.Text = "Eliminar";
+            this.tooleliminar.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
-            // toolStripButton3
+            // toolmodificar
             // 
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(78, 22);
-            this.toolStripButton3.Text = "Modificar";
-            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
+            this.toolmodificar.Image = ((System.Drawing.Image)(resources.GetObject("toolmodificar.Image")));
+            this.toolmodificar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolmodificar.Name = "toolmodificar";
+            this.toolmodificar.Size = new System.Drawing.Size(78, 22);
+            this.toolmodificar.Text = "Modificar";
+            this.toolmodificar.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
-            // toolStripButton4
+            // toolreporte
             // 
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(68, 22);
-            this.toolStripButton4.Text = "Reporte";
+            this.toolreporte.Image = ((System.Drawing.Image)(resources.GetObject("toolreporte.Image")));
+            this.toolreporte.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolreporte.Name = "toolreporte";
+            this.toolreporte.Size = new System.Drawing.Size(68, 22);
+            this.toolreporte.Text = "Reporte";
             // 
             // toolStripcmbcalendario
             // 
@@ -184,6 +184,178 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             this.superTabControl1.Text = "superTabControl1";
             this.superTabControl1.SelectedTabChanged += new System.EventHandler<DevComponents.DotNetBar.SuperTabStripSelectedTabChangedEventArgs>(this.superTabControl1_SelectedTabChanged);
             // 
+            // superTabControlPanel1
+            // 
+            this.superTabControlPanel1.Controls.Add(this.dtidia);
+            this.superTabControlPanel1.Controls.Add(this.labelX2);
+            this.superTabControlPanel1.Controls.Add(this.labelX1);
+            this.superTabControlPanel1.Controls.Add(this.txtbuscar);
+            this.superTabControlPanel1.Controls.Add(this.groupbox1);
+            this.superTabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superTabControlPanel1.Location = new System.Drawing.Point(0, 27);
+            this.superTabControlPanel1.Name = "superTabControlPanel1";
+            this.superTabControlPanel1.Size = new System.Drawing.Size(680, 375);
+            this.superTabControlPanel1.TabIndex = 1;
+            this.superTabControlPanel1.TabItem = this.superTabItem1;
+            // 
+            // dtidia
+            // 
+            // 
+            // 
+            // 
+            this.dtidia.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.dtidia.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dtidia.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
+            this.dtidia.ButtonDropDown.Visible = true;
+            this.dtidia.IsPopupCalendarOpen = false;
+            this.dtidia.Location = new System.Drawing.Point(454, 17);
+            // 
+            // 
+            // 
+            this.dtidia.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dtidia.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dtidia.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
+            this.dtidia.MonthCalendar.ClearButtonVisible = true;
+            // 
+            // 
+            // 
+            this.dtidia.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.dtidia.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
+            this.dtidia.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.dtidia.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.dtidia.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.dtidia.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
+            this.dtidia.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dtidia.MonthCalendar.DisplayMonth = new System.DateTime(2014, 9, 1, 0, 0, 0, 0);
+            this.dtidia.MonthCalendar.MarkedDates = new System.DateTime[0];
+            this.dtidia.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dtidia.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.dtidia.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
+            this.dtidia.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.dtidia.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dtidia.MonthCalendar.TodayButtonVisible = true;
+            this.dtidia.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
+            this.dtidia.MonthCalendar.PaintLabel += new DevComponents.Editors.DateTimeAdv.DayPaintEventHandler(this.dtidia_MonthCalendar_PaintLabel);
+            this.dtidia.Name = "dtidia";
+            this.dtidia.Size = new System.Drawing.Size(128, 22);
+            this.dtidia.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.dtidia.TabIndex = 4;
+            this.dtidia.ValueChanged += new System.EventHandler(this.dtidia_ValueChanged);
+            // 
+            // labelX2
+            // 
+            this.labelX2.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX2.Location = new System.Drawing.Point(417, 14);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(31, 23);
+            this.labelX2.TabIndex = 3;
+            this.labelX2.Text = "Dia";
+            // 
+            // labelX1
+            // 
+            this.labelX1.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX1.ForeColor = System.Drawing.Color.Black;
+            this.labelX1.Location = new System.Drawing.Point(113, 14);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.Size = new System.Drawing.Size(51, 23);
+            this.labelX1.TabIndex = 2;
+            this.labelX1.Text = "Buscar";
+            // 
+            // txtbuscar
+            // 
+            this.txtbuscar.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtbuscar.Border.Class = "TextBoxBorder";
+            this.txtbuscar.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtbuscar.DisabledBackColor = System.Drawing.Color.White;
+            this.txtbuscar.ForeColor = System.Drawing.Color.Black;
+            this.txtbuscar.Location = new System.Drawing.Point(170, 17);
+            this.txtbuscar.Name = "txtbuscar";
+            this.txtbuscar.PreventEnterBeep = true;
+            this.txtbuscar.Size = new System.Drawing.Size(100, 22);
+            this.txtbuscar.TabIndex = 1;
+            // 
+            // groupbox1
+            // 
+            this.groupbox1.BackColor = System.Drawing.Color.White;
+            this.groupbox1.CanvasColor = System.Drawing.SystemColors.Control;
+            this.groupbox1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2013;
+            this.groupbox1.Controls.Add(this.dgvfaltasdia);
+            this.groupbox1.DisabledBackColor = System.Drawing.Color.Empty;
+            this.groupbox1.Location = new System.Drawing.Point(21, 43);
+            this.groupbox1.Name = "groupbox1";
+            this.groupbox1.Size = new System.Drawing.Size(639, 320);
+            // 
+            // 
+            // 
+            this.groupbox1.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.groupbox1.Style.BackColorGradientAngle = 90;
+            this.groupbox1.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.groupbox1.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupbox1.Style.BorderBottomWidth = 1;
+            this.groupbox1.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.groupbox1.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupbox1.Style.BorderLeftWidth = 1;
+            this.groupbox1.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupbox1.Style.BorderRightWidth = 1;
+            this.groupbox1.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupbox1.Style.BorderTopWidth = 1;
+            this.groupbox1.Style.CornerDiameter = 4;
+            this.groupbox1.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.groupbox1.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
+            this.groupbox1.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.groupbox1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
+            // 
+            // 
+            // 
+            this.groupbox1.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.groupbox1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.groupbox1.TabIndex = 0;
+            this.groupbox1.Text = "Faltas por Día";
+            // 
+            // dgvfaltasdia
+            // 
+            this.dgvfaltasdia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvfaltasdia.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvfaltasdia.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.dgvfaltasdia.Location = new System.Drawing.Point(3, 4);
+            this.dgvfaltasdia.Name = "dgvfaltasdia";
+            this.dgvfaltasdia.Size = new System.Drawing.Size(627, 287);
+            this.dgvfaltasdia.TabIndex = 0;
+            // 
+            // superTabItem1
+            // 
+            this.superTabItem1.AttachedControl = this.superTabControlPanel1;
+            this.superTabItem1.GlobalItem = false;
+            this.superTabItem1.Name = "superTabItem1";
+            this.superTabItem1.Text = "Faltas por Día";
+            // 
             // superTabControlPanel3
             // 
             this.superTabControlPanel3.Controls.Add(this.groupPanel2);
@@ -195,9 +367,9 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             this.superTabControlPanel3.Controls.Add(this.dtiinicio);
             this.superTabControlPanel3.Controls.Add(this.dtifin);
             this.superTabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel3.Location = new System.Drawing.Point(0, 27);
+            this.superTabControlPanel3.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel3.Name = "superTabControlPanel3";
-            this.superTabControlPanel3.Size = new System.Drawing.Size(680, 375);
+            this.superTabControlPanel3.Size = new System.Drawing.Size(680, 402);
             this.superTabControlPanel3.TabIndex = 0;
             this.superTabControlPanel3.TabItem = this.superTabItem3;
             this.superTabControlPanel3.Click += new System.EventHandler(this.superTabControlPanel3_Click);
@@ -246,14 +418,14 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             // dgvfaltasrango
             // 
             this.dgvfaltasrango.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvfaltasrango.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvfaltasrango.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvfaltasrango.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.dgvfaltasrango.Location = new System.Drawing.Point(4, 4);
             this.dgvfaltasrango.Name = "dgvfaltasrango";
@@ -432,178 +604,6 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             this.superTabItem3.Name = "superTabItem3";
             this.superTabItem3.Text = "Faltas por Rango";
             // 
-            // superTabControlPanel1
-            // 
-            this.superTabControlPanel1.Controls.Add(this.dtidia);
-            this.superTabControlPanel1.Controls.Add(this.labelX2);
-            this.superTabControlPanel1.Controls.Add(this.labelX1);
-            this.superTabControlPanel1.Controls.Add(this.txtbuscar);
-            this.superTabControlPanel1.Controls.Add(this.groupbox1);
-            this.superTabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel1.Location = new System.Drawing.Point(0, 27);
-            this.superTabControlPanel1.Name = "superTabControlPanel1";
-            this.superTabControlPanel1.Size = new System.Drawing.Size(680, 375);
-            this.superTabControlPanel1.TabIndex = 1;
-            this.superTabControlPanel1.TabItem = this.superTabItem1;
-            // 
-            // dtidia
-            // 
-            // 
-            // 
-            // 
-            this.dtidia.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.dtidia.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dtidia.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
-            this.dtidia.ButtonDropDown.Visible = true;
-            this.dtidia.IsPopupCalendarOpen = false;
-            this.dtidia.Location = new System.Drawing.Point(454, 17);
-            // 
-            // 
-            // 
-            this.dtidia.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.dtidia.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dtidia.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
-            this.dtidia.MonthCalendar.ClearButtonVisible = true;
-            // 
-            // 
-            // 
-            this.dtidia.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.dtidia.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
-            this.dtidia.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.dtidia.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.dtidia.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.dtidia.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
-            this.dtidia.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dtidia.MonthCalendar.DisplayMonth = new System.DateTime(2014, 9, 1, 0, 0, 0, 0);
-            this.dtidia.MonthCalendar.MarkedDates = new System.DateTime[0];
-            this.dtidia.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.dtidia.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.dtidia.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
-            this.dtidia.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.dtidia.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dtidia.MonthCalendar.TodayButtonVisible = true;
-            this.dtidia.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
-            this.dtidia.MonthCalendar.PaintLabel += new DevComponents.Editors.DateTimeAdv.DayPaintEventHandler(this.dtidia_MonthCalendar_PaintLabel);
-            this.dtidia.Name = "dtidia";
-            this.dtidia.Size = new System.Drawing.Size(128, 22);
-            this.dtidia.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dtidia.TabIndex = 4;
-            this.dtidia.ValueChanged += new System.EventHandler(this.dtidia_ValueChanged);
-            // 
-            // labelX2
-            // 
-            this.labelX2.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX2.Location = new System.Drawing.Point(417, 14);
-            this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(31, 23);
-            this.labelX2.TabIndex = 3;
-            this.labelX2.Text = "Dia";
-            // 
-            // labelX1
-            // 
-            this.labelX1.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.ForeColor = System.Drawing.Color.Black;
-            this.labelX1.Location = new System.Drawing.Point(113, 14);
-            this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(51, 23);
-            this.labelX1.TabIndex = 2;
-            this.labelX1.Text = "Buscar";
-            // 
-            // txtbuscar
-            // 
-            this.txtbuscar.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtbuscar.Border.Class = "TextBoxBorder";
-            this.txtbuscar.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtbuscar.DisabledBackColor = System.Drawing.Color.White;
-            this.txtbuscar.ForeColor = System.Drawing.Color.Black;
-            this.txtbuscar.Location = new System.Drawing.Point(170, 17);
-            this.txtbuscar.Name = "txtbuscar";
-            this.txtbuscar.PreventEnterBeep = true;
-            this.txtbuscar.Size = new System.Drawing.Size(100, 22);
-            this.txtbuscar.TabIndex = 1;
-            // 
-            // groupbox1
-            // 
-            this.groupbox1.BackColor = System.Drawing.Color.White;
-            this.groupbox1.CanvasColor = System.Drawing.SystemColors.Control;
-            this.groupbox1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2013;
-            this.groupbox1.Controls.Add(this.dgvfaltasdia);
-            this.groupbox1.DisabledBackColor = System.Drawing.Color.Empty;
-            this.groupbox1.Location = new System.Drawing.Point(21, 43);
-            this.groupbox1.Name = "groupbox1";
-            this.groupbox1.Size = new System.Drawing.Size(639, 320);
-            // 
-            // 
-            // 
-            this.groupbox1.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.groupbox1.Style.BackColorGradientAngle = 90;
-            this.groupbox1.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.groupbox1.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupbox1.Style.BorderBottomWidth = 1;
-            this.groupbox1.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.groupbox1.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupbox1.Style.BorderLeftWidth = 1;
-            this.groupbox1.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupbox1.Style.BorderRightWidth = 1;
-            this.groupbox1.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupbox1.Style.BorderTopWidth = 1;
-            this.groupbox1.Style.CornerDiameter = 4;
-            this.groupbox1.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.groupbox1.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
-            this.groupbox1.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.groupbox1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
-            // 
-            // 
-            // 
-            this.groupbox1.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.groupbox1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.groupbox1.TabIndex = 0;
-            this.groupbox1.Text = "Faltas por Día";
-            // 
-            // dgvfaltasdia
-            // 
-            this.dgvfaltasdia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvfaltasdia.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvfaltasdia.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.dgvfaltasdia.Location = new System.Drawing.Point(3, 4);
-            this.dgvfaltasdia.Name = "dgvfaltasdia";
-            this.dgvfaltasdia.Size = new System.Drawing.Size(627, 287);
-            this.dgvfaltasdia.TabIndex = 0;
-            // 
-            // superTabItem1
-            // 
-            this.superTabItem1.AttachedControl = this.superTabControlPanel1;
-            this.superTabItem1.GlobalItem = false;
-            this.superTabItem1.Name = "superTabItem1";
-            this.superTabItem1.Text = "Faltas por Día";
-            // 
             // superTabControlPanel2
             // 
             this.superTabControlPanel2.Controls.Add(this.groupPanel1);
@@ -662,14 +662,14 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             // dgvfaltasmes
             // 
             this.dgvfaltasmes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvfaltasmes.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvfaltasmes.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvfaltasmes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.dgvfaltasmes.Location = new System.Drawing.Point(4, 4);
             this.dgvfaltasmes.Name = "dgvfaltasmes";
@@ -760,15 +760,15 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).EndInit();
             this.superTabControl1.ResumeLayout(false);
+            this.superTabControlPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtidia)).EndInit();
+            this.groupbox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvfaltasdia)).EndInit();
             this.superTabControlPanel3.ResumeLayout(false);
             this.groupPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvfaltasrango)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtiinicio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtifin)).EndInit();
-            this.superTabControlPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtidia)).EndInit();
-            this.groupbox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvfaltasdia)).EndInit();
             this.superTabControlPanel2.ResumeLayout(false);
             this.groupPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvfaltasmes)).EndInit();
@@ -780,10 +780,10 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
         #endregion
 
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
+        private System.Windows.Forms.ToolStripButton toolnuevo;
+        private System.Windows.Forms.ToolStripButton tooleliminar;
+        private System.Windows.Forms.ToolStripButton toolmodificar;
+        private System.Windows.Forms.ToolStripButton toolreporte;
         private System.Windows.Forms.ToolStripComboBox toolStripcmbcalendario;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private DevComponents.DotNetBar.SuperTabControl superTabControl1;

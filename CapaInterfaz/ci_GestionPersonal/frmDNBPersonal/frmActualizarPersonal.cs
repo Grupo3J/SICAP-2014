@@ -17,8 +17,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
     public partial class frmActualizarPersonal : DevComponents.DotNetBar.Metro.MetroForm
     {
         public frmActualizarPersonal(Personal p)
-        {
-
+        {           
             ced = p.Cedula;
             nom = p.Nombre;
             ape = p.Apellido;

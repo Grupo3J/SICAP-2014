@@ -28,12 +28,11 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDNBAdministrarImprevistos));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolnuevo = new System.Windows.Forms.ToolStripButton();
+            this.tooleliminar = new System.Windows.Forms.ToolStripButton();
+            this.toolmodificar = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripcmbcalendario = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
@@ -47,9 +46,9 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton2,
-            this.toolStripButton3,
+            this.toolnuevo,
+            this.tooleliminar,
+            this.toolmodificar,
             this.toolStripButton4,
             this.toolStripcmbcalendario,
             this.toolStripLabel1});
@@ -59,36 +58,36 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButton1
+            // toolnuevo
             // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(62, 22);
-            this.toolStripButton1.Text = "Nuevo";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            this.toolnuevo.Image = global::CapaInterfaz.Properties.Resources._48px_Crystal_Clear_action_edit_add;
+            this.toolnuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolnuevo.Name = "toolnuevo";
+            this.toolnuevo.Size = new System.Drawing.Size(62, 22);
+            this.toolnuevo.Text = "Nuevo";
+            this.toolnuevo.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
-            // toolStripButton2
+            // tooleliminar
             // 
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(70, 22);
-            this.toolStripButton2.Text = "Eliminar";
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            this.tooleliminar.Image = global::CapaInterfaz.Properties.Resources._48px_Crystal_Clear_action_editcut;
+            this.tooleliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tooleliminar.Name = "tooleliminar";
+            this.tooleliminar.Size = new System.Drawing.Size(70, 22);
+            this.tooleliminar.Text = "Eliminar";
+            this.tooleliminar.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
-            // toolStripButton3
+            // toolmodificar
             // 
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(78, 22);
-            this.toolStripButton3.Text = "Modificar";
-            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
+            this.toolmodificar.Image = global::CapaInterfaz.Properties.Resources._48px_Crystal_Clear_action_edit;
+            this.toolmodificar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolmodificar.Name = "toolmodificar";
+            this.toolmodificar.Size = new System.Drawing.Size(78, 22);
+            this.toolmodificar.Text = "Modificar";
+            this.toolmodificar.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // toolStripButton4
             // 
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
+            this.toolStripButton4.Image = global::CapaInterfaz.Properties.Resources.ima_reportes;
             this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton4.Name = "toolStripButton4";
             this.toolStripButton4.Size = new System.Drawing.Size(68, 22);
@@ -194,9 +193,9 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
         #endregion
 
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.ToolStripButton toolnuevo;
+        private System.Windows.Forms.ToolStripButton tooleliminar;
+        private System.Windows.Forms.ToolStripButton toolmodificar;
         private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.ToolStripComboBox toolStripcmbcalendario;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;

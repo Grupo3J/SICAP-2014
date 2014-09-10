@@ -14,6 +14,7 @@ using System.Globalization;
 using CapaEntidades.GestionAsistencia;
 using CapaLogicaNegocio.cln_GestionPersonal;
 using System.Drawing.Drawing2D;
+using CapaEntidades.GestionSeguridad;
 
 namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
 {
@@ -34,20 +35,25 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
         DiaNoLAborableLN diasnolab = new DiaNoLAborableLN();
         List<sp_ListarDiaAdicionalResult> da;
         List<sp_ListarDiaNoLaborablesResult> dnl;
+        public void setUser(Usuarios s, Permisos per)
+        {
+            user = s;
+            permiso = per;
+        }
 
         private void superTabControl1_SelectedTabChanged(object sender, SuperTabStripSelectedTabChangedEventArgs e)
         {
             if (superTabControl1.SelectedTabIndex != 0)
             {
-                toolStripButton1.Visible = false;
-                toolStripButton2.Visible = false;
-                toolStripButton3.Visible = false;
+                toolnuevo.Visible = false;
+                tooleliminar.Visible = false;
+                toolmodificar.Visible = false;
             }
             else
             {
-                toolStripButton1.Visible = true;
-                toolStripButton2.Visible = true;
-                toolStripButton3.Visible = true;
+                toolnuevo.Visible = true;
+                tooleliminar.Visible = true;
+                toolmodificar.Visible = true;
             }
         }
 
@@ -64,7 +70,11 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             {
                 if (!toolStripcmbcalendario.Items.Contains(temp.NOMBRE))
                     toolStripcmbcalendario.Items.Add(temp.NOMBRE);
+
             }
+            if (!permiso.Escritura) { toolStrip1.Items.Remove(toolnuevo); }
+            if (!permiso.Eliminacion) { toolStrip1.Items.Remove(tooleliminar); }
+            if (!permiso.Modificacion) { toolStrip1.Items.Remove(toolmodificar); }
         }
 
         private void toolStripcmbcalendario_SelectedIndexChanged(object sender, EventArgs e)
@@ -420,6 +430,8 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             }
         }
 
+        public Usuarios user { get; set; }
 
+        public Permisos permiso { get; set; }
     }
 }
