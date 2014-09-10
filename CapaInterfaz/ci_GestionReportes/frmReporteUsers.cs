@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace CapaInterfaz.ci_GestionReportes
 {
-    public partial class frmReporteUsers : Form
+    public partial class frmReporteUsers : DevComponents.DotNetBar.Metro.MetroForm
     {
         public frmReporteUsers()
         {
@@ -53,7 +53,7 @@ namespace CapaInterfaz.ci_GestionReportes
         private void btnpantallacompleta_Click(object sender, EventArgs e)
         {
             frmReporteUsers a= new frmReporteUsers();
-
+            a.btnpantallacompleta.Visible = false;
             a.WindowState = FormWindowState.Maximized;
             a.Show();
         }

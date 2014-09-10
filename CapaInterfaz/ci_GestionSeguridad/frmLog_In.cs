@@ -14,7 +14,7 @@ namespace CapaInterfaz.ci_GestionSeguridad
 {
     public partial class frmLog_In : DevComponents.DotNetBar.Metro.MetroForm
     {
-        string clave = "";
+     
        
         public frmLog_In()
         {

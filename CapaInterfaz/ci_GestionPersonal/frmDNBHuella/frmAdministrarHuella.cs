@@ -12,6 +12,7 @@ using CapaLogicaNegocio.cln_GestionPersonal;
 using CapaEntidades.GestionPersonal;
 using CapaDatos.cd_GestionPersonal;
 using System.IO;
+using CapaEntidades.GestionSeguridad;
 
 
 namespace CapaInterfaz.ci_GestionPersonal.frmDNBHuella
@@ -32,7 +33,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBHuella
         private int m_ImageHeight;
         private Byte[] arrayHuella1;
         private Byte[] arrayHuella2;
-
+       
         private void dataGridViewX1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -237,5 +238,11 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBHuella
             this.Close();
         }
 
+
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

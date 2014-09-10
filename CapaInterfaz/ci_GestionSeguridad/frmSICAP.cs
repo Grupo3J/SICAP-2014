@@ -80,7 +80,7 @@ namespace CapaInterfaz.ci_GestionSeguridad
             if (sist.Login(user.Nick, user.Clave))
             {
                 
-                sist.SetArbol(this.treeView1);
+               // sist.SetArbol(this.treeView1);
                 user = USLN.getUserbyced(sist.Cedula);
                
             }

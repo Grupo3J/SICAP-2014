@@ -59,7 +59,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
         }
 
         Bitmap picture;
-        Bitmap picture2;
+        
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {

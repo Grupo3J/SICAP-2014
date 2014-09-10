@@ -928,4 +928,29 @@
       <Column Name="DESCRIPCION" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
     </ElementType>
   </Function>
+  <Function Name="dbo.sp_ReportePersonal" Method="sp_ReportePersonal">
+    <Parameter Name="tipo" Type="System.String" DbType="VarChar(30)" />
+    <ElementType Name="sp_ReportePersonalResult">
+      <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="APELLIDO" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="CARGO" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="TITULO" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="CORREO" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="SEXO" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="CIUDAD" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="DIRECCION" Type="System.String" DbType="VarChar(75)" CanBeNull="true" />
+      <Column Name="TELEFONO" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="TIPO" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_ObtenerArbol" Method="sp_ObtenerArbol">
+    <Parameter Name="nick" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="clave" Type="System.String" DbType="VarChar(80)" />
+    <ElementType Name="sp_ObtenerArbolResult">
+      <Column Name="IDMODULO" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="MOD_IDMODULO" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

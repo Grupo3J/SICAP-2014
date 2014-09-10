@@ -28,7 +28,6 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmActualizarPersonal));
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.comboCalendario = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.textDireccion = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -50,7 +49,6 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             this.textCedula = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX12 = new DevComponents.DotNetBar.LabelX();
             this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
-            this.pictureFoto = new System.Windows.Forms.PictureBox();
             this.labelX11 = new DevComponents.DotNetBar.LabelX();
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.labelX9 = new DevComponents.DotNetBar.LabelX();
@@ -64,14 +62,14 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.pictureFoto = new System.Windows.Forms.PictureBox();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureFoto)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFoto)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage1
@@ -331,7 +329,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             // 
             // labelX12
             // 
-            this.labelX12.BackColor = System.Drawing.Color.White;
+            this.labelX12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             // 
             // 
             // 
@@ -355,18 +353,9 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             this.buttonX1.Text = "Cargar Foto";
             this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
             // 
-            // pictureFoto
-            // 
-            this.pictureFoto.ForeColor = System.Drawing.Color.Black;
-            this.pictureFoto.Location = new System.Drawing.Point(31, 20);
-            this.pictureFoto.Name = "pictureFoto";
-            this.pictureFoto.Size = new System.Drawing.Size(99, 107);
-            this.pictureFoto.TabIndex = 65;
-            this.pictureFoto.TabStop = false;
-            // 
             // labelX11
             // 
-            this.labelX11.BackColor = System.Drawing.Color.White;
+            this.labelX11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             // 
             // 
             // 
@@ -380,7 +369,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             // 
             // labelX10
             // 
-            this.labelX10.BackColor = System.Drawing.Color.White;
+            this.labelX10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             // 
             // 
             // 
@@ -394,7 +383,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             // 
             // labelX9
             // 
-            this.labelX9.BackColor = System.Drawing.Color.White;
+            this.labelX9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             // 
             // 
             // 
@@ -408,7 +397,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             // 
             // labelX8
             // 
-            this.labelX8.BackColor = System.Drawing.Color.White;
+            this.labelX8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             // 
             // 
             // 
@@ -422,7 +411,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             // 
             // labelX7
             // 
-            this.labelX7.BackColor = System.Drawing.Color.White;
+            this.labelX7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             // 
             // 
             // 
@@ -436,7 +425,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             // 
             // labelX6
             // 
-            this.labelX6.BackColor = System.Drawing.Color.White;
+            this.labelX6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             // 
             // 
             // 
@@ -450,7 +439,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             // 
             // labelX5
             // 
-            this.labelX5.BackColor = System.Drawing.Color.White;
+            this.labelX5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             // 
             // 
             // 
@@ -464,7 +453,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             // 
             // labelX4
             // 
-            this.labelX4.BackColor = System.Drawing.Color.White;
+            this.labelX4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             // 
             // 
             // 
@@ -478,7 +467,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             // 
             // labelX3
             // 
-            this.labelX3.BackColor = System.Drawing.Color.White;
+            this.labelX3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             // 
             // 
             // 
@@ -492,7 +481,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             // 
             // labelX2
             // 
-            this.labelX2.BackColor = System.Drawing.Color.White;
+            this.labelX2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             // 
             // 
             // 
@@ -506,7 +495,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             // 
             // labelX1
             // 
-            this.labelX1.BackColor = System.Drawing.Color.White;
+            this.labelX1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             // 
             // 
             // 
@@ -530,10 +519,11 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             // 
             // toolStrip1
             // 
+            this.toolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.toolStrip1.ForeColor = System.Drawing.Color.Black;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
             this.toolStripSeparator1,
-            this.toolStripButton2,
             this.toolStripButton5});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -541,9 +531,14 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             this.toolStrip1.TabIndex = 28;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
             // toolStripButton1
             // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.Image = global::CapaInterfaz.Properties.Resources._48px_Crystal_Clear_device_3floppy_mount;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(69, 22);
@@ -551,26 +546,23 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             this.toolStripButton1.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(73, 22);
-            this.toolStripButton2.Text = "Cancelar";
-            // 
             // toolStripButton5
             // 
-            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
+            this.toolStripButton5.Image = global::CapaInterfaz.Properties.Resources._48px_Crystal_Clear_action_reload;
             this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton5.Name = "toolStripButton5";
             this.toolStripButton5.Size = new System.Drawing.Size(54, 22);
             this.toolStripButton5.Text = "Atras";
+            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
+            // 
+            // pictureFoto
+            // 
+            this.pictureFoto.ForeColor = System.Drawing.Color.Black;
+            this.pictureFoto.Location = new System.Drawing.Point(31, 20);
+            this.pictureFoto.Name = "pictureFoto";
+            this.pictureFoto.Size = new System.Drawing.Size(99, 107);
+            this.pictureFoto.TabIndex = 65;
+            this.pictureFoto.TabStop = false;
             // 
             // frmActualizarPersonal
             // 
@@ -586,10 +578,10 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             this.Text = "Actualizar Datos Persona";
             this.Load += new System.EventHandler(this.frmActualizarPersonal_Load);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureFoto)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -634,7 +626,6 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripButton toolStripButton5;
 
 

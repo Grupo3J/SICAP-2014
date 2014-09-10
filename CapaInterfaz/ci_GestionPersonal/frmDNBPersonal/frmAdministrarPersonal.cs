@@ -31,16 +31,17 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
         {
 
         }
-
+        public void setUser(Usuarios s, Permisos per)
+        {
+            user = s;
+            permiso = per;
+        }
         private void frmAdministrarPersonal_Load(object sender, EventArgs e)
         {
-
-            Permisos per = new Permisos();
-            per.Escritura = true;
-            per.Lectura = true;
-            per.Modificacion = true;
-
-            if (toolStripButton2.Enabled = (per.Modificacion)) { }
+            if (!permiso.Escritura) { toolStrip1.Items.Remove(toolnuevo); }
+            if (!permiso.Eliminacion) { toolStrip1.Items.Remove(tooleliminar); }
+            if (!permiso.Modificacion) { toolStrip1.Items.Remove(toolmodificar); }
+            
             dataGridViewX1.DataSource = PLN.ListarPersonal("");
         }
 
@@ -178,7 +179,13 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
 
         }
 
-        
 
+
+
+        public Usuarios user { get; set; }
+
+        public Permisos permiso { get; set; }
+
+        
     }
 }

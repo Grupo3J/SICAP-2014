@@ -35,10 +35,12 @@
             // crystalReportViewer1
             // 
             this.crystalReportViewer1.ActiveViewIndex = -1;
+            this.crystalReportViewer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crystalReportViewer1.CachedPageNumberPerDoc = 10;
+           //jordi this.crystalReportViewer1.CachedPageNumberPerDoc = 10;
             this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crystalReportViewer1.ForeColor = System.Drawing.Color.Black;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
             this.crystalReportViewer1.Size = new System.Drawing.Size(704, 441);
@@ -46,12 +48,14 @@
             // 
             // btnpantallacompleta
             // 
+            this.btnpantallacompleta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnpantallacompleta.ForeColor = System.Drawing.Color.Black;
             this.btnpantallacompleta.Location = new System.Drawing.Point(545, 0);
             this.btnpantallacompleta.Name = "btnpantallacompleta";
             this.btnpantallacompleta.Size = new System.Drawing.Size(132, 23);
             this.btnpantallacompleta.TabIndex = 1;
             this.btnpantallacompleta.Text = "Ver Pantalla Completa";
-            this.btnpantallacompleta.UseVisualStyleBackColor = true;
+            this.btnpantallacompleta.UseVisualStyleBackColor = false;
             this.btnpantallacompleta.Click += new System.EventHandler(this.btnpantallacompleta_Click);
             // 
             // frmReporteUsers
@@ -61,6 +65,7 @@
             this.ClientSize = new System.Drawing.Size(704, 441);
             this.Controls.Add(this.btnpantallacompleta);
             this.Controls.Add(this.crystalReportViewer1);
+            this.DoubleBuffered = true;
             this.Name = "frmReporteUsers";
             this.Text = "frmReporteUsers";
             this.Load += new System.EventHandler(this.frmReporteUsers_Load);

@@ -73,7 +73,7 @@ namespace CapaInterfaz.ci_GestionSeguridad
 
                 cargarUsuario();
                 
-                List<pa_ObtenerArbolResult>   g=sist.getArbol(user.Nick, user.Clave);
+                List<sp_ObtenerArbolResult>   g=sist.getArbol(user.Nick, user.Clave);
 
                 
 
@@ -227,11 +227,11 @@ namespace CapaInterfaz.ci_GestionSeguridad
             //MessageBox.Show(((MetroTileItem)sender).Text);
 
             string op = ((MetroTileItem)sender).Text.Substring(4, ((MetroTileItem)sender).Text.Length-9);
-                        
+               
             try
             {
-
-                Type objectType = Type.GetType(RCLN.geturlrecurso_by_nombremod(op));
+                string url = RCLN.geturlrecurso_by_nombremod(op);
+                Type objectType = Type.GetType(url);
                 Form myObject = (Form)Activator.CreateInstance(objectType);
                 MethodInfo methodInfo = objectType.GetMethod("setUser");
 
@@ -246,7 +246,8 @@ namespace CapaInterfaz.ci_GestionSeguridad
             }
             catch (Exception)
             {
-
+                DevComponents.DotNetBar.MessageBoxEx.Show(this, "No se ha podido mostra la ventana es posible que no se haya especificiado bien la url del formulario o el metodo(setuser)", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+          
             }
             
 

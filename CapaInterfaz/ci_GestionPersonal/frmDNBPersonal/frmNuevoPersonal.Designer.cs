@@ -28,8 +28,9 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNuevoPersonal));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.comboItem2 = new DevComponents.Editors.ComboItem();
             this.comboItem1 = new DevComponents.Editors.ComboItem();
             this.comboItem6 = new DevComponents.Editors.ComboItem();
@@ -57,6 +58,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             this.comboSexo = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.comboItem14 = new DevComponents.Editors.ComboItem();
             this.comboItem15 = new DevComponents.Editors.ComboItem();
+            this.pictureFoto = new System.Windows.Forms.PictureBox();
             this.textCedula = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX11 = new DevComponents.DotNetBar.LabelX();
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
@@ -79,17 +81,14 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             this.comboItem9 = new DevComponents.Editors.ComboItem();
             this.comboItem10 = new DevComponents.Editors.ComboItem();
             this.comboItem11 = new DevComponents.Editors.ComboItem();
-            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
-            this.pictureFoto = new System.Windows.Forms.PictureBox();
             this.pictureHuella = new System.Windows.Forms.PictureBox();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFoto)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureFoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureHuella)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,6 +102,24 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             this.toolStrip1.Size = new System.Drawing.Size(704, 25);
             this.toolStrip1.TabIndex = 25;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = global::CapaInterfaz.Properties.Resources._48px_Crystal_Clear_device_3floppy_mount;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(69, 22);
+            this.toolStripButton1.Text = "Guardar";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.Image = global::CapaInterfaz.Properties.Resources._48px_Crystal_Clear_action_reload;
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(73, 22);
+            this.toolStripButton2.Text = "Cancelar";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // comboItem2
             // 
@@ -399,6 +416,14 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             // 
             this.comboItem15.Text = "Mujer";
             // 
+            // pictureFoto
+            // 
+            this.pictureFoto.Location = new System.Drawing.Point(31, 20);
+            this.pictureFoto.Name = "pictureFoto";
+            this.pictureFoto.Size = new System.Drawing.Size(99, 107);
+            this.pictureFoto.TabIndex = 65;
+            this.pictureFoto.TabStop = false;
+            // 
             // textCedula
             // 
             this.textCedula.BackColor = System.Drawing.Color.White;
@@ -658,6 +683,14 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             // 
             this.comboItem11.Text = "Meñique";
             // 
+            // pictureHuella
+            // 
+            this.pictureHuella.Location = new System.Drawing.Point(42, 73);
+            this.pictureHuella.Name = "pictureHuella";
+            this.pictureHuella.Size = new System.Drawing.Size(97, 104);
+            this.pictureHuella.TabIndex = 83;
+            this.pictureHuella.TabStop = false;
+            // 
             // buttonX2
             // 
             this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -669,40 +702,6 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             this.buttonX2.TabIndex = 79;
             this.buttonX2.Text = "Cargar Huella";
             this.buttonX2.Click += new System.EventHandler(this.buttonX2_Click_2);
-            // 
-            // pictureFoto
-            // 
-            this.pictureFoto.Location = new System.Drawing.Point(31, 20);
-            this.pictureFoto.Name = "pictureFoto";
-            this.pictureFoto.Size = new System.Drawing.Size(99, 107);
-            this.pictureFoto.TabIndex = 65;
-            this.pictureFoto.TabStop = false;
-            // 
-            // pictureHuella
-            // 
-            this.pictureHuella.Location = new System.Drawing.Point(42, 73);
-            this.pictureHuella.Name = "pictureHuella";
-            this.pictureHuella.Size = new System.Drawing.Size(97, 104);
-            this.pictureHuella.TabIndex = 83;
-            this.pictureHuella.TabStop = false;
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(69, 22);
-            this.toolStripButton1.Text = "Guardar";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(73, 22);
-            this.toolStripButton2.Text = "Cancelar";
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // frmNuevoPersonal
             // 
@@ -721,9 +720,9 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             this.toolStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFoto)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureFoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureHuella)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

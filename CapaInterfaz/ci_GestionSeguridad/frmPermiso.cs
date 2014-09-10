@@ -69,11 +69,11 @@ namespace CapaInterfaz.ci_GestionSeguridad
                 //per.Modificacion = tem.Nodes[3].Checked;
                 //per.Busqueda = tem.Nodes[4].Checked;
                 Permisos pertem = PELN.getPermisoByidmodNombreRol(modidmodulo, comboBox1.SelectedItem.ToString());
-                pertem.Lectura = tem.Nodes[0].Checked;
-                pertem.Escritura = tem.Nodes[1].Checked;
+                
+                pertem.Escritura = tem.Nodes[0].Checked;
+                
+                pertem.Modificacion = tem.Nodes[1].Checked;
                 pertem.Eliminacion = tem.Nodes[2].Checked;
-                pertem.Modificacion = tem.Nodes[3].Checked;
-                pertem.Busqueda = tem.Nodes[4].Checked;
                 PELN.modificar(pertem);
 
             }
@@ -97,6 +97,14 @@ namespace CapaInterfaz.ci_GestionSeguridad
             treeView1.CheckBoxes = true;
             treeView1.Nodes.Clear();
             PELN.SetArbol(treeView1, comboBox1.SelectedItem.ToString());
+            
+        }
+
+        private void btnguardar_Click(object sender, EventArgs e)
+        {
+            string msj = "Se ha establecido correctamente los permisos de " + comboBox1.SelectedItem;
+            msj = user.IdRol ==rLN.getIdRolByNombrRol(""+comboBox1.SelectedItem)?msj=msj+" Para guardar los cambios sera necesario reestableces sesion":msj;
+            DevComponents.DotNetBar.MessageBoxEx.Show(msj);
             
         }
     }

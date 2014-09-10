@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using DevComponents.DotNetBar;
 using CapaLogicaNegocio.cln_GestionPlanificacion;
+using CapaEntidades.GestionSeguridad;
 
 namespace CapaInterfaz.ci_GestionPlanificacion.frmDNBDiasAdicionales
 {
@@ -17,8 +18,16 @@ namespace CapaInterfaz.ci_GestionPlanificacion.frmDNBDiasAdicionales
             InitializeComponent();
         }
         DiasAdicionalesLN DALN = new DiasAdicionalesLN();
+        public void setUser(Usuarios s, Permisos per)
+        {
+            user = s;
+            permiso = per;
+        }
         private void frmAdministrarDiasAdicionales_Load(object sender, EventArgs e)
         {
+            if (!permiso.Escritura) { toolStrip1.Items.Remove(toolnuevo); }
+            if (!permiso.Eliminacion) { toolStrip1.Items.Remove(tooleliminar); }
+            if (!permiso.Modificacion) { toolStrip1.Items.Remove(toolmodificar); }
             dataGridViewX1.DataSource = DALN.ListarDiasAdicionales();
 
         }
@@ -63,5 +72,9 @@ namespace CapaInterfaz.ci_GestionPlanificacion.frmDNBDiasAdicionales
             //frmModificarDiasAdicionales frmda = new frmModificarDiasAdicionales(idCalendario, iddia, fecha, descripcion);
             //frmda.Show();
         }
+
+        public Usuarios user { get; set; }
+
+        public Permisos permiso { get; set; }
     }
 }

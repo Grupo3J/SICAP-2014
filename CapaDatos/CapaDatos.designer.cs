@@ -795,6 +795,20 @@ namespace CapaDatos
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula, fecha, idCalendario);
 			return ((ISingleResult<sp_ContarImprevistoResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ReportePersonal")]
+		public ISingleResult<sp_ReportePersonalResult> sp_ReportePersonal([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string tipo)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tipo);
+			return ((ISingleResult<sp_ReportePersonalResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ObtenerArbol")]
+		public ISingleResult<sp_ObtenerArbolResult> sp_ObtenerArbol([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string nick, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(80)")] string clave)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nick, clave);
+			return ((ISingleResult<sp_ObtenerArbolResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.FaltasPersonalporMeses")]
@@ -9186,6 +9200,274 @@ namespace CapaDatos
 				if ((this._DESCRIPCION != value))
 				{
 					this._DESCRIPCION = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_ReportePersonalResult
+	{
+		
+		private string _CEDULA;
+		
+		private string _NOMBRE;
+		
+		private string _APELLIDO;
+		
+		private string _CARGO;
+		
+		private string _TITULO;
+		
+		private string _CORREO;
+		
+		private char _SEXO;
+		
+		private string _CIUDAD;
+		
+		private string _DIRECCION;
+		
+		private string _TELEFONO;
+		
+		private string _TIPO;
+		
+		public sp_ReportePersonalResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CEDULA", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string CEDULA
+		{
+			get
+			{
+				return this._CEDULA;
+			}
+			set
+			{
+				if ((this._CEDULA != value))
+				{
+					this._CEDULA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOMBRE", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string NOMBRE
+		{
+			get
+			{
+				return this._NOMBRE;
+			}
+			set
+			{
+				if ((this._NOMBRE != value))
+				{
+					this._NOMBRE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_APELLIDO", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string APELLIDO
+		{
+			get
+			{
+				return this._APELLIDO;
+			}
+			set
+			{
+				if ((this._APELLIDO != value))
+				{
+					this._APELLIDO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CARGO", DbType="VarChar(25) NOT NULL", CanBeNull=false)]
+		public string CARGO
+		{
+			get
+			{
+				return this._CARGO;
+			}
+			set
+			{
+				if ((this._CARGO != value))
+				{
+					this._CARGO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TITULO", DbType="VarChar(15)")]
+		public string TITULO
+		{
+			get
+			{
+				return this._TITULO;
+			}
+			set
+			{
+				if ((this._TITULO != value))
+				{
+					this._TITULO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CORREO", DbType="VarChar(30)")]
+		public string CORREO
+		{
+			get
+			{
+				return this._CORREO;
+			}
+			set
+			{
+				if ((this._CORREO != value))
+				{
+					this._CORREO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SEXO", DbType="Char(1) NOT NULL")]
+		public char SEXO
+		{
+			get
+			{
+				return this._SEXO;
+			}
+			set
+			{
+				if ((this._SEXO != value))
+				{
+					this._SEXO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CIUDAD", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string CIUDAD
+		{
+			get
+			{
+				return this._CIUDAD;
+			}
+			set
+			{
+				if ((this._CIUDAD != value))
+				{
+					this._CIUDAD = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIRECCION", DbType="VarChar(75)")]
+		public string DIRECCION
+		{
+			get
+			{
+				return this._DIRECCION;
+			}
+			set
+			{
+				if ((this._DIRECCION != value))
+				{
+					this._DIRECCION = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TELEFONO", DbType="VarChar(10)")]
+		public string TELEFONO
+		{
+			get
+			{
+				return this._TELEFONO;
+			}
+			set
+			{
+				if ((this._TELEFONO != value))
+				{
+					this._TELEFONO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TIPO", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string TIPO
+		{
+			get
+			{
+				return this._TIPO;
+			}
+			set
+			{
+				if ((this._TIPO != value))
+				{
+					this._TIPO = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_ObtenerArbolResult
+	{
+		
+		private string _IDMODULO;
+		
+		private string _MOD_IDMODULO;
+		
+		private string _NOMBRE;
+		
+		public sp_ObtenerArbolResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDMODULO", DbType="VarChar(5) NOT NULL", CanBeNull=false)]
+		public string IDMODULO
+		{
+			get
+			{
+				return this._IDMODULO;
+			}
+			set
+			{
+				if ((this._IDMODULO != value))
+				{
+					this._IDMODULO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MOD_IDMODULO", DbType="VarChar(5)")]
+		public string MOD_IDMODULO
+		{
+			get
+			{
+				return this._MOD_IDMODULO;
+			}
+			set
+			{
+				if ((this._MOD_IDMODULO != value))
+				{
+					this._MOD_IDMODULO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOMBRE", DbType="VarChar(50)")]
+		public string NOMBRE
+		{
+			get
+			{
+				return this._NOMBRE;
+			}
+			set
+			{
+				if ((this._NOMBRE != value))
+				{
+					this._NOMBRE = value;
 				}
 			}
 		}

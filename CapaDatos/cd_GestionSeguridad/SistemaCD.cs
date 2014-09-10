@@ -8,14 +8,14 @@ namespace CapaDatos.cd_GestionSeguridad
 {
     public class SistemaCD
     {
-        public static List<pa_ObtenerArbolResult> getarbol(string nick,string clave)
+        public static List<sp_ObtenerArbolResult> getarbol(string nick, string clave)
         {
             CapaDatosDataContext DB;
             try
             {
                 using (DB = new CapaDatosDataContext())
                 {
-                    return DB.pa_ObtenerArbol(nick, clave).ToList();
+                    return DB.sp_ObtenerArbol(nick, clave).ToList();
                 }
             }
             catch (Exception ex)
@@ -28,14 +28,14 @@ namespace CapaDatos.cd_GestionSeguridad
             }
         }
 
-        public static List<pa_ObtenerArbolResult>  getArbolbynickclave(string nick, string clave)
+        public static List<sp_ObtenerArbolResult> getArbolbynickclave(string nick, string clave)
         {
             CapaDatosDataContext DB;
             try
             {
                 using (DB = new CapaDatosDataContext())
                 {
-                    return DB.pa_ObtenerArbol(nick, clave).ToList();
+                    return DB.sp_ObtenerArbol(nick, clave).ToList();
                 }
             }
             catch (Exception ex)
@@ -46,7 +46,7 @@ namespace CapaDatos.cd_GestionSeguridad
             {
                 DB = null;
             }
-        
+
         }
     }
 }

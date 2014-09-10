@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEditUser));
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
@@ -86,7 +85,7 @@
             // 
             // btnestablecerpersonal
             // 
-            this.btnestablecerpersonal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnestablecerpersonal.BackColor = System.Drawing.Color.White;
             this.btnestablecerpersonal.ForeColor = System.Drawing.Color.Black;
             this.btnestablecerpersonal.Location = new System.Drawing.Point(234, 21);
             this.btnestablecerpersonal.Name = "btnestablecerpersonal";
@@ -109,7 +108,7 @@
             // 
             // cmbRoles
             // 
-            this.cmbRoles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cmbRoles.BackColor = System.Drawing.Color.White;
             this.cmbRoles.ForeColor = System.Drawing.Color.Black;
             this.cmbRoles.FormattingEnabled = true;
             this.cmbRoles.Location = new System.Drawing.Point(426, 240);
@@ -142,7 +141,7 @@
             // 
             // cmbsexo
             // 
-            this.cmbsexo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cmbsexo.BackColor = System.Drawing.Color.White;
             this.cmbsexo.ForeColor = System.Drawing.Color.Black;
             this.cmbsexo.FormattingEnabled = true;
             this.cmbsexo.Items.AddRange(new object[] {
@@ -271,7 +270,7 @@
             // lklabel
             // 
             this.lklabel.AutoSize = true;
-            this.lklabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lklabel.BackColor = System.Drawing.Color.White;
             this.lklabel.ForeColor = System.Drawing.Color.Black;
             this.lklabel.Location = new System.Drawing.Point(477, 23);
             this.lklabel.Name = "lklabel";
@@ -425,8 +424,7 @@
             // 
             // groupPanel1
             // 
-            this.groupPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
+            this.groupPanel1.BackColor = System.Drawing.Color.White;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.groupPanel1.ColorTable = DevComponents.DotNetBar.Controls.ePanelColorTable.Yellow;
             this.groupPanel1.Controls.Add(this.cmbTipo);
@@ -533,7 +531,7 @@
             // 
             // btncancelar
             // 
-            this.btncancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btncancelar.BackColor = System.Drawing.Color.White;
             this.btncancelar.ForeColor = System.Drawing.Color.Black;
             this.btncancelar.Location = new System.Drawing.Point(335, 346);
             this.btncancelar.Name = "btncancelar";
@@ -545,7 +543,7 @@
             // 
             // btnguardar
             // 
-            this.btnguardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnguardar.BackColor = System.Drawing.Color.White;
             this.btnguardar.ForeColor = System.Drawing.Color.Black;
             this.btnguardar.Location = new System.Drawing.Point(224, 346);
             this.btnguardar.Name = "btnguardar";
@@ -557,11 +555,11 @@
             // 
             // pict_foto
             // 
-            this.pict_foto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.pict_foto.BackColor = System.Drawing.Color.White;
             this.pict_foto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pict_foto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pict_foto.ForeColor = System.Drawing.Color.Black;
-            this.pict_foto.Image = ((System.Drawing.Image)(resources.GetObject("pict_foto.Image")));
+            this.pict_foto.Image = global::CapaInterfaz.Properties.Resources.images;
             this.pict_foto.Location = new System.Drawing.Point(426, 53);
             this.pict_foto.Name = "pict_foto";
             this.pict_foto.Size = new System.Drawing.Size(164, 165);

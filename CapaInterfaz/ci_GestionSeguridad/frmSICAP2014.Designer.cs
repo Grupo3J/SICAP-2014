@@ -54,7 +54,7 @@
             // 
             // metroShell1
             // 
-            this.metroShell1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.metroShell1.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
@@ -99,8 +99,7 @@
             // 
             // groupPanel1
             // 
-            this.groupPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.groupPanel1.CanvasColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.groupPanel1.BackColor = System.Drawing.Color.White;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.groupPanel1.ColorTable = DevComponents.DotNetBar.Controls.ePanelColorTable.Orange;
             this.groupPanel1.Controls.Add(this.panelEx1);
@@ -142,7 +141,6 @@
             // 
             // panelEx1
             // 
-            this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2013;
             this.panelEx1.DisabledBackColor = System.Drawing.Color.Empty;
             this.panelEx1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -164,7 +162,7 @@
             // 
             // metroStatusBar1
             // 
-            this.metroStatusBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.metroStatusBar1.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
@@ -213,7 +211,7 @@
             // 
             // radialMenu1
             // 
-            this.radialMenu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.radialMenu1.BackColor = System.Drawing.Color.White;
             this.radialMenu1.ForeColor = System.Drawing.Color.Black;
             this.radialMenu1.ImeMode = System.Windows.Forms.ImeMode.AlphaFull;
             this.radialMenu1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -261,7 +259,7 @@
             // 
             // lblnameuser
             // 
-            this.lblnameuser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblnameuser.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
@@ -277,7 +275,7 @@
             // 
             // lblrol
             // 
-            this.lblrol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblrol.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
@@ -293,7 +291,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.ForeColor = System.Drawing.Color.Black;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(898, 48);
@@ -315,6 +313,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupPanel1);
             this.Controls.Add(this.metroShell1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmSICAP2014";
             this.Sizable = false;

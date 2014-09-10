@@ -12,6 +12,10 @@ namespace CapaLogicaNegocio.cln_GestionReportes
         public List<VistaReporteUsers> ReportesUsuarios()
         {
             return ReporteCD.ReporteUsers();
-        } 
+        }
+        public List<sp_ReportePersonalResult> filtrarPersonalbyTipo(string tipo)
+        {
+            return ReporteCD.filtrarPersonalbyTipo(tipo);
+        }
     }
 }

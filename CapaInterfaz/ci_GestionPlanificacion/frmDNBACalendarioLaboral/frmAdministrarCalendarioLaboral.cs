@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using DevComponents.DotNetBar;
 using CapaLogicaNegocio.cln_GestionPlanificacion;
 using CapaInterfaz.ci_GestionPlanificacion.frmDNBACalendarioLaboral;
+using CapaEntidades.GestionSeguridad;
 
 namespace CapaInterfaz.ci_GestionPlanificacion.frmDNBAdministrarCalendarioLab
 {
@@ -17,11 +18,19 @@ namespace CapaInterfaz.ci_GestionPlanificacion.frmDNBAdministrarCalendarioLab
         {
             InitializeComponent();
         }
-
+        public void setUser(Usuarios s, Permisos per)
+        {
+            user = s;
+            permiso = per;
+        }
         CalendarioLN CLN = new CalendarioLN();
 
         private void frmAdministrarCalendarioLaboral_Load(object sender, EventArgs e)
         {
+            if (!permiso.Escritura) { toolStrip1.Items.Remove(toolnuevo); }
+            if (!permiso.Eliminacion) { toolStrip1.Items.Remove(tooleliminar); }
+            if (!permiso.Modificacion) { toolStrip1.Items.Remove(toolmodificar); }
+            
             dataGridViewX1.DataSource = CLN.ListarCalendario();
         }
 
@@ -54,5 +63,9 @@ namespace CapaInterfaz.ci_GestionPlanificacion.frmDNBAdministrarCalendarioLab
             frmNuevoCalendarioLaboral FRMNCL = new frmNuevoCalendarioLaboral();
             FRMNCL.Show();
         }
+
+        public Usuarios user { get; set; }
+
+        public Permisos permiso { get; set; }
     }
 }

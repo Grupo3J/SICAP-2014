@@ -28,23 +28,22 @@ namespace CapaInterfaz.ci_GestionPlanificacion.frmDNBACalendarioLaboral
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNuevoCalendarioLaboral));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.comboNombre = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.comboItem1 = new DevComponents.Editors.ComboItem();
+            this.comboItem2 = new DevComponents.Editors.ComboItem();
+            this.comboItem3 = new DevComponents.Editors.ComboItem();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textDescripcion = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePFin = new System.Windows.Forms.DateTimePicker();
             this.dateTimePInicio = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textDescripcion = new System.Windows.Forms.TextBox();
-            this.comboNombre = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.comboItem1 = new DevComponents.Editors.ComboItem();
-            this.comboItem2 = new DevComponents.Editors.ComboItem();
-            this.comboItem3 = new DevComponents.Editors.ComboItem();
             this.toolStrip1.SuspendLayout();
             this.groupPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -61,23 +60,23 @@ namespace CapaInterfaz.ci_GestionPlanificacion.frmDNBACalendarioLaboral
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "Datos Calendario Laboral";
             // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
             // toolStripButton1
             // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.Image = global::CapaInterfaz.Properties.Resources._48px_Crystal_Clear_device_3floppy_mount;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(69, 22);
             this.toolStripButton1.Text = "Guardar";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
             // toolStripButton2
             // 
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.Image = global::CapaInterfaz.Properties.Resources._48px_Crystal_Clear_action_reload;
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(73, 22);
@@ -132,6 +131,51 @@ namespace CapaInterfaz.ci_GestionPlanificacion.frmDNBACalendarioLaboral
             this.groupPanel1.TabIndex = 5;
             this.groupPanel1.Text = "Datos Calendario Laboral";
             // 
+            // comboNombre
+            // 
+            this.comboNombre.DisplayMember = "Text";
+            this.comboNombre.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboNombre.FormattingEnabled = true;
+            this.comboNombre.ItemHeight = 16;
+            this.comboNombre.Items.AddRange(new object[] {
+            this.comboItem1,
+            this.comboItem2,
+            this.comboItem3});
+            this.comboNombre.Location = new System.Drawing.Point(130, 25);
+            this.comboNombre.Name = "comboNombre";
+            this.comboNombre.Size = new System.Drawing.Size(259, 22);
+            this.comboNombre.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.comboNombre.TabIndex = 26;
+            // 
+            // comboItem1
+            // 
+            this.comboItem1.Text = "MATUTINO";
+            // 
+            // comboItem2
+            // 
+            this.comboItem2.Text = "VESPERTINO";
+            // 
+            // comboItem3
+            // 
+            this.comboItem3.Text = "NOCTURNO";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(37, 164);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(70, 13);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "Descripción:";
+            // 
+            // textDescripcion
+            // 
+            this.textDescripcion.Location = new System.Drawing.Point(130, 161);
+            this.textDescripcion.Multiline = true;
+            this.textDescripcion.Name = "textDescripcion";
+            this.textDescripcion.Size = new System.Drawing.Size(346, 22);
+            this.textDescripcion.TabIndex = 24;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -172,51 +216,6 @@ namespace CapaInterfaz.ci_GestionPlanificacion.frmDNBACalendarioLaboral
             this.label1.Size = new System.Drawing.Size(51, 13);
             this.label1.TabIndex = 18;
             this.label1.Text = "Nombre:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(37, 164);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 13);
-            this.label2.TabIndex = 25;
-            this.label2.Text = "Descripción:";
-            // 
-            // textDescripcion
-            // 
-            this.textDescripcion.Location = new System.Drawing.Point(130, 161);
-            this.textDescripcion.Multiline = true;
-            this.textDescripcion.Name = "textDescripcion";
-            this.textDescripcion.Size = new System.Drawing.Size(346, 22);
-            this.textDescripcion.TabIndex = 24;
-            // 
-            // comboNombre
-            // 
-            this.comboNombre.DisplayMember = "Text";
-            this.comboNombre.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboNombre.FormattingEnabled = true;
-            this.comboNombre.ItemHeight = 16;
-            this.comboNombre.Items.AddRange(new object[] {
-            this.comboItem1,
-            this.comboItem2,
-            this.comboItem3});
-            this.comboNombre.Location = new System.Drawing.Point(130, 25);
-            this.comboNombre.Name = "comboNombre";
-            this.comboNombre.Size = new System.Drawing.Size(259, 22);
-            this.comboNombre.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.comboNombre.TabIndex = 26;
-            // 
-            // comboItem1
-            // 
-            this.comboItem1.Text = "MATUTINO";
-            // 
-            // comboItem2
-            // 
-            this.comboItem2.Text = "VESPERTINO";
-            // 
-            // comboItem3
-            // 
-            this.comboItem3.Text = "NOCTURNO";
             // 
             // frmNuevoCalendarioLaboral
             // 

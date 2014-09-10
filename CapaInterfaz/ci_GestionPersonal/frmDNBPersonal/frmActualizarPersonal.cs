@@ -243,5 +243,15 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
 
             return (byte[])converter.ConvertTo(img, typeof(byte[]));
         }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

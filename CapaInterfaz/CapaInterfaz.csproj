@@ -242,6 +242,12 @@
     <Compile Include="ci_GestionPlanificacion\frmDNBDiasNoLaborables\frmNuevoDiaNoLaborable.Designer.cs">
       <DependentUpon>frmNuevoDiaNoLaborable.cs</DependentUpon>
     </Compile>
+    <Compile Include="ci_GestionReportes\CRPersonal.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRPersonal.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ci_GestionReportes\CRUsers.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -252,6 +258,30 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DSSeguridad.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ci_GestionReportes\frmReporteAsistencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionReportes\frmReporteAsistencia.Designer.cs">
+      <DependentUpon>frmReporteAsistencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ci_GestionReportes\frmReporteFaltas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionReportes\frmReporteFaltas.Designer.cs">
+      <DependentUpon>frmReporteFaltas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ci_GestionReportes\frmReporteImprevistos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionReportes\frmReporteImprevistos.Designer.cs">
+      <DependentUpon>frmReporteImprevistos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ci_GestionReportes\frmReportePersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionReportes\frmReportePersonal.Designer.cs">
+      <DependentUpon>frmReportePersonal.cs</DependentUpon>
     </Compile>
     <Compile Include="ci_GestionReportes\frmReporteUsers.cs">
       <SubType>Form</SubType>
@@ -333,6 +363,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Secugen.cs" />
     <Compile Include="Utilities.cs" />
     <EmbeddedResource Include="ci_GestionAsistencia\frmDNBAsistencia\frmDNBEscogerPersonal.resx">
@@ -398,9 +433,25 @@
     <EmbeddedResource Include="ci_GestionPlanificacion\frmDNBDiasNoLaborables\frmNuevoDiaNoLaborable.resx">
       <DependentUpon>frmNuevoDiaNoLaborable.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionReportes\CRPersonal.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRPersonal.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="ci_GestionReportes\CRUsers.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CRUsers.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionReportes\frmReporteAsistencia.resx">
+      <DependentUpon>frmReporteAsistencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionReportes\frmReporteFaltas.resx">
+      <DependentUpon>frmReporteFaltas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionReportes\frmReporteImprevistos.resx">
+      <DependentUpon>frmReporteImprevistos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionReportes\frmReportePersonal.resx">
+      <DependentUpon>frmReportePersonal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ci_GestionReportes\frmReporteUsers.resx">
       <DependentUpon>frmReporteUsers.cs</DependentUpon>
@@ -446,11 +497,6 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="ci_GestionReportes\DSSeguridad.xsc">
       <DependentUpon>DSSeguridad.xsd</DependentUpon>
     </None>
@@ -531,7 +577,16 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\48px-Crystal_Clear_action_edit.png" />
+    <Content Include="Resources\48px-Crystal_Clear_action_editcut.png" />
+    <Content Include="Resources\48px-Crystal_Clear_action_edit_add.png" />
+    <Content Include="Resources\48px-Crystal_Clear_action_lock.png" />
+    <Content Include="Resources\48px-Crystal_Clear_action_reload.png" />
+    <Content Include="Resources\48px-Crystal_Clear_device_3floppy_mount.png" />
+    <Content Include="Resources\Administrar.jpg" />
     <Content Include="Resources\images.jpg" />
+    <Content Include="Resources\ima_administracion.png" />
+    <Content Include="Resources\ima_reportes.jpg" />
     <Content Include="Resources\personal.png" />
     <Content Include="Resources\SICAPLOGO.png" />
     <Content Include="Resources\Snapshot_20140812_33.JPG" />

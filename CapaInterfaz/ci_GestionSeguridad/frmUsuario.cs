@@ -115,6 +115,7 @@ namespace CapaInterfaz.ci_GestionSeguridad
                 
 
             }
+            mostrarUsuarios();
         }
         public static byte[] ImageToByte(Image img)
         {
@@ -179,9 +180,7 @@ namespace CapaInterfaz.ci_GestionSeguridad
             {
                 try
                 {
-                    string cedula = (DtgUsuarios.CurrentRow.Cells[0].Value.ToString());
-                    
-                   
+                    string cedula = (DtgUsuarios.CurrentRow.Cells[0].Value.ToString());             
                     USLN.eliminarUser(cedula);
                     mostrarUsuarios();
                 }
