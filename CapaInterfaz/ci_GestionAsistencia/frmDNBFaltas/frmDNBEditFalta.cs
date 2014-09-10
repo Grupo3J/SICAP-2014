@@ -11,6 +11,8 @@ using CapaLogicaNegocio.cln_GestionAsistencia;
 using CapaLogicaNegocio.cln_GestionPersonal;
 using CapaDatos;
 using CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia;
+using CapaLogicaNegocio.cln_GestionPlanificacion;
+using System.Drawing.Drawing2D;
 
 namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
 {
@@ -18,8 +20,8 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
     {
         public frmDNBEditFalta(string IdCalendario)
         {
-            InitializeComponent();
             frmDNBEditFalta.IdCalendario = IdCalendario;
+            InitializeComponent();
         }
 
         public string OPTION = "";
@@ -27,6 +29,10 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
         public static string IdCalendario;
         PersonalLN personal = new PersonalLN();
         FaltasLN faltas = new FaltasLN();
+        DiasAdicionalesLN diasadic = new DiasAdicionalesLN();
+        DiaNoLAborableLN diasnolab = new DiaNoLAborableLN();
+        List<sp_ListarDiaAdicionalResult> da;
+        List<sp_ListarDiaNoLaborablesResult> dnl;
 
         private void frmDNBEditFalta_Load(object sender, EventArgs e)
         {
@@ -38,6 +44,8 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
                     cmbTipo.Items.Add(temp.TIPO);
             }
             dtifecha.AllowEmptyState = true;
+            da = (from lt in diasadic.ListarDiasAdicionales() where lt.IDCALENDARIO == IdCalendario select lt).ToList();
+            dnl = (from lt in diasnolab.ListarDiasNoLaborables() where lt.IDCALENDARIO == IdCalendario select lt).ToList();
         }
 
         private void buttonX3_Click(object sender, EventArgs e)
@@ -104,6 +112,54 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             {
                 OPTION = "OK";
                 this.Close();
+            }
+        }
+
+        private bool CompararDia(DateTime dia)
+        {
+            if (da == null || dnl == null)
+            {
+                return false;
+            }
+            else
+            {
+                var linq = (from lt in da where lt.FECHA == dia select lt).Count();
+                var linq2 = (from lt in dnl where lt.FECHA == dia select lt).Count();
+                if (linq == 0 || linq2 != 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
+        private void dtifecha_MonthCalendar_PaintLabel(object sender, DevComponents.Editors.DateTimeAdv.DayPaintEventArgs e)
+        {
+            DevComponents.Editors.DateTimeAdv.DayLabel day = sender as DevComponents.Editors.DateTimeAdv.DayLabel;
+            if (day == null || day.Date == DateTime.MinValue) return;
+
+            // Cross all weekend days and disable selection for them...
+            if ((day.Date.DayOfWeek == DayOfWeek.Saturday || day.Date.DayOfWeek == DayOfWeek.Sunday))
+            {
+                if (CompararDia(day.Date) == true)
+                {
+                    day.Selectable = false; // Mark label as not selectable...
+                    day.TrackMouse = false; // Do not track mouse movement...
+                    e.PaintBackground();
+                    e.PaintText();
+                    Rectangle r = day.Bounds;
+                    r.Inflate(-2, -2);
+                    SmoothingMode sm = e.Graphics.SmoothingMode;
+                    e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+                    e.Graphics.DrawLine(Pens.Red, r.X, r.Y, r.Right, r.Bottom);
+                    e.Graphics.DrawLine(Pens.Red, r.Right, r.Y, r.X, r.Bottom);
+                    e.Graphics.SmoothingMode = sm;
+                    // Ensure that no part is rendered internally by control...
+                    e.RenderParts = DevComponents.Editors.DateTimeAdv.eDayPaintParts.None;
+                }
             }
         }
 

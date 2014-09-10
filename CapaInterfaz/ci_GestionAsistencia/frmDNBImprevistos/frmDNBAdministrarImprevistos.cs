@@ -81,7 +81,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            frmDNBEditImprevisto impr = new frmDNBEditImprevisto();
+            frmDNBEditImprevisto impr = new frmDNBEditImprevisto(idcalendario);
             var linq = calendario.PersonalporCalendario(idcalendario);
             impr.dataGridViewX1.DataSource = linq.ToList();
             impr.listaizq = linq.ToList();
@@ -231,7 +231,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-            frmDNBEditImprevisto impr = new frmDNBEditImprevisto();
+            frmDNBEditImprevisto impr = new frmDNBEditImprevisto(idcalendario);
             var linq = calendario.PersonalporCalendario(idcalendario);
             var linq2 = imprevisto.ListarPersonasporImprevisto(idcalendario, dataGridViewX1.CurrentRow.Cells[0].Value.ToString());
             

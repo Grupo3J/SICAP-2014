@@ -257,6 +257,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             this.dtifecha.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.dtifecha.MonthCalendar.TodayButtonVisible = true;
             this.dtifecha.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
+            this.dtifecha.MonthCalendar.PaintLabel += new DevComponents.Editors.DateTimeAdv.DayPaintEventHandler(this.dtifecha_MonthCalendar_PaintLabel);
             this.dtifecha.Name = "dtifecha";
             this.dtifecha.Size = new System.Drawing.Size(120, 22);
             this.dtifecha.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
