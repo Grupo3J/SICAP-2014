@@ -190,7 +190,32 @@ namespace CapaDatos.cd_GestionAsistencia
             }
         }
 
-        
+        public static int ContarFaltaPersonalDia(string cedula, DateTime Fecha, string IdCalendario)
+        {
+            CapaDatosDataContext DB;
+            try
+            {
+                using (DB = new CapaDatosDataContext())
+                {
+                    var linq = (from pa in DB.FALTAS
+                                where pa.IDCALENDARIO == IdCalendario
+                                    && (pa.FECHA.Month == Fecha.Month)
+                                    && (pa.FECHA.Year == Fecha.Year)
+                                    && (pa.FECHA.Day == Fecha.Day)
+                                    && pa.CEDULA == cedula
+                                select pa).Count();
+                    return linq;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new CapaDatosExcepciones("Error al Contar Falta de Personal por Dia", ex);
+            }
+            finally
+            {
+                DB = null;
+            }
+        }
 
     }
 }

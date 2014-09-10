@@ -57,5 +57,10 @@ namespace CapaLogicaNegocio.cln_GestionAsistencia
         {
             FaltaCD.EliminarAsistenciainterfFalta(cedula,fecha,idcalendario);
         }
+
+        public int ContarFaltaPersonalDia(string cedula,DateTime fecha,string idcalendario) 
+        {
+            return FaltaCD.ContarFaltaPersonalDia(cedula,fecha,idcalendario); 
+        }
     }
 }

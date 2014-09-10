@@ -46,5 +46,10 @@ namespace CapaLogicaNegocio.cln_GestionAsistencia
         {
             ImprevistoCD.EliminarImprevisto(idimprevisto);
         }
+
+        public int ContarImprevisto(string cedula,DateTime fecha,string idcalendario) 
+        {
+            return ImprevistoCD.contarImprevisto(cedula,fecha,idcalendario);
+        }
     }
 }

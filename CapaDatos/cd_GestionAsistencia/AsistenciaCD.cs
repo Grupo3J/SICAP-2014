@@ -86,6 +86,32 @@ namespace CapaDatos.cd_GestionAsistencia
             }
         }
 
+        public static int ContarAsistenciaPersonalDia(string cedula,DateTime Fecha,string IdCalendario) 
+        {
+                        CapaDatosDataContext DB;
+            try
+            {
+                using (DB = new CapaDatosDataContext())
+                {
+                    var linq = (from pa in DB.PersonalporAsistencia
+                                                        where pa.IDCALENDARIO == IdCalendario
+                                                            && (pa.FECHAHORAENTRADA.Month == Fecha.Month)
+                                                            && (pa.FECHAHORAENTRADA.Year == Fecha.Year)
+                                                            && (pa.FECHAHORAENTRADA.Day == Fecha.Day)
+                                                            && pa.CEDULA == cedula
+                                                        select pa).Count();
+                    return linq;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new CapaDatosExcepciones("Error al Listar Personal por Dia", ex);
+            }
+            finally
+            {
+                DB = null;
+            }
+        }
 
     }
 }

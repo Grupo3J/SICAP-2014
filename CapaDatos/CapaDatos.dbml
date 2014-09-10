@@ -917,4 +917,15 @@
       <Column Name="DESCRIPCION" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
     </ElementType>
   </Function>
+  <Function Name="dbo.sp_ContarImprevisto" Method="sp_ContarImprevisto">
+    <Parameter Name="Cedula" Parameter="cedula" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="Fecha" Parameter="fecha" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="IdCalendario" Parameter="idCalendario" Type="System.String" DbType="VarChar(5)" />
+    <ElementType Name="sp_ContarImprevistoResult">
+      <Column Name="IDIMPREVISTO" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="FECHAINICIO" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FECHAFINAL" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+    </ElementType>
+  </Function>
 </Database>

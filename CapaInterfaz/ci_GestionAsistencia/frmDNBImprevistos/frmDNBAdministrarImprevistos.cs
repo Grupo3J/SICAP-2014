@@ -24,6 +24,8 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
         }
         ImprevistoLN imprevisto = new ImprevistoLN();
         CalendarioLN calendario = new CalendarioLN();
+        FaltasLN faltas = new FaltasLN();
+        AsistenciaLN asistencia = new AsistenciaLN();
         Imprevistos imp = new Imprevistos();
         DataGridViewButtonColumn coldescrip = new DataGridViewButtonColumn();
         DataGridViewButtonColumn colpers = new DataGridViewButtonColumn();
@@ -89,12 +91,37 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
             {
                 try
                 {
-                    imp.IdImprevisto = GenerarIdImprevisto();
+                    string id;
+                    do
+                    {
+                        id = GenerarIdImprevisto();
+                        imp.IdImprevisto = id;
+
+                    }
+                    while (imprevisto.ExisteImprevisto(id));
+                    
                     imp.FechaInicio = impr.dtifechainicio.Value.Add(TimeSpan.Parse(impr.dtihoraentrada.Value.TimeOfDay.ToString()));
                     imp.FechaFinal = impr.dtifechainicio.Value.Add(TimeSpan.Parse(impr.dtihorafin.Value.TimeOfDay.ToString()));
                     imp.Descripcion = impr.textBoxX1.Text;
-                    imprevisto.InsertarImprevisto(imp);
-                    calendario.IngresarPersonalDet(impr.listader, idcalendario, imp.IdImprevisto);
+
+                    
+                    string personas = "No se puede agregar un Imprevisto a las Siguientes Personas:\n";
+                    
+                    foreach (sp_PersonalporCalendarioResult temp in impr.listader) 
+                    { 
+                        if (asistencia.ContarAsistenciaPersonal(temp.CEDULA, imp.FechaInicio, idcalendario) != 0 || faltas.ContarFaltaPersonalDia(temp.CEDULA, imp.FechaInicio, idcalendario) != 0) 
+                            personas += "* "+temp.NOMBRE + " " + temp.APELLIDO + "\n";
+                    }
+                    impr.listader.RemoveAll(x => asistencia.ContarAsistenciaPersonal(x.CEDULA, imp.FechaInicio, idcalendario) != 0 || faltas.ContarFaltaPersonalDia(x.CEDULA, imp.FechaInicio, idcalendario) != 0);
+                    personas += "Debido a que poseen Faltas o Asistencias ese Dia";
+                    if (impr.listader.Count > 0)
+                    {
+                        imprevisto.InsertarImprevisto(imp);
+                        calendario.IngresarPersonalDet(impr.listader, idcalendario, imp.IdImprevisto);
+                        MessageBoxEx.Show(personas);
+                    }
+                    else
+                        MessageBoxEx.Show("No se pudo agregar el Imprevisto\nRevise la Administracion de Faltas e Asistencia");
                     MostrarImprevistos(idcalendario);
                 }
                 catch (Exception mes)
@@ -181,9 +208,25 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
                     imp.FechaInicio = impr.dtifechainicio.Value.Add(TimeSpan.Parse(impr.dtihoraentrada.Value.TimeOfDay.ToString()));
                     imp.FechaFinal = impr.dtifechainicio.Value.Add(TimeSpan.Parse(impr.dtihorafin.Value.TimeOfDay.ToString()));
                     imp.Descripcion = impr.textBoxX1.Text;
-                    imprevisto.ModificarImprevisto(imp);
-                    calendario.EliminarDetallePersonal(idcalendario,imp.IdImprevisto);
-                    calendario.IngresarPersonalDet(impr.listader, idcalendario, imp.IdImprevisto);
+                    string personas = "No se puede agregar un Imprevisto a las Siguientes Personas:\n";
+
+                    foreach (sp_PersonalporCalendarioResult temp in impr.listader)
+                    {
+                        if (asistencia.ContarAsistenciaPersonal(temp.CEDULA, imp.FechaInicio, idcalendario) != 0 || faltas.ContarFaltaPersonalDia(temp.CEDULA, imp.FechaInicio, idcalendario) != 0)
+                            personas += "* " + temp.NOMBRE + " " + temp.APELLIDO + "\n";
+                    }
+                    impr.listader.RemoveAll(x => asistencia.ContarAsistenciaPersonal(x.CEDULA, imp.FechaInicio, idcalendario) != 0 || faltas.ContarFaltaPersonalDia(x.CEDULA, imp.FechaInicio, idcalendario) != 0);
+                    personas += "Debido a que poseen Faltas o Asistencias ese Dia";
+                    if (impr.listader.Count > 0)
+                    {
+                        imprevisto.ModificarImprevisto(imp);
+                        calendario.EliminarDetallePersonal(idcalendario, imp.IdImprevisto);
+                        calendario.IngresarPersonalDet(impr.listader, idcalendario, imp.IdImprevisto);
+                        MessageBoxEx.Show(personas);
+                    }
+                    else
+                        MessageBoxEx.Show("No se pudo agregar el Imprevisto\nRevise la Administracion de Faltas e Asistencia");
+                    
                     MostrarImprevistos(idcalendario);
                 }
                 catch (Exception mes)
@@ -197,7 +240,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
         {
             if (dataGridViewX1.Rows.Count > 0) 
             {
-                DialogResult dialogResult = MessageBox.Show("Deseea Eliminar el Imprevisto\n", "Administración de Imprevistos", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBoxEx.Show("Deseea Eliminar el Imprevisto\n", "Administración de Imprevistos", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     //do something

@@ -32,5 +32,10 @@ namespace CapaLogicaNegocio.cln_GestionAsistencia
             }
 
         }
+
+        public int ContarAsistenciaPersonal(string cedula,DateTime fecha,string idcalendario) 
+        {
+            return AsistenciaCD.ContarAsistenciaPersonalDia(cedula,fecha,idcalendario);
+        }
     }
 }

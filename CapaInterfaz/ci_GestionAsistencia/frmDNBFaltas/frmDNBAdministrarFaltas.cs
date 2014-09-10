@@ -28,6 +28,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
         FaltasLN faltas = new FaltasLN();
         Faltas falta = new Faltas();
         PersonalLN personal = new PersonalLN();
+        ImprevistoLN imprevistos = new ImprevistoLN();
 
         private void superTabControl1_SelectedTabChanged(object sender, SuperTabStripSelectedTabChangedEventArgs e)
         {
@@ -179,14 +180,51 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             {
                 try
                 {
-                    falta.IdFaltas= GenerarIdFalta();
+                    string id;
+                    do
+                    {
+                        id = GenerarIdFalta();
+                        falta.IdFaltas = id;
+                    }
+                    while (faltas.ExisteFalta(id));
+                        
                     falta.Fecha  = impr.dtifecha.Value;
                     falta.Cedula = impr.txtcedula.Text;
                     falta.IdCalendario = idcalendario;
                     falta.Justificacion = impr.checkBoxX1.Checked == true?true:false;
-                    faltas.InsertarFaltas(falta);
-                    faltas.EliminarAsistenciainterfFalta(impr.txtcedula.Text,impr.dtifecha.Value,idcalendario);
-                    MostrarFaltasDia(idcalendario,dtidia.Value);
+                    
+                    int num = imprevistos.ContarImprevisto(falta.Cedula, falta.Fecha, falta.IdCalendario);
+                    AsistenciaLN asistencia = new AsistenciaLN();
+
+                    if (num == 0)
+                    {
+                        if (asistencia.ContarAsistenciaPersonal(falta.Cedula, falta.Fecha, falta.IdCalendario) == 0)
+                            faltas.InsertarFaltas(falta);
+                        else
+                        {
+                            DialogResult dialogResult = MessageBoxEx.Show("Ya Existe una Asistencia en esa Fecha\nDeseea Ingresar la Falta de Todos Modos\nEsta Operacion Borrar el Registro de Asistencia", "Administración de Faltas", MessageBoxButtons.YesNo);
+                            if (dialogResult == DialogResult.Yes)
+                            {
+                                //do something
+                                faltas.EliminarAsistenciainterfFalta(impr.txtcedula.Text, impr.dtifecha.Value, idcalendario);
+                                faltas.InsertarFaltas(falta);
+                            }
+                            else if (dialogResult == DialogResult.No)
+                            {
+                                //do something else
+                                return;
+                            }
+                        }
+                    }
+                    else
+                        MessageBoxEx.Show("El personal seleccionado posee un Imprevisto en esa fecha\nNo se puede agregar la falta");
+
+
+                    
+                    
+                    
+                    MostrarFaltasDia(idcalendario, dtidia.Value);
+                    
                 }
                 catch (Exception mes)
                 {

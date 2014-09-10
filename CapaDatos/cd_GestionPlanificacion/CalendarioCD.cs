@@ -79,6 +79,30 @@ namespace CapaDatos.cd_GestionPlanificacion
             }
         }
 
+        public static bool ComprobarCalendarioFecha(string idcalendario,DateTime fecha) 
+        {
+            CapaDatosDataContext DB;
+            try
+            {
+                using (DB = new CapaDatosDataContext())
+                {
+                    var linq = (from lt in DB.sp_ListarCalendario().ToList() where lt.IDCALENDARIO ==idcalendario select lt).ToList();
+                    if (fecha >= linq[0].FECHAINICIO && fecha < linq[0].FECHAFIN) 
+                        return true;
+                        else
+                        return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new CapaDatosExcepciones("Error al Listar Calendario Laboral", ex);
+            }
+            finally
+            {
+                DB = null;
+            }
+        }
+
         public static bool ExisteCalendario(string idCalendario)
         {
             CapaDatosDataContext DB;

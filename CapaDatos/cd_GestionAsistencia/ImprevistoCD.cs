@@ -146,6 +146,27 @@ namespace CapaDatos.cd_GestionAsistencia
             }
         }
 
+        public static int contarImprevisto(string cedula,DateTime fecha,string idcalendario) 
+        {
+            CapaDatosDataContext DB;
+            try
+            {
+                using (DB = new CapaDatosDataContext())
+                {
+                    var query = (from prov in DB.sp_ContarImprevisto(cedula,fecha,idcalendario) select prov).Count();
+                    return query;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new CapaDatosExcepciones("Error al Contar Imprevistos Imprevisto.", ex);
+            }
+            finally
+            {
+                DB = null;
+            }
+        }
         
+
     }
 }
