@@ -29,9 +29,9 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDNBAdministrarFaltas));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolnuevo = new System.Windows.Forms.ToolStripButton();
             this.tooleliminar = new System.Windows.Forms.ToolStripButton();
@@ -46,11 +46,11 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.txtbuscar = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.groupbox1 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.dgvfaltasdia = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.dgvfaltasdia = new System.Windows.Forms.DataGridView();
             this.superTabItem1 = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel3 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.dgvfaltasrango = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.dgvfaltasrango = new System.Windows.Forms.DataGridView();
             this.txtbuscarrango = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
@@ -61,7 +61,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             this.superTabItem3 = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel2 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.dgvfaltasmes = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.dgvfaltasmes = new System.Windows.Forms.DataGridView();
             this.cmbmes = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.txtbuscarmes = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -165,8 +165,8 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             this.superTabControl1.ControlBox.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.superTabControl1.ControlBox.MenuBox,
             this.superTabControl1.ControlBox.CloseBox});
-            this.superTabControl1.Controls.Add(this.superTabControlPanel1);
             this.superTabControl1.Controls.Add(this.superTabControlPanel3);
+            this.superTabControl1.Controls.Add(this.superTabControlPanel1);
             this.superTabControl1.Controls.Add(this.superTabControlPanel2);
             this.superTabControl1.ForeColor = System.Drawing.Color.Black;
             this.superTabControl1.Location = new System.Drawing.Point(12, 28);
@@ -334,20 +334,21 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             // 
             // dgvfaltasdia
             // 
+            this.dgvfaltasdia.AllowUserToAddRows = false;
+            this.dgvfaltasdia.AllowUserToDeleteRows = false;
+            this.dgvfaltasdia.BackgroundColor = System.Drawing.Color.Beige;
             this.dgvfaltasdia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvfaltasdia.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvfaltasdia.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.dgvfaltasdia.Location = new System.Drawing.Point(3, 4);
+            this.dgvfaltasdia.Location = new System.Drawing.Point(3, 3);
             this.dgvfaltasdia.Name = "dgvfaltasdia";
-            this.dgvfaltasdia.Size = new System.Drawing.Size(627, 287);
-            this.dgvfaltasdia.TabIndex = 0;
+            this.dgvfaltasdia.ReadOnly = true;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LemonChiffon;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightGreen;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvfaltasdia.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvfaltasdia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvfaltasdia.Size = new System.Drawing.Size(627, 291);
+            this.dgvfaltasdia.TabIndex = 31;
             // 
             // superTabItem1
             // 
@@ -367,9 +368,9 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             this.superTabControlPanel3.Controls.Add(this.dtiinicio);
             this.superTabControlPanel3.Controls.Add(this.dtifin);
             this.superTabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel3.Location = new System.Drawing.Point(0, 0);
+            this.superTabControlPanel3.Location = new System.Drawing.Point(0, 27);
             this.superTabControlPanel3.Name = "superTabControlPanel3";
-            this.superTabControlPanel3.Size = new System.Drawing.Size(680, 402);
+            this.superTabControlPanel3.Size = new System.Drawing.Size(680, 375);
             this.superTabControlPanel3.TabIndex = 0;
             this.superTabControlPanel3.TabItem = this.superTabItem3;
             this.superTabControlPanel3.Click += new System.EventHandler(this.superTabControlPanel3_Click);
@@ -417,20 +418,21 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             // 
             // dgvfaltasrango
             // 
+            this.dgvfaltasrango.AllowUserToAddRows = false;
+            this.dgvfaltasrango.AllowUserToDeleteRows = false;
+            this.dgvfaltasrango.BackgroundColor = System.Drawing.Color.Beige;
             this.dgvfaltasrango.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvfaltasrango.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvfaltasrango.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.dgvfaltasrango.Location = new System.Drawing.Point(4, 4);
+            this.dgvfaltasrango.Location = new System.Drawing.Point(4, 3);
             this.dgvfaltasrango.Name = "dgvfaltasrango";
-            this.dgvfaltasrango.Size = new System.Drawing.Size(584, 275);
-            this.dgvfaltasrango.TabIndex = 0;
+            this.dgvfaltasrango.ReadOnly = true;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LemonChiffon;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightGreen;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvfaltasrango.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvfaltasrango.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvfaltasrango.Size = new System.Drawing.Size(584, 276);
+            this.dgvfaltasrango.TabIndex = 33;
             // 
             // txtbuscarrango
             // 
@@ -612,9 +614,9 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             this.superTabControlPanel2.Controls.Add(this.txtbuscarmes);
             this.superTabControlPanel2.Controls.Add(this.labelX3);
             this.superTabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel2.Location = new System.Drawing.Point(0, 0);
+            this.superTabControlPanel2.Location = new System.Drawing.Point(0, 27);
             this.superTabControlPanel2.Name = "superTabControlPanel2";
-            this.superTabControlPanel2.Size = new System.Drawing.Size(680, 402);
+            this.superTabControlPanel2.Size = new System.Drawing.Size(680, 375);
             this.superTabControlPanel2.TabIndex = 0;
             this.superTabControlPanel2.TabItem = this.superTabItem2;
             // 
@@ -661,20 +663,21 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             // 
             // dgvfaltasmes
             // 
+            this.dgvfaltasmes.AllowUserToAddRows = false;
+            this.dgvfaltasmes.AllowUserToDeleteRows = false;
+            this.dgvfaltasmes.BackgroundColor = System.Drawing.Color.Beige;
             this.dgvfaltasmes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvfaltasmes.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvfaltasmes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.dgvfaltasmes.Location = new System.Drawing.Point(4, 4);
+            this.dgvfaltasmes.Location = new System.Drawing.Point(4, 3);
             this.dgvfaltasmes.Name = "dgvfaltasmes";
-            this.dgvfaltasmes.Size = new System.Drawing.Size(596, 285);
-            this.dgvfaltasmes.TabIndex = 0;
+            this.dgvfaltasmes.ReadOnly = true;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LemonChiffon;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightGreen;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvfaltasmes.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvfaltasmes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvfaltasmes.Size = new System.Drawing.Size(596, 286);
+            this.dgvfaltasmes.TabIndex = 32;
             // 
             // cmbmes
             // 
@@ -790,7 +793,6 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
         private DevComponents.DotNetBar.SuperTabControlPanel superTabControlPanel1;
         private DevComponents.DotNetBar.SuperTabItem superTabItem1;
         private DevComponents.DotNetBar.Controls.GroupPanel groupbox1;
-        private DevComponents.DotNetBar.Controls.DataGridViewX dgvfaltasdia;
         private DevComponents.DotNetBar.SuperTabControlPanel superTabControlPanel3;
         private DevComponents.DotNetBar.SuperTabItem superTabItem3;
         private DevComponents.DotNetBar.SuperTabControlPanel superTabControlPanel2;
@@ -804,7 +806,6 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
         private DevComponents.DotNetBar.Controls.TextBoxX txtbuscarmes;
         private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
-        private DevComponents.DotNetBar.Controls.DataGridViewX dgvfaltasmes;
         private DevComponents.DotNetBar.LabelX labelX6;
         private DevComponents.DotNetBar.LabelX labelX5;
         private DevComponents.Editors.DateTimeAdv.DateTimeInput dtiinicio;
@@ -813,7 +814,9 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
         private DevComponents.DotNetBar.Controls.TextBoxX txtbuscarrango;
         private DevComponents.DotNetBar.LabelX labelX7;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel2;
-        private DevComponents.DotNetBar.Controls.DataGridViewX dgvfaltasrango;
         private DevComponents.DotNetBar.SuperTooltip superTooltip1;
+        private System.Windows.Forms.DataGridView dgvfaltasdia;
+        private System.Windows.Forms.DataGridView dgvfaltasmes;
+        private System.Windows.Forms.DataGridView dgvfaltasrango;
     }
 }

@@ -54,6 +54,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
             }
 
             toolStripcmbcalendario.SelectedIndex = 0;
+            dtidia.Value = DateTime.Now;
             dataGridViewX1.DataSource = asistencia.ListarAsistenciaPersonal(linq[0].IDCALENDARIO, DateTime.Now);
             dataGridViewX1.Columns[4].Visible = false;
             dataGridViewX1.Columns[5].Visible = false;

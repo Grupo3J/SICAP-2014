@@ -28,6 +28,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDNBAdministrarImprevistos));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolnuevo = new System.Windows.Forms.ToolStripButton();
@@ -37,10 +38,10 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
             this.toolStripcmbcalendario = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.dataGridViewX1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.dgvimprevistos = new System.Windows.Forms.DataGridView();
             this.toolStrip1.SuspendLayout();
             this.groupPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvimprevistos)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -60,7 +61,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
             // 
             // toolnuevo
             // 
-            this.toolnuevo.Image = global::CapaInterfaz.Properties.Resources._48px_Crystal_Clear_action_edit_add;
+            this.toolnuevo.Image = ((System.Drawing.Image)(resources.GetObject("toolnuevo.Image")));
             this.toolnuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolnuevo.Name = "toolnuevo";
             this.toolnuevo.Size = new System.Drawing.Size(62, 22);
@@ -69,7 +70,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
             // 
             // tooleliminar
             // 
-            this.tooleliminar.Image = global::CapaInterfaz.Properties.Resources._48px_Crystal_Clear_action_editcut;
+            this.tooleliminar.Image = ((System.Drawing.Image)(resources.GetObject("tooleliminar.Image")));
             this.tooleliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tooleliminar.Name = "tooleliminar";
             this.tooleliminar.Size = new System.Drawing.Size(70, 22);
@@ -78,7 +79,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
             // 
             // toolmodificar
             // 
-            this.toolmodificar.Image = global::CapaInterfaz.Properties.Resources._48px_Crystal_Clear_action_edit;
+            this.toolmodificar.Image = ((System.Drawing.Image)(resources.GetObject("toolmodificar.Image")));
             this.toolmodificar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolmodificar.Name = "toolmodificar";
             this.toolmodificar.Size = new System.Drawing.Size(78, 22);
@@ -87,7 +88,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
             // 
             // toolStripButton4
             // 
-            this.toolStripButton4.Image = global::CapaInterfaz.Properties.Resources.ima_reportes;
+            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
             this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton4.Name = "toolStripButton4";
             this.toolStripButton4.Size = new System.Drawing.Size(68, 22);
@@ -110,7 +111,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
             this.groupPanel1.BackColor = System.Drawing.Color.White;
             this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.groupPanel1.Controls.Add(this.dataGridViewX1);
+            this.groupPanel1.Controls.Add(this.dgvimprevistos);
             this.groupPanel1.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel1.Location = new System.Drawing.Point(12, 65);
             this.groupPanel1.Name = "groupPanel1";
@@ -146,27 +147,23 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
             this.groupPanel1.TabIndex = 1;
             this.groupPanel1.Text = "Imprevistos";
             // 
-            // dataGridViewX1
+            // dgvimprevistos
             // 
-            this.dataGridViewX1.AllowUserToAddRows = false;
-            this.dataGridViewX1.AllowUserToDeleteRows = false;
-            this.dataGridViewX1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            this.dgvimprevistos.AllowUserToAddRows = false;
+            this.dgvimprevistos.AllowUserToDeleteRows = false;
+            this.dgvimprevistos.BackgroundColor = System.Drawing.Color.Beige;
+            this.dgvimprevistos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvimprevistos.Location = new System.Drawing.Point(3, 3);
+            this.dgvimprevistos.Name = "dgvimprevistos";
+            this.dgvimprevistos.ReadOnly = true;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LemonChiffon;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightGreen;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewX1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-            this.dataGridViewX1.Location = new System.Drawing.Point(3, 4);
-            this.dataGridViewX1.Name = "dataGridViewX1";
-            this.dataGridViewX1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewX1.Size = new System.Drawing.Size(668, 311);
-            this.dataGridViewX1.TabIndex = 0;
-            this.dataGridViewX1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewX1_CellClick);
-            this.dataGridViewX1.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataGridViewX1_CellPainting);
+            this.dgvimprevistos.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvimprevistos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvimprevistos.Size = new System.Drawing.Size(668, 312);
+            this.dgvimprevistos.TabIndex = 34;
             // 
             // frmDNBAdministrarImprevistos
             // 
@@ -184,7 +181,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.groupPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvimprevistos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,6 +197,6 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
         private System.Windows.Forms.ToolStripComboBox toolStripcmbcalendario;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
-        private DevComponents.DotNetBar.Controls.DataGridViewX dataGridViewX1;
+        private System.Windows.Forms.DataGridView dgvimprevistos;
     }
 }
