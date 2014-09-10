@@ -106,19 +106,82 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
 
                     
                     string personas = "No se puede agregar un Imprevisto a las Siguientes Personas:\n";
-                    
+                    int i = 0;
+                    List<string> idfaltas = new List<string>();
                     foreach (sp_PersonalporCalendarioResult temp in impr.listader) 
-                    { 
-                        if (asistencia.ContarAsistenciaPersonal(temp.CEDULA, imp.FechaInicio, idcalendario) != 0 || faltas.ContarFaltaPersonalDia(temp.CEDULA, imp.FechaInicio, idcalendario) != 0) 
-                            personas += "* "+temp.NOMBRE + " " + temp.APELLIDO + "\n";
+                    {
+                        if (asistencia.ContarAsistenciaPersonal(temp.CEDULA, imp.FechaInicio, idcalendario) != 0) 
+                        {
+                            personas += "* " + temp.NOMBRE + " " + temp.APELLIDO + "\n";
+                            i++;
+                        }
+                        else if(faltas.ContarFaltaPersonalDia(temp.CEDULA, imp.FechaInicio, idcalendario) != 0)
+                        {
+                            var faltjustificadas = (from lt in faltas.ListarFaltasPersonalDia(idcalendario,imp.FechaInicio)
+                                                       where lt.CEDULA == temp.CEDULA && lt.JUSTIFICACION==false select lt.IDFALTA).ToList();
+                            if(faltjustificadas.Count>0)
+                            idfaltas.Add(faltjustificadas[0].ToString());
+                        }
                     }
-                    impr.listader.RemoveAll(x => asistencia.ContarAsistenciaPersonal(x.CEDULA, imp.FechaInicio, idcalendario) != 0 || faltas.ContarFaltaPersonalDia(x.CEDULA, imp.FechaInicio, idcalendario) != 0);
-                    personas += "Debido a que poseen Faltas o Asistencias ese Dia";
+
+                    if (idfaltas.Count > 0) 
+                    {
+                        DialogResult dialogResult = MessageBoxEx.Show("Existe Personal con Falta Injustificada ese Día\nDeseea Justificar Dicha Falta\nSi Selecciona NO será Excluida del Imprevisto", "Administración de Imprevistos", MessageBoxButtons.YesNo);
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            //do something
+                            foreach(string temp in idfaltas)
+                            {
+                                Faltas f = new Faltas();
+                                f.IdFaltas = temp;
+                                f.Justificacion = true;
+                                faltas.ModificarFaltasJustificacion(f);
+                            }
+                        }
+                        else if (dialogResult == DialogResult.No)
+                        {
+                        //do something else
+                        impr.listader.RemoveAll(x => faltas.ContarFaltaPersonalDia(x.CEDULA, imp.FechaInicio, idcalendario) != 0);    
+                        }
+                    }
+                    
+                    impr.listader.RemoveAll(x => asistencia.ContarAsistenciaPersonal(x.CEDULA, imp.FechaInicio, idcalendario) != 0);
+                    personas += "Debido a que poseen Asistencias ese Dia";
                     if (impr.listader.Count > 0)
                     {
-                        imprevisto.InsertarImprevisto(imp);
-                        calendario.IngresarPersonalDet(impr.listader, idcalendario, imp.IdImprevisto);
-                        MessageBoxEx.Show(personas);
+                        var calend = (from lt in calendario.ListarCalendario()
+                                    where lt.IDCALENDARIO == idcalendario
+                                    select lt).ToList();
+                        if (imp.FechaInicio >= calend[0].FECHAINICIO && imp.FechaFinal < calend[0].FECHAFIN)
+                        {
+                            var imprev = (from lt in imprevisto.ListarImprevistoporCalendario(idcalendario)
+                                          where lt.FECHA.Value.Day == imp.FechaInicio.Day && lt.FECHA.Value.Month == imp.FechaInicio.Month && lt.FECHA.Value.Year == imp.FechaInicio.Year
+                                          select lt).Count();
+                            if (imprev == 0)
+                            {
+                                if (imp.FechaInicio <= imp.FechaFinal)
+                                {
+                                    imprevisto.InsertarImprevisto(imp);
+                                    calendario.IngresarPersonalDet(impr.listader, idcalendario, imp.IdImprevisto);
+                                    if (i != 0)
+                                        MessageBoxEx.Show(personas);
+                                }
+                                else
+                                {
+                                    MessageBoxEx.Show("La Hora de Entrada debe ser Menor que la Hora de Salida");
+                                }
+                                
+                            }
+                            else
+                            {
+                                MessageBoxEx.Show(this, "Ya Existe un Imprevisto en esa Fecha", "Administración de Imprevistos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        else
+                        {
+                            MessageBoxEx.Show(this, "La Fecha Establecida no esta en el Rango del Calendario", "Administrar Faltas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        
                     }
                     else
                         MessageBoxEx.Show("No se pudo agregar el Imprevisto\nRevise la Administracion de Faltas e Asistencia");
@@ -126,7 +189,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
                 }
                 catch (Exception mes)
                 {
-                    MessageBox.Show(mes.Message);
+                    MessageBox.Show(mes.Message+mes.StackTrace);
                 }
             }
         }
@@ -209,24 +272,84 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
                     imp.FechaFinal = impr.dtifechainicio.Value.Add(TimeSpan.Parse(impr.dtihorafin.Value.TimeOfDay.ToString()));
                     imp.Descripcion = impr.textBoxX1.Text;
                     string personas = "No se puede agregar un Imprevisto a las Siguientes Personas:\n";
-
+                    int i = 0;
+                    List<string> idfaltas = new List<string>();
                     foreach (sp_PersonalporCalendarioResult temp in impr.listader)
                     {
-                        if (asistencia.ContarAsistenciaPersonal(temp.CEDULA, imp.FechaInicio, idcalendario) != 0 || faltas.ContarFaltaPersonalDia(temp.CEDULA, imp.FechaInicio, idcalendario) != 0)
+                        if (asistencia.ContarAsistenciaPersonal(temp.CEDULA, imp.FechaInicio, idcalendario) != 0)
+                        {
                             personas += "* " + temp.NOMBRE + " " + temp.APELLIDO + "\n";
+                            i++;
+                        }
+                        else if (faltas.ContarFaltaPersonalDia(temp.CEDULA, imp.FechaInicio, idcalendario) != 0)
+                        {
+                            var faltjustificadas = (from lt in faltas.ListarFaltasPersonalDia(idcalendario, imp.FechaInicio)
+                                                    where lt.CEDULA == temp.CEDULA && lt.JUSTIFICACION == false
+                                                    select lt.IDFALTA).ToList();
+                            if (faltjustificadas.Count > 0)
+                                idfaltas.Add(faltjustificadas[0].ToString());
+                        }
+                    }
+
+                    if (idfaltas.Count > 0)
+                    {
+                        DialogResult dialogResult = MessageBoxEx.Show("Existe Personal con Falta Injustificada ese Día\nDeseea Justificar Dicha Falta\nSi Selecciona NO será Excluida del Imprevisto", "Administración de Imprevistos", MessageBoxButtons.YesNo);
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            //do something
+                            foreach (string temp in idfaltas)
+                            {
+                                Faltas f = new Faltas();
+                                f.IdFaltas = temp;
+                                f.Justificacion = true;
+                                faltas.ModificarFaltasJustificacion(f);
+                            }
+                        }
+                        else if (dialogResult == DialogResult.No)
+                        {
+                            //do something else
+                            impr.listader.RemoveAll(x => faltas.ContarFaltaPersonalDia(x.CEDULA, imp.FechaInicio, idcalendario) != 0);
+                        }
                     }
                     impr.listader.RemoveAll(x => asistencia.ContarAsistenciaPersonal(x.CEDULA, imp.FechaInicio, idcalendario) != 0 || faltas.ContarFaltaPersonalDia(x.CEDULA, imp.FechaInicio, idcalendario) != 0);
                     personas += "Debido a que poseen Faltas o Asistencias ese Dia";
                     if (impr.listader.Count > 0)
                     {
-                        imprevisto.ModificarImprevisto(imp);
-                        calendario.EliminarDetallePersonal(idcalendario, imp.IdImprevisto);
-                        calendario.IngresarPersonalDet(impr.listader, idcalendario, imp.IdImprevisto);
-                        MessageBoxEx.Show(personas);
+                        var calend = (from lt in calendario.ListarCalendario()
+                                      where lt.IDCALENDARIO == idcalendario
+                                      select lt).ToList();
+                        if (imp.FechaInicio >= calend[0].FECHAINICIO && imp.FechaFinal < calend[0].FECHAFIN)
+                        {
+                            var imprev = (from lt in imprevisto.ListarImprevistoporCalendario(idcalendario) 
+                                         where lt.FECHA.Value.Day==imp.FechaInicio.Day && lt.FECHA.Value.Month==imp.FechaInicio.Month && lt.FECHA.Value.Year==imp.FechaInicio.Year
+                                         select lt).Count();
+                            if (imprev == 0)
+                            {
+                                if (imp.FechaInicio <= imp.FechaFinal)
+                                {
+                                    imprevisto.ModificarImprevisto(imp);
+                                    calendario.EliminarDetallePersonal(idcalendario, imp.IdImprevisto);
+                                    calendario.IngresarPersonalDet(impr.listader, idcalendario, imp.IdImprevisto);
+                                    if (i != 0)
+                                        MessageBoxEx.Show(personas);
+                                }
+                                else 
+                                {
+                                    MessageBoxEx.Show("La Hora de Entrada debe ser Menor que la Hora de Salida");
+                                }
+                            }
+                            else 
+                            {
+                                MessageBoxEx.Show(this,"Ya Existe un Imprevisto en esa Fecha","Administración de Imprevistos",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                            }
+                        }
+                        else
+                        {
+                            MessageBoxEx.Show(this, "La Fecha Establecida no esta en el Rango del Calendario", "Administrar Faltas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        } 
                     }
                     else
                         MessageBoxEx.Show("No se pudo agregar el Imprevisto\nRevise la Administracion de Faltas e Asistencia");
-                    
                     MostrarImprevistos(idcalendario);
                 }
                 catch (Exception mes)

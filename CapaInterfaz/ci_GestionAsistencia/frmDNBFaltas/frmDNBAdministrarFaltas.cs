@@ -163,7 +163,6 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
                 {
                     MostrarPersonalFaltasRango(idcalendario, dtiinicio.Value, dtifin.Value);
                 }
-
             }
         }
 
@@ -199,7 +198,25 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
                     if (num == 0)
                     {
                         if (asistencia.ContarAsistenciaPersonal(falta.Cedula, falta.Fecha, falta.IdCalendario) == 0)
-                            faltas.InsertarFaltas(falta);
+                        {
+                            var linq = (from lt in calendario.ListarCalendario()
+                                           where lt.IDCALENDARIO == falta.IdCalendario
+                                           select lt).ToList();
+                            if (falta.Fecha >= linq[0].FECHAINICIO && falta.Fecha < linq[0].FECHAFIN)
+                            {
+                                var imprev = (from lt in faltas.ListarFaltasPersonalDia(idcalendario,falta.Fecha)
+                                              where lt.CEDULA == falta.Cedula && lt.FECHA.Day == falta.Fecha.Day && lt.FECHA.Month == falta.Fecha.Month && lt.FECHA.Year == falta.Fecha.Year
+                                              select lt).Count();
+                                if (imprev == 0)
+                                    faltas.InsertarFaltas(falta);    
+                                else
+                                    MessageBoxEx.Show(this, "Ya Existe un Falta en esa Fecha", "Administración de Faltas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            else 
+                            {
+                                MessageBoxEx.Show(this,"La Fecha Establecida no esta en el Rango del Calendario","Administrar Faltas",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                            }
+                        }
                         else
                         {
                             DialogResult dialogResult = MessageBoxEx.Show("Ya Existe una Asistencia en esa Fecha\nDeseea Ingresar la Falta de Todos Modos\nEsta Operacion Borrar el Registro de Asistencia", "Administración de Faltas", MessageBoxButtons.YesNo);
@@ -219,10 +236,6 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
                     else
                         MessageBoxEx.Show("El personal seleccionado posee un Imprevisto en esa fecha\nNo se puede agregar la falta");
 
-
-                    
-                    
-                    
                     MostrarFaltasDia(idcalendario, dtidia.Value);
                     
                 }
@@ -246,6 +259,8 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             frmDNBEditFalta impr = new frmDNBEditFalta(idcalendario);
             var linq = personal.getPersonalByced(dgvfaltasdia.CurrentRow.Cells[6].Value.ToString());
             impr.cmbTipo.SelectedText = linq.Tipo;
+            impr.buttonX3.Enabled = false;
+            impr.buttonX4.Enabled = false;
             impr.txtcedula.Text = linq.Cedula;
             impr.txtcedula.ReadOnly = true;
             impr.txtnombre.Text = linq.Nombre;
@@ -253,7 +268,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             impr.txtcargo.Text = linq.Cargo;
             impr.txtcargo.ReadOnly = true;
             impr.dtifecha.Value = Convert.ToDateTime(dgvfaltasdia.CurrentRow.Cells[3].Value.ToString());
-            impr.dtifecha.IsInputReadOnly = true;
+            impr.dtifecha.ButtonDropDown.Enabled = false;
             impr.checkBoxX1.Checked = dgvfaltasdia.CurrentRow.Cells[4].Value.ToString().ToLower() == "false" ? false : true;
             impr.pictureBox1.Image = Utilities.convertByteToImage(linq.DataFoto.ToArray());
             impr.ShowDialog();

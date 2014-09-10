@@ -411,8 +411,6 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
         #endregion
 
         private DevComponents.DotNetBar.LabelX labelX5;
-        private DevComponents.DotNetBar.ButtonX buttonX4;
-        private DevComponents.DotNetBar.ButtonX buttonX3;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel2;
         private DevComponents.DotNetBar.LabelX labelX4;
         private DevComponents.DotNetBar.LabelX labelX3;
@@ -428,5 +426,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
         public DevComponents.DotNetBar.Controls.TextBoxX txtcedula;
         public DevComponents.Editors.DateTimeAdv.DateTimeInput dtifecha;
         public DevComponents.DotNetBar.Controls.CheckBoxX checkBoxX1;
+        public DevComponents.DotNetBar.ButtonX buttonX4;
+        public DevComponents.DotNetBar.ButtonX buttonX3;
     }
 }
