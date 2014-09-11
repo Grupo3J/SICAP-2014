@@ -21,7 +21,7 @@ namespace CapaDatos.cd_GestionPlanificacion
                 da.IdCalendario = dad.IdCalendario;
                 da.Fecha = dad.Fecha;
                 da.Descripcion = dad.Descripcion;
-               
+
 
                 bd.sp_RegistrarDiaAdicional(da.IdDiasAdcionales, da.IdCalendario, da.Fecha, da.Descripcion);
                 bd.SubmitChanges();
@@ -87,6 +87,43 @@ namespace CapaDatos.cd_GestionPlanificacion
 
         }
 
+
+
+        public static bool ExisteAdicionalFecha(string fecha, string idDiasAdicional, string idCal)
+        {
+            string dia = fecha.Substring(0, 2);
+            string mes = fecha.Substring(2, 2);
+            string anio = fecha.Substring(4, 4);
+            CapaDatosDataContext DB;
+            try
+            {
+                using (DB = new CapaDatosDataContext())
+                {
+                    var query = (from cal in DB.DIASADICIONALES
+                                 where (cal.IDDIASADICIONALES.Equals(idDiasAdicional)) ||
+                                          ((cal.IDCALENDARIO.Equals(idCal) && cal.FECHA.Day.Equals(dia) && cal.FECHA.Month.Equals(mes)
+                                          && cal.FECHA.Year.Equals(anio)))
+                                 select cal).Count();
+                    if (query == 0)
+                        return false;
+                    else
+                        return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new CapaDatosExcepciones("Error al Buscar id de Dia Adicional", ex);
+            }
+            finally
+            {
+                DB = null;
+            }
+
+        }
+
+
+
+
         //metodo para eliminar dias adicionales
         public static void EliminarDiaAdicional(string idDiaAdicional)
         {
@@ -148,9 +185,10 @@ namespace CapaDatos.cd_GestionPlanificacion
                 using (DB = new CapaDatosDataContext())
                 {
 
-                    var query = (from cal in DB.DIASADICIONALES where (cal.IDCALENDARIO.Equals(idCalendario)
+                    var query = (from cal in DB.DIASADICIONALES
+                                 where (cal.IDCALENDARIO.Equals(idCalendario)
                                      && cal.FECHA.Day.Equals(dia) && cal.FECHA.Month.Equals(mes)
-                                     && cal.FECHA.Year.Equals(anio)) 
+                                     && cal.FECHA.Year.Equals(anio))
                                  select cal).Count();
 
                     if (query == 0)

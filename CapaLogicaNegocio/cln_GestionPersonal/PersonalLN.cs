@@ -33,6 +33,17 @@ namespace CapaLogicaNegocio.cln_GestionPersonal
 
         }
 
+        public void InsertarPersonalVoid(Personal p)
+        {
+            if (PersonalCd.Existe(p.Cedula))
+                throw new Exception("Ya existe una persona con esa cédula");
+            else
+            {
+                PersonalCd.Create(p);
+            }
+
+        }
+
         public bool InsertarPersonalCalendario(string ced, string idcal)
         {
             if (PersonalCd.ExistePersonalEnCalendario(ced))
@@ -45,6 +56,28 @@ namespace CapaLogicaNegocio.cln_GestionPersonal
 
         }
 
+        public bool ExistePersonalCalendario(string ced)
+        {
+            if (PersonalCd.ExistePersonalEnCalendario(ced))
+                return true;
+            else
+            {
+                return false;
+            }
+
+        }
+
+        public void InsertarPersonalCalendarioVoid(string ced, string idcal)
+        {
+            if (PersonalCd.ExistePersonalEnCalendario(ced))
+                throw new Exception("La cédula: " + ced + "ya esta registrada en ese calendario");
+            else
+            {
+                PersonalCd.CreatePersonalCalendario(ced, idcal);
+            }
+
+        }
+
         public bool ModificarPersonal(Personal p, int v)
         {
             PersonalCd.ModificarPersonalCedula(p, v);
@@ -52,7 +85,11 @@ namespace CapaLogicaNegocio.cln_GestionPersonal
 
 
         }
+        public void ModificarPersonalVoid(Personal p, int v)
+        {
+            PersonalCd.ModificarPersonalCedula(p, v);
 
+        }
         //public bool ModificarPersonalSinFoto(Personal p)
         //{
         //    PersonalCd.ModificarPersonalSinFoto(p);
@@ -87,6 +124,6 @@ namespace CapaLogicaNegocio.cln_GestionPersonal
 
 
         }
-        
+
     }
 }

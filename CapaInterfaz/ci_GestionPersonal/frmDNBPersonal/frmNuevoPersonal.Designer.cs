@@ -28,6 +28,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -83,6 +84,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             this.comboItem11 = new DevComponents.Editors.ComboItem();
             this.pictureHuella = new System.Windows.Forms.PictureBox();
             this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -90,6 +92,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureHuella)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -102,6 +105,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             this.toolStrip1.Size = new System.Drawing.Size(704, 25);
             this.toolStrip1.TabIndex = 25;
             this.toolStrip1.Text = "toolStrip1";
+            this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
             // 
             // toolStripButton1
             // 
@@ -247,6 +251,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             this.textDireccion.PreventEnterBeep = true;
             this.textDireccion.Size = new System.Drawing.Size(423, 22);
             this.textDireccion.TabIndex = 75;
+            this.textDireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textDireccion_KeyPress);
             // 
             // textCiudad
             // 
@@ -263,6 +268,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             this.textCiudad.PreventEnterBeep = true;
             this.textCiudad.Size = new System.Drawing.Size(271, 22);
             this.textCiudad.TabIndex = 74;
+            this.textCiudad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textCiudad_KeyPress);
             // 
             // textCorreo
             // 
@@ -279,6 +285,8 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             this.textCorreo.PreventEnterBeep = true;
             this.textCorreo.Size = new System.Drawing.Size(423, 22);
             this.textCorreo.TabIndex = 73;
+            this.textCorreo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textCorreo_KeyPress);
+            this.textCorreo.Validated += new System.EventHandler(this.textCorreo_Validated);
             // 
             // textTelefono
             // 
@@ -295,6 +303,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             this.textTelefono.PreventEnterBeep = true;
             this.textTelefono.Size = new System.Drawing.Size(170, 22);
             this.textTelefono.TabIndex = 72;
+            this.textTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textTelefono_KeyPress);
             // 
             // textCargo
             // 
@@ -311,6 +320,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             this.textCargo.PreventEnterBeep = true;
             this.textCargo.Size = new System.Drawing.Size(423, 22);
             this.textCargo.TabIndex = 71;
+            this.textCargo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textCargo_KeyPress);
             // 
             // comboTipo
             // 
@@ -360,6 +370,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             this.textTitulo.PreventEnterBeep = true;
             this.textTitulo.Size = new System.Drawing.Size(423, 22);
             this.textTitulo.TabIndex = 69;
+            this.textTitulo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textTitulo_KeyPress);
             // 
             // textApellidos
             // 
@@ -376,6 +387,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             this.textApellidos.PreventEnterBeep = true;
             this.textApellidos.Size = new System.Drawing.Size(271, 22);
             this.textApellidos.TabIndex = 68;
+            this.textApellidos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textApellidos_KeyPress);
             // 
             // textNombres
             // 
@@ -392,6 +404,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             this.textNombres.PreventEnterBeep = true;
             this.textNombres.Size = new System.Drawing.Size(271, 22);
             this.textNombres.TabIndex = 67;
+            this.textNombres.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textNombres_KeyPress);
             // 
             // comboSexo
             // 
@@ -421,6 +434,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             this.pictureFoto.Location = new System.Drawing.Point(31, 20);
             this.pictureFoto.Name = "pictureFoto";
             this.pictureFoto.Size = new System.Drawing.Size(99, 107);
+            this.pictureFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureFoto.TabIndex = 65;
             this.pictureFoto.TabStop = false;
             // 
@@ -439,6 +453,8 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             this.textCedula.PreventEnterBeep = true;
             this.textCedula.Size = new System.Drawing.Size(170, 22);
             this.textCedula.TabIndex = 64;
+            this.textCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textCedula_KeyPress);
+            this.textCedula.Validated += new System.EventHandler(this.textCedula_Validated);
             // 
             // labelX11
             // 
@@ -703,6 +719,10 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             this.buttonX2.Text = "Cargar Huella";
             this.buttonX2.Click += new System.EventHandler(this.buttonX2_Click_2);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmNuevoPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -724,6 +744,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             this.tabPage2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureHuella)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -786,5 +807,6 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
         private DevComponents.Editors.ComboItem comboItem17;
         private DevComponents.Editors.ComboItem comboItem14;
         private DevComponents.Editors.ComboItem comboItem15;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

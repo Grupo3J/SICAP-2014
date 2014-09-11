@@ -74,5 +74,15 @@ namespace CapaLogicaNegocio.cln_GestionPlanificacion
             }
         }
 
+        public bool ExisteNoLaborableFecha(string fecha, string idDiasAdicional, string idCal)
+        {
+            if (DiasNoLaborablesCD.ExisteNoLaborableFecha(fecha, idDiasAdicional, idCal))
+                return true;
+            else
+            {
+                return false;
+            }
+        }
+
     }
 }

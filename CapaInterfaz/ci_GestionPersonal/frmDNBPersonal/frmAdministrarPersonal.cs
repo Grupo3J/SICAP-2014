@@ -64,14 +64,35 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
             DialogResult dialog;
-            dialog = MessageBox.Show("¿Está seguro que desea eliminar la persona?", "Información del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            string cedula = dataGridViewX1.CurrentRow.Cells[0].Value.ToString();
 
-            if (dialog == DialogResult.Yes)
+            try
             {
-                string cedula = dataGridViewX1.CurrentRow.Cells[0].Value.ToString();
-                PLN.EliminarPresonal(cedula);
-                dataGridViewX1.DataSource = PLN.ListarPersonal("");
+
+                if (PLN.ExistePersonalCalendario(cedula))
+                {
+                    MessageBoxEx.Show("La persona esta registrada en un calendario, por tal no se puede eliminar");
+                }
+                else {
+                    dialog = MessageBox.Show("¿Está seguro que desea eliminar la persona?", "Información del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                    if (dialog == DialogResult.Yes)
+                    {
+                        cedula = dataGridViewX1.CurrentRow.Cells[0].Value.ToString();
+                        PLN.EliminarPresonal(cedula);
+                        MessageBoxEx.Show("Persona eliminada con éxito");
+                        dataGridViewX1.DataSource = PLN.ListarPersonal("");
+                    }
+                }
+
+
             }
+            catch (Exception er) { 
+            
+            }
+            
+            
+            
         }
 
 
@@ -153,6 +174,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
+            
             Personal p = new Personal();
             p.Cedula = dataGridViewX1.CurrentRow.Cells[0].Value.ToString();
             p.Nombre = dataGridViewX1.CurrentRow.Cells[1].Value.ToString();

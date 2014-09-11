@@ -128,6 +128,31 @@ namespace CapaDatos.cd_GestionPlanificacion
 
         }
 
+        public static bool ExisteCalendarioEnDetalleCalendario(string idcal)
+        {
+            CapaDatosDataContext DB;
+            try
+            {
+                using (DB = new CapaDatosDataContext())
+                {
+                    var query = (from prov in DB.DETALLE_PERSONAL_CALENDARIO where prov.IDCALENDARIO == idcal select prov).Count();
+                    if (query == 0)
+                        return false;
+                    else
+                        return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new CapaDatosExcepciones("Error al Buscar la Calendario del DetallePersonalCalendario.");
+            }
+            finally
+            {
+                DB = null;
+            }
+
+        }
+
         public static void EliminarCalendario(string idCaledario)
         {
             CapaDatosDataContext DB = new CapaDatosDataContext();

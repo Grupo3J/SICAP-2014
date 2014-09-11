@@ -178,5 +178,31 @@ namespace CapaDatos.cd_GestionPersonal
                 bd = null;
             }
         }
+
+        public static bool ExisteMasDeUnaHuella(string cedula)
+        {
+            CapaDatosDataContext DB;
+            try
+            {
+                using (DB = new CapaDatosDataContext())
+                {
+                    var query = (from hue in DB.HUELLA where (hue.CEDULA == cedula) select hue).Count();
+
+                    if (query < 2)
+                        return false;
+                    else
+                        return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new CapaDatosExcepciones("Error al Buscar id de la huella", ex);
+            }
+            finally
+            {
+                DB = null;
+            }
+
+        }
     }
 }

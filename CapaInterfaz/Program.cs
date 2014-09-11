@@ -20,8 +20,8 @@ namespace CapaInterfaz
             //Application.Run(new CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas.frmDNBAdministrarFaltas());
             //Application.Run(new CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos.frmDNBAdministrarImprevistos());
             //Application.Run(new CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia.frmDNBAdministrarAsistencia());
-            //Application.Run(new CapaInterfaz.ci_GestionSeguridad.frmLog_In());
-            Application.Run(new CapaInterfaz.ci_GestionReportes.frmReporteAsistenciaRango());
+            Application.Run(new CapaInterfaz.ci_GestionSeguridad.frmLog_In());
+            //Application.Run(new CapaInterfaz.ci_GestionReportes.frmReporteAsistenciaRango());
         }
     }
 }

@@ -28,6 +28,7 @@ namespace CapaInterfaz.ci_GestionPlanificacion.frmDNBACalendarioLaboral
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -44,8 +45,10 @@ namespace CapaInterfaz.ci_GestionPlanificacion.frmDNBACalendarioLaboral
             this.dateTimePFin = new System.Windows.Forms.DateTimePicker();
             this.dateTimePInicio = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolStrip1.SuspendLayout();
             this.groupPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -175,6 +178,7 @@ namespace CapaInterfaz.ci_GestionPlanificacion.frmDNBACalendarioLaboral
             this.textDescripcion.Name = "textDescripcion";
             this.textDescripcion.Size = new System.Drawing.Size(346, 22);
             this.textDescripcion.TabIndex = 24;
+            this.textDescripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textDescripcion_KeyPress);
             // 
             // label4
             // 
@@ -217,6 +221,10 @@ namespace CapaInterfaz.ci_GestionPlanificacion.frmDNBACalendarioLaboral
             this.label1.TabIndex = 18;
             this.label1.Text = "Nombre:";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmNuevoCalendarioLaboral
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -234,6 +242,7 @@ namespace CapaInterfaz.ci_GestionPlanificacion.frmDNBACalendarioLaboral
             this.toolStrip1.PerformLayout();
             this.groupPanel1.ResumeLayout(false);
             this.groupPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -257,5 +266,6 @@ namespace CapaInterfaz.ci_GestionPlanificacion.frmDNBACalendarioLaboral
         private DevComponents.Editors.ComboItem comboItem1;
         private DevComponents.Editors.ComboItem comboItem2;
         private DevComponents.Editors.ComboItem comboItem3;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

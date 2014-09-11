@@ -84,28 +84,25 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             // 
             // toolmodificar
             // 
-            this.toolmodificar.Image = ((System.Drawing.Image)(resources.GetObject("toolmodificar.Image")));
             this.toolmodificar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolmodificar.Name = "toolmodificar";
-            this.toolmodificar.Size = new System.Drawing.Size(78, 22);
+            this.toolmodificar.Size = new System.Drawing.Size(62, 22);
             this.toolmodificar.Text = "Modificar";
             this.toolmodificar.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // tooleliminar
             // 
-            this.tooleliminar.Image = ((System.Drawing.Image)(resources.GetObject("tooleliminar.Image")));
             this.tooleliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tooleliminar.Name = "tooleliminar";
-            this.tooleliminar.Size = new System.Drawing.Size(70, 22);
+            this.tooleliminar.Size = new System.Drawing.Size(54, 22);
             this.tooleliminar.Text = "Eliminar";
             this.tooleliminar.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // toollistar
             // 
-            this.toollistar.Image = ((System.Drawing.Image)(resources.GetObject("toollistar.Image")));
             this.toollistar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toollistar.Name = "toollistar";
-            this.toollistar.Size = new System.Drawing.Size(55, 22);
+            this.toollistar.Size = new System.Drawing.Size(39, 22);
             this.toollistar.Text = "Listar";
             this.toollistar.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
@@ -167,7 +164,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             this.labelXDatos.ForeColor = System.Drawing.Color.Black;
             this.labelXDatos.Location = new System.Drawing.Point(15, 100);
             this.labelXDatos.Name = "labelXDatos";
-            this.labelXDatos.Size = new System.Drawing.Size(131, 23);
+            this.labelXDatos.Size = new System.Drawing.Size(279, 23);
             this.labelXDatos.TabIndex = 17;
             this.labelXDatos.Click += new System.EventHandler(this.labelXDatos_Click);
             // 

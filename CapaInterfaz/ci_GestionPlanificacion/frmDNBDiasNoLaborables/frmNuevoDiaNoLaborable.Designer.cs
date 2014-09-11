@@ -28,6 +28,7 @@ namespace CapaInterfaz.ci_GestionPlanificacion.frmDNBDiasNoLaborables
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNuevoDiaNoLaborable));
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -39,8 +40,10 @@ namespace CapaInterfaz.ci_GestionPlanificacion.frmDNBDiasNoLaborables
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupPanel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupPanel1
@@ -120,6 +123,7 @@ namespace CapaInterfaz.ci_GestionPlanificacion.frmDNBDiasNoLaborables
             this.textDescripcion.PreventEnterBeep = true;
             this.textDescripcion.Size = new System.Drawing.Size(304, 22);
             this.textDescripcion.TabIndex = 16;
+            this.textDescripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textDescripcion_KeyPress);
             // 
             // labelX3
             // 
@@ -188,6 +192,10 @@ namespace CapaInterfaz.ci_GestionPlanificacion.frmDNBDiasNoLaborables
             this.toolStripButton2.Text = "Cancelar";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmNuevoDiaNoLaborable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -204,6 +212,7 @@ namespace CapaInterfaz.ci_GestionPlanificacion.frmDNBDiasNoLaborables
             this.groupPanel1.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,5 +230,6 @@ namespace CapaInterfaz.ci_GestionPlanificacion.frmDNBDiasNoLaborables
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

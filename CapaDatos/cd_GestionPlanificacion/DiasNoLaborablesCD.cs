@@ -166,6 +166,37 @@ namespace CapaDatos.cd_GestionPlanificacion
                  }
              }
 
+             public static bool ExisteNoLaborableFecha(string fecha, string idDiasAdicional, string idCal)
+             {
+                 string dia = fecha.Substring(0, 2);
+                 string mes = fecha.Substring(2, 2);
+                 string anio = fecha.Substring(4, 4);
+                 CapaDatosDataContext DB;
+                 try
+                 {
+                     using (DB = new CapaDatosDataContext())
+                     {
+                         var query = (from cal in DB.DIASNOLABORABLES
+                                      where (cal.IDDIASNOLABORABLES.Equals(idDiasAdicional)) ||
+                                               ((cal.IDCALENDARIO.Equals(idCal) && cal.FECHA.Day.Equals(dia) && cal.FECHA.Month.Equals(mes)
+                                               && cal.FECHA.Year.Equals(anio)))
+                                      select cal).Count();
+                         if (query == 0)
+                             return false;
+                         else
+                             return true;
+                     }
+                 }
+                 catch (Exception ex)
+                 {
+                     throw new CapaDatosExcepciones("Error al Buscar id de Dia Adicional", ex);
+                 }
+                 finally
+                 {
+                     DB = null;
+                 }
+
+             }
 
 
     }

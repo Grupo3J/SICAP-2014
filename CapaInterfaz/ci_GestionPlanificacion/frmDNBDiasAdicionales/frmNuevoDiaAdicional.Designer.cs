@@ -28,6 +28,7 @@ namespace CapaInterfaz.ci_GestionPlanificacion.frmDNBDiasAdicionales
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -38,8 +39,10 @@ namespace CapaInterfaz.ci_GestionPlanificacion.frmDNBDiasAdicionales
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolStrip1.SuspendLayout();
             this.groupPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -150,6 +153,7 @@ namespace CapaInterfaz.ci_GestionPlanificacion.frmDNBDiasAdicionales
             this.textDescripcion.PreventEnterBeep = true;
             this.textDescripcion.Size = new System.Drawing.Size(304, 22);
             this.textDescripcion.TabIndex = 16;
+            this.textDescripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textDescripcion_KeyPress);
             // 
             // labelX3
             // 
@@ -187,6 +191,10 @@ namespace CapaInterfaz.ci_GestionPlanificacion.frmDNBDiasAdicionales
             this.labelX1.TabIndex = 13;
             this.labelX1.Text = "IdCalendario:";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmNuevoDiaAdicional
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -203,6 +211,7 @@ namespace CapaInterfaz.ci_GestionPlanificacion.frmDNBDiasAdicionales
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.groupPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,5 +229,6 @@ namespace CapaInterfaz.ci_GestionPlanificacion.frmDNBDiasAdicionales
         private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.LabelX labelX1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

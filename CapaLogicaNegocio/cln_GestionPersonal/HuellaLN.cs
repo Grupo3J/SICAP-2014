@@ -21,12 +21,44 @@ namespace CapaLogicaNegocio.cln_GestionPersonal
         public bool InsertarHuella(Huella p)
         {
             if (HuellaCD.ExisteHuella(p.IdHuella, p.Nombre, p.Cedula))
+            {
                 return true;
+
+                throw new Exception("Error al insertar huella huella");
+            }
             else
             {
                 HuellaCD.Create(p);
                 return false;
             }
+
+        }
+
+        public void InsertarHuellaSinReturn(Huella p)
+        {
+            if (HuellaCD.ExisteHuella(p.IdHuella, p.Nombre, p.Cedula))
+            {
+
+                throw new Exception("Ya existe una huella con ese nombre");
+            }
+            else
+            {
+                HuellaCD.Create(p);
+            }
+
+        }
+
+        public bool SiExisteMasDeUnaHuella(string cedula)
+        {
+            if (HuellaCD.ExisteMasDeUnaHuella(cedula))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
 
         }
 
@@ -45,6 +77,7 @@ namespace CapaLogicaNegocio.cln_GestionPersonal
 
 
         }
+
 
 
 

@@ -83,5 +83,16 @@ namespace CapaLogicaNegocio.cln_GestionPlanificacion
         {
             return CalendarioCD.ObtenerDetalleCalendarioPersonal(ced);
         }
+
+        public bool ExisteCalendarioEnDetalleCalendario(string idcal)
+        {
+            if (CalendarioCD.ExisteCalendarioEnDetalleCalendario(idcal))
+                return true;
+            else
+            {
+                return false;
+            }
+
+        }
     }
 }

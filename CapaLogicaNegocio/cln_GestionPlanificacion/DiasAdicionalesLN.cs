@@ -30,6 +30,17 @@ namespace CapaLogicaNegocio.cln_GestionPlanificacion
 
         }
 
+        public void InsertarDiasAdicionalesVoid(DiasAdicionales p)
+        {
+            if (DiasAdicionalesCD.ExisteDiaAdicional(p.IdDiasAdcionales))
+                throw new Exception("Error al insertar día a dicional.....Por favor cierre el programa y vuelva a intentarlo");
+            else
+            {
+                DiasAdicionalesCD.Create(p);
+            }
+
+        }
+
         public bool ModificarDiaAdicional(DiasAdicionales cal)
         {
             DiasAdicionalesCD.ModificarDiaAdicional(cal);
@@ -62,6 +73,16 @@ namespace CapaLogicaNegocio.cln_GestionPlanificacion
         public bool ExisteNoLaboralEnAdicional(string fecha, string idCalendario)
         {
             if (DiasAdicionalesCD.ExisteDiaNoLaborableEnAdicional(fecha, idCalendario))
+                return true;
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool ExisteAdicionalFecha(string fecha, string idDiasAdicional, string idCal)
+        {
+            if (DiasAdicionalesCD.ExisteAdicionalFecha(fecha, idDiasAdicional, idCal))
                 return true;
             else
             {

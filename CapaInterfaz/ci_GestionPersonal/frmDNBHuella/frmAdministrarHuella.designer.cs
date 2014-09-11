@@ -28,13 +28,19 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBHuella
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.dataGridViewX1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.buttonXCargarHuella = new DevComponents.DotNetBar.ButtonX();
+            this.pictureBox1Huella = new System.Windows.Forms.PictureBox();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.comboBoxEx1 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.comboItem1 = new DevComponents.Editors.ComboItem();
@@ -42,16 +48,12 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBHuella
             this.comboItem3 = new DevComponents.Editors.ComboItem();
             this.comboItem4 = new DevComponents.Editors.ComboItem();
             this.comboItem5 = new DevComponents.Editors.ComboItem();
-            this.pictureBox1Huella = new System.Windows.Forms.PictureBox();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1Huella)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -60,7 +62,6 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBHuella
             this.toolStrip1.ForeColor = System.Drawing.Color.Black;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
-            this.toolStripButton2,
             this.toolStripButton3,
             this.toolStripButton4,
             this.toolStripButton5});
@@ -69,6 +70,42 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBHuella
             this.toolStrip1.Size = new System.Drawing.Size(621, 25);
             this.toolStrip1.TabIndex = 13;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = global::CapaInterfaz.Properties.Resources._48px_Crystal_Clear_device_3floppy_mount;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(69, 22);
+            this.toolStripButton1.Text = "Guardar";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.Image = global::CapaInterfaz.Properties.Resources._48px_Crystal_Clear_action_editcut;
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(70, 22);
+            this.toolStripButton3.Text = "Eliminar";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
+            // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.Image = global::CapaInterfaz.Properties.Resources.ima_administracion;
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(55, 22);
+            this.toolStripButton4.Text = "Listar";
+            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
+            // 
+            // toolStripButton5
+            // 
+            this.toolStripButton5.Image = global::CapaInterfaz.Properties.Resources._48px_Crystal_Clear_action_reload;
+            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton5.Name = "toolStripButton5";
+            this.toolStripButton5.Size = new System.Drawing.Size(73, 22);
+            this.toolStripButton5.Text = "Cancelar";
+            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
             // dataGridViewX1
             // 
@@ -135,6 +172,16 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBHuella
             this.buttonXCargarHuella.Text = "Cargar Huella";
             this.buttonXCargarHuella.Click += new System.EventHandler(this.buttonXCargarHuella_Click_1);
             // 
+            // pictureBox1Huella
+            // 
+            this.pictureBox1Huella.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.pictureBox1Huella.ForeColor = System.Drawing.Color.Black;
+            this.pictureBox1Huella.Location = new System.Drawing.Point(102, 69);
+            this.pictureBox1Huella.Name = "pictureBox1Huella";
+            this.pictureBox1Huella.Size = new System.Drawing.Size(98, 94);
+            this.pictureBox1Huella.TabIndex = 21;
+            this.pictureBox1Huella.TabStop = false;
+            // 
             // labelX1
             // 
             this.labelX1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -188,60 +235,9 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBHuella
             // 
             this.comboItem5.Text = "Meñique";
             // 
-            // pictureBox1Huella
+            // errorProvider1
             // 
-            this.pictureBox1Huella.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.pictureBox1Huella.ForeColor = System.Drawing.Color.Black;
-            this.pictureBox1Huella.Location = new System.Drawing.Point(102, 69);
-            this.pictureBox1Huella.Name = "pictureBox1Huella";
-            this.pictureBox1Huella.Size = new System.Drawing.Size(98, 94);
-            this.pictureBox1Huella.TabIndex = 21;
-            this.pictureBox1Huella.TabStop = false;
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.Image = global::CapaInterfaz.Properties.Resources._48px_Crystal_Clear_device_3floppy_mount;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(69, 22);
-            this.toolStripButton1.Text = "Guardar";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.Image = global::CapaInterfaz.Properties.Resources._48px_Crystal_Clear_action_edit;
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(78, 22);
-            this.toolStripButton2.Text = "Modificar";
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
-            // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.Image = global::CapaInterfaz.Properties.Resources._48px_Crystal_Clear_action_editcut;
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(70, 22);
-            this.toolStripButton3.Text = "Eliminar";
-            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
-            // 
-            // toolStripButton4
-            // 
-            this.toolStripButton4.Image = global::CapaInterfaz.Properties.Resources.ima_administracion;
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(55, 22);
-            this.toolStripButton4.Text = "Listar";
-            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
-            // 
-            // toolStripButton5
-            // 
-            this.toolStripButton5.Image = global::CapaInterfaz.Properties.Resources._48px_Crystal_Clear_action_reload;
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(73, 22);
-            this.toolStripButton5.Text = "Cancelar";
-            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmAdministrarHuella
             // 
@@ -262,6 +258,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBHuella
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1Huella)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,7 +268,6 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBHuella
 
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.ToolStripButton toolStripButton4;
         private DevComponents.DotNetBar.Controls.DataGridViewX dataGridViewX1;
@@ -286,5 +282,6 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBHuella
         private DevComponents.Editors.ComboItem comboItem4;
         private DevComponents.Editors.ComboItem comboItem5;
         private System.Windows.Forms.ToolStripButton toolStripButton5;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

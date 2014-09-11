@@ -33,7 +33,6 @@ namespace CapaInterfaz.ci_GestionPlanificacion.frmDNBDiasAdicionales
             this.toolnuevo = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolmodificar = new System.Windows.Forms.ToolStripButton();
-            this.tooleliminar = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.dataGridViewX1 = new System.Windows.Forms.DataGridView();
@@ -50,7 +49,6 @@ namespace CapaInterfaz.ci_GestionPlanificacion.frmDNBDiasAdicionales
             this.toolnuevo,
             this.toolStripSeparator1,
             this.toolmodificar,
-            this.tooleliminar,
             this.toolStripButton4});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -82,15 +80,6 @@ namespace CapaInterfaz.ci_GestionPlanificacion.frmDNBDiasAdicionales
             this.toolmodificar.Text = "Modificar";
             this.toolmodificar.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
-            // tooleliminar
-            // 
-            this.tooleliminar.Image = global::CapaInterfaz.Properties.Resources._48px_Crystal_Clear_action_editcut;
-            this.tooleliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tooleliminar.Name = "tooleliminar";
-            this.tooleliminar.Size = new System.Drawing.Size(70, 22);
-            this.tooleliminar.Text = "Eliminar";
-            this.tooleliminar.Click += new System.EventHandler(this.toolStripButton3_Click);
-            // 
             // toolStripButton4
             // 
             this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -102,7 +91,7 @@ namespace CapaInterfaz.ci_GestionPlanificacion.frmDNBDiasAdicionales
             // groupPanel1
             // 
             this.groupPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.groupPanel1.CanvasColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.groupPanel1.ColorTable = DevComponents.DotNetBar.Controls.ePanelColorTable.Yellow;
             this.groupPanel1.Controls.Add(this.dataGridViewX1);
@@ -188,7 +177,6 @@ namespace CapaInterfaz.ci_GestionPlanificacion.frmDNBDiasAdicionales
         private System.Windows.Forms.ToolStripButton toolnuevo;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton toolmodificar;
-        private System.Windows.Forms.ToolStripButton tooleliminar;
         private System.Windows.Forms.ToolStripButton toolStripButton4;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
         private System.Windows.Forms.DataGridView dataGridViewX1;

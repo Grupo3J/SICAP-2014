@@ -27,7 +27,7 @@ namespace CapaInterfaz.ci_GestionPlanificacion.frmDNBDiasNoLaborables
         private void frmDiasNoLaborables_Load(object sender, EventArgs e)
         {
             if (!permiso.Escritura) { toolStrip1.Items.Remove(toolnuevo); }
-            if (!permiso.Eliminacion) { toolStrip1.Items.Remove(tooleliminar); }
+           // if (!permiso.Eliminacion) { toolStrip1.Items.Remove(tooleliminar); }
             if (!permiso.Modificacion) { toolStrip1.Items.Remove(toolmodificar); }
             dataGridViewX1.DataSource = DNLLN.ListarDiasNoLaborables();
         }

@@ -47,15 +47,36 @@ namespace CapaInterfaz.ci_GestionPlanificacion.frmDNBAdministrarCalendarioLab
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
             DialogResult dialog;
-            dialog = MessageBox.Show("¿Está seguro que desea eliminar el Calendario Laboral?", "Información del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            string idCalendario = dataGridViewX1.CurrentRow.Cells[0].Value.ToString();
 
-            if (dialog == DialogResult.Yes)
+            try
             {
-                string idCalendario = dataGridViewX1.CurrentRow.Cells[0].Value.ToString();
+                if (CLN.ExisteCalendarioEnDetalleCalendario(idCalendario))
+                {
+                    MessageBoxEx.Show("No se puede eliminar calendario laboral porque ya hay personas asignadas a éste");
+                }
+                else {
+                    dialog = MessageBox.Show("¿Está seguro que desea eliminar el Calendario Laboral?", "Información del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                CLN.EliminarCalendario(idCalendario);
-                dataGridViewX1.DataSource = CLN.ListarCalendario();
+                    if (dialog == DialogResult.Yes)
+                    {
+
+                        CLN.EliminarCalendario(idCalendario);
+                        dataGridViewX1.DataSource = CLN.ListarCalendario();
+                    }
+                }
             }
+            catch (Exception er) {
+                MessageBoxEx.Show(er.Message);
+            }
+
+            
+            
+            
+            
+            
+            
+            
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
