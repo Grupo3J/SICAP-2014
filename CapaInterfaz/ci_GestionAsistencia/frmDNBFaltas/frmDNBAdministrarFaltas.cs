@@ -70,7 +70,6 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             {
                 if (!toolStripcmbcalendario.Items.Contains(temp.NOMBRE))
                     toolStripcmbcalendario.Items.Add(temp.NOMBRE);
-
             }
             if (!permiso.Escritura) { toolStrip1.Items.Remove(toolnuevo); }
             if (!permiso.Eliminacion) { toolStrip1.Items.Remove(tooleliminar); }
@@ -375,6 +374,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
                 }
             }
         }
+
 
         private void dtiinicio_MonthCalendar_PaintLabel(object sender, DevComponents.Editors.DateTimeAdv.DayPaintEventArgs e)
         {

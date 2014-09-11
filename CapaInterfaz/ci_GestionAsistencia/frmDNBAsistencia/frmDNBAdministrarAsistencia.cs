@@ -14,6 +14,9 @@ using CapaEntidades.GestionAsistencia;
 using CapaDatos;
 using CapaLogicaNegocio.cln_GestionPersonal;
 using CapaEntidades.GestionSeguridad;
+using System.Globalization;
+using System.Drawing.Drawing2D;
+using System.Media;
 
 namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
 {
@@ -22,16 +25,39 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
         public frmDNBAdministrarAsistencia()
         {
             InitializeComponent();
-            Inicializar();
+            if(CompararFechaPlus(DateTime.Now)==false)
+            {
+            //Tipo de Secugen Fingerprint reader utilizado 
+            SGFPMDeviceName device_name = SGFPMDeviceName.DEV_FDU05;
+            //Inicializar SGFingerPrintManager para que cargue el driver del dispositivo utilizado
+            m_FPM = new SGFingerPrintManager();
+            m_FPM.Init(device_name);
+            //Escoge el Puerto en el que se ejecuta el dispositivo
+            Int32 port_addr = (Int32)SGFPMPortAddr.USB_AUTO_DETECT;
+            Int32 iError = m_FPM.OpenDevice(port_addr);
             m_FPM.EnableAutoOnEvent(true, (int)this.Handle);
+            }
         }
 
         AsistenciaLN asistencia = new AsistenciaLN();
         CalendarioLN calendario = new CalendarioLN();
+        private String[] Meses;
+        FaltasLN faltas = new FaltasLN();
+        PersonalLN personal = new PersonalLN();
+        ImprevistoLN imprevistos = new ImprevistoLN();
+        DiasAdicionalesLN diasadic = new DiasAdicionalesLN();
+        DiaNoLAborableLN diasnolab = new DiaNoLAborableLN();
+        List<sp_ListarDiaAdicionalResult> da;
+        List<sp_ListarDiaNoLaborablesResult> dnl;
+        
+        HuellaLN huella = new HuellaLN();
         private SGFingerPrintManager m_FPM;
         private int m_ImageWidth;
         private int m_ImageHeight;
         private Byte[] arrayHuella1;
+        List<sp_PersonalporCalendarioResult> personalporc;
+        private string idcalendario;
+
         public void setUser(Usuarios s, Permisos per)
         {
             user = s;
@@ -54,14 +80,23 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
             }
 
             toolStripcmbcalendario.SelectedIndex = 0;
+            idcalendario = linq[0].IDCALENDARIO;
             dtidia.Value = DateTime.Now;
-            dataGridViewX1.DataSource = asistencia.ListarAsistenciaPersonal(linq[0].IDCALENDARIO, DateTime.Now);
-            dataGridViewX1.Columns[4].Visible = false;
-            dataGridViewX1.Columns[5].Visible = false;
-            dataGridViewX1.Columns[6].Visible = false;
-            dataGridViewX1.Columns[7].Visible = false;
-            dataGridViewX1.Columns[8].Visible = false;
+            CargarPersonalporCalendario(idcalendario);
 
+            MostrarPersonalDia(idcalendario,DateTime.Now);
+
+            Meses = CultureInfo.CurrentCulture.DateTimeFormat.MonthNames;
+            int cuentameses = Math.Abs((linq[0].FECHAINICIO.Month - linq[0].FECHAFIN.Month) + 12 * (linq[0].FECHAINICIO.Year - linq[0].FECHAFIN.Year));
+            cmbmes.Items.Clear();
+            for (int i = 0; i <= cuentameses; i++)
+            {
+                DateTime currentfecha = linq[0].FECHAINICIO.AddMonths(i);
+                cmbmes.Items.Add(Meses[currentfecha.Month - 1] + " " + currentfecha.Year);
+            }
+            da = (from lt in diasadic.ListarDiasAdicionales() where lt.IDCALENDARIO == idcalendario select lt).ToList();
+            dnl = (from lt in diasnolab.ListarDiasNoLaborables() where lt.IDCALENDARIO == idcalendario select lt).ToList();
+            
             if (!permiso.Escritura) { toolStrip1.Items.Remove(toolnuevo); }
             if (!permiso.Eliminacion) { toolStrip1.Items.Remove(tooleliminar); }
 
@@ -79,30 +114,28 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
                 if (message.WParam.ToInt32() == (Int32)SGFPMAutoOnEvent.FINGER_ON)
                 {
                     //StatusBar.Text = "Device Message: Finger On";
-                    HuellaLN huella = new HuellaLN();
                     bool matched = false;
-                    using (CapaDatosDataContext DB = new CapaDatosDataContext())
+                    List<sp_ListarHuellaCedulaResult> list;
+                    foreach (sp_PersonalporCalendarioResult temp in personalporc)
                     {
-                        var linq = (from lq in DB.PERSONAL select lq.CEDULA).ToList();
-                        foreach (string temp in linq)
+                        if (matched == true)
+                            break;
+                        list = huella.ListarHuella(temp.CEDULA);
+                        foreach (sp_ListarHuellaCedulaResult huell in list)
                         {
-                            if (matched == true)
-                                break;
-                            List<sp_ListarHuellaCedulaResult> list = huella.ListarHuella(temp);
-                            foreach (sp_ListarHuellaCedulaResult huell in list)
+                            if (MatchTemplate(huell.DATAHUELLA1.ToArray(), huell.DATAHUELLA2.ToArray()))
                             {
-                                if (MatchTemplate(huell.DATAHUELLA1.ToArray(), huell.DATAHUELLA2.ToArray()))
-                                {
-                                    matched = true;
-                                    AsistenciaperReader(temp);
-                                    break;
-                                }
+                                matched = true;
+                                AsistenciaperReader(temp.CEDULA);
+                                break;
                             }
-
                         }
                     }
-                    if (matched == false)
-                        MessageBox.Show("Not Matched");
+                    if (matched == false) 
+                    {
+                        AutoClosingMessageBox.Show("Huella No Encontrada", "Administracion de Huellas", 1000);                       
+                    }
+                      
                 }
                 else if (message.WParam.ToInt32() == (Int32)SGFPMAutoOnEvent.FINGER_OFF)
                 {
@@ -110,21 +143,99 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
                     //MessageBox.Show("Here");
                 }
             }
+            
             base.WndProc(ref message);
         }
 
         private void AsistenciaperReader(string cedula)
         {
-            AsistenciaLN asistencia = new AsistenciaLN();
-            var linq = (from lp in calendario.ListarCalendario() select lp.IDCALENDARIO).ToList();
             Asistencia temp = new Asistencia();
             temp.IdAsistencia = GenerarIdAsistencia();
             temp.FechaHoraEntrada = DateTime.Now;
             temp.FechaHoraSalida = DateTime.Now;
-            temp.IdCalendario = linq[toolStripcmbcalendario.SelectedIndex];
+            temp.IdCalendario = idcalendario;
             temp.Cedula = cedula;
-            asistencia.InsertarAsistencia(temp);
-            MessageBox.Show("Asistencia Ingresada..");
+
+            if (asistencia.ContarAsistenciaPersonal(cedula, DateTime.Now, idcalendario) > 0)
+            {
+                var linq = asistencia.AsistenciaPersonalDia(cedula, DateTime.Now, idcalendario);
+                if (linq.FECHAHORASALIDA == linq.FECHAHORAENTRADA)
+                {
+                    //ModificarAsistenciaFechaHoraSalida
+                    temp.FechaHoraSalida = DateTime.Now;
+                    temp.IdAsistencia = linq.IDASISTENCIA;
+                    asistencia.ModificarAsistenciaPersonal(temp);
+                }
+                else
+                {
+                    AutoClosingMessageBox.Show("Ya se ha Ingresado Asistencia","Administrar Asistencia",700);
+                }
+            }
+            else 
+            {
+                //Imgresar FAlta Normal
+                if (imprevistos.ContarImprevisto(cedula, DateTime.Now, idcalendario) == 0)
+                {
+                    asistencia.InsertarAsistencia(temp);
+                    onePing();
+                }                
+                else
+                {
+                AutoClosingMessageBox.Show("Existe un Imprevisto en esta Fecha\nRevise Administracion de Imprevistos","Administrar Asistencia",2000);
+                }   
+                 
+            }
+            
+            MostrarPersonalDia(idcalendario, DateTime.Now);
+            var cont = faltas.ContarFaltaPersonalDia(cedula, DateTime.Now, idcalendario);
+            if (cont > 0)
+                faltas.ELiminarFaltaPersonalDia(idcalendario, DateTime.Now, cedula);
+            
+        }
+
+        private void MostrarAsistenciaMes(string idcalendario, DateTime fecha)
+        {
+            dgvasistenciames.DataSource = asistencia.ListarAsistenciasPersonalMes(idcalendario, fecha);
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            frmDNBEditAsistencia frmasis = new frmDNBEditAsistencia(idcalendario);
+            frmasis.ShowDialog();       
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripcmbcalendario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (toolStripcmbcalendario.SelectedIndex >= 0)
+            {
+                sp_ListarCalendarioResult temp = calendario.ListarCalendario()[toolStripcmbcalendario.SelectedIndex];
+                idcalendario = temp.IDCALENDARIO;
+                CargarPersonalporCalendario(idcalendario);
+                dtidia.Value = DateTime.Now;
+                MostrarPersonalDia(idcalendario, dtidia.Value);
+                Meses = CultureInfo.CurrentCulture.DateTimeFormat.MonthNames;
+                int cuentameses = Math.Abs((temp.FECHAINICIO.Month - temp.FECHAFIN.Month) + 12 * (temp.FECHAINICIO.Year - temp.FECHAFIN.Year));
+                cmbmes.Items.Clear();
+                for (int i = 0; i <= cuentameses; i++)
+                {
+                    DateTime currentfecha = temp.FECHAINICIO.AddMonths(i);
+                    cmbmes.Items.Add(Meses[currentfecha.Month - 1] + " " + currentfecha.Year);
+                }
+                da = (from lt in diasadic.ListarDiasAdicionales() where lt.IDCALENDARIO == idcalendario select lt).ToList();
+                dnl = (from lt in diasnolab.ListarDiasNoLaborables() where lt.IDCALENDARIO == idcalendario select lt).ToList();
+            }
+            else
+                MessageBoxEx.Show("Por favor escoja un Calendario");
+        }
+
+        private void dtidia_ValueChanged(object sender, EventArgs e)
+        {
+            MostrarPersonalDia(idcalendario,dtidia.Value);
         }
 
         private string GenerarIdAsistencia()
@@ -137,29 +248,9 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
             return idhuella;
         }
 
-        private void Inicializar()
-        {
-            //Tipo de Secugen Fingerprint reader utilizado 
-            SGFPMDeviceName device_name = SGFPMDeviceName.DEV_FDU05;
-            //Inicializar SGFingerPrintManager para que cargue el driver del dispositivo utilizado
-            m_FPM = new SGFingerPrintManager();
-            m_FPM.Init(device_name);
-            //Escoge el Puerto en el que se ejecuta el dispositivo
-            Int32 port_addr = (Int32)SGFPMPortAddr.USB_AUTO_DETECT;
-            Int32 iError = m_FPM.OpenDevice(port_addr);
-        }
-
         private bool MatchTemplate(byte[] m_RegMin1, byte[] m_RegMin2)
         {
-            //Escoge el Puerto en el que se ejecuta el dispositivo
-            Int32 port_addr = (Int32)SGFPMPortAddr.USB_AUTO_DETECT;
-            Int32 iError = m_FPM.OpenDevice(port_addr);
-            if (iError == (Int32)SGFPMError.ERROR_NONE)
-            {
-                //MessageBox.Show("Por favor coloque su dedo en el lector de huellas");
-            }
-            else
-                MessageBox.Show("Error en inicializar SecuGen: " + iError);
+            Int32 iError;// = m_FPM.OpenDevice(port_addr);
             //Obtener Informacion del dispositivo inicializado
             SGFPMDeviceInfoParam pInfo = new SGFPMDeviceInfoParam();
             iError = m_FPM.GetDeviceInfo(pInfo);
@@ -174,7 +265,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
             bool matched1 = false;
             bool matched2 = false;
             //Step 1: Capture Image
-            Int32 timeout = 3000;
+            Int32 timeout = 1300;
             Int32 quality = 80;
             //Convierte el huella en una imagen y la presenta en un picturebox
             iError = m_FPM.GetImageEx(fp_image, timeout, 0, quality);
@@ -199,26 +290,227 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
             }
             else
             {
-                MessageBox.Show("Error: " + iError.ToString());
+                AutoClosingMessageBox.Show("Error: " + iError.ToString(),"Secugen U20",800);
                 return false;
             }
-
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
+        private void MostrarPersonalDia(string calendario, DateTime fecha)
         {
-            var linq = (from lp in calendario.ListarCalendario() select lp).ToList();
-            frmDNBEditAsistencia frmasis = new frmDNBEditAsistencia(linq[toolStripcmbcalendario.SelectedIndex].IDCALENDARIO);
-            frmasis.ShowDialog();       
+            dataGridViewX1.Columns.Clear();
+            dataGridViewX1.DataSource = asistencia.ListarAsistenciaPersonal(idcalendario, fecha);
+            dataGridViewX1.Columns[4].Visible = false;
+            dataGridViewX1.Columns[5].Visible = false;
+            dataGridViewX1.Columns[6].Visible = false;
+            dataGridViewX1.Columns[7].Visible = false;
+            dataGridViewX1.Columns[8].Visible = false;
         }
+
+        private void MostrarPersonalAsistenciaRango(string idcalendario, DateTime fechainicio, DateTime fechafin)
+        {
+            dgvasistenciarango.DataSource = asistencia.ListarAsistenciasPersonalRango(idcalendario, fechainicio, fechafin);
+        }
+
+        private void CargarPersonalporCalendario(string idcalendario)
+        {
+            personalporc = calendario.PersonalporCalendario(idcalendario);
+        }
+
         public Usuarios user { get; set; }
 
         public Permisos permiso { get; set; }
 
-        private void toolStripButton2_Click(object sender, EventArgs e)
+        private bool CompararDia(DateTime dia)
         {
-
+            if (da == null || dnl == null)
+            {
+                return false;
+            }
+            else
+            {
+                var linq = (from lt in da where lt.FECHA == dia select lt).Count();
+                var linq2 = (from lt in dnl where lt.FECHA == dia select lt).Count();
+                if (linq == 0 || linq2 != 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
         }
 
+        private bool CompararFechaPlus(DateTime day)
+        {
+            if ((day.Date.DayOfWeek == DayOfWeek.Saturday || day.Date.DayOfWeek == DayOfWeek.Sunday))
+            {
+                if (CompararDia(day.Date) == true)
+                {
+                    return true;
+                }
+                else
+                    return false;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private void dtidia_MonthCalendar_PaintLabel(object sender, DevComponents.Editors.DateTimeAdv.DayPaintEventArgs e)
+        {
+            DevComponents.Editors.DateTimeAdv.DayLabel day = sender as DevComponents.Editors.DateTimeAdv.DayLabel;
+            if (day == null || day.Date == DateTime.MinValue) return;
+
+            // Cross all weekend days and disable selection for them...
+            if ((day.Date.DayOfWeek == DayOfWeek.Saturday || day.Date.DayOfWeek == DayOfWeek.Sunday))
+            {
+                if (CompararDia(day.Date) == true)
+                {
+                    day.Selectable = false; // Mark label as not selectable...
+                    day.TrackMouse = false; // Do not track mouse movement...
+                    e.PaintBackground();
+                    e.PaintText();
+                    Rectangle r = day.Bounds;
+                    r.Inflate(-2, -2);
+                    SmoothingMode sm = e.Graphics.SmoothingMode;
+                    e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+                    e.Graphics.DrawLine(Pens.Red, r.X, r.Y, r.Right, r.Bottom);
+                    e.Graphics.DrawLine(Pens.Red, r.Right, r.Y, r.X, r.Bottom);
+                    e.Graphics.SmoothingMode = sm;
+                    // Ensure that no part is rendered internally by control...
+                    e.RenderParts = DevComponents.Editors.DateTimeAdv.eDayPaintParts.None;
+                }
+            }
+        }
+
+        private void dateTimeInput2_MonthCalendar_PaintLabel(object sender, DevComponents.Editors.DateTimeAdv.DayPaintEventArgs e)
+        {
+            DevComponents.Editors.DateTimeAdv.DayLabel day = sender as DevComponents.Editors.DateTimeAdv.DayLabel;
+            if (day == null || day.Date == DateTime.MinValue) return;
+
+            // Cross all weekend days and disable selection for them...
+            if ((day.Date.DayOfWeek == DayOfWeek.Saturday || day.Date.DayOfWeek == DayOfWeek.Sunday))
+            {
+                if (CompararDia(day.Date) == true)
+                {
+                    day.Selectable = false; // Mark label as not selectable...
+                    day.TrackMouse = false; // Do not track mouse movement...
+                    e.PaintBackground();
+                    e.PaintText();
+                    Rectangle r = day.Bounds;
+                    r.Inflate(-2, -2);
+                    SmoothingMode sm = e.Graphics.SmoothingMode;
+                    e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+                    e.Graphics.DrawLine(Pens.Red, r.X, r.Y, r.Right, r.Bottom);
+                    e.Graphics.DrawLine(Pens.Red, r.Right, r.Y, r.X, r.Bottom);
+                    e.Graphics.SmoothingMode = sm;
+                    // Ensure that no part is rendered internally by control...
+                    e.RenderParts = DevComponents.Editors.DateTimeAdv.eDayPaintParts.None;
+                }
+            }
+        }
+
+        private void dateTimeInput1_MonthCalendar_PaintLabel(object sender, DevComponents.Editors.DateTimeAdv.DayPaintEventArgs e)
+        {
+            DevComponents.Editors.DateTimeAdv.DayLabel day = sender as DevComponents.Editors.DateTimeAdv.DayLabel;
+            if (day == null || day.Date == DateTime.MinValue) return;
+
+            // Cross all weekend days and disable selection for them...
+            if ((day.Date.DayOfWeek == DayOfWeek.Saturday || day.Date.DayOfWeek == DayOfWeek.Sunday))
+            {
+                if (CompararDia(day.Date) == true)
+                {
+                    day.Selectable = false; // Mark label as not selectable...
+                    day.TrackMouse = false; // Do not track mouse movement...
+                    e.PaintBackground();
+                    e.PaintText();
+                    Rectangle r = day.Bounds;
+                    r.Inflate(-2, -2);
+                    SmoothingMode sm = e.Graphics.SmoothingMode;
+                    e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+                    e.Graphics.DrawLine(Pens.Red, r.X, r.Y, r.Right, r.Bottom);
+                    e.Graphics.DrawLine(Pens.Red, r.Right, r.Y, r.X, r.Bottom);
+                    e.Graphics.SmoothingMode = sm;
+                    // Ensure that no part is rendered internally by control...
+                    e.RenderParts = DevComponents.Editors.DateTimeAdv.eDayPaintParts.None;
+                }
+            }
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {}
+
+        public void onePing()
+        {
+            SystemSounds.Exclamation.Play();
+        }
+
+        private void cmbmes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (toolStripcmbcalendario.SelectedIndex >= 0)
+            {
+                char[] delimiterChar = { ' ' };
+                string[] words = cmbmes.SelectedItem.ToString().Split(delimiterChar);
+                int index = 0;
+                foreach (var temp in Meses)
+                {
+                    index++;
+                    if (words[0].Equals(temp))
+                        break;
+                }
+                DateTime date = Convert.ToDateTime("1" + "/" + index.ToString() + "/" + words[1]);
+                MostrarAsistenciaMes(idcalendario, date);
+            }
+            else
+            {
+                MessageBoxEx.Show("Por favor escoja un Calendario");
+            }
+        }
+
+        private void buttonX1_Click(object sender, EventArgs e)
+        {
+            if (toolStripcmbcalendario.SelectedIndex < 0)
+                MessageBoxEx.Show("Por favor escoja un Calendario..");
+            else
+            {
+                if (dtiinicio.IsEmpty || dtifin.IsEmpty)
+                    MessageBoxEx.Show("Seleccione un Rango de Fechas");
+                else
+                {
+                    MostrarPersonalAsistenciaRango(idcalendario, dtiinicio.Value, dtifin.Value);
+                }
+            }
+        }
     }
 }
+
+    public class AutoClosingMessageBox
+    {
+        System.Threading.Timer _timeoutTimer;
+        string _caption;
+        AutoClosingMessageBox(string text, string caption, int timeout)
+        {
+            _caption = caption;
+            _timeoutTimer = new System.Threading.Timer(OnTimerElapsed,
+                null, timeout, System.Threading.Timeout.Infinite);
+            MessageBoxEx.Show(text, caption);
+        }
+        public static void Show(string text, string caption, int timeout)
+        {
+            new AutoClosingMessageBox(text, caption, timeout);
+        }
+        void OnTimerElapsed(object state)
+        {
+            IntPtr mbWnd = FindWindow(null, _caption);
+            if (mbWnd != IntPtr.Zero)
+                SendMessage(mbWnd, WM_CLOSE, IntPtr.Zero, IntPtr.Zero);
+            _timeoutTimer.Dispose();
+        }
+        const int WM_CLOSE = 0x0010;
+        [System.Runtime.InteropServices.DllImport("user32.dll", SetLastError = true)]
+        static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
+        [System.Runtime.InteropServices.DllImport("user32.dll", CharSet = System.Runtime.InteropServices.CharSet.Auto)]
+        static extern IntPtr SendMessage(IntPtr hWnd, UInt32 Msg, IntPtr wParam, IntPtr lParam);
+    }

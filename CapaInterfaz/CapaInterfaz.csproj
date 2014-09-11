@@ -106,6 +106,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -242,6 +243,42 @@
     <Compile Include="ci_GestionPlanificacion\frmDNBDiasNoLaborables\frmNuevoDiaNoLaborable.Designer.cs">
       <DependentUpon>frmNuevoDiaNoLaborable.cs</DependentUpon>
     </Compile>
+    <Compile Include="ci_GestionReportes\CRAsistenciaporDia.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRAsistenciaporDia.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ci_GestionReportes\CRAsistenciaporMes.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRAsistenciaporMes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ci_GestionReportes\CRAsistenciaporRango.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRAsistenciaporRango.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ci_GestionReportes\CRFaltasporDia.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRFaltasporDia.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ci_GestionReportes\CRFaltasporMes.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRFaltasporMes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ci_GestionReportes\CRFaltasporRango.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRFaltasporRango.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ci_GestionReportes\CRPersonal.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -259,23 +296,41 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DSSeguridad.xsd</DependentUpon>
     </Compile>
-    <Compile Include="ci_GestionReportes\frmReporteAsistencia.cs">
+    <Compile Include="ci_GestionReportes\frmReporteAsistenciaRango.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ci_GestionReportes\frmReporteAsistencia.Designer.cs">
-      <DependentUpon>frmReporteAsistencia.cs</DependentUpon>
+    <Compile Include="ci_GestionReportes\frmReporteAsistenciaRango.Designer.cs">
+      <DependentUpon>frmReporteAsistenciaRango.cs</DependentUpon>
     </Compile>
-    <Compile Include="ci_GestionReportes\frmReporteFaltas.cs">
+    <Compile Include="ci_GestionReportes\frmReporteAsistenciaDias.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ci_GestionReportes\frmReporteFaltas.Designer.cs">
-      <DependentUpon>frmReporteFaltas.cs</DependentUpon>
+    <Compile Include="ci_GestionReportes\frmReporteAsistenciaDias.Designer.cs">
+      <DependentUpon>frmReporteAsistenciaDias.cs</DependentUpon>
     </Compile>
-    <Compile Include="ci_GestionReportes\frmReporteImprevistos.cs">
+    <Compile Include="ci_GestionReportes\frmReporteAsistenciaMes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ci_GestionReportes\frmReporteImprevistos.Designer.cs">
-      <DependentUpon>frmReporteImprevistos.cs</DependentUpon>
+    <Compile Include="ci_GestionReportes\frmReporteAsistenciaMes.Designer.cs">
+      <DependentUpon>frmReporteAsistenciaMes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ci_GestionReportes\frmReporteFaltasDias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionReportes\frmReporteFaltasDias.Designer.cs">
+      <DependentUpon>frmReporteFaltasDias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ci_GestionReportes\frmReporteFaltasMes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionReportes\frmReporteFaltasMes.Designer.cs">
+      <DependentUpon>frmReporteFaltasMes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ci_GestionReportes\frmReporteFaltasRango.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionReportes\frmReporteFaltasRango.Designer.cs">
+      <DependentUpon>frmReporteFaltasRango.cs</DependentUpon>
     </Compile>
     <Compile Include="ci_GestionReportes\frmReportePersonal.cs">
       <SubType>Form</SubType>
@@ -433,6 +488,30 @@
     <EmbeddedResource Include="ci_GestionPlanificacion\frmDNBDiasNoLaborables\frmNuevoDiaNoLaborable.resx">
       <DependentUpon>frmNuevoDiaNoLaborable.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionReportes\CRAsistenciaporDia.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRAsistenciaporDia.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionReportes\CRAsistenciaporMes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRAsistenciaporMes.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionReportes\CRAsistenciaporRango.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRAsistenciaporRango.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionReportes\CRFaltasporDia.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRFaltasporDia.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionReportes\CRFaltasporMes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRFaltasporMes.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionReportes\CRFaltasporRango.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRFaltasporRango.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="ci_GestionReportes\CRPersonal.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CRPersonal.cs</LastGenOutput>
@@ -441,14 +520,23 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CRUsers.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="ci_GestionReportes\frmReporteAsistencia.resx">
-      <DependentUpon>frmReporteAsistencia.cs</DependentUpon>
+    <EmbeddedResource Include="ci_GestionReportes\frmReporteAsistenciaRango.resx">
+      <DependentUpon>frmReporteAsistenciaRango.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ci_GestionReportes\frmReporteFaltas.resx">
-      <DependentUpon>frmReporteFaltas.cs</DependentUpon>
+    <EmbeddedResource Include="ci_GestionReportes\frmReporteAsistenciaDias.resx">
+      <DependentUpon>frmReporteAsistenciaDias.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ci_GestionReportes\frmReporteImprevistos.resx">
-      <DependentUpon>frmReporteImprevistos.cs</DependentUpon>
+    <EmbeddedResource Include="ci_GestionReportes\frmReporteAsistenciaMes.resx">
+      <DependentUpon>frmReporteAsistenciaMes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionReportes\frmReporteFaltasDias.resx">
+      <DependentUpon>frmReporteFaltasDias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionReportes\frmReporteFaltasMes.resx">
+      <DependentUpon>frmReporteFaltasMes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionReportes\frmReporteFaltasRango.resx">
+      <DependentUpon>frmReporteFaltasRango.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ci_GestionReportes\frmReportePersonal.resx">
       <DependentUpon>frmReportePersonal.cs</DependentUpon>

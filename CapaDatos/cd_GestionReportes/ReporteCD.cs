@@ -48,5 +48,125 @@ namespace CapaDatos.cd_GestionReportes
                 DB = null;
             }
         }
+
+        public static List<sp_PersonalporAsistenciaDiaResult> PersonalporAsistenciaDia(string idcalendario,DateTime fecha) 
+        {
+            CapaDatosDataContext DB;
+            try
+            {
+                using (DB = new CapaDatosDataContext())
+                {
+                    return DB.sp_PersonalporAsistenciaDia(idcalendario,fecha).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new CapaDatosExcepciones("Error al Listar Personal por Asistencia Dia", ex);
+            }
+            finally
+            {
+                DB = null;
+            }
+        }
+
+        public static List<sp_PersonalporAsistenciaMesResult> PersonalporAsistenciaMes(string idcalendario, DateTime fechames)
+        {
+            CapaDatosDataContext DB;
+            try
+            {
+                using (DB = new CapaDatosDataContext())
+                {
+                    return DB.sp_PersonalporAsistenciaMes(idcalendario, fechames).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new CapaDatosExcepciones("Error al Listar Personal por Asistencia Mes", ex);
+            }
+            finally
+            {
+                DB = null;
+            }
+        }
+
+        public static List<sp_PersonalporAsistenciaRangoResult> PersonalporAsistenciaRango(string idcalendario, DateTime fechainicio,DateTime fechafin)
+        {
+            CapaDatosDataContext DB;
+            try
+            {
+                using (DB = new CapaDatosDataContext())
+                {
+                    return DB.sp_PersonalporAsistenciaRango(idcalendario, fechainicio,fechafin).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new CapaDatosExcepciones("Error al Listar Personal por Asistencia Rango", ex);
+            }
+            finally
+            {
+                DB = null;
+            }
+        }
+
+        public static List<sp_PersonalporFaltaDiaResult> PersonalporFaltaDia(string idcalendario, DateTime fecha)
+        {
+            CapaDatosDataContext DB;
+            try
+            {
+                using (DB = new CapaDatosDataContext())
+                {
+                    return DB.sp_PersonalporFaltaDia(idcalendario, fecha).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new CapaDatosExcepciones("Error al Listar Personal por Falta Dia", ex);
+            }
+            finally
+            {
+                DB = null;
+            }
+        }
+        
+        public static List<sp_PersonalporFaltaMesResult> PersonalporFaltaMes(string idcalendario, DateTime fechames)
+        {
+            CapaDatosDataContext DB;
+            try
+            {
+                using (DB = new CapaDatosDataContext())
+                {
+                    return DB.sp_PersonalporFaltaMes(idcalendario, fechames).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new CapaDatosExcepciones("Error al Listar Personal por Falta Mes", ex);
+            }
+            finally
+            {
+                DB = null;
+            }
+        }
+
+        public static List<sp_PersonalporFaltaRangoResult> PersonalporFaltaRango(string idcalendario, DateTime fechainicio, DateTime fechafin)
+        {
+            CapaDatosDataContext DB;
+            try
+            {
+                using (DB = new CapaDatosDataContext())
+                {
+                    return DB.sp_PersonalporFaltaRango(idcalendario, fechainicio, fechafin).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new CapaDatosExcepciones("Error al Listar Personal por Falta Rango", ex);
+            }
+            finally
+            {
+                DB = null;
+            }
+        }
     }
 }

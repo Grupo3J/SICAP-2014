@@ -29,9 +29,9 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDNBAdministrarFaltas));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolnuevo = new System.Windows.Forms.ToolStripButton();
             this.tooleliminar = new System.Windows.Forms.ToolStripButton();
@@ -40,6 +40,14 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             this.toolStripcmbcalendario = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.superTabControl1 = new DevComponents.DotNetBar.SuperTabControl();
+            this.superTabControlPanel2 = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.dgvfaltasmes = new System.Windows.Forms.DataGridView();
+            this.cmbmes = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.labelX4 = new DevComponents.DotNetBar.LabelX();
+            this.txtbuscarmes = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX3 = new DevComponents.DotNetBar.LabelX();
+            this.superTabItem2 = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel1 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.dtidia = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
@@ -59,18 +67,13 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             this.dtiinicio = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.dtifin = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.superTabItem3 = new DevComponents.DotNetBar.SuperTabItem();
-            this.superTabControlPanel2 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.dgvfaltasmes = new System.Windows.Forms.DataGridView();
-            this.cmbmes = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.labelX4 = new DevComponents.DotNetBar.LabelX();
-            this.txtbuscarmes = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX3 = new DevComponents.DotNetBar.LabelX();
-            this.superTabItem2 = new DevComponents.DotNetBar.SuperTabItem();
             this.superTooltip1 = new DevComponents.DotNetBar.SuperTooltip();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).BeginInit();
             this.superTabControl1.SuspendLayout();
+            this.superTabControlPanel2.SuspendLayout();
+            this.groupPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvfaltasmes)).BeginInit();
             this.superTabControlPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtidia)).BeginInit();
             this.groupbox1.SuspendLayout();
@@ -80,9 +83,6 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             ((System.ComponentModel.ISupportInitialize)(this.dgvfaltasrango)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtiinicio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtifin)).BeginInit();
-            this.superTabControlPanel2.SuspendLayout();
-            this.groupPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvfaltasmes)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -183,6 +183,141 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             this.superTabItem3});
             this.superTabControl1.Text = "superTabControl1";
             this.superTabControl1.SelectedTabChanged += new System.EventHandler<DevComponents.DotNetBar.SuperTabStripSelectedTabChangedEventArgs>(this.superTabControl1_SelectedTabChanged);
+            // 
+            // superTabControlPanel2
+            // 
+            this.superTabControlPanel2.Controls.Add(this.groupPanel1);
+            this.superTabControlPanel2.Controls.Add(this.cmbmes);
+            this.superTabControlPanel2.Controls.Add(this.labelX4);
+            this.superTabControlPanel2.Controls.Add(this.txtbuscarmes);
+            this.superTabControlPanel2.Controls.Add(this.labelX3);
+            this.superTabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superTabControlPanel2.Location = new System.Drawing.Point(0, 0);
+            this.superTabControlPanel2.Name = "superTabControlPanel2";
+            this.superTabControlPanel2.Size = new System.Drawing.Size(680, 402);
+            this.superTabControlPanel2.TabIndex = 0;
+            this.superTabControlPanel2.TabItem = this.superTabItem2;
+            // 
+            // groupPanel1
+            // 
+            this.groupPanel1.BackColor = System.Drawing.Color.White;
+            this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
+            this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupPanel1.Controls.Add(this.dgvfaltasmes);
+            this.groupPanel1.DisabledBackColor = System.Drawing.Color.Empty;
+            this.groupPanel1.Location = new System.Drawing.Point(34, 43);
+            this.groupPanel1.Name = "groupPanel1";
+            this.groupPanel1.Size = new System.Drawing.Size(609, 315);
+            // 
+            // 
+            // 
+            this.groupPanel1.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.groupPanel1.Style.BackColorGradientAngle = 90;
+            this.groupPanel1.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.groupPanel1.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupPanel1.Style.BorderBottomWidth = 1;
+            this.groupPanel1.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.groupPanel1.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupPanel1.Style.BorderLeftWidth = 1;
+            this.groupPanel1.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupPanel1.Style.BorderRightWidth = 1;
+            this.groupPanel1.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupPanel1.Style.BorderTopWidth = 1;
+            this.groupPanel1.Style.CornerDiameter = 4;
+            this.groupPanel1.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.groupPanel1.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
+            this.groupPanel1.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
+            // 
+            // 
+            // 
+            this.groupPanel1.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.groupPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.groupPanel1.TabIndex = 4;
+            this.groupPanel1.Text = "Faltas por Mes";
+            // 
+            // dgvfaltasmes
+            // 
+            this.dgvfaltasmes.AllowUserToAddRows = false;
+            this.dgvfaltasmes.AllowUserToDeleteRows = false;
+            this.dgvfaltasmes.BackgroundColor = System.Drawing.Color.Beige;
+            this.dgvfaltasmes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvfaltasmes.Location = new System.Drawing.Point(4, 3);
+            this.dgvfaltasmes.Name = "dgvfaltasmes";
+            this.dgvfaltasmes.ReadOnly = true;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LemonChiffon;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightGreen;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvfaltasmes.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvfaltasmes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvfaltasmes.Size = new System.Drawing.Size(596, 286);
+            this.dgvfaltasmes.TabIndex = 32;
+            // 
+            // cmbmes
+            // 
+            this.cmbmes.DisplayMember = "Text";
+            this.cmbmes.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbmes.FormattingEnabled = true;
+            this.cmbmes.ItemHeight = 16;
+            this.cmbmes.Location = new System.Drawing.Point(451, 15);
+            this.cmbmes.Name = "cmbmes";
+            this.cmbmes.Size = new System.Drawing.Size(121, 22);
+            this.cmbmes.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cmbmes.TabIndex = 3;
+            this.cmbmes.SelectedIndexChanged += new System.EventHandler(this.cmbmes_SelectedIndexChanged);
+            // 
+            // labelX4
+            // 
+            this.labelX4.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX4.Location = new System.Drawing.Point(406, 14);
+            this.labelX4.Name = "labelX4";
+            this.labelX4.Size = new System.Drawing.Size(39, 23);
+            this.labelX4.TabIndex = 2;
+            this.labelX4.Text = "Mes";
+            // 
+            // txtbuscarmes
+            // 
+            this.txtbuscarmes.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtbuscarmes.Border.Class = "TextBoxBorder";
+            this.txtbuscarmes.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtbuscarmes.DisabledBackColor = System.Drawing.Color.White;
+            this.txtbuscarmes.ForeColor = System.Drawing.Color.Black;
+            this.txtbuscarmes.Location = new System.Drawing.Point(167, 15);
+            this.txtbuscarmes.Name = "txtbuscarmes";
+            this.txtbuscarmes.PreventEnterBeep = true;
+            this.txtbuscarmes.Size = new System.Drawing.Size(100, 22);
+            this.txtbuscarmes.TabIndex = 1;
+            // 
+            // labelX3
+            // 
+            this.labelX3.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX3.Location = new System.Drawing.Point(121, 12);
+            this.labelX3.Name = "labelX3";
+            this.labelX3.Size = new System.Drawing.Size(40, 23);
+            this.labelX3.TabIndex = 0;
+            this.labelX3.Text = "Buscar";
+            // 
+            // superTabItem2
+            // 
+            this.superTabItem2.AttachedControl = this.superTabControlPanel2;
+            this.superTabItem2.GlobalItem = false;
+            this.superTabItem2.Name = "superTabItem2";
+            this.superTabItem2.Text = "Faltas por Mes";
             // 
             // superTabControlPanel1
             // 
@@ -606,141 +741,6 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             this.superTabItem3.Name = "superTabItem3";
             this.superTabItem3.Text = "Faltas por Rango";
             // 
-            // superTabControlPanel2
-            // 
-            this.superTabControlPanel2.Controls.Add(this.groupPanel1);
-            this.superTabControlPanel2.Controls.Add(this.cmbmes);
-            this.superTabControlPanel2.Controls.Add(this.labelX4);
-            this.superTabControlPanel2.Controls.Add(this.txtbuscarmes);
-            this.superTabControlPanel2.Controls.Add(this.labelX3);
-            this.superTabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel2.Location = new System.Drawing.Point(0, 27);
-            this.superTabControlPanel2.Name = "superTabControlPanel2";
-            this.superTabControlPanel2.Size = new System.Drawing.Size(680, 375);
-            this.superTabControlPanel2.TabIndex = 0;
-            this.superTabControlPanel2.TabItem = this.superTabItem2;
-            // 
-            // groupPanel1
-            // 
-            this.groupPanel1.BackColor = System.Drawing.Color.White;
-            this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
-            this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.groupPanel1.Controls.Add(this.dgvfaltasmes);
-            this.groupPanel1.DisabledBackColor = System.Drawing.Color.Empty;
-            this.groupPanel1.Location = new System.Drawing.Point(34, 43);
-            this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(609, 315);
-            // 
-            // 
-            // 
-            this.groupPanel1.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.groupPanel1.Style.BackColorGradientAngle = 90;
-            this.groupPanel1.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.groupPanel1.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel1.Style.BorderBottomWidth = 1;
-            this.groupPanel1.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.groupPanel1.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel1.Style.BorderLeftWidth = 1;
-            this.groupPanel1.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel1.Style.BorderRightWidth = 1;
-            this.groupPanel1.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel1.Style.BorderTopWidth = 1;
-            this.groupPanel1.Style.CornerDiameter = 4;
-            this.groupPanel1.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.groupPanel1.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
-            this.groupPanel1.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
-            // 
-            // 
-            // 
-            this.groupPanel1.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.groupPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.groupPanel1.TabIndex = 4;
-            this.groupPanel1.Text = "Faltas por Mes";
-            // 
-            // dgvfaltasmes
-            // 
-            this.dgvfaltasmes.AllowUserToAddRows = false;
-            this.dgvfaltasmes.AllowUserToDeleteRows = false;
-            this.dgvfaltasmes.BackgroundColor = System.Drawing.Color.Beige;
-            this.dgvfaltasmes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvfaltasmes.Location = new System.Drawing.Point(4, 3);
-            this.dgvfaltasmes.Name = "dgvfaltasmes";
-            this.dgvfaltasmes.ReadOnly = true;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LemonChiffon;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightGreen;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvfaltasmes.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvfaltasmes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvfaltasmes.Size = new System.Drawing.Size(596, 286);
-            this.dgvfaltasmes.TabIndex = 32;
-            // 
-            // cmbmes
-            // 
-            this.cmbmes.DisplayMember = "Text";
-            this.cmbmes.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbmes.FormattingEnabled = true;
-            this.cmbmes.ItemHeight = 16;
-            this.cmbmes.Location = new System.Drawing.Point(451, 15);
-            this.cmbmes.Name = "cmbmes";
-            this.cmbmes.Size = new System.Drawing.Size(121, 22);
-            this.cmbmes.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cmbmes.TabIndex = 3;
-            this.cmbmes.SelectedIndexChanged += new System.EventHandler(this.cmbmes_SelectedIndexChanged);
-            // 
-            // labelX4
-            // 
-            this.labelX4.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX4.Location = new System.Drawing.Point(406, 14);
-            this.labelX4.Name = "labelX4";
-            this.labelX4.Size = new System.Drawing.Size(39, 23);
-            this.labelX4.TabIndex = 2;
-            this.labelX4.Text = "Mes";
-            // 
-            // txtbuscarmes
-            // 
-            this.txtbuscarmes.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtbuscarmes.Border.Class = "TextBoxBorder";
-            this.txtbuscarmes.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtbuscarmes.DisabledBackColor = System.Drawing.Color.White;
-            this.txtbuscarmes.ForeColor = System.Drawing.Color.Black;
-            this.txtbuscarmes.Location = new System.Drawing.Point(167, 15);
-            this.txtbuscarmes.Name = "txtbuscarmes";
-            this.txtbuscarmes.PreventEnterBeep = true;
-            this.txtbuscarmes.Size = new System.Drawing.Size(100, 22);
-            this.txtbuscarmes.TabIndex = 1;
-            // 
-            // labelX3
-            // 
-            this.labelX3.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX3.Location = new System.Drawing.Point(121, 12);
-            this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(40, 23);
-            this.labelX3.TabIndex = 0;
-            this.labelX3.Text = "Buscar";
-            // 
-            // superTabItem2
-            // 
-            this.superTabItem2.AttachedControl = this.superTabControlPanel2;
-            this.superTabItem2.GlobalItem = false;
-            this.superTabItem2.Name = "superTabItem2";
-            this.superTabItem2.Text = "Faltas por Mes";
-            // 
             // superTooltip1
             // 
             this.superTooltip1.DefaultTooltipSettings = new DevComponents.DotNetBar.SuperTooltipInfo("", "", "", null, null, DevComponents.DotNetBar.eTooltipColor.Gray);
@@ -763,6 +763,9 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).EndInit();
             this.superTabControl1.ResumeLayout(false);
+            this.superTabControlPanel2.ResumeLayout(false);
+            this.groupPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvfaltasmes)).EndInit();
             this.superTabControlPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtidia)).EndInit();
             this.groupbox1.ResumeLayout(false);
@@ -772,9 +775,6 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             ((System.ComponentModel.ISupportInitialize)(this.dgvfaltasrango)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtiinicio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtifin)).EndInit();
-            this.superTabControlPanel2.ResumeLayout(false);
-            this.groupPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvfaltasmes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
