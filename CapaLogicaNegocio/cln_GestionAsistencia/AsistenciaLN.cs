@@ -38,6 +38,11 @@ namespace CapaLogicaNegocio.cln_GestionAsistencia
             AsistenciaCD.Modify(p);
         }
 
+        public void EliminarAsistencia(Asistencia not) 
+        {
+            AsistenciaCD.eliminar(not);
+        }
+
         public int ContarAsistenciaPersonal(string cedula,DateTime fecha,string idcalendario) 
         {
             return AsistenciaCD.ContarAsistenciaPersonalDia(cedula,fecha,idcalendario);

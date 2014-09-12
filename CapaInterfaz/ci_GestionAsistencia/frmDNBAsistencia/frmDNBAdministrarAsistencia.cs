@@ -206,7 +206,26 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-
+            if (toolStripcmbcalendario.SelectedIndex == -1 || dataGridViewX1.Rows.Count <= 0)
+            {
+                MessageBoxEx.Show("Escoja un Calendario");
+            }
+            else 
+            {
+                DialogResult dialogResult = MessageBox.Show("Deseea Eliminar la Asistencia\n", "Administración de Asistencias", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    //do something
+                    Asistencia temp = new Asistencia();
+                    temp.IdAsistencia = dataGridViewX1.CurrentRow.Cells[7].Value.ToString();
+                    asistencia.EliminarAsistencia(temp);
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    //do something else
+                    return;
+                }
+            }
         }
 
         private void toolStripcmbcalendario_SelectedIndexChanged(object sender, EventArgs e)

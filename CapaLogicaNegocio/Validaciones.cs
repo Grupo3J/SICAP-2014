@@ -62,6 +62,15 @@ namespace CapaLogicaNegocio
         }
         public bool esCedulaValida(String cedula)
         {
+            bool mistmatch = false;
+            for (int i = 0; i < cedula.Length; i++)
+            {
+                if (i > 0 && cedula[i] != cedula[i - 1])
+                    mistmatch = true;
+            }
+            if (mistmatch == false)
+                return mistmatch;
+
             //verifica que tenga 10 dígitos 
             if (!(cedula.Length == 10))
             {

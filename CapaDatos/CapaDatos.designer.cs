@@ -844,6 +844,13 @@ namespace CapaDatos
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idCalendario, fecha);
 			return ((ISingleResult<sp_PersonalporFaltaDiaResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_Eliminar_Asistencia")]
+		public int sp_Eliminar_Asistencia([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Idasistencia", DbType="VarChar(10)")] string idasistencia)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idasistencia);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.FaltasPersonalporMeses")]

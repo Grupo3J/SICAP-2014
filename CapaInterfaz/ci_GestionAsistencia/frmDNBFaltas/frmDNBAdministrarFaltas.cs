@@ -271,37 +271,44 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-            frmDNBEditFalta impr = new frmDNBEditFalta(idcalendario);
-            var linq = personal.getPersonalByced(dgvfaltasdia.CurrentRow.Cells[6].Value.ToString());
-            impr.cmbTipo.SelectedText = linq.Tipo;
-            impr.buttonX3.Enabled = false;
-            impr.buttonX4.Enabled = false;
-            impr.txtcedula.Text = linq.Cedula;
-            impr.txtcedula.ReadOnly = true;
-            impr.txtnombre.Text = linq.Nombre;
-            impr.txtnombre.ReadOnly = true;
-            impr.txtcargo.Text = linq.Cargo;
-            impr.txtcargo.ReadOnly = true;
-            impr.dtifecha.Value = Convert.ToDateTime(dgvfaltasdia.CurrentRow.Cells[3].Value.ToString());
-            impr.dtifecha.ButtonDropDown.Enabled = false;
-            impr.checkBoxX1.Checked = dgvfaltasdia.CurrentRow.Cells[4].Value.ToString().ToLower() == "false" ? false : true;
-            impr.pictureBox1.Image = Utilities.convertByteToImage(linq.DataFoto.ToArray());
-            impr.ShowDialog();
-            if (impr.OPTION == "OK" && toolStripcmbcalendario.SelectedIndex >= 0)
+            if (toolStripcmbcalendario.SelectedIndex == -1)
             {
-                try
+                MessageBoxEx.Show("Por favor Seleccione un Calendario");
+            }
+            else 
+            {
+                frmDNBEditFalta impr = new frmDNBEditFalta(idcalendario);
+                var linq = personal.getPersonalByced(dgvfaltasdia.CurrentRow.Cells[6].Value.ToString());
+                impr.cmbTipo.SelectedText = linq.Tipo;
+                impr.buttonX3.Enabled = false;
+                impr.buttonX4.Enabled = false;
+                impr.txtcedula.Text = linq.Cedula;
+                impr.txtcedula.ReadOnly = true;
+                impr.txtnombre.Text = linq.Nombre;
+                impr.txtnombre.ReadOnly = true;
+                impr.txtcargo.Text = linq.Cargo;
+                impr.txtcargo.ReadOnly = true;
+                impr.dtifecha.Value = Convert.ToDateTime(dgvfaltasdia.CurrentRow.Cells[3].Value.ToString());
+                impr.dtifecha.ButtonDropDown.Enabled = false;
+                impr.checkBoxX1.Checked = dgvfaltasdia.CurrentRow.Cells[4].Value.ToString().ToLower() == "false" ? false : true;
+                impr.pictureBox1.Image = Utilities.convertByteToImage(linq.DataFoto.ToArray());
+                impr.ShowDialog();
+                if (impr.OPTION == "OK" && toolStripcmbcalendario.SelectedIndex >= 0)
                 {
-                    falta.IdFaltas = dgvfaltasdia.CurrentRow.Cells[0].Value.ToString();
-                    falta.Fecha = impr.dtifecha.Value;
-                    falta.Cedula = impr.txtcedula.Text;
-                    falta.IdCalendario = idcalendario;
-                    falta.Justificacion = impr.checkBoxX1.Checked == false ? false : true;
-                    faltas.ModificarFaltasJustificacion(falta);
-                    MostrarFaltasDia(idcalendario, dtidia.Value);
-                }
-                catch (Exception mes)
-                {
-                    MessageBox.Show(mes.Message);
+                    try
+                    {
+                        falta.IdFaltas = dgvfaltasdia.CurrentRow.Cells[0].Value.ToString();
+                        falta.Fecha = impr.dtifecha.Value;
+                        falta.Cedula = impr.txtcedula.Text;
+                        falta.IdCalendario = idcalendario;
+                        falta.Justificacion = impr.checkBoxX1.Checked == false ? false : true;
+                        faltas.ModificarFaltasJustificacion(falta);
+                        MostrarFaltasDia(idcalendario, dtidia.Value);
+                    }
+                    catch (Exception mes)
+                    {
+                        MessageBox.Show(mes.Message);
+                    }
                 }
             }
         }

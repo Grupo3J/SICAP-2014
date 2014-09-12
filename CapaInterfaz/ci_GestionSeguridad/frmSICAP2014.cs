@@ -285,10 +285,11 @@ namespace CapaInterfaz.ci_GestionSeguridad
             ci_GestionAyuda.frmAyuda ayuda = new ci_GestionAyuda.frmAyuda();
             addPanel(ayuda);
             groupPanel1.Text = "Ayuda de Sicap";
+
             //CapaInterfaz.Properties.Resources.
            // global::.Properties.Resources.IMG00244
             //Process.Start("C:\\Users\\HERNAN\\SkyDrive\\UNIVERSIDAD\\MODULOS\\REDACCION DE INFORMES\\portafolio\\chm.chm");
-            string ruta = Application.StartupPath.Replace("bin\\Debug", "Resources\\chm.chm");
+            string ruta = Application.StartupPath.Replace("bin\\Debug", "Resources\\SICAP.chm");
            
             Process.Start(ruta);
         }

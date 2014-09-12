@@ -82,7 +82,7 @@ namespace CapaDatos.cd_GestionPersonal
             {
                 using (DB = new CapaDatosDataContext())
                 {
-                    var query = (from hue in DB.HUELLA where (((hue.IDHUELLA == idHuella))||((hue.NOMBRE.Equals(nombre)) && hue.CEDULA.Equals(cedula))) select hue).Count();
+                    var query = (from hue in DB.HUELLA where (((hue.IDHUELLA == idHuella))&&((hue.NOMBRE.Equals(nombre)) && hue.CEDULA.Equals(cedula))) select hue).Count();
 
                     if (query == 0)
                         return false;

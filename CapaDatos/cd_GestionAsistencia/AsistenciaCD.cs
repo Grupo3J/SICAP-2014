@@ -206,5 +206,30 @@ namespace CapaDatos.cd_GestionAsistencia
             }
         }
 
+        public static Asistencia eliminar(Asistencia not) 
+        {
+            CapaDatosDataContext bd = new CapaDatosDataContext();
+            try
+            {
+                Asistencia p = new Asistencia();
+                p.IdAsistencia = not.IdAsistencia;
+                //p.Cedula = not.Cedula;
+                //p.IdCalendario = not.IdCalendario;
+                //p.FechaHoraEntrada = not.FechaHoraEntrada;
+                p.FechaHoraSalida = not.FechaHoraSalida;
+                bd.sp_Eliminar_Asistencia(p.IdAsistencia);
+                bd.SubmitChanges();
+            }
+            catch (CapaDatosExcepciones ex)
+            {
+                throw new CapaDatosExcepciones("Error al  Eliminar Asistencia", ex);
+            }
+            finally
+            {
+                bd = null;
+            }
+
+            return not;
+        }
     }
 }

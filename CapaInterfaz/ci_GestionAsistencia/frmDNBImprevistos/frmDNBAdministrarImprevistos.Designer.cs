@@ -34,7 +34,6 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
             this.toolnuevo = new System.Windows.Forms.ToolStripButton();
             this.tooleliminar = new System.Windows.Forms.ToolStripButton();
             this.toolmodificar = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripcmbcalendario = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
@@ -50,7 +49,6 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
             this.toolnuevo,
             this.tooleliminar,
             this.toolmodificar,
-            this.toolStripButton4,
             this.toolStripcmbcalendario,
             this.toolStripLabel1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
@@ -85,14 +83,6 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
             this.toolmodificar.Size = new System.Drawing.Size(78, 22);
             this.toolmodificar.Text = "Modificar";
             this.toolmodificar.Click += new System.EventHandler(this.toolStripButton3_Click);
-            // 
-            // toolStripButton4
-            // 
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(68, 22);
-            this.toolStripButton4.Text = "Reporte";
             // 
             // toolStripcmbcalendario
             // 
@@ -193,7 +183,6 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
         private System.Windows.Forms.ToolStripButton toolnuevo;
         private System.Windows.Forms.ToolStripButton tooleliminar;
         private System.Windows.Forms.ToolStripButton toolmodificar;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.ToolStripComboBox toolStripcmbcalendario;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;

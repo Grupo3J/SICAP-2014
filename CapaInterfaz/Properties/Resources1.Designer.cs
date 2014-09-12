@@ -251,6 +251,52 @@ namespace CapaInterfaz.Properties {
         }
         
         /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Byte[].
+        /// </summary>
+        internal static byte[] SICAP {
+            get {
+                object obj = ResourceManager.GetObject("SICAP", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;html&gt;
+        ///&lt;head&gt;
+        ///	&lt;title&gt;SICAP&lt;/title&gt;
+        ///	&lt;style type=&quot;text/css&quot;&gt;
+        ///	/* ========== Text Styles ========== */
+        ///hr { color: #000000}
+        ///body, table, span.rvts0 /* Normal text */
+        ///{
+        /// font-size: 10pt;
+        /// font-family: &apos;Arial&apos;, &apos;Helvetica&apos;, sans-serif;
+        /// font-style: normal;
+        /// font-weight: normal;
+        /// color: #000000;
+        /// text-decoration: none;
+        ///}
+        ///span.rvts1 /* Heading */
+        ///{
+        /// font-weight: bold;
+        /// color: #0000ff;
+        ///}
+        ///span.rvts2 /* Subheading */
+        ///{
+        /// font-weight: bold;
+        /// color: #000080;
+        ///}
+        ///span.rvts3 /* Keywords */
+        ///{
+        /// fo [resto de la cadena truncado]&quot;;.
+        /// </summary>
+        internal static string SICAP1 {
+            get {
+                return ResourceManager.GetString("SICAP1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap SICAPLOGO {

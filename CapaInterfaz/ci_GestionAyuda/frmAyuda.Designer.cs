@@ -39,7 +39,7 @@
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.Size = new System.Drawing.Size(704, 441);
             this.webBrowser1.TabIndex = 0;
-            this.webBrowser1.Url = new System.Uri("file:///C:/Users/HERNAN/Desktop/manual/index.htm", System.UriKind.Absolute);
+            this.webBrowser1.Url = new System.Uri("file:///C:/Users/JORGE-TORRES/Desktop/Manual/SICAP%20.html", System.UriKind.Absolute);
             this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
             // 
             // frmAyuda
@@ -50,7 +50,7 @@
             this.Controls.Add(this.webBrowser1);
             this.DoubleBuffered = true;
             this.Name = "frmAyuda";
-            this.Text = "frmAyuda";
+            this.Text = "Ayuda";
             this.Load += new System.EventHandler(this.frmAyuda_Load);
             this.ResumeLayout(false);
 

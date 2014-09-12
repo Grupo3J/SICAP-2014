@@ -68,7 +68,13 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             this.errorProvider1.Clear();
-            if (this.textCedula.Text == "") { errorProvider1.SetError(textCedula, "Ingrese cédula"); return; }
+            bool mistmatch = false;
+            for(int i=0;i<textCedula.Text.Length;i++)
+            {
+                if(i>0 && textCedula.Text[i]!=textCedula.Text[i-1])
+                    mistmatch=true;
+            }
+            if (this.textCedula.Text == "" || mistmatch==false) { errorProvider1.SetError(textCedula, "Ingrese cédula"); return; }
             if (this.textNombres.Text == "") { errorProvider1.SetError(textNombres, "Ingrese nombres"); return; }
             if (this.textApellidos.Text == "") { errorProvider1.SetError(textApellidos, "Ingrese apellidos"); return; }
             if (this.textTitulo.Text == "") { errorProvider1.SetError(textTitulo, "Ingrese título"); return; }
@@ -115,8 +121,9 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
                 PLN.InsertarPersonalVoid(p);
                 HLN.InsertarHuellaSinReturn(h);
                 PLN.InsertarPersonalCalendarioVoid(textCedula.Text, lista[datico]);
-
+                
                 MessageBoxEx.Show("Persona registrada con éxito");
+                
             }
             catch (Exception er){
                 MessageBox.Show(er.Message);
@@ -363,9 +370,15 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
 
         private void textCedula_Validated(object sender, EventArgs e)
         {
-            if (textCedula.Text != "")
+            bool mistmatch = false;
+            for (int i = 0; i < textCedula.Text.Length; i++)
             {
-                if (!VAL.esCedulaValida(textCedula.Text))
+                if (i>0 && textCedula.Text[i] != textCedula.Text[i - 1])
+                    mistmatch = true;
+            }
+            if (textCedula.Text != "" )
+            {
+                if (!VAL.esCedulaValida(textCedula.Text) || mistmatch==false)
                 {
                     errorProvider1.SetError(textCedula, "Cedula no Valida");
                     textCedula.Focus();
