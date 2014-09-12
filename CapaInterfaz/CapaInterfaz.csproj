@@ -418,7 +418,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources1.Designer.cs">
+    <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
@@ -583,7 +583,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
-      <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="ci_GestionReportes\DSSeguridad.xsc">
       <DependentUpon>DSSeguridad.xsd</DependentUpon>
@@ -615,9 +615,6 @@
     <None Include="Resources\chm.chm" />
     <None Include="Resources\chm.chw" />
     <None Include="Resources\logoSICAP.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\photo.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\imagenHuella.jpg" />
@@ -660,9 +657,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\imaMano.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
@@ -676,41 +670,8 @@
     <Content Include="Resources\images.jpg" />
     <Content Include="Resources\ima_administracion.png" />
     <Content Include="Resources\ima_reportes.jpg" />
-    <Content Include="Resources\lib\NewItem13.png" />
-    <Content Include="Resources\lib\NewItem14.png" />
-    <Content Include="Resources\lib\NewItem15.png" />
-    <Content Include="Resources\lib\NewItem16.png" />
-    <Content Include="Resources\lib\NewItem17.png" />
-    <Content Include="Resources\lib\NewItem18.png" />
-    <Content Include="Resources\lib\NewItem19.png" />
-    <Content Include="Resources\lib\NewItem23.png" />
-    <Content Include="Resources\lib\NewItem24.png" />
-    <Content Include="Resources\lib\NewItem25.png" />
-    <Content Include="Resources\lib\NewItem26.png" />
-    <Content Include="Resources\lib\NewItem27.png" />
-    <Content Include="Resources\lib\NewItem28.png" />
-    <Content Include="Resources\lib\NewItem29.png" />
-    <Content Include="Resources\lib\NewItem30.png" />
-    <Content Include="Resources\lib\NewItem31.png" />
-    <Content Include="Resources\lib\NewItem32.png" />
-    <Content Include="Resources\lib\NewItem33.png" />
-    <Content Include="Resources\lib\NewItem34.png" />
-    <Content Include="Resources\lib\NewItem35.png" />
-    <Content Include="Resources\lib\NewItem39.png" />
-    <Content Include="Resources\lib\NewItem42.png" />
-    <Content Include="Resources\lib\NewItem43.png" />
-    <Content Include="Resources\lib\NewItem45.png" />
-    <Content Include="Resources\lib\NewItem46.png" />
-    <Content Include="Resources\lib\NewItem47.png" />
-    <Content Include="Resources\lib\NewItem50.png" />
-    <Content Include="Resources\lib\NewItem51.png" />
-    <Content Include="Resources\lib\NewItem52.png" />
-    <Content Include="Resources\lib\NewItem53.png" />
     <Content Include="Resources\personal.png" />
-    <None Include="Resources\SICAP .html" />
     <Content Include="Resources\SICAPLOGO.png" />
-    <Content Include="Resources\Snapshot_20140812_33.JPG" />
-    <None Include="Resources\buscar.bmp" />
     <Content Include="Resources\buscar1.png" />
   </ItemGroup>
   <ItemGroup>

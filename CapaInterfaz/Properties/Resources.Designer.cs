@@ -63,16 +63,6 @@ namespace CapaInterfaz.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _48px_Crystal_Clear_action_edit {
-            get {
-                object obj = ResourceManager.GetObject("_48px_Crystal_Clear_action_edit", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap _48px_Crystal_Clear_action_edit_add {
             get {
                 object obj = ResourceManager.GetObject("_48px_Crystal_Clear_action_edit_add", resourceCulture);
@@ -126,16 +116,6 @@ namespace CapaInterfaz.Properties {
         internal static System.Drawing.Bitmap Administrar {
             get {
                 object obj = ResourceManager.GetObject("Administrar", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap buscar {
-            get {
-                object obj = ResourceManager.GetObject("buscar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,16 +183,6 @@ namespace CapaInterfaz.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap imaMano {
-            get {
-                object obj = ResourceManager.GetObject("imaMano", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap logoSICAP {
             get {
                 object obj = ResourceManager.GetObject("logoSICAP", resourceCulture);
@@ -243,75 +213,9 @@ namespace CapaInterfaz.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap photo {
-            get {
-                object obj = ResourceManager.GetObject("photo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Byte[].
-        /// </summary>
-        internal static byte[] SICAP {
-            get {
-                object obj = ResourceManager.GetObject("SICAP", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a &lt;html&gt;
-        ///&lt;head&gt;
-        ///	&lt;title&gt;SICAP&lt;/title&gt;
-        ///	&lt;style type=&quot;text/css&quot;&gt;
-        ///	/* ========== Text Styles ========== */
-        ///hr { color: #000000}
-        ///body, table, span.rvts0 /* Normal text */
-        ///{
-        /// font-size: 10pt;
-        /// font-family: &apos;Arial&apos;, &apos;Helvetica&apos;, sans-serif;
-        /// font-style: normal;
-        /// font-weight: normal;
-        /// color: #000000;
-        /// text-decoration: none;
-        ///}
-        ///span.rvts1 /* Heading */
-        ///{
-        /// font-weight: bold;
-        /// color: #0000ff;
-        ///}
-        ///span.rvts2 /* Subheading */
-        ///{
-        /// font-weight: bold;
-        /// color: #000080;
-        ///}
-        ///span.rvts3 /* Keywords */
-        ///{
-        /// fo [resto de la cadena truncado]&quot;;.
-        /// </summary>
-        internal static string SICAP1 {
-            get {
-                return ResourceManager.GetString("SICAP1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap SICAPLOGO {
             get {
                 object obj = ResourceManager.GetObject("SICAPLOGO", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Snapshot_20140812_33 {
-            get {
-                object obj = ResourceManager.GetObject("Snapshot_20140812_33", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
