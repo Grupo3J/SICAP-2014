@@ -458,9 +458,6 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
             }
         }
 
-        private void timer2_Tick(object sender, EventArgs e)
-        {}
-
         public void onePing()
         {
             SystemSounds.Exclamation.Play();

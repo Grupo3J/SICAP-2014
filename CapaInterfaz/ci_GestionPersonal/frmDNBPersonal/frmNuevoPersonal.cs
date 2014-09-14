@@ -215,14 +215,15 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
                     // This should be done GetDeviceInfo();
                     m_ImageWidth = pInfo.ImageWidth;
                     m_ImageHeight = pInfo.ImageHeight;
-                }
-                Int32 timeout = 3000;
-                Int32 quality = 80;
+                }                
                 Byte[] fp_image = new Byte[m_ImageWidth * m_ImageHeight];
+                SGFPMSecurityLevel secu_level = SGFPMSecurityLevel.LOWEST; // Adjust this value according to application type
                 //Convierte el huella en una imagen y la presenta en un picturebox
-                iError = m_FPM.GetImageEx(fp_image, timeout, this.pictureHuella.Handle.ToInt32(), quality);
-                //Ajusta el brillo a 70
-                iError = m_FPM.SetBrightness(70);
+                iError = m_FPM.GetImage(fp_image);
+                if (iError == (Int32)SGFPMError.ERROR_NONE)
+                {
+                    DrawImage(fp_image, pictureHuella);
+                }
                 Int32 max_template_size = 0;
                 //Obtiene el maximo tamaño que posee el buffer.
                 m_FPM.GetMaxTemplateSize(ref max_template_size);
@@ -230,11 +231,14 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
                 arrayHuella2 = new Byte[max_template_size];
                 //Crea un formato(minucia) a partir de la imagen
                 m_FPM.CreateTemplate(fp_image, arrayHuella1);
-                iError = m_FPM.GetImageEx(fp_image, timeout, this.pictureHuella.Handle.ToInt32(), quality);
+                iError = m_FPM.GetImage(fp_image);
+                if (iError == (Int32)SGFPMError.ERROR_NONE)
+                {
+                    DrawImage(fp_image, pictureHuella);
+                }
                 m_FPM.CreateTemplate(fp_image, arrayHuella2);
                 // Match for registration
                 bool matched = false;
-                SGFPMSecurityLevel secu_level = SGFPMSecurityLevel.NORMAL;
                 iError = m_FPM.MatchTemplate(arrayHuella1, arrayHuella2, secu_level, ref matched);
                 string er = iError.ToString();
 
@@ -387,6 +391,23 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
                     errorProvider1.Clear();
             }
            // VAL.Enter(e, textCedula);
+        }
+
+        private void DrawImage(Byte[] imgData, PictureBox picBox)
+        {
+            int colorval;
+            Bitmap bmp = new Bitmap(m_ImageWidth, m_ImageHeight);
+            picBox.Image = (Image)bmp;
+
+            for (int i = 0; i < bmp.Width; i++)
+            {
+                for (int j = 0; j < bmp.Height; j++)
+                {
+                    colorval = (int)imgData[(j * m_ImageWidth) + i];
+                    bmp.SetPixel(i, j, Color.FromArgb(colorval, colorval, colorval));
+                }
+            }
+            picBox.Refresh();
         }
     }
 }
