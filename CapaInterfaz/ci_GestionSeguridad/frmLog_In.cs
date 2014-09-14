@@ -60,6 +60,14 @@ namespace CapaInterfaz.ci_GestionSeguridad
         List<sp_PersonalporCalendarioResult> personalporc;
         List<sp_ListarHuellaCedulaResult> huellaporc= new List<sp_ListarHuellaCedulaResult>();
         private string idcalendario;
+        private Form children;
+
+        public Form Children
+        {
+            get { return children; }
+            set { children = value; }
+        }
+
         public static string IdUsuario="";
 
         private void frmLog_In_Load(object sender, EventArgs e)
@@ -119,7 +127,7 @@ namespace CapaInterfaz.ci_GestionSeguridad
         }
 
         protected override void WndProc(ref Message message)
-        {
+        {   
             if (message.Msg == (int)SGFPMMessages.DEV_AUTOONEVENT)
             {
                 if (message.WParam.ToInt32() == (Int32)SGFPMAutoOnEvent.FINGER_ON)
@@ -255,20 +263,24 @@ namespace CapaInterfaz.ci_GestionSeguridad
             Acceder.Visible = false;
         }
 
-        private void Abrir()
+        private void Discovered() 
         {
-            frmUsuarioLogged frm = new frmUsuarioLogged();
-            Hidden();
-            addPanel(frm);
+            label1.Visible = true;
+            label3.Visible = true;
+            label6.Visible = true;
+            label2.Visible = true;
+            label4.Visible = true;
+            label5.Visible = true;
+            pictureBox1.Visible = true;
+            txtLogin.Visible = true;
+            txtClave.Visible = true;
+            Acceder.Visible = true;
         }
         
         private void addPanel(object form)
         {
-            
-            if (this.panelEx1.Controls.Count > 0)
-                this.panelEx1.Controls.RemoveAt(0);
             Form fh = form as Form;
-           
+            fh.Name = "fh";
             fh.TopLevel = false;
             fh.FormBorderStyle = FormBorderStyle.None;
             fh.Dock = DockStyle.Fill;
@@ -279,7 +291,6 @@ namespace CapaInterfaz.ci_GestionSeguridad
 
         private void Acceder_Click(object sender, EventArgs e)
         {
-            Abrir();
             verificaeingresa();
         }
        
@@ -290,19 +301,28 @@ namespace CapaInterfaz.ci_GestionSeguridad
 
             if (sit.Login(txtLogin.Text, txtClave.Text))
             {
-                frmSICAP2014 fp = new frmSICAP2014(m_FPM);
+                frmSICAP2014 fp = new frmSICAP2014(this);
                 fp.user = USLN.getUserbyced(sit.Cedula);
+                frmUsuarioLogged frm = new frmUsuarioLogged(fp.user);
+                Hidden();
+                addPanel(frm);
                 DialogResult resul = new DialogResult();
                 this.Hide();
                 txtLogin.Text = "";
                 txtClave.Text = "";
                 resul = fp.ShowDialog();
 
-                if (fp.OPTION == "OK")
+                if (fp.OPTION == "EXIT")
                 {
                     this.Show();
                     txtLogin.Focus();
-
+                }
+                if (fp.OPTION == "LOGOUT") 
+                {
+                    panelEx1.Controls.RemoveByKey("fh");
+                    Discovered();
+                    panelEx1.Refresh();
+                    this.Show();
                 }
                 //frmSICAP2014 k = new frmSICAP2014();
                 // k.user = USLN.getUserbyced(sit.Cedula);
@@ -341,11 +361,6 @@ namespace CapaInterfaz.ci_GestionSeguridad
             try 
             {
                 personalporc = calendario.PersonalporCalendario(idcalendario);
-                huellaporc.Clear();
-                foreach(sp_PersonalporCalendarioResult temp in personalporc)
-                {
-                    huellaporc.AddRange(huella.ListarHuella(temp.CEDULA));
-                }
             }
             catch(Exception){}
         }

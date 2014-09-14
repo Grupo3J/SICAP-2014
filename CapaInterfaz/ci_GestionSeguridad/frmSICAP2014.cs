@@ -24,6 +24,7 @@ namespace CapaInterfaz.ci_GestionSeguridad
 {
     public partial class frmSICAP2014 : DevComponents.DotNetBar.Metro.MetroAppForm
     {
+        private Form owner;
         UsuariosLN USLN = new UsuariosLN();
         RecursoLN RCLN = new RecursoLN();
         public Usuarios user = new Usuarios();
@@ -31,10 +32,13 @@ namespace CapaInterfaz.ci_GestionSeguridad
         Validaciones val = new Validaciones();
         RolesLN OPRLN = new RolesLN();
         public string OPTION = "";
-        public frmSICAP2014(SGFingerPrintManager m_FPM)
+
+        public frmSICAP2014(Form owner)
         {
             InitializeComponent();
-            m_FPM.EnableAutoOnEvent(true, (int)this.Handle);
+            this.owner = owner;
+            frmLog_In children = (frmLog_In)owner;
+            children.Children = this;
         }
 
         protected override void WndProc(ref Message message)
@@ -357,7 +361,7 @@ namespace CapaInterfaz.ci_GestionSeguridad
                 }
                 if (j == radialcerrarsesion)
                 {
-                    OPTION = "OK";
+                    OPTION = "LOGOUT";
                     this.Close();                    
                 }
                 if (j == radialacercade)
@@ -384,8 +388,14 @@ namespace CapaInterfaz.ci_GestionSeguridad
 
         private void formclosed(object sender, FormClosedEventArgs e)
         {
-            this.OPTION = "OK";
-            this.Close();
+            if (OPTION == "LOGOUT")
+                this.Close();
+            else 
+            {
+                OPTION = "EXIT";
+                this.Hide();
+            }
+                
         }
 
 
