@@ -362,7 +362,7 @@ namespace CapaInterfaz.ci_GestionSeguridad
                 if (j == radialcerrarsesion)
                 {
                     OPTION = "LOGOUT";
-                    this.Close();                    
+                    this.Close();
                 }
                 if (j == radialacercade)
                 {
@@ -389,11 +389,16 @@ namespace CapaInterfaz.ci_GestionSeguridad
         private void formclosed(object sender, FormClosedEventArgs e)
         {
             if (OPTION == "LOGOUT")
-                this.Close();
+            {
+                frmLog_In fo = (frmLog_In)owner;
+                fo.Return();
+            }
             else 
             {
                 OPTION = "EXIT";
                 this.Hide();
+                frmLog_In fo = (frmLog_In)owner;
+                fo.Return();
             }
                 
         }

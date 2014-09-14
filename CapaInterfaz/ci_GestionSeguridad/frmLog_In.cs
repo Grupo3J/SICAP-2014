@@ -102,7 +102,8 @@ namespace CapaInterfaz.ci_GestionSeguridad
                 }
                 else
                 {
-                    AutoClosingMessageBox.Show("Ya se ha Ingresado Asistencia", "Administrar Asistencia", 700);
+                    //AutoClosingMessageBox.Show("Ya se ha Ingresado Asistencia", "Administrar Asistencia", 700);
+                    onePing(1);
                 }
             }
             else
@@ -111,11 +112,12 @@ namespace CapaInterfaz.ci_GestionSeguridad
                 if (imprevistos.ContarImprevisto(cedula, DateTime.Now, idcalendario) == 0)
                 {
                     asistencia.InsertarAsistencia(temp);
-                    onePing();
+                    onePing(0);
                 }
                 else
                 {
-                    AutoClosingMessageBox.Show("Existe un Imprevisto en esta Fecha\nRevise Administracion de Imprevistos", "Administrar Asistencia", 2000);
+                    //AutoClosingMessageBox.Show("Existe un Imprevisto en esta Fecha\nRevise Administracion de Imprevistos", "Administrar Asistencia", 2000);
+                    onePing(1);
                 }
             }
 
@@ -156,7 +158,8 @@ namespace CapaInterfaz.ci_GestionSeguridad
                             }
                             if (matched == false)
                             {
-                                AutoClosingMessageBox.Show("Huella No Encontrada", "Administracion de Huellas", 1000);
+                                //AutoClosingMessageBox.Show("Huella No Encontrada", "Administracion de Huellas", 1000);
+                                onePing(1);
                             }
                         }
                         //AutoClosingMessageBox.Show("Dedo Aqui :)","Hehehe",100);
@@ -244,9 +247,12 @@ namespace CapaInterfaz.ci_GestionSeguridad
             dataGridViewX1.Columns[8].Visible = false;
         }
 
-        public void onePing()
+        public void onePing(int num)
         {
-            SystemSounds.Exclamation.Play();
+            if(num==0)
+                SystemSounds.Exclamation.Play();
+            else
+                SystemSounds.Asterisk.Play();
         }
 
         private void Hidden()
@@ -306,24 +312,12 @@ namespace CapaInterfaz.ci_GestionSeguridad
                 frmUsuarioLogged frm = new frmUsuarioLogged(fp.user);
                 Hidden();
                 addPanel(frm);
-                DialogResult resul = new DialogResult();
                 this.Hide();
                 txtLogin.Text = "";
                 txtClave.Text = "";
-                resul = fp.ShowDialog();
+                fp.Show();
 
-                if (fp.OPTION == "EXIT")
-                {
-                    this.Show();
-                    txtLogin.Focus();
-                }
-                if (fp.OPTION == "LOGOUT") 
-                {
-                    panelEx1.Controls.RemoveByKey("fh");
-                    Discovered();
-                    panelEx1.Refresh();
-                    this.Show();
-                }
+               
                 //frmSICAP2014 k = new frmSICAP2014();
                 // k.user = USLN.getUserbyced(sit.Cedula);
                 //k.Show();
@@ -385,6 +379,23 @@ namespace CapaInterfaz.ci_GestionSeguridad
                 }
             }
             picBox.Refresh();
+        }
+
+        public void Return() 
+        {
+            frmSICAP2014 fp = (frmSICAP2014)children;
+            if (fp.OPTION == "EXIT")
+            {
+                this.Show();
+                txtLogin.Focus();
+            }
+            if (fp.OPTION == "LOGOUT")
+            {
+                panelEx1.Controls.RemoveByKey("fh");
+                Discovered();
+                panelEx1.Refresh();
+                this.Show();
+            }
         }
     }
 }
