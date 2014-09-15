@@ -82,7 +82,7 @@ namespace CapaInterfaz.ci_GestionReportes
                     ds.Clear();
                     foreach (sp_PersonalporAsistenciaDiaResult p in lp)
                     {
-                        ds.sp_PersonalporAsistenciaDia.Addsp_PersonalporAsistenciaDiaRow(p.Nombre,p.HoraEntrada,p.HoraSalida,p.Tiempo.Value,p.FECHAHORAENTRADA,p.FECHAHORASALIDA.Value,p.CEDULA,p.IDCALENDARIO,p.IDASISTENCIA);
+                        ds.sp_PersonalporAsistenciaDia.Addsp_PersonalporAsistenciaDiaRow(p.Nombre,p.HoraEntrada,p.HoraSalida,p.Tiempo,p.FECHAHORAENTRADA,p.FECHAHORASALIDA.Value,p.CEDULA,p.IDCALENDARIO,p.IDASISTENCIA);
                     }
                     rpt.SetDataSource(ds);
 

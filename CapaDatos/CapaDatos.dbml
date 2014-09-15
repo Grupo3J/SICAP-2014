@@ -16,7 +16,7 @@
       <Column Name="Nombre" Type="System.String" DbType="VarChar(61) NOT NULL" CanBeNull="false" />
       <Column Name="HoraEntrada" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
       <Column Name="HoraSalida" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
-      <Column Name="Tiempo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tiempo" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
       <Column Name="FECHAHORAENTRADA" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="FECHAHORASALIDA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
@@ -157,7 +157,7 @@
     <Type Name="MODULOS">
       <Column Name="IDMODULO" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MOD_IDMODULO" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
-      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Association Name="MODULOS_MODULOS" Member="MODULOS2" ThisKey="IDMODULO" OtherKey="MOD_IDMODULO" Type="MODULOS" />
       <Association Name="MODULOS_RECURSOS" Member="RECURSOS" ThisKey="IDMODULO" OtherKey="IDMODULO" Type="RECURSOS" />
       <Association Name="MODULOS_MODULOS" Member="MODULOS1" ThisKey="MOD_IDMODULO" OtherKey="IDMODULO" Type="MODULOS" IsForeignKey="true" />
@@ -184,14 +184,14 @@
       <Column Name="NOMBRE" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="APELLIDO" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="CARGO" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
-      <Column Name="TITULO" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="TITULO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="CORREO" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
       <Column Name="SEXO" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
-      <Column Name="CIUDAD" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="CIUDAD" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="DIRECCION" Type="System.String" DbType="VarChar(75)" CanBeNull="true" />
       <Column Name="TELEFONO" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="TIPO" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="DATAFOTO" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="TIPO" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="DATAFOTO" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
       <Association Name="PERSONAL_DETALLE_PERSONAL_CALENDARIO" Member="DETALLE_PERSONAL_CALENDARIO" ThisKey="CEDULA" OtherKey="CEDULA" Type="DETALLE_PERSONAL_CALENDARIO" />
       <Association Name="PERSONAL_HUELLA" Member="HUELLA" ThisKey="CEDULA" OtherKey="CEDULA" Type="HUELLA" />
       <Association Name="PERSONAL_USUARIO" Member="USUARIO" ThisKey="CEDULA" OtherKey="CEDULA" Type="USUARIO" Cardinality="One" />
@@ -202,9 +202,9 @@
       <Column Name="IDRECURSO" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="IDMODULO" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
       <Column Name="ESTADO" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="URLRECURSO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="URLRECURSO" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
       <Column Name="NOMBRE" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="DESCRIPCION" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="HABILITADOMENU" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="POSICIONMENU" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="RECURSOS_PERMISOS" Member="PERMISOS" ThisKey="IDRECURSO" OtherKey="IDRECURSO" Type="PERMISOS" />
@@ -245,14 +245,14 @@
       <Column Name="NOMBRE" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="APELLIDO" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="CARGO" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
-      <Column Name="TITULO" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="TITULO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="CORREO" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
       <Column Name="SEXO" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
-      <Column Name="CIUDAD" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="CIUDAD" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="DIRECCION" Type="System.String" DbType="VarChar(75)" CanBeNull="true" />
       <Column Name="TELEFONO" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="TIPO" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="DATAFOTO" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" />
+      <Column Name="TIPO" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="DATAFOTO" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="dbo.pa_EliminarPersonalCedula" Method="pa_EliminarPersonalCedula">
@@ -266,14 +266,14 @@
       <Column Name="NOMBRE" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="APELLIDO" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="CARGO" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
-      <Column Name="TITULO" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="TITULO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="CORREO" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
       <Column Name="SEXO" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
-      <Column Name="CIUDAD" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="CIUDAD" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="DIRECCION" Type="System.String" DbType="VarChar(75)" CanBeNull="true" />
       <Column Name="TELEFONO" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="TIPO" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="DATAFOTO" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" />
+      <Column Name="TIPO" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="DATAFOTO" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="dbo.pa_FiltrarRoles" Method="pa_FiltrarRoles">
@@ -308,9 +308,9 @@
       <Column Name="IDRECURSO" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
       <Column Name="IDMODULO" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
       <Column Name="ESTADO" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="URLRECURSO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="URLRECURSO" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
       <Column Name="NOMBRE" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="DESCRIPCION" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="HABILITADOMENU" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="POSICIONMENU" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
@@ -398,7 +398,7 @@
     <ElementType Name="pa_ObtenerArbolResult">
       <Column Name="IDMODULO" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
       <Column Name="MOD_IDMODULO" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
-      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="dbo.pa_ObtenerArbolbyNombreRol" Method="pa_ObtenerArbolbyNombreRol">
@@ -406,7 +406,7 @@
     <ElementType Name="pa_ObtenerArbolbyNombreRolResult">
       <Column Name="IDMODULO" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
       <Column Name="MOD_IDMODULO" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
-      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="dbo.pa_ObtenerPermisosByCedNombreMod" Method="pa_ObtenerPermisosByCedNombreMod">
@@ -425,9 +425,9 @@
       <Column Name="IDRECURSO1" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
       <Column Name="IDMODULO" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
       <Column Name="ESTADO1" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="URLRECURSO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="URLRECURSO" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
       <Column Name="NOMBRE" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="DESCRIPCION" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="HABILITADOMENU" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="POSICIONMENU" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
@@ -447,9 +447,9 @@
       <Column Name="IDRECURSO1" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
       <Column Name="IDMODULO" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
       <Column Name="ESTADOREC" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="URLRECURSO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="URLRECURSO" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
       <Column Name="NOMBRE" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="DESCRIPCION" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="HABILITADOMENU" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="POSICIONMENU" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
@@ -491,15 +491,30 @@
       <Column Name="NOMBRE" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="APELLIDO" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="CARGO" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
-      <Column Name="TITULO" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="TITULO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="CORREO" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
       <Column Name="SEXO" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
-      <Column Name="CIUDAD" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="CIUDAD" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="DIRECCION" Type="System.String" DbType="VarChar(75)" CanBeNull="true" />
       <Column Name="TELEFONO" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="TIPO" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="DATAFOTO" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" />
+      <Column Name="TIPO" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="DATAFOTO" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.sp_ContarImprevisto" Method="sp_ContarImprevisto">
+    <Parameter Name="Cedula" Parameter="cedula" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="Fecha" Parameter="fecha" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="IdCalendario" Parameter="idCalendario" Type="System.String" DbType="VarChar(5)" />
+    <ElementType Name="sp_ContarImprevistoResult">
+      <Column Name="IDIMPREVISTO" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="FECHAINICIO" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FECHAFINAL" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Eliminar_Asistencia" Method="sp_Eliminar_Asistencia">
+    <Parameter Name="Idasistencia" Parameter="idasistencia" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.sp_Eliminar_Detalle_Imprevisto_Calendario" Method="sp_Eliminar_Detalle_Imprevisto_Calendario">
     <Parameter Name="IdCalendario" Parameter="idCalendario" Type="System.String" DbType="VarChar(5)" />
@@ -508,6 +523,12 @@
   </Function>
   <Function Name="dbo.sp_EliminarAsistenciaId" Method="sp_EliminarAsistenciaId">
     <Parameter Name="IDASISTENCIA" Parameter="iDASISTENCIA" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_EliminarAsistenciainterfFalta" Method="sp_EliminarAsistenciainterfFalta">
+    <Parameter Name="Cedula" Parameter="cedula" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="Fecha" Parameter="fecha" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="IdCalendario" Parameter="idCalendario" Type="System.String" DbType="VarChar(5)" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.sp_EliminarCalendario" Method="sp_EliminarCalendario">
@@ -618,6 +639,22 @@
       <Column Name="JUSTIFICACION" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
+  <Function Name="dbo.sp_FiltrarPersonalValor" Method="sp_FiltrarPersonalValor">
+    <Parameter Name="valor" Type="System.String" DbType="VarChar(15)" />
+    <ElementType Name="sp_FiltrarPersonalValorResult">
+      <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="APELLIDO" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="CARGO" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="TITULO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CORREO" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="SEXO" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="CIUDAD" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="DIRECCION" Type="System.String" DbType="VarChar(75)" CanBeNull="true" />
+      <Column Name="TELEFONO" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="TIPO" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
   <Function Name="dbo.sp_FiltrarPersonalValores" Method="sp_FiltrarPersonalValores">
     <Parameter Name="valor" Type="System.String" DbType="VarChar(15)" />
     <ElementType Name="sp_FiltrarPersonalValoresResult">
@@ -625,14 +662,24 @@
       <Column Name="NOMBRE" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="APELLIDO" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="CARGO" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
-      <Column Name="TITULO" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="TITULO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="CORREO" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
       <Column Name="SEXO" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
-      <Column Name="CIUDAD" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="CIUDAD" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="DIRECCION" Type="System.String" DbType="VarChar(75)" CanBeNull="true" />
       <Column Name="TELEFONO" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="TIPO" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="DATAFOTO" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" />
+      <Column Name="TIPO" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="DATAFOTO" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_ImprevistosporCalendario" Method="sp_ImprevistosporCalendario">
+    <Parameter Name="IdCalendario" Parameter="idCalendario" Type="System.String" DbType="VarChar(5)" />
+    <ElementType Name="sp_ImprevistosporCalendarioResult">
+      <Column Name="IDIMPREVISTO" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="FECHA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="HORA_ENTRADA" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="HORA_SALIDA" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
     </ElementType>
   </Function>
   <Function Name="dbo.sp_ListarCalendario" Method="sp_ListarCalendario">
@@ -666,6 +713,22 @@
       <Column Name="FECHA" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="DESCRIPCION" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.sp_ListarHuellaCedula" Method="sp_ListarHuellaCedula">
+    <Parameter Name="Cedula" Parameter="cedula" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="sp_ListarHuellaCedulaResult">
+      <Column Name="IDHUELLA" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="DATAHUELLA1" Type="System.Data.Linq.Binary" DbType="VarBinary(8000) NOT NULL" CanBeNull="false" />
+      <Column Name="DATAHUELLA2" Type="System.Data.Linq.Binary" DbType="VarBinary(8000) NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="IMAGEN" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_ModificarAsistenciaFechaFinal" Method="sp_ModificarAsistenciaFechaFinal">
+    <Parameter Name="IdAsistencia" Parameter="idAsistencia" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="FechaFin" Parameter="fechaFin" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.sp_ModificarCalendario" Method="sp_ModificarCalendario">
     <Parameter Name="IdCalendario" Parameter="idCalendario" Type="System.String" DbType="VarChar(5)" />
@@ -712,6 +775,20 @@
     <Parameter Name="DESCRIPCION" Parameter="dESCRIPCION" Type="System.String" DbType="Text" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.sp_ModificarPersonalCedula" Method="sp_ModificarPersonalCedula">
+    <Parameter Name="Cedula" Parameter="cedula" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="Apellido" Parameter="apellido" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="Cargo" Parameter="cargo" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="Titulo" Parameter="titulo" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="Correo" Parameter="correo" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="Sexo" Parameter="sexo" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="Ciudad" Parameter="ciudad" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="Direccion" Parameter="direccion" Type="System.String" DbType="VarChar(75)" />
+    <Parameter Name="Telefono" Parameter="telefono" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="Tipo" Parameter="tipo" Type="System.String" DbType="VarChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
   <Function Name="dbo.sp_ModificarPersonalSinFoto" Method="sp_ModificarPersonalSinFoto">
     <Parameter Name="Cedula" Parameter="cedula" Type="System.String" DbType="VarChar(10)" />
     <Parameter Name="DataFoto" Parameter="dataFoto" Type="System.Data.Linq.Binary" DbType="Image" />
@@ -732,14 +809,44 @@
       <Column Name="NOMBRE" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="APELLIDO" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="CARGO" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
-      <Column Name="TITULO" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="TITULO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="CORREO" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
       <Column Name="SEXO" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
-      <Column Name="CIUDAD" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="CIUDAD" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="DIRECCION" Type="System.String" DbType="VarChar(75)" CanBeNull="true" />
       <Column Name="TELEFONO" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="TIPO" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="DATAFOTO" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" />
+      <Column Name="TIPO" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="DATAFOTO" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_ObtenerArbol" Method="sp_ObtenerArbol">
+    <Parameter Name="nick" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="clave" Type="System.String" DbType="VarChar(80)" />
+    <ElementType Name="sp_ObtenerArbolResult">
+      <Column Name="IDMODULO" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="MOD_IDMODULO" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_PersonalporAsistenciaMes" Method="sp_PersonalporAsistenciaMes">
+    <Parameter Name="IdCalendario" Parameter="idCalendario" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="FechaMes" Parameter="fechaMes" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="sp_PersonalporAsistenciaMesResult">
+      <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(61) NOT NULL" CanBeNull="false" />
+      <Column Name="TOTAL_ASISTENCIAS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TOTAL_HORAS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_PersonalporAsistenciaRango" Method="sp_PersonalporAsistenciaRango">
+    <Parameter Name="IdCalendario" Parameter="idCalendario" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="FechaInicio" Parameter="fechaInicio" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="FechaFin" Parameter="fechaFin" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="sp_PersonalporAsistenciaRangoResult">
+      <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(61) NOT NULL" CanBeNull="false" />
+      <Column Name="TOTAL_ASISTENCIAS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TOTAL_HORAS" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="dbo.sp_PersonalporCalendario" Method="sp_PersonalporCalendario">
@@ -749,14 +856,27 @@
       <Column Name="NOMBRE" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="APELLIDO" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="CARGO" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
-      <Column Name="TITULO" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="TITULO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="CORREO" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
       <Column Name="SEXO" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
-      <Column Name="CIUDAD" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="CIUDAD" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="DIRECCION" Type="System.String" DbType="VarChar(75)" CanBeNull="true" />
       <Column Name="TELEFONO" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="TIPO" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="DATAFOTO" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" />
+      <Column Name="TIPO" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="DATAFOTO" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_PersonalporFaltaDia" Method="sp_PersonalporFaltaDia">
+    <Parameter Name="IdCalendario" Parameter="idCalendario" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="Fecha" Parameter="fecha" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="sp_PersonalporFaltaDiaResult">
+      <Column Name="IDFALTA" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="APELLIDO" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="FECHA" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="JUSTIFICACION" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IDCALENDARIO" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
   <Function Name="dbo.sp_PersonalporFaltaMes" Method="sp_PersonalporFaltaMes">
@@ -856,83 +976,9 @@
     <Parameter Name="Cedula" Parameter="cedula" Type="System.String" DbType="VarChar(10)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.vaciarseguridad" Method="vaciarseguridad">
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_ModificarPersonalCedula" Method="sp_ModificarPersonalCedula">
-    <Parameter Name="Cedula" Parameter="cedula" Type="System.String" DbType="VarChar(10)" />
-    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="Apellido" Parameter="apellido" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="Cargo" Parameter="cargo" Type="System.String" DbType="VarChar(25)" />
-    <Parameter Name="Titulo" Parameter="titulo" Type="System.String" DbType="VarChar(15)" />
-    <Parameter Name="Correo" Parameter="correo" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="Sexo" Parameter="sexo" Type="System.Char" DbType="Char(1)" />
-    <Parameter Name="Ciudad" Parameter="ciudad" Type="System.String" DbType="VarChar(15)" />
-    <Parameter Name="Direccion" Parameter="direccion" Type="System.String" DbType="VarChar(75)" />
-    <Parameter Name="Telefono" Parameter="telefono" Type="System.String" DbType="VarChar(10)" />
-    <Parameter Name="Tipo" Parameter="tipo" Type="System.String" DbType="VarChar(20)" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_EliminarAsistenciainterfFalta" Method="sp_EliminarAsistenciainterfFalta">
-    <Parameter Name="Cedula" Parameter="cedula" Type="System.String" DbType="VarChar(10)" />
-    <Parameter Name="Fecha" Parameter="fecha" Type="System.DateTime" DbType="DateTime" />
-    <Parameter Name="IdCalendario" Parameter="idCalendario" Type="System.String" DbType="VarChar(5)" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_ImprevistosporCalendario" Method="sp_ImprevistosporCalendario">
-    <Parameter Name="IdCalendario" Parameter="idCalendario" Type="System.String" DbType="VarChar(5)" />
-    <ElementType Name="sp_ImprevistosporCalendarioResult">
-      <Column Name="IDIMPREVISTO" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
-      <Column Name="FECHA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="HORA_ENTRADA" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="HORA_SALIDA" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="DESCRIPCION" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.sp_ContarImprevisto" Method="sp_ContarImprevisto">
-    <Parameter Name="Cedula" Parameter="cedula" Type="System.String" DbType="VarChar(10)" />
-    <Parameter Name="Fecha" Parameter="fecha" Type="System.DateTime" DbType="DateTime" />
-    <Parameter Name="IdCalendario" Parameter="idCalendario" Type="System.String" DbType="VarChar(5)" />
-    <ElementType Name="sp_ContarImprevistoResult">
-      <Column Name="IDIMPREVISTO" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
-      <Column Name="FECHAINICIO" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="FECHAFINAL" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="DESCRIPCION" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.sp_ReportePersonal" Method="sp_ReportePersonal">
     <Parameter Name="tipo" Type="System.String" DbType="VarChar(30)" />
     <ElementType Name="sp_ReportePersonalResult">
-      <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="APELLIDO" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="CARGO" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
-      <Column Name="TITULO" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Column Name="CORREO" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="SEXO" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
-      <Column Name="CIUDAD" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
-      <Column Name="DIRECCION" Type="System.String" DbType="VarChar(75)" CanBeNull="true" />
-      <Column Name="TELEFONO" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="TIPO" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.sp_ObtenerArbol" Method="sp_ObtenerArbol">
-    <Parameter Name="nick" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="clave" Type="System.String" DbType="VarChar(80)" />
-    <ElementType Name="sp_ObtenerArbolResult">
-      <Column Name="IDMODULO" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
-      <Column Name="MOD_IDMODULO" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
-      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.sp_ModificarAsistenciaFechaFinal" Method="sp_ModificarAsistenciaFechaFinal">
-    <Parameter Name="IdAsistencia" Parameter="idAsistencia" Type="System.String" DbType="VarChar(10)" />
-    <Parameter Name="FechaFin" Parameter="fechaFin" Type="System.DateTime" DbType="DateTime" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_FiltrarPersonalValor" Method="sp_FiltrarPersonalValor">
-    <Parameter Name="valor" Type="System.String" DbType="VarChar(15)" />
-    <ElementType Name="sp_FiltrarPersonalValorResult">
       <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="NOMBRE" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="APELLIDO" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
@@ -946,37 +992,8 @@
       <Column Name="TIPO" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.sp_ListarHuellaCedula" Method="sp_ListarHuellaCedula">
-    <Parameter Name="Cedula" Parameter="cedula" Type="System.String" DbType="VarChar(10)" />
-    <ElementType Name="sp_ListarHuellaCedulaResult">
-      <Column Name="IDHUELLA" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
-      <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="DATAHUELLA1" Type="System.Data.Linq.Binary" DbType="VarBinary(8000) NOT NULL" CanBeNull="false" />
-      <Column Name="DATAHUELLA2" Type="System.Data.Linq.Binary" DbType="VarBinary(8000) NOT NULL" CanBeNull="false" />
-      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
-      <Column Name="IMAGEN" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.sp_PersonalporAsistenciaRango" Method="sp_PersonalporAsistenciaRango">
-    <Parameter Name="IdCalendario" Parameter="idCalendario" Type="System.String" DbType="VarChar(5)" />
-    <Parameter Name="FechaInicio" Parameter="fechaInicio" Type="System.DateTime" DbType="DateTime" />
-    <Parameter Name="FechaFin" Parameter="fechaFin" Type="System.DateTime" DbType="DateTime" />
-    <ElementType Name="sp_PersonalporAsistenciaRangoResult">
-      <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(61) NOT NULL" CanBeNull="false" />
-      <Column Name="TOTAL_ASISTENCIAS" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TOTAL_HORAS" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.sp_PersonalporAsistenciaMes" Method="sp_PersonalporAsistenciaMes">
-    <Parameter Name="IdCalendario" Parameter="idCalendario" Type="System.String" DbType="VarChar(5)" />
-    <Parameter Name="FechaMes" Parameter="fechaMes" Type="System.DateTime" DbType="DateTime" />
-    <ElementType Name="sp_PersonalporAsistenciaMesResult">
-      <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(61) NOT NULL" CanBeNull="false" />
-      <Column Name="TOTAL_ASISTENCIAS" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TOTAL_HORAS" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </ElementType>
+  <Function Name="dbo.vaciarseguridad" Method="vaciarseguridad">
+    <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.sp_PersonalporAsistenciaDia" Method="sp_PersonalporAsistenciaDia">
     <Parameter Name="IdCalendario" Parameter="idCalendario" Type="System.String" DbType="VarChar(5)" />
@@ -985,29 +1002,12 @@
       <Column Name="Nombre" Type="System.String" DbType="VarChar(61) NOT NULL" CanBeNull="false" />
       <Column Name="HoraEntrada" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
       <Column Name="HoraSalida" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
-      <Column Name="Tiempo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tiempo" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
       <Column Name="FECHAHORAENTRADA" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="FECHAHORASALIDA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="IDCALENDARIO" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
       <Column Name="IDASISTENCIA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
     </ElementType>
-  </Function>
-  <Function Name="dbo.sp_PersonalporFaltaDia" Method="sp_PersonalporFaltaDia">
-    <Parameter Name="IdCalendario" Parameter="idCalendario" Type="System.String" DbType="VarChar(5)" />
-    <Parameter Name="Fecha" Parameter="fecha" Type="System.DateTime" DbType="DateTime" />
-    <ElementType Name="sp_PersonalporFaltaDiaResult">
-      <Column Name="IDFALTA" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
-      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="APELLIDO" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="FECHA" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="JUSTIFICACION" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="IDCALENDARIO" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
-      <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.sp_Eliminar_Asistencia" Method="sp_Eliminar_Asistencia">
-    <Parameter Name="Idasistencia" Parameter="idasistencia" Type="System.String" DbType="VarChar(10)" />
-    <Return Type="System.Int32" />
   </Function>
 </Database>

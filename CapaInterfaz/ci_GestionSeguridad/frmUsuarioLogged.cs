@@ -15,11 +15,26 @@ namespace CapaInterfaz.ci_GestionSeguridad
     public partial class frmUsuarioLogged : DevComponents.DotNetBar.Metro.MetroForm
     {
         RolesLN OPRLN = new RolesLN();
+        private Form children;
+        private Form paretn;
 
-        public frmUsuarioLogged(Usuarios user)
+        public Form Paretn
+        {
+            get { return paretn; }
+            set { paretn = value; }
+        }
+        public Form Children
+        {
+            get { return children; }
+            set { children = value; }
+        }
+
+        public frmUsuarioLogged(Usuarios user,Form children,Form paretn)
         {
             InitializeComponent();
             cargarUsuario(user);
+            Children = children;
+            Paretn = paretn;
         }
 
         private void cargarUsuario(Usuarios user)
@@ -53,8 +68,9 @@ namespace CapaInterfaz.ci_GestionSeguridad
                 RadialMenuItem j = ((RadialMenuItem)sender);
                 if (j == raidalhome)
                 {
-                    //addPanel(new frmHome());
-                    //groupPanel1.Text = "SICAP Sistema de control de asistencia de Personal";
+                    paretn.Hide();
+                    frmSICAP2014 child = (frmSICAP2014)Children;
+                    child.Show();
                 }
                 if (j == raidallogout)
                 {
@@ -63,9 +79,11 @@ namespace CapaInterfaz.ci_GestionSeguridad
                 }
                 if (j == raidalacercade)
                 {
-                    //ci_GestionAyuda.frmAcercaDe acercade = new ci_GestionAyuda.frmAcercaDe();
-                    //groupPanel1.Text = "Acerca de";
-                    //addPanel(acercade);
+                    ci_GestionAyuda.frmAcercaDe acercade = new ci_GestionAyuda.frmAcercaDe();
+                    frmSICAP2014 child = (frmSICAP2014)Children;
+                    child.groupPanel1.Text = "Acerca de";
+                    child.addPanel(acercade);
+                    child.Show(); 
                 }
                 if (j == raidalmiperfil)
                 {
@@ -75,7 +93,7 @@ namespace CapaInterfaz.ci_GestionSeguridad
                     //groupPanel1.Text = "Mi Perfil ";
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }

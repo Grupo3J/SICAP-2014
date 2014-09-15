@@ -309,15 +309,13 @@ namespace CapaInterfaz.ci_GestionSeguridad
             {
                 frmSICAP2014 fp = new frmSICAP2014(this);
                 fp.user = USLN.getUserbyced(sit.Cedula);
-                frmUsuarioLogged frm = new frmUsuarioLogged(fp.user);
+                frmUsuarioLogged frm = new frmUsuarioLogged(fp.user,Children,this);                
                 Hidden();
                 addPanel(frm);
                 this.Hide();
                 txtLogin.Text = "";
                 txtClave.Text = "";
                 fp.Show();
-
-               
                 //frmSICAP2014 k = new frmSICAP2014();
                 // k.user = USLN.getUserbyced(sit.Cedula);
                 //k.Show();

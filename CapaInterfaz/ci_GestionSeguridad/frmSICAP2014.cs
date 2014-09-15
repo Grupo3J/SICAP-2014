@@ -37,8 +37,8 @@ namespace CapaInterfaz.ci_GestionSeguridad
         {
             InitializeComponent();
             this.owner = owner;
-            frmLog_In children = (frmLog_In)owner;
-            children.Children = this;
+            frmLog_In princp = (frmLog_In)owner;
+            princp.Children = this;
         }
 
         protected override void WndProc(ref Message message)
@@ -83,7 +83,7 @@ namespace CapaInterfaz.ci_GestionSeguridad
             base.WndProc(ref message);
         }
 
-        private void addPanel(object form)
+        public void addPanel(object form)
         {
             if (this.panelEx1.Controls.Count > 0)
                 this.panelEx1.Controls.RemoveAt(0);
