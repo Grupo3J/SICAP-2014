@@ -669,6 +669,14 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\i386\SecuGen.FDxSDKPro.Windows.dll" />
+    <Content Include="bin\i386\sgfpamx.dll" />
+    <Content Include="bin\i386\sgfplib.dll" />
+    <Content Include="bin\i386\sgfplibx.ocx" />
+    <Content Include="bin\x64\SecuGen.FDxSDKPro.Windows.dll" />
+    <Content Include="bin\x64\sgfpamx.dll" />
+    <Content Include="bin\x64\sgfplib.dll" />
+    <Content Include="bin\x64\sgfplibx.ocx" />
     <Content Include="Resources\48px-Crystal_Clear_action_edit.png" />
     <Content Include="Resources\48px-Crystal_Clear_action_editcut.png" />
     <Content Include="Resources\48px-Crystal_Clear_action_edit_add.png" />
