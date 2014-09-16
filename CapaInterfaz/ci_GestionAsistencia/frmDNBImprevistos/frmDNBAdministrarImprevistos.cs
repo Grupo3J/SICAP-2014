@@ -128,7 +128,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
                         }
                         else if(faltas.ContarFaltaPersonalDia(temp.CEDULA, imp.FechaInicio, idcalendario) != 0)
                         {
-                            var faltjustificadas = (from lt in faltas.ListarFaltasPersonalDia(idcalendario,imp.FechaInicio)
+                            var faltjustificadas = (from lt in faltas.ListarFaltasPersonalDia(idcalendario,imp.FechaInicio,"")
                                                        where lt.CEDULA == temp.CEDULA && lt.JUSTIFICACION==false select lt.IDFALTA).ToList();
                             if(faltjustificadas.Count>0)
                             idfaltas.Add(faltjustificadas[0].ToString());
@@ -301,7 +301,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
                             }
                             else if (faltas.ContarFaltaPersonalDia(temp.CEDULA, imp.FechaInicio, idcalendario) != 0)
                             {
-                                var faltjustificadas = (from lt in faltas.ListarFaltasPersonalDia(idcalendario, imp.FechaInicio)
+                                var faltjustificadas = (from lt in faltas.ListarFaltasPersonalDia(idcalendario, imp.FechaInicio,"")
                                                         where lt.CEDULA == temp.CEDULA && lt.JUSTIFICACION == false
                                                         select lt.IDFALTA).ToList();
                                 if (faltjustificadas.Count > 0)

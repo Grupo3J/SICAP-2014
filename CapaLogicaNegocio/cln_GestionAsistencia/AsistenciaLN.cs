@@ -16,9 +16,9 @@ namespace CapaLogicaNegocio.cln_GestionAsistencia
             return AsistenciaCD.ExisteAsistencia(id);
         }
 
-        public List<PersonalporAsistencia> ListarAsistenciaPersonal(string IdCalendario,DateTime Fecha) 
+        public List<sp_PersonalporAsistenciaDiaResult> ListarAsistenciaPersonal(string IdCalendario,DateTime Fecha,string valor) 
         {
-            return AsistenciaCD.ObtenerPersonalporDia(IdCalendario,Fecha);
+            return AsistenciaCD.ObtenerPersonalporDia(IdCalendario,Fecha,valor);
         }
 
         public bool InsertarAsistencia(Asistencia p)
@@ -53,14 +53,14 @@ namespace CapaLogicaNegocio.cln_GestionAsistencia
             return AsistenciaCD.AsistenciaPersonalDia(cedula,fecha,idcalendario); 
         }
 
-        public List<sp_PersonalporAsistenciaMesResult> ListarAsistenciasPersonalMes(string IdCalendario, DateTime Fecha)
+        public List<sp_PersonalporAsistenciaMesResult> ListarAsistenciasPersonalMes(string IdCalendario, DateTime Fecha,string valor)
         {
-            return AsistenciaCD.ObtenerPersonalporMes(IdCalendario, Fecha);
+            return AsistenciaCD.ObtenerPersonalporMes(IdCalendario, Fecha,valor);
         }
 
-        public List<sp_PersonalporAsistenciaRangoResult> ListarAsistenciasPersonalRango(string IdCalendario, DateTime Fechainicio,DateTime Fechafin)
+        public List<sp_PersonalporAsistenciaRangoResult> ListarAsistenciasPersonalRango(string IdCalendario, DateTime Fechainicio,DateTime Fechafin,string valor)
         {
-            return AsistenciaCD.ObtenerPersonalporRango(IdCalendario, Fechainicio,Fechafin);
+            return AsistenciaCD.ObtenerPersonalporRango(IdCalendario, Fechainicio,Fechafin,valor);
         }
     }
 }

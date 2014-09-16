@@ -72,17 +72,22 @@ namespace CapaInterfaz.ci_GestionReportes
 
         private void dtidia_ValueChanged(object sender, EventArgs e)
         {
+            FIltrarAsistenciaDia("");
+        }
+
+        private void FIltrarAsistenciaDia(string valor) 
+        {
             if (cmbcalendario.SelectedIndex >= 0)
             {
                 //MostrarFaltasDia(idcalendario, dtidia.Value);
                 try
                 {
-                    List<sp_PersonalporAsistenciaDiaResult> lp = reportes.PersonalporAsistenciaDia(idcalendario, dtidia.Value);
+                    List<sp_PersonalporAsistenciaDiaResult> lp = reportes.PersonalporAsistenciaDia(idcalendario, dtidia.Value,valor);
                     //MessageBox.Show(""+lp.Count);
                     ds.Clear();
                     foreach (sp_PersonalporAsistenciaDiaResult p in lp)
                     {
-                        ds.sp_PersonalporAsistenciaDia.Addsp_PersonalporAsistenciaDiaRow(p.Nombre,p.HoraEntrada,p.HoraSalida,p.Tiempo,p.FECHAHORAENTRADA,p.FECHAHORASALIDA.Value,p.CEDULA,p.IDCALENDARIO,p.IDASISTENCIA);
+                        ds.sp_PersonalporAsistenciaDia.Addsp_PersonalporAsistenciaDiaRow(p.Nombre, p.HoraEntrada, p.HoraSalida, p.Tiempo, p.FECHAHORAENTRADA, p.FECHAHORASALIDA.Value, p.CEDULA, p.IDCALENDARIO, p.IDASISTENCIA);
                     }
                     rpt.SetDataSource(ds);
 
@@ -97,6 +102,11 @@ namespace CapaInterfaz.ci_GestionReportes
             {
                 MessageBoxEx.Show("Por favor escoja un Calendario");
             }
+        }
+
+        private void txtbuscar_TextChanged(object sender, EventArgs e)
+        {
+            FIltrarAsistenciaDia(txtbuscar.Text);
         }
     }
 }

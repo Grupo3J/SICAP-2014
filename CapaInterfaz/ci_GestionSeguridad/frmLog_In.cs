@@ -1,5 +1,6 @@
 ﻿using CapaDatos;
 using CapaEntidades.GestionAsistencia;
+using CapaEntidades.GestionPersonal;
 using CapaLogicaNegocio;
 using CapaLogicaNegocio.cln_GestionAsistencia;
 using CapaLogicaNegocio.cln_GestionPersonal;
@@ -28,24 +29,6 @@ namespace CapaInterfaz.ci_GestionSeguridad
         {
             InitializeComponent();
             txtLogin.Focus();
-            //Tipo de Secugen Fingerprint reader utilizado 
-            SGFPMDeviceName device_name = SGFPMDeviceName.DEV_FDU05;
-            //Inicializar SGFingerPrintManager para que cargue el driver del dispositivo utilizado
-            m_FPM = new SGFingerPrintManager();
-            m_FPM.Init(device_name);
-            //Escoge el Puerto en el que se ejecuta el dispositivo
-            Int32 port_addr = (Int32)SGFPMPortAddr.USB_AUTO_DETECT;
-            Int32 iError = m_FPM.OpenDevice(port_addr);
-            m_FPM.EnableAutoOnEvent(true, (int)this.Handle);
-            //Obtener Informacion del dispositivo inicializado
-            SGFPMDeviceInfoParam pInfo = new SGFPMDeviceInfoParam();
-            iError = m_FPM.GetDeviceInfo(pInfo);
-            if (iError == (Int32)SGFPMError.ERROR_NONE)
-            {
-                // This should be done GetDeviceInfo();
-                m_ImageWidth = pInfo.ImageWidth;
-                m_ImageHeight = pInfo.ImageHeight;
-            }
         }
 
         AsistenciaLN asistencia = new AsistenciaLN();
@@ -62,6 +45,10 @@ namespace CapaInterfaz.ci_GestionSeguridad
         List<sp_ListarHuellaCedulaResult> huellaporc= new List<sp_ListarHuellaCedulaResult>();
         private string idcalendario;
         private Form children;
+        DiasAdicionalesLN diasadic = new DiasAdicionalesLN();
+        DiaNoLAborableLN diasnolab = new DiaNoLAborableLN();
+        List<sp_ListarDiaAdicionalResult> da;
+        List<sp_ListarDiaNoLaborablesResult> dnl;
 
         public Form Children
         {
@@ -82,12 +69,14 @@ namespace CapaInterfaz.ci_GestionSeguridad
             }
             labelX2.Text = DateTime.Now.ToLongDateString(); 
             timer1.Start();
+
         }
 
         private void AsistenciaperReader(string cedula)
         {
             try
             {
+                frmSICAP2014 frm = (frmSICAP2014)Children;
                 Asistencia temp = new Asistencia();
             string id;
             do
@@ -96,7 +85,6 @@ namespace CapaInterfaz.ci_GestionSeguridad
                 temp.IdAsistencia = id;
             }
             while (asistencia.existeAsistencia(id));
-            temp.IdAsistencia = GenerarIdAsistencia();
             DateTime now = DateTime.Now;
             temp.FechaHoraEntrada = now;
             temp.FechaHoraSalida = now;
@@ -126,12 +114,22 @@ namespace CapaInterfaz.ci_GestionSeguridad
                     temp.IdAsistencia = linq.IDASISTENCIA;
                     asistencia.ModificarAsistenciaPersonal(temp);
                     listBox1.Items.Add("---Registrando Salida con Exito");
+                    Personal per = personal.getPersonalByced(cedula);
+                    frm.balloonTip1.SetBalloonCaption(frm.panelEx1, "Registrando Salida con Exito");
+                    frm.balloonTip1.SetBalloonText(frm.panelEx1, per.Nombre + " " + per.Apellido + "\n" + per.Cedula);
+                    frm.balloonTip1.CaptionImage = null;
+                    frm.balloonTip1.ShowBalloon(frm.panelEx1);
                 }
                 else
                 {
                     //AutoClosingMessageBox.Show("Ya se ha Ingresado Asistencia", "Administrar Asistencia", 700);
                     listBox1.Items.Add("---Ya ha Registrado Asistencia");
                     onePing(1);
+                    Personal per = personal.getPersonalByced(cedula);
+                    frm.balloonTip1.SetBalloonCaption(frm.panelEx1, "Ya se ha Registrado Asistencia");
+                    frm.balloonTip1.SetBalloonText(frm.panelEx1, per.Nombre + " " + per.Apellido + "\n" + per.Cedula);
+                    frm.balloonTip1.CaptionImage = null;
+                    frm.balloonTip1.ShowBalloon(frm.panelEx1);
                 }
             }
             else
@@ -142,17 +140,26 @@ namespace CapaInterfaz.ci_GestionSeguridad
                     var calen = (from lt in calendario.ListarCalendario() where lt.IDCALENDARIO == idcalendario 
                                select lt).ToList();
                     DateTime hora =  calen[0].FECHAINICIO;
-                    hora.AddMinutes(calen[0].RETRASO.Value);
-                    if (DateTime.Now.TimeOfDay > hora.TimeOfDay)
+                    if (DateTime.Now.TimeOfDay > hora.AddMinutes(calen[0].RETRASO.Value).TimeOfDay)
                     {
                         onePing(1);
                         listBox1.Items.Add("---Termino Hora de Registro de Entrada");
+                        Personal per = personal.getPersonalByced(cedula);
+                        frm.balloonTip1.SetBalloonCaption(frm.panelEx1, "Termino Hora de Registro de Entrada");
+                        frm.balloonTip1.SetBalloonText(frm.panelEx1, per.Nombre + " " + per.Apellido + "\n" + per.Cedula);
+                        frm.balloonTip1.CaptionImage = null;
+                        frm.balloonTip1.ShowBalloon(frm.panelEx1);
                     }
                     else 
                     {
                         asistencia.InsertarAsistencia(temp);
                         onePing(0);
                         listBox1.Items.Add("---Registrando Entrada con Exito");
+                        Personal per = personal.getPersonalByced(cedula);
+                        frm.balloonTip1.SetBalloonCaption(frm.panelEx1,"Entrada Registrada con Exito");
+                        frm.balloonTip1.SetBalloonText(frm.panelEx1,per.Nombre+" "+per.Apellido+"\n"+per.Cedula);
+                        frm.balloonTip1.CaptionImage = null;
+                        frm.balloonTip1.ShowBalloon(frm.panelEx1);
                     }
                 }
                 else
@@ -161,6 +168,11 @@ namespace CapaInterfaz.ci_GestionSeguridad
                     onePing(1);
                     listBox1.Items.Add("---Existe un Imprevisto en esta Fecha");
                     listBox1.Items.Add("---Revise Administración de Imprevistos");
+                    Personal per = personal.getPersonalByced(cedula);
+                    frm.balloonTip1.SetBalloonCaption(frm.panelEx1, "Existe un Imprevisto en esta Fecha\nRevise Administración de Imprevistos");
+                    frm.balloonTip1.SetBalloonText(frm.panelEx1, per.Nombre + " " + per.Apellido + "\n" + per.Cedula);
+                    frm.balloonTip1.CaptionImage = null;
+                    frm.balloonTip1.ShowBalloon(frm.panelEx1);
                 }
             }
 
@@ -244,6 +256,7 @@ namespace CapaInterfaz.ci_GestionSeguridad
                     //AutoClosingMessageBox.Show("Dedo se fue :(", "Hehehe", 100);
                     //listBox1.Items.Add("::. Event Finger Removed");
                     pictureBox3.Image = CapaInterfaz.Properties.Resources.buttonstart;
+                    pictureBox3.Refresh();
                     this.listBox1.SelectedIndex = this.listBox1.Items.Count - 1;
                 }
             }
@@ -302,7 +315,7 @@ namespace CapaInterfaz.ci_GestionSeguridad
         private void MostrarPersonalDia(string calendario, DateTime fecha)
         {
             dataGridViewX1.Columns.Clear();
-            dataGridViewX1.DataSource = asistencia.ListarAsistenciaPersonal(idcalendario, fecha);
+            dataGridViewX1.DataSource = asistencia.ListarAsistenciaPersonal(idcalendario, fecha,"");
             foreach(DataGridViewRow temp in dataGridViewX1.Rows)
             {
                 if (Convert.ToDateTime(temp.Cells[1].Value) == Convert.ToDateTime(temp.Cells[2].Value)) 
@@ -417,6 +430,29 @@ namespace CapaInterfaz.ci_GestionSeguridad
             }
             else
                 MessageBoxEx.Show("Por favor escoja un Calendario");
+            da = (from lt in diasadic.ListarDiasAdicionales() where lt.IDCALENDARIO == idcalendario select lt).ToList();
+            dnl = (from lt in diasnolab.ListarDiasNoLaborables() where lt.IDCALENDARIO == idcalendario select lt).ToList();
+            if (CompararFechaPlus(DateTime.Now) == false)
+            {
+                //Tipo de Secugen Fingerprint reader utilizado 
+                SGFPMDeviceName device_name = SGFPMDeviceName.DEV_FDU05;
+                //Inicializar SGFingerPrintManager para que cargue el driver del dispositivo utilizado
+                m_FPM = new SGFingerPrintManager();
+                m_FPM.Init(device_name);
+                //Escoge el Puerto en el que se ejecuta el dispositivo
+                Int32 port_addr = (Int32)SGFPMPortAddr.USB_AUTO_DETECT;
+                Int32 iError = m_FPM.OpenDevice(port_addr);
+                m_FPM.EnableAutoOnEvent(true, (int)this.Handle);
+                //Obtener Informacion del dispositivo inicializado
+                SGFPMDeviceInfoParam pInfo = new SGFPMDeviceInfoParam();
+                iError = m_FPM.GetDeviceInfo(pInfo);
+                if (iError == (Int32)SGFPMError.ERROR_NONE)
+                {
+                    // This should be done GetDeviceInfo();
+                    m_ImageWidth = pInfo.ImageWidth;
+                    m_ImageHeight = pInfo.ImageHeight;
+                }
+            }
         }
 
         private void CargarPersonalporCalendario(string idcalendario)
@@ -543,6 +579,44 @@ namespace CapaInterfaz.ci_GestionSeguridad
         private void timer1_Tick(object sender, EventArgs e)
         {
             labelX2.Text = DateTime.Now.ToLongDateString(); 
+        }
+
+        private bool CompararDia(DateTime dia)
+        {
+            if (da == null || dnl == null)
+            {
+                return false;
+            }
+            else
+            {
+                var linq = (from lt in da where lt.FECHA == dia select lt).Count();
+                var linq2 = (from lt in dnl where lt.FECHA == dia select lt).Count();
+                if (linq == 0 || linq2 != 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
+        private bool CompararFechaPlus(DateTime day)
+        {
+            if ((day.Date.DayOfWeek == DayOfWeek.Saturday || day.Date.DayOfWeek == DayOfWeek.Sunday))
+            {
+                if (CompararDia(day.Date) == true)
+                {
+                    return true;
+                }
+                else
+                    return false;
+            }
+            else
+            {
+                return false;
+            }
         }
 
     }

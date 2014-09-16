@@ -63,17 +63,22 @@ namespace CapaInterfaz.ci_GestionReportes
 
         private void dtidia_ValueChanged(object sender, EventArgs e)
         {
-            if (cmbcalendario.SelectedIndex >= 0)
+            FiltrarFaltasDia("");
+        }
+
+        private void FiltrarFaltasDia(string valor)
+        {
+            if (cmbcalendario.SelectedIndex >= 0 && dtidia.IsEmpty == false)
             {
                 //MostrarFaltasDia(idcalendario, dtidia.Value);
                 try
                 {
-                    List<sp_PersonalporFaltaDiaResult> lp = reportes.PersonalporFaltaDia(idcalendario,dtidia.Value);
+                    List<sp_PersonalporFaltaDiaResult> lp = reportes.PersonalporFaltaDia(idcalendario, dtidia.Value,valor);
                     //MessageBox.Show(""+lp.Count);
                     ds.Clear();
                     foreach (sp_PersonalporFaltaDiaResult p in lp)
                     {
-                        ds.sp_PersonalporFaltaDia.Addsp_PersonalporFaltaDiaRow(p.IDFALTA,p.NOMBRE, p.APELLIDO,p.FECHA,p.JUSTIFICACION,p.IDCALENDARIO,p.CEDULA);
+                        ds.sp_PersonalporFaltaDia.Addsp_PersonalporFaltaDiaRow(p.IDFALTA, p.NOMBRE, p.APELLIDO, p.FECHA, p.JUSTIFICACION, p.IDCALENDARIO, p.CEDULA);
                     }
                     rpt.SetDataSource(ds);
 
@@ -88,6 +93,11 @@ namespace CapaInterfaz.ci_GestionReportes
             {
                 MessageBoxEx.Show("Por favor escoja un Calendario");
             }
+        }
+
+        private void txtbuscar_TextChanged(object sender, EventArgs e)
+        {
+            FiltrarFaltasDia(txtbuscar.Text);
         }
     }
 }

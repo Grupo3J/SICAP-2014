@@ -830,42 +830,6 @@
       <Column Name="NOMBRE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.sp_PersonalporAsistenciaDia" Method="sp_PersonalporAsistenciaDia">
-    <Parameter Name="IdCalendario" Parameter="idCalendario" Type="System.String" DbType="VarChar(5)" />
-    <Parameter Name="Fecha" Parameter="fecha" Type="System.DateTime" DbType="DateTime" />
-    <ElementType Name="sp_PersonalporAsistenciaDiaResult">
-      <Column Name="Nombre" Type="System.String" DbType="VarChar(61) NOT NULL" CanBeNull="false" />
-      <Column Name="HoraEntrada" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
-      <Column Name="HoraSalida" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
-      <Column Name="Tiempo" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
-      <Column Name="FECHAHORAENTRADA" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="FECHAHORASALIDA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="IDCALENDARIO" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
-      <Column Name="IDASISTENCIA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.sp_PersonalporAsistenciaMes" Method="sp_PersonalporAsistenciaMes">
-    <Parameter Name="IdCalendario" Parameter="idCalendario" Type="System.String" DbType="VarChar(5)" />
-    <Parameter Name="FechaMes" Parameter="fechaMes" Type="System.DateTime" DbType="DateTime" />
-    <ElementType Name="sp_PersonalporAsistenciaMesResult">
-      <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(61) NOT NULL" CanBeNull="false" />
-      <Column Name="TOTAL_ASISTENCIAS" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TOTAL_HORAS" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.sp_PersonalporAsistenciaRango" Method="sp_PersonalporAsistenciaRango">
-    <Parameter Name="IdCalendario" Parameter="idCalendario" Type="System.String" DbType="VarChar(5)" />
-    <Parameter Name="FechaInicio" Parameter="fechaInicio" Type="System.DateTime" DbType="DateTime" />
-    <Parameter Name="FechaFin" Parameter="fechaFin" Type="System.DateTime" DbType="DateTime" />
-    <ElementType Name="sp_PersonalporAsistenciaRangoResult">
-      <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(61) NOT NULL" CanBeNull="false" />
-      <Column Name="TOTAL_ASISTENCIAS" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TOTAL_HORAS" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.sp_PersonalporCalendario" Method="sp_PersonalporCalendario">
     <Parameter Name="IdCalendario" Parameter="idCalendario" Type="System.String" DbType="VarChar(5)" />
     <ElementType Name="sp_PersonalporCalendarioResult">
@@ -881,44 +845,6 @@
       <Column Name="TELEFONO" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="TIPO" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="DATAFOTO" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.sp_PersonalporFaltaDia" Method="sp_PersonalporFaltaDia">
-    <Parameter Name="IdCalendario" Parameter="idCalendario" Type="System.String" DbType="VarChar(5)" />
-    <Parameter Name="Fecha" Parameter="fecha" Type="System.DateTime" DbType="DateTime" />
-    <ElementType Name="sp_PersonalporFaltaDiaResult">
-      <Column Name="IDFALTA" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
-      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="APELLIDO" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="FECHA" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="JUSTIFICACION" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="IDCALENDARIO" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
-      <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.sp_PersonalporFaltaMes" Method="sp_PersonalporFaltaMes">
-    <Parameter Name="IdCalendario" Parameter="idCalendario" Type="System.String" DbType="VarChar(5)" />
-    <Parameter Name="FechaMes" Parameter="fechaMes" Type="System.DateTime" DbType="DateTime" />
-    <ElementType Name="sp_PersonalporFaltaMesResult">
-      <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="APELLIDO" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="TOTAL_FALTAS" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="JUSTIFICADAS" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NO_JUSTIFICADAS" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.sp_PersonalporFaltaRango" Method="sp_PersonalporFaltaRango">
-    <Parameter Name="IdCalendario" Parameter="idCalendario" Type="System.String" DbType="VarChar(5)" />
-    <Parameter Name="FechaInicio" Parameter="fechaInicio" Type="System.DateTime" DbType="DateTime" />
-    <Parameter Name="FechaFin" Parameter="fechaFin" Type="System.DateTime" DbType="DateTime" />
-    <ElementType Name="sp_PersonalporFaltaRangoResult">
-      <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="APELLIDO" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="TOTAL_FALTAS" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="JUSTIFICADAS" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NO_JUSTIFICADAS" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="dbo.sp_RegistrarAsistencia" Method="sp_RegistrarAsistencia">
@@ -1025,5 +951,85 @@
     <Parameter Name="FechaFin" Parameter="fechaFin" Type="System.DateTime" DbType="DateTime" />
     <Parameter Name="FechaMostrada" Parameter="fechaMostrada" Type="System.DateTime" DbType="DateTime" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_PersonalporAsistenciaDia" Method="sp_PersonalporAsistenciaDia">
+    <Parameter Name="IdCalendario" Parameter="idCalendario" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="Fecha" Parameter="fecha" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Valor" Parameter="valor" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="sp_PersonalporAsistenciaDiaResult">
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(61) NOT NULL" CanBeNull="false" />
+      <Column Name="HoraEntrada" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="HoraSalida" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Tiempo" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="FECHAHORAENTRADA" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FECHAHORASALIDA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="IDCALENDARIO" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="IDASISTENCIA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_PersonalporAsistenciaMes" Method="sp_PersonalporAsistenciaMes">
+    <Parameter Name="IdCalendario" Parameter="idCalendario" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="FechaMes" Parameter="fechaMes" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Valor" Parameter="valor" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="sp_PersonalporAsistenciaMesResult">
+      <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(61) NOT NULL" CanBeNull="false" />
+      <Column Name="TOTAL_ASISTENCIAS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TOTAL_HORAS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_PersonalporAsistenciaRango" Method="sp_PersonalporAsistenciaRango">
+    <Parameter Name="IdCalendario" Parameter="idCalendario" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="FechaInicio" Parameter="fechaInicio" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="FechaFin" Parameter="fechaFin" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Valor" Parameter="valor" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="sp_PersonalporAsistenciaRangoResult">
+      <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(61) NOT NULL" CanBeNull="false" />
+      <Column Name="TOTAL_ASISTENCIAS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TOTAL_HORAS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_PersonalporFaltaDia" Method="sp_PersonalporFaltaDia">
+    <Parameter Name="IdCalendario" Parameter="idCalendario" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="Fecha" Parameter="fecha" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Valor" Parameter="valor" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="sp_PersonalporFaltaDiaResult">
+      <Column Name="IDFALTA" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="APELLIDO" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="FECHA" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="JUSTIFICACION" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IDCALENDARIO" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_PersonalporFaltaMes" Method="sp_PersonalporFaltaMes">
+    <Parameter Name="IdCalendario" Parameter="idCalendario" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="FechaMes" Parameter="fechaMes" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Valor" Parameter="valor" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="sp_PersonalporFaltaMesResult">
+      <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="APELLIDO" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="TOTAL_FALTAS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="JUSTIFICADAS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NO_JUSTIFICADAS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_PersonalporFaltaRango" Method="sp_PersonalporFaltaRango">
+    <Parameter Name="IdCalendario" Parameter="idCalendario" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="FechaInicio" Parameter="fechaInicio" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="FechaFin" Parameter="fechaFin" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Valor" Parameter="valor" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="sp_PersonalporFaltaRangoResult">
+      <Column Name="CEDULA" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="APELLIDO" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="TOTAL_FALTAS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="JUSTIFICADAS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NO_JUSTIFICADAS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
   </Function>
 </Database>

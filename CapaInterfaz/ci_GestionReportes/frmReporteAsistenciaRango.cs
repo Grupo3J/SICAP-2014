@@ -26,10 +26,16 @@ namespace CapaInterfaz.ci_GestionReportes
         ReportesLN reportes = new ReportesLN();
         DSSeguridad ds = new DSSeguridad();
         CRAsistenciaporRango rpt = new CRAsistenciaporRango();
+        
         private void buttonX1_Click(object sender, EventArgs e)
         {
+            FiltrarAsistenciaRango("");
+        }
+
+        private void FiltrarAsistenciaRango(string valor) 
+        {
             if (cmbcalendario.SelectedIndex < 0)
-                MessageBoxEx.Show("Por favor escoja un Calendario..");
+            MessageBoxEx.Show("Por favor escoja un Calendario..");
             else
             {
                 if (dtiinicio.IsEmpty || dtifin.IsEmpty)
@@ -39,7 +45,7 @@ namespace CapaInterfaz.ci_GestionReportes
                     //MostrarPersonalFaltasRango(idcalendario, dtiinicio.Value, dtifin.Value);
                     try
                     {
-                        List<sp_PersonalporAsistenciaRangoResult> lp = reportes.PersonalporAsistenciaRango(idcalendario, dtiinicio.Value, dtifin.Value);
+                        List<sp_PersonalporAsistenciaRangoResult> lp = reportes.PersonalporAsistenciaRango(idcalendario, dtiinicio.Value, dtifin.Value,valor);
                         //MessageBox.Show(""+lp.Count);
                         ds.Clear();
                         foreach (sp_PersonalporAsistenciaRangoResult p in lp)
@@ -48,8 +54,8 @@ namespace CapaInterfaz.ci_GestionReportes
                         }
 
                         rpt.SetDataSource(ds);
-
                         crystalReportViewer1.ReportSource = rpt;
+                        txtbuscar.Focus();
                     }
                     catch (Exception men)
                     {
@@ -80,6 +86,12 @@ namespace CapaInterfaz.ci_GestionReportes
                 if (!cmbcalendario.Items.Contains(temp.NOMBRE))
                     cmbcalendario.Items.Add(temp.NOMBRE);
             }
+        }
+
+        private void txtbuscar_TextChanged(object sender, EventArgs e)
+        {
+            FiltrarAsistenciaRango(txtbuscar.Text);
+            txtbuscar.Focus();
         }
     }
 }

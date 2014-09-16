@@ -49,14 +49,14 @@ namespace CapaDatos.cd_GestionReportes
             }
         }
 
-        public static List<sp_PersonalporAsistenciaDiaResult> PersonalporAsistenciaDia(string idcalendario,DateTime fecha) 
+        public static List<sp_PersonalporAsistenciaDiaResult> PersonalporAsistenciaDia(string idcalendario,DateTime fecha,string valor) 
         {
             CapaDatosDataContext DB;
             try
             {
                 using (DB = new CapaDatosDataContext())
                 {
-                    return DB.sp_PersonalporAsistenciaDia(idcalendario,fecha).ToList();
+                    return DB.sp_PersonalporAsistenciaDia(idcalendario,fecha,valor).ToList();
                 }
             }
             catch (Exception ex)
@@ -69,14 +69,14 @@ namespace CapaDatos.cd_GestionReportes
             }
         }
 
-        public static List<sp_PersonalporAsistenciaMesResult> PersonalporAsistenciaMes(string idcalendario, DateTime fechames)
+        public static List<sp_PersonalporAsistenciaMesResult> PersonalporAsistenciaMes(string idcalendario, DateTime fechames,string valor)
         {
             CapaDatosDataContext DB;
             try
             {
                 using (DB = new CapaDatosDataContext())
                 {
-                    return DB.sp_PersonalporAsistenciaMes(idcalendario, fechames).ToList();
+                    return DB.sp_PersonalporAsistenciaMes(idcalendario, fechames,valor).ToList();
                 }
             }
             catch (Exception ex)
@@ -89,14 +89,14 @@ namespace CapaDatos.cd_GestionReportes
             }
         }
 
-        public static List<sp_PersonalporAsistenciaRangoResult> PersonalporAsistenciaRango(string idcalendario, DateTime fechainicio,DateTime fechafin)
+        public static List<sp_PersonalporAsistenciaRangoResult> PersonalporAsistenciaRango(string idcalendario, DateTime fechainicio,DateTime fechafin,string valor)
         {
             CapaDatosDataContext DB;
             try
             {
                 using (DB = new CapaDatosDataContext())
                 {
-                    return DB.sp_PersonalporAsistenciaRango(idcalendario, fechainicio,fechafin).ToList();
+                    return DB.sp_PersonalporAsistenciaRango(idcalendario, fechainicio,fechafin,valor).ToList();
                 }
             }
             catch (Exception ex)
@@ -109,14 +109,14 @@ namespace CapaDatos.cd_GestionReportes
             }
         }
 
-        public static List<sp_PersonalporFaltaDiaResult> PersonalporFaltaDia(string idcalendario, DateTime fecha)
+        public static List<sp_PersonalporFaltaDiaResult> PersonalporFaltaDia(string idcalendario, DateTime fecha,string valor)
         {
             CapaDatosDataContext DB;
             try
             {
                 using (DB = new CapaDatosDataContext())
                 {
-                    return DB.sp_PersonalporFaltaDia(idcalendario, fecha).ToList();
+                    return DB.sp_PersonalporFaltaDia(idcalendario, fecha,valor).ToList();
                 }
             }
             catch (Exception ex)
@@ -129,14 +129,14 @@ namespace CapaDatos.cd_GestionReportes
             }
         }
         
-        public static List<sp_PersonalporFaltaMesResult> PersonalporFaltaMes(string idcalendario, DateTime fechames)
+        public static List<sp_PersonalporFaltaMesResult> PersonalporFaltaMes(string idcalendario, DateTime fechames,string valor)
         {
             CapaDatosDataContext DB;
             try
             {
                 using (DB = new CapaDatosDataContext())
                 {
-                    return DB.sp_PersonalporFaltaMes(idcalendario, fechames).ToList();
+                    return DB.sp_PersonalporFaltaMes(idcalendario, fechames,valor).ToList();
                 }
             }
             catch (Exception ex)
@@ -149,14 +149,14 @@ namespace CapaDatos.cd_GestionReportes
             }
         }
 
-        public static List<sp_PersonalporFaltaRangoResult> PersonalporFaltaRango(string idcalendario, DateTime fechainicio, DateTime fechafin)
+        public static List<sp_PersonalporFaltaRangoResult> PersonalporFaltaRango(string idcalendario, DateTime fechainicio, DateTime fechafin,string valor)
         {
             CapaDatosDataContext DB;
             try
             {
                 using (DB = new CapaDatosDataContext())
                 {
-                    return DB.sp_PersonalporFaltaRango(idcalendario, fechainicio, fechafin).ToList();
+                    return DB.sp_PersonalporFaltaRango(idcalendario, fechainicio, fechafin,valor).ToList();
                 }
             }
             catch (Exception ex)

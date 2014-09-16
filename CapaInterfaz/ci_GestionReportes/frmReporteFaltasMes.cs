@@ -54,7 +54,12 @@ namespace CapaInterfaz.ci_GestionReportes
 
         private void cmbmes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbcalendario.SelectedIndex >= 0)
+            FiltrarFaltaMes("");
+        }
+
+        private void FiltrarFaltaMes(string valor)
+        {
+            if (cmbcalendario.SelectedIndex >= 0 && cmbmes.SelectedIndex != -1)
             {
                 char[] delimiterChar = { ' ' };
                 string[] words = cmbmes.SelectedItem.ToString().Split(delimiterChar);
@@ -68,7 +73,7 @@ namespace CapaInterfaz.ci_GestionReportes
                 DateTime date = Convert.ToDateTime("1" + "/" + index.ToString() + "/" + words[1]);
                 try
                 {
-                    List<sp_PersonalporFaltaMesResult> lp = reportes.PersonalporFaltaMes(idcalendario,date);
+                    List<sp_PersonalporFaltaMesResult> lp = reportes.PersonalporFaltaMes(idcalendario, date,valor);
                     //MessageBox.Show(""+lp.Count);
                     ds.Clear();
                     foreach (sp_PersonalporFaltaMesResult p in lp)

@@ -47,48 +47,6 @@ namespace CapaInterfaz.ci_GestionSeguridad
             princp.Children = this;
         }
 
-        protected override void WndProc(ref Message message)
-        {
-            if (message.Msg == (int)SGFPMMessages.DEV_AUTOONEVENT)
-            {
-                if (message.WParam.ToInt32() == (Int32)SGFPMAutoOnEvent.FINGER_ON)
-                {
-                    ////StatusBar.Text = "Device Message: Finger On";
-                    //bool matched = false;
-                    //List<sp_ListarHuellaCedulaResult> list;
-                    //foreach (sp_PersonalporCalendarioResult temp in personalporc)
-                    //{
-                    //    if (matched == true)
-                    //        break;
-                    //    list = huella.ListarHuella(temp.CEDULA);
-                    //    foreach (sp_ListarHuellaCedulaResult huell in list)
-                    //    {
-                    //        if (MatchTemplate(huell.DATAHUELLA1.ToArray(), huell.DATAHUELLA2.ToArray()))
-                    //        {
-                    //            matched = true;
-                    //            AsistenciaperReader(temp.CEDULA);
-                    //            break;
-                    //        }
-                    //    }
-                    //}
-                    //if (matched == false)
-                    //{
-                    //    AutoClosingMessageBox.Show("Huella No Encontrada", "Administracion de Huellas", 1000);
-                    //}
-                    AutoClosingMessageBox.Show("Dedo Aqui :)", "Hehehe SICAP-2014 :O", 100);
-
-                }
-                else if (message.WParam.ToInt32() == (Int32)SGFPMAutoOnEvent.FINGER_OFF)
-                {
-                    //StatusBar.Text = "Device Message: Finger Off";
-                    //MessageBox.Show("Here");
-                    AutoClosingMessageBox.Show("Dedo se fue :(", "Hehehe SICAP-2013 :O", 100);
-                }
-            }
-
-            base.WndProc(ref message);
-        }
-
         public void addPanel(object form)
         {
             if (this.panelEx1.Controls.Count > 0)

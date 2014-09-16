@@ -31,7 +31,7 @@ namespace CapaInterfaz.ci_GestionReportes
 
         private void cmbcalendario_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbcalendario.SelectedIndex >= 0)
+            if (cmbcalendario.SelectedIndex >= 0 && cmbmes.SelectedIndex != -1)
             {
                 sp_ListarCalendarioResult temp = calendario.ListarCalendario()[cmbcalendario.SelectedIndex];
                 idcalendario = temp.IDCALENDARIO;
@@ -51,7 +51,12 @@ namespace CapaInterfaz.ci_GestionReportes
 
         private void cmbmes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbcalendario.SelectedIndex >= 0)
+            FiltrarAsistenciaporMes("");
+        }
+
+        private void FiltrarAsistenciaporMes(string valor) 
+        {
+            if (cmbcalendario.SelectedIndex >= 0 && cmbmes.SelectedIndex != -1)
             {
                 char[] delimiterChar = { ' ' };
                 string[] words = cmbmes.SelectedItem.ToString().Split(delimiterChar);
@@ -65,12 +70,12 @@ namespace CapaInterfaz.ci_GestionReportes
                 DateTime date = Convert.ToDateTime("1" + "/" + index.ToString() + "/" + words[1]);
                 try
                 {
-                    List<sp_PersonalporAsistenciaMesResult> lp = reportes.PersonalporAsistenciaMes(idcalendario, date);
+                    List<sp_PersonalporAsistenciaMesResult> lp = reportes.PersonalporAsistenciaMes(idcalendario, date,valor);
                     //MessageBox.Show(""+lp.Count);
                     ds.Clear();
                     foreach (sp_PersonalporAsistenciaMesResult p in lp)
                     {
-                        ds.sp_PersonalporAsistenciaMes.Addsp_PersonalporAsistenciaMesRow(p.CEDULA,p.NOMBRE,p.TOTAL_ASISTENCIAS.Value,p.TOTAL_HORAS.Value);
+                        ds.sp_PersonalporAsistenciaMes.Addsp_PersonalporAsistenciaMesRow(p.CEDULA, p.NOMBRE, p.TOTAL_ASISTENCIAS.Value, p.TOTAL_HORAS.Value);
                     }
 
                     rpt.SetDataSource(ds);
@@ -99,5 +104,16 @@ namespace CapaInterfaz.ci_GestionReportes
                     cmbcalendario.Items.Add(temp.NOMBRE);
             }
         }
+
+        private void groupPanel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtbuscar_TextChanged(object sender, EventArgs e)
+        {
+            FiltrarAsistenciaporMes(txtbuscar.Text);
+        }
+
     }
 }

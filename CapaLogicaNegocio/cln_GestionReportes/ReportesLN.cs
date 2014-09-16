@@ -19,34 +19,34 @@ namespace CapaLogicaNegocio.cln_GestionReportes
             return ReporteCD.filtrarPersonalbyTipo(tipo);
         }
 
-        public List<sp_PersonalporAsistenciaDiaResult> PersonalporAsistenciaDia(string idcalendario,DateTime fecha) 
+        public List<sp_PersonalporAsistenciaDiaResult> PersonalporAsistenciaDia(string idcalendario,DateTime fecha,string valor) 
         {
-            return ReporteCD.PersonalporAsistenciaDia(idcalendario,fecha);
+            return ReporteCD.PersonalporAsistenciaDia(idcalendario,fecha,valor);
         }
 
-        public List<sp_PersonalporAsistenciaMesResult> PersonalporAsistenciaMes(string idcalendario,DateTime fechames) 
+        public List<sp_PersonalporAsistenciaMesResult> PersonalporAsistenciaMes(string idcalendario,DateTime fechames,string valor) 
         {
-            return ReporteCD.PersonalporAsistenciaMes(idcalendario,fechames);
+            return ReporteCD.PersonalporAsistenciaMes(idcalendario,fechames,valor);
         }
 
-        public List<sp_PersonalporAsistenciaRangoResult> PersonalporAsistenciaRango(string idcalendario,DateTime fechainicio,DateTime fechafin) 
+        public List<sp_PersonalporAsistenciaRangoResult> PersonalporAsistenciaRango(string idcalendario,DateTime fechainicio,DateTime fechafin,string valor) 
         {
-            return ReporteCD.PersonalporAsistenciaRango(idcalendario,fechainicio,fechafin);
+            return ReporteCD.PersonalporAsistenciaRango(idcalendario,fechainicio,fechafin,valor);
         }
 
-        public List<sp_PersonalporFaltaDiaResult> PersonalporFaltaDia(string idcalendario, DateTime fecha)
+        public List<sp_PersonalporFaltaDiaResult> PersonalporFaltaDia(string idcalendario, DateTime fecha,string valor)
         {
-            return ReporteCD.PersonalporFaltaDia(idcalendario, fecha);
+            return ReporteCD.PersonalporFaltaDia(idcalendario, fecha,valor);
         }
 
-        public List<sp_PersonalporFaltaMesResult> PersonalporFaltaMes(string idcalendario, DateTime fechames)
+        public List<sp_PersonalporFaltaMesResult> PersonalporFaltaMes(string idcalendario, DateTime fechames,string valor)
         {
-            return ReporteCD.PersonalporFaltaMes(idcalendario, fechames);
+            return ReporteCD.PersonalporFaltaMes(idcalendario, fechames,valor);
         }
 
-        public List<sp_PersonalporFaltaRangoResult> PersonalporFaltaRango(string idcalendario, DateTime fechainicio, DateTime fechafin)
+        public List<sp_PersonalporFaltaRangoResult> PersonalporFaltaRango(string idcalendario, DateTime fechainicio, DateTime fechafin,string valor)
         {
-            return ReporteCD.PersonalporFaltaRango(idcalendario, fechainicio, fechafin);
+            return ReporteCD.PersonalporFaltaRango(idcalendario, fechainicio, fechafin,valor);
         }
 
     }

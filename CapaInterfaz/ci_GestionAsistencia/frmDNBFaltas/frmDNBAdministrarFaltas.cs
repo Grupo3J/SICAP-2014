@@ -83,7 +83,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
                 sp_ListarCalendarioResult temp = calendario.ListarCalendario()[toolStripcmbcalendario.SelectedIndex];
                 idcalendario = temp.IDCALENDARIO;
                 dtidia.Value = DateTime.Now;
-                MostrarFaltasDia(idcalendario, dtidia.Value);
+                MostrarFaltasDia(idcalendario, dtidia.Value,"");
                 Meses = CultureInfo.CurrentCulture.DateTimeFormat.MonthNames;
                 int cuentameses = Math.Abs((temp.FECHAINICIO.Month - temp.FECHAFIN.Month) + 12 * (temp.FECHAINICIO.Year - temp.FECHAFIN.Year));
                 cmbmes.Items.Clear();
@@ -103,7 +103,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
         {
             if (toolStripcmbcalendario.SelectedIndex >= 0)
             {
-                MostrarFaltasDia(idcalendario, dtidia.Value);
+                MostrarFaltasDia(idcalendario, dtidia.Value,"");
             }
             else 
             {
@@ -111,18 +111,18 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             }
         }
 
-        private void MostrarFaltasDia(string idcalendario,DateTime fecha)
+        private void MostrarFaltasDia(string idcalendario,DateTime fecha,string valor)
         {
             //dataGridViewX1.DataSource = null;
             dgvfaltasdia.Columns.Clear();
-            dgvfaltasdia.DataSource = faltas.ListarFaltasPersonalDia(idcalendario,fecha);
+            dgvfaltasdia.DataSource = faltas.ListarFaltasPersonalDia(idcalendario,fecha,valor);
             dgvfaltasdia.Columns[5].Visible = false;
             dgvfaltasdia.Columns[6].Visible = false;
         }
 
-        private void MostrarFaltasMes(string idcalendario,DateTime fecha) 
+        private void MostrarFaltasMes(string idcalendario,DateTime fecha,string valor) 
         {
-            dgvfaltasmes.DataSource = faltas.ListarFaltasPersonalMes(idcalendario,fecha);
+            dgvfaltasmes.DataSource = faltas.ListarFaltasPersonalMes(idcalendario,fecha,valor);
         }
 
         private void superTabControlPanel3_Click(object sender, EventArgs e)
@@ -146,7 +146,12 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
 
         private void cmbmes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (toolStripcmbcalendario.SelectedIndex >= 0)
+            FiltrarFaltaMes("");
+        }
+
+        private void FiltrarFaltaMes(string valor)
+        {
+            if (toolStripcmbcalendario.SelectedIndex >= 0 && cmbmes.SelectedIndex != -1)
             {
                 char[] delimiterChar = { ' ' };
                 string[] words = cmbmes.SelectedItem.ToString().Split(delimiterChar);
@@ -158,15 +163,20 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
                         break;
                 }
                 DateTime date = Convert.ToDateTime("1" + "/" + index.ToString() + "/" + words[1]);
-                MostrarFaltasMes(idcalendario, date);
+                MostrarFaltasMes(idcalendario, date,valor);
             }
-            else 
+            else
             {
                 MessageBoxEx.Show("Por favor escoja un Calendario");
             }
         }
 
         private void buttonX1_Click(object sender, EventArgs e)
+        {
+            FiltrarFaltaRango("");
+        }
+
+        private void FiltrarFaltaRango(string valor)
         {
             if (toolStripcmbcalendario.SelectedIndex < 0)
                 MessageBoxEx.Show("Por favor escoja un Calendario..");
@@ -176,14 +186,14 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
                     MessageBoxEx.Show("Seleccione un Rango de Fechas");
                 else
                 {
-                    MostrarPersonalFaltasRango(idcalendario, dtiinicio.Value, dtifin.Value);
+                    MostrarPersonalFaltasRango(idcalendario, dtiinicio.Value, dtifin.Value,valor);
                 }
             }
         }
 
-        private void MostrarPersonalFaltasRango(string idcalendario,DateTime fechainicio,DateTime fechafin) 
+        private void MostrarPersonalFaltasRango(string idcalendario,DateTime fechainicio,DateTime fechafin,string valor) 
         {
-            dgvfaltasrango.DataSource = faltas.ListarFaltasPersonalRango(idcalendario,fechainicio,fechafin);
+            dgvfaltasrango.DataSource = faltas.ListarFaltasPersonalRango(idcalendario,fechainicio,fechafin,valor);
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -219,7 +229,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
                                            select lt).ToList();
                             if (falta.Fecha >= linq[0].FECHAINICIO && falta.Fecha < linq[0].FECHAFIN)
                             {
-                                var imprev = (from lt in faltas.ListarFaltasPersonalDia(idcalendario,falta.Fecha)
+                                var imprev = (from lt in faltas.ListarFaltasPersonalDia(idcalendario,falta.Fecha,"")
                                               where lt.CEDULA == falta.Cedula && lt.FECHA.Day == falta.Fecha.Day && lt.FECHA.Month == falta.Fecha.Month && lt.FECHA.Year == falta.Fecha.Year
                                               select lt).Count();
                                 if (imprev == 0)
@@ -251,7 +261,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
                     else
                         MessageBoxEx.Show("El personal seleccionado posee un Imprevisto en esa fecha\nNo se puede agregar la falta");
 
-                    MostrarFaltasDia(idcalendario, dtidia.Value);
+                    MostrarFaltasDia(idcalendario, dtidia.Value,"");
                     
                 }
                 catch (Exception mes)
@@ -303,7 +313,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
                         falta.IdCalendario = idcalendario;
                         falta.Justificacion = impr.checkBoxX1.Checked == false ? false : true;
                         faltas.ModificarFaltasJustificacion(falta);
-                        MostrarFaltasDia(idcalendario, dtidia.Value);
+                        MostrarFaltasDia(idcalendario, dtidia.Value,"");
                     }
                     catch (Exception mes)
                     {
@@ -440,5 +450,10 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
         public Usuarios user { get; set; }
 
         public Permisos permiso { get; set; }
+
+        private void txtbuscar_TextChanged(object sender, EventArgs e)
+        {
+                
+        }
     }
 }

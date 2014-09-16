@@ -47,6 +47,7 @@
             this.radialcerrarsesion = new DevComponents.DotNetBar.RadialMenuItem();
             this.lblnameuser = new DevComponents.DotNetBar.LabelX();
             this.lblrol = new DevComponents.DotNetBar.LabelX();
+            this.balloonTip1 = new DevComponents.DotNetBar.BalloonTip();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -333,11 +334,9 @@
 
         private DevComponents.DotNetBar.Metro.MetroShell metroShell1;
         private DevComponents.DotNetBar.StyleManager styleManager1;
-        private DevComponents.DotNetBar.PanelEx panelEx1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private DevComponents.DotNetBar.ButtonItem buttonItem1;
         private DevComponents.DotNetBar.Metro.MetroStatusBar metroStatusBar1;
-        private DevComponents.DotNetBar.LabelItem lbluser;
         private DevComponents.DotNetBar.LabelItem labelItem2;
         private DevComponents.DotNetBar.LabelItem lblhora;
         private System.Windows.Forms.Timer timer1;
@@ -349,5 +348,8 @@
         private DevComponents.DotNetBar.LabelX lblnameuser;
         private DevComponents.DotNetBar.LabelX lblrol;
         public DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
+        public DevComponents.DotNetBar.BalloonTip balloonTip1;
+        public DevComponents.DotNetBar.PanelEx panelEx1;
+        public DevComponents.DotNetBar.LabelItem lbluser;
     }
 }

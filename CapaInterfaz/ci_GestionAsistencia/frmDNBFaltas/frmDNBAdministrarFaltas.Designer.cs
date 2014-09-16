@@ -29,8 +29,8 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDNBAdministrarFaltas));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolnuevo = new System.Windows.Forms.ToolStripButton();
@@ -39,6 +39,14 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             this.toolStripcmbcalendario = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.superTabControl1 = new DevComponents.DotNetBar.SuperTabControl();
+            this.superTabControlPanel1 = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.dtidia = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.txtbuscar = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.groupbox1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.dgvfaltasdia = new System.Windows.Forms.DataGridView();
+            this.superTabItem1 = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel3 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.dgvfaltasrango = new System.Windows.Forms.DataGridView();
@@ -50,14 +58,6 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             this.dtiinicio = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.dtifin = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.superTabItem3 = new DevComponents.DotNetBar.SuperTabItem();
-            this.superTabControlPanel1 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.dtidia = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.labelX2 = new DevComponents.DotNetBar.LabelX();
-            this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.txtbuscar = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.groupbox1 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.dgvfaltasdia = new System.Windows.Forms.DataGridView();
-            this.superTabItem1 = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel2 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.dgvfaltasmes = new System.Windows.Forms.DataGridView();
@@ -70,15 +70,15 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).BeginInit();
             this.superTabControl1.SuspendLayout();
+            this.superTabControlPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtidia)).BeginInit();
+            this.groupbox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvfaltasdia)).BeginInit();
             this.superTabControlPanel3.SuspendLayout();
             this.groupPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvfaltasrango)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtiinicio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtifin)).BeginInit();
-            this.superTabControlPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtidia)).BeginInit();
-            this.groupbox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvfaltasdia)).BeginInit();
             this.superTabControlPanel2.SuspendLayout();
             this.groupPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvfaltasmes)).BeginInit();
@@ -174,6 +174,180 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             this.superTabControl1.Text = "superTabControl1";
             this.superTabControl1.SelectedTabChanged += new System.EventHandler<DevComponents.DotNetBar.SuperTabStripSelectedTabChangedEventArgs>(this.superTabControl1_SelectedTabChanged);
             // 
+            // superTabControlPanel1
+            // 
+            this.superTabControlPanel1.Controls.Add(this.dtidia);
+            this.superTabControlPanel1.Controls.Add(this.labelX2);
+            this.superTabControlPanel1.Controls.Add(this.labelX1);
+            this.superTabControlPanel1.Controls.Add(this.txtbuscar);
+            this.superTabControlPanel1.Controls.Add(this.groupbox1);
+            this.superTabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superTabControlPanel1.Location = new System.Drawing.Point(0, 27);
+            this.superTabControlPanel1.Name = "superTabControlPanel1";
+            this.superTabControlPanel1.Size = new System.Drawing.Size(680, 375);
+            this.superTabControlPanel1.TabIndex = 1;
+            this.superTabControlPanel1.TabItem = this.superTabItem1;
+            // 
+            // dtidia
+            // 
+            // 
+            // 
+            // 
+            this.dtidia.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.dtidia.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dtidia.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
+            this.dtidia.ButtonDropDown.Visible = true;
+            this.dtidia.IsPopupCalendarOpen = false;
+            this.dtidia.Location = new System.Drawing.Point(454, 17);
+            // 
+            // 
+            // 
+            this.dtidia.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dtidia.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dtidia.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
+            this.dtidia.MonthCalendar.ClearButtonVisible = true;
+            // 
+            // 
+            // 
+            this.dtidia.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.dtidia.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
+            this.dtidia.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.dtidia.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.dtidia.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.dtidia.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
+            this.dtidia.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dtidia.MonthCalendar.DisplayMonth = new System.DateTime(2014, 9, 1, 0, 0, 0, 0);
+            this.dtidia.MonthCalendar.MarkedDates = new System.DateTime[0];
+            this.dtidia.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dtidia.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.dtidia.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
+            this.dtidia.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.dtidia.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dtidia.MonthCalendar.TodayButtonVisible = true;
+            this.dtidia.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
+            this.dtidia.MonthCalendar.PaintLabel += new DevComponents.Editors.DateTimeAdv.DayPaintEventHandler(this.dtidia_MonthCalendar_PaintLabel);
+            this.dtidia.Name = "dtidia";
+            this.dtidia.Size = new System.Drawing.Size(128, 22);
+            this.dtidia.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.dtidia.TabIndex = 4;
+            this.dtidia.ValueChanged += new System.EventHandler(this.dtidia_ValueChanged);
+            // 
+            // labelX2
+            // 
+            this.labelX2.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX2.Location = new System.Drawing.Point(417, 14);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(31, 23);
+            this.labelX2.TabIndex = 3;
+            this.labelX2.Text = "Dia";
+            // 
+            // labelX1
+            // 
+            this.labelX1.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX1.ForeColor = System.Drawing.Color.Black;
+            this.labelX1.Location = new System.Drawing.Point(113, 14);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.Size = new System.Drawing.Size(51, 23);
+            this.labelX1.TabIndex = 2;
+            this.labelX1.Text = "Buscar";
+            // 
+            // txtbuscar
+            // 
+            this.txtbuscar.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtbuscar.Border.Class = "TextBoxBorder";
+            this.txtbuscar.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtbuscar.DisabledBackColor = System.Drawing.Color.White;
+            this.txtbuscar.ForeColor = System.Drawing.Color.Black;
+            this.txtbuscar.Location = new System.Drawing.Point(170, 17);
+            this.txtbuscar.Name = "txtbuscar";
+            this.txtbuscar.PreventEnterBeep = true;
+            this.txtbuscar.Size = new System.Drawing.Size(100, 22);
+            this.txtbuscar.TabIndex = 1;
+            this.txtbuscar.TextChanged += new System.EventHandler(this.txtbuscar_TextChanged);
+            // 
+            // groupbox1
+            // 
+            this.groupbox1.BackColor = System.Drawing.Color.White;
+            this.groupbox1.CanvasColor = System.Drawing.SystemColors.Control;
+            this.groupbox1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2013;
+            this.groupbox1.Controls.Add(this.dgvfaltasdia);
+            this.groupbox1.DisabledBackColor = System.Drawing.Color.Empty;
+            this.groupbox1.Location = new System.Drawing.Point(21, 43);
+            this.groupbox1.Name = "groupbox1";
+            this.groupbox1.Size = new System.Drawing.Size(639, 320);
+            // 
+            // 
+            // 
+            this.groupbox1.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.groupbox1.Style.BackColorGradientAngle = 90;
+            this.groupbox1.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.groupbox1.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupbox1.Style.BorderBottomWidth = 1;
+            this.groupbox1.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.groupbox1.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupbox1.Style.BorderLeftWidth = 1;
+            this.groupbox1.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupbox1.Style.BorderRightWidth = 1;
+            this.groupbox1.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupbox1.Style.BorderTopWidth = 1;
+            this.groupbox1.Style.CornerDiameter = 4;
+            this.groupbox1.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.groupbox1.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
+            this.groupbox1.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.groupbox1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
+            // 
+            // 
+            // 
+            this.groupbox1.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.groupbox1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.groupbox1.TabIndex = 0;
+            this.groupbox1.Text = "Faltas por Día";
+            // 
+            // dgvfaltasdia
+            // 
+            this.dgvfaltasdia.AllowUserToAddRows = false;
+            this.dgvfaltasdia.AllowUserToDeleteRows = false;
+            this.dgvfaltasdia.BackgroundColor = System.Drawing.Color.Beige;
+            this.dgvfaltasdia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvfaltasdia.Location = new System.Drawing.Point(3, 3);
+            this.dgvfaltasdia.Name = "dgvfaltasdia";
+            this.dgvfaltasdia.ReadOnly = true;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LemonChiffon;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightGreen;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvfaltasdia.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvfaltasdia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvfaltasdia.Size = new System.Drawing.Size(627, 291);
+            this.dgvfaltasdia.TabIndex = 31;
+            // 
+            // superTabItem1
+            // 
+            this.superTabItem1.AttachedControl = this.superTabControlPanel1;
+            this.superTabItem1.GlobalItem = false;
+            this.superTabItem1.Name = "superTabItem1";
+            this.superTabItem1.Text = "Faltas por Día";
+            // 
             // superTabControlPanel3
             // 
             this.superTabControlPanel3.Controls.Add(this.groupPanel2);
@@ -185,9 +359,9 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             this.superTabControlPanel3.Controls.Add(this.dtiinicio);
             this.superTabControlPanel3.Controls.Add(this.dtifin);
             this.superTabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel3.Location = new System.Drawing.Point(0, 0);
+            this.superTabControlPanel3.Location = new System.Drawing.Point(0, 27);
             this.superTabControlPanel3.Name = "superTabControlPanel3";
-            this.superTabControlPanel3.Size = new System.Drawing.Size(680, 402);
+            this.superTabControlPanel3.Size = new System.Drawing.Size(680, 375);
             this.superTabControlPanel3.TabIndex = 0;
             this.superTabControlPanel3.TabItem = this.superTabItem3;
             this.superTabControlPanel3.Click += new System.EventHandler(this.superTabControlPanel3_Click);
@@ -423,179 +597,6 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             this.superTabItem3.Name = "superTabItem3";
             this.superTabItem3.Text = "Faltas por Rango";
             // 
-            // superTabControlPanel1
-            // 
-            this.superTabControlPanel1.Controls.Add(this.dtidia);
-            this.superTabControlPanel1.Controls.Add(this.labelX2);
-            this.superTabControlPanel1.Controls.Add(this.labelX1);
-            this.superTabControlPanel1.Controls.Add(this.txtbuscar);
-            this.superTabControlPanel1.Controls.Add(this.groupbox1);
-            this.superTabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel1.Location = new System.Drawing.Point(0, 27);
-            this.superTabControlPanel1.Name = "superTabControlPanel1";
-            this.superTabControlPanel1.Size = new System.Drawing.Size(680, 375);
-            this.superTabControlPanel1.TabIndex = 1;
-            this.superTabControlPanel1.TabItem = this.superTabItem1;
-            // 
-            // dtidia
-            // 
-            // 
-            // 
-            // 
-            this.dtidia.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.dtidia.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dtidia.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
-            this.dtidia.ButtonDropDown.Visible = true;
-            this.dtidia.IsPopupCalendarOpen = false;
-            this.dtidia.Location = new System.Drawing.Point(454, 17);
-            // 
-            // 
-            // 
-            this.dtidia.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.dtidia.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dtidia.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
-            this.dtidia.MonthCalendar.ClearButtonVisible = true;
-            // 
-            // 
-            // 
-            this.dtidia.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.dtidia.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
-            this.dtidia.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.dtidia.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.dtidia.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.dtidia.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
-            this.dtidia.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dtidia.MonthCalendar.DisplayMonth = new System.DateTime(2014, 9, 1, 0, 0, 0, 0);
-            this.dtidia.MonthCalendar.MarkedDates = new System.DateTime[0];
-            this.dtidia.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.dtidia.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.dtidia.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
-            this.dtidia.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.dtidia.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dtidia.MonthCalendar.TodayButtonVisible = true;
-            this.dtidia.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
-            this.dtidia.MonthCalendar.PaintLabel += new DevComponents.Editors.DateTimeAdv.DayPaintEventHandler(this.dtidia_MonthCalendar_PaintLabel);
-            this.dtidia.Name = "dtidia";
-            this.dtidia.Size = new System.Drawing.Size(128, 22);
-            this.dtidia.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dtidia.TabIndex = 4;
-            this.dtidia.ValueChanged += new System.EventHandler(this.dtidia_ValueChanged);
-            // 
-            // labelX2
-            // 
-            this.labelX2.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX2.Location = new System.Drawing.Point(417, 14);
-            this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(31, 23);
-            this.labelX2.TabIndex = 3;
-            this.labelX2.Text = "Dia";
-            // 
-            // labelX1
-            // 
-            this.labelX1.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.ForeColor = System.Drawing.Color.Black;
-            this.labelX1.Location = new System.Drawing.Point(113, 14);
-            this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(51, 23);
-            this.labelX1.TabIndex = 2;
-            this.labelX1.Text = "Buscar";
-            // 
-            // txtbuscar
-            // 
-            this.txtbuscar.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtbuscar.Border.Class = "TextBoxBorder";
-            this.txtbuscar.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtbuscar.DisabledBackColor = System.Drawing.Color.White;
-            this.txtbuscar.ForeColor = System.Drawing.Color.Black;
-            this.txtbuscar.Location = new System.Drawing.Point(170, 17);
-            this.txtbuscar.Name = "txtbuscar";
-            this.txtbuscar.PreventEnterBeep = true;
-            this.txtbuscar.Size = new System.Drawing.Size(100, 22);
-            this.txtbuscar.TabIndex = 1;
-            // 
-            // groupbox1
-            // 
-            this.groupbox1.BackColor = System.Drawing.Color.White;
-            this.groupbox1.CanvasColor = System.Drawing.SystemColors.Control;
-            this.groupbox1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2013;
-            this.groupbox1.Controls.Add(this.dgvfaltasdia);
-            this.groupbox1.DisabledBackColor = System.Drawing.Color.Empty;
-            this.groupbox1.Location = new System.Drawing.Point(21, 43);
-            this.groupbox1.Name = "groupbox1";
-            this.groupbox1.Size = new System.Drawing.Size(639, 320);
-            // 
-            // 
-            // 
-            this.groupbox1.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.groupbox1.Style.BackColorGradientAngle = 90;
-            this.groupbox1.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.groupbox1.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupbox1.Style.BorderBottomWidth = 1;
-            this.groupbox1.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.groupbox1.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupbox1.Style.BorderLeftWidth = 1;
-            this.groupbox1.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupbox1.Style.BorderRightWidth = 1;
-            this.groupbox1.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupbox1.Style.BorderTopWidth = 1;
-            this.groupbox1.Style.CornerDiameter = 4;
-            this.groupbox1.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.groupbox1.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
-            this.groupbox1.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.groupbox1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
-            // 
-            // 
-            // 
-            this.groupbox1.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.groupbox1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.groupbox1.TabIndex = 0;
-            this.groupbox1.Text = "Faltas por Día";
-            // 
-            // dgvfaltasdia
-            // 
-            this.dgvfaltasdia.AllowUserToAddRows = false;
-            this.dgvfaltasdia.AllowUserToDeleteRows = false;
-            this.dgvfaltasdia.BackgroundColor = System.Drawing.Color.Beige;
-            this.dgvfaltasdia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvfaltasdia.Location = new System.Drawing.Point(3, 3);
-            this.dgvfaltasdia.Name = "dgvfaltasdia";
-            this.dgvfaltasdia.ReadOnly = true;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LemonChiffon;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightGreen;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvfaltasdia.RowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvfaltasdia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvfaltasdia.Size = new System.Drawing.Size(627, 291);
-            this.dgvfaltasdia.TabIndex = 31;
-            // 
-            // superTabItem1
-            // 
-            this.superTabItem1.AttachedControl = this.superTabControlPanel1;
-            this.superTabItem1.GlobalItem = false;
-            this.superTabItem1.Name = "superTabItem1";
-            this.superTabItem1.Text = "Faltas por Día";
-            // 
             // superTabControlPanel2
             // 
             this.superTabControlPanel2.Controls.Add(this.groupPanel1);
@@ -604,9 +605,9 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             this.superTabControlPanel2.Controls.Add(this.txtbuscarmes);
             this.superTabControlPanel2.Controls.Add(this.labelX3);
             this.superTabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel2.Location = new System.Drawing.Point(0, 0);
+            this.superTabControlPanel2.Location = new System.Drawing.Point(0, 27);
             this.superTabControlPanel2.Name = "superTabControlPanel2";
-            this.superTabControlPanel2.Size = new System.Drawing.Size(680, 402);
+            this.superTabControlPanel2.Size = new System.Drawing.Size(680, 375);
             this.superTabControlPanel2.TabIndex = 0;
             this.superTabControlPanel2.TabItem = this.superTabItem2;
             // 
@@ -753,15 +754,15 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).EndInit();
             this.superTabControl1.ResumeLayout(false);
+            this.superTabControlPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtidia)).EndInit();
+            this.groupbox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvfaltasdia)).EndInit();
             this.superTabControlPanel3.ResumeLayout(false);
             this.groupPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvfaltasrango)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtiinicio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtifin)).EndInit();
-            this.superTabControlPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtidia)).EndInit();
-            this.groupbox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvfaltasdia)).EndInit();
             this.superTabControlPanel2.ResumeLayout(false);
             this.groupPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvfaltasmes)).EndInit();

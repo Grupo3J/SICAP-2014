@@ -88,20 +88,14 @@ namespace CapaDatos.cd_GestionAsistencia
             return not;
         }
 
-        public static List<PersonalporAsistencia> ObtenerPersonalporDia(string IdCalendario,DateTime Fecha)
+        public static List<sp_PersonalporAsistenciaDiaResult> ObtenerPersonalporDia(string IdCalendario,DateTime Fecha,string valor)
         {
             CapaDatosDataContext DB;
             try
             {
                 using (DB = new CapaDatosDataContext())
                 {
-                    var linq = (from pa in DB.PersonalporAsistencia
-                                                        where pa.IDCALENDARIO == IdCalendario
-                                                            && (pa.FECHAHORAENTRADA.Month == Fecha.Month)
-                                                            && (pa.FECHAHORAENTRADA.Year == Fecha.Year)
-                                                            && (pa.FECHAHORAENTRADA.Day == Fecha.Day)
-                                                        select pa).ToList();
-                    return linq; 
+                    return DB.sp_PersonalporAsistenciaDia(IdCalendario,Fecha,valor).ToList(); 
                 }
             }
             catch (Exception ex)
@@ -168,14 +162,14 @@ namespace CapaDatos.cd_GestionAsistencia
             }
         }
 
-        public static List<sp_PersonalporAsistenciaMesResult> ObtenerPersonalporMes(string idcalendario,DateTime fecha) 
+        public static List<sp_PersonalporAsistenciaMesResult> ObtenerPersonalporMes(string idcalendario,DateTime fecha,string valor) 
         {
             CapaDatosDataContext DB;
             try
             {
                 using (DB = new CapaDatosDataContext())
                 {
-                    return DB.sp_PersonalporAsistenciaMes(idcalendario, fecha).ToList();
+                    return DB.sp_PersonalporAsistenciaMes(idcalendario, fecha,valor).ToList();
                 }
             }
             catch (Exception ex)
@@ -188,14 +182,14 @@ namespace CapaDatos.cd_GestionAsistencia
             }
         }
 
-        public static List<sp_PersonalporAsistenciaRangoResult> ObtenerPersonalporRango(string idcalendario, DateTime fechainicio,DateTime fechafin)
+        public static List<sp_PersonalporAsistenciaRangoResult> ObtenerPersonalporRango(string idcalendario, DateTime fechainicio,DateTime fechafin,string valor)
         {
             CapaDatosDataContext DB;
             try
             {
                 using (DB = new CapaDatosDataContext())
                 {
-                    return DB.sp_PersonalporAsistenciaRango(idcalendario, fechainicio,fechafin).ToList();
+                    return DB.sp_PersonalporAsistenciaRango(idcalendario, fechainicio,fechafin,valor).ToList();
                 }
             }
             catch (Exception ex)
@@ -215,10 +209,6 @@ namespace CapaDatos.cd_GestionAsistencia
             {
                 Asistencia p = new Asistencia();
                 p.IdAsistencia = not.IdAsistencia;
-                //p.Cedula = not.Cedula;
-                //p.IdCalendario = not.IdCalendario;
-                //p.FechaHoraEntrada = not.FechaHoraEntrada;
-                p.FechaHoraSalida = not.FechaHoraSalida;
                 bd.sp_Eliminar_Asistencia(p.IdAsistencia);
                 bd.SubmitChanges();
             }

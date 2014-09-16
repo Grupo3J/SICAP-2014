@@ -25,18 +25,6 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
         public frmDNBAdministrarAsistencia()
         {
             InitializeComponent();
-            if(CompararFechaPlus(DateTime.Now)==false)
-            {
-            //Tipo de Secugen Fingerprint reader utilizado 
-            SGFPMDeviceName device_name = SGFPMDeviceName.DEV_FDU05;
-            //Inicializar SGFingerPrintManager para que cargue el driver del dispositivo utilizado
-            m_FPM = new SGFingerPrintManager();
-            m_FPM.Init(device_name);
-            //Escoge el Puerto en el que se ejecuta el dispositivo
-            Int32 port_addr = (Int32)SGFPMPortAddr.USB_AUTO_DETECT;
-            Int32 iError = m_FPM.OpenDevice(port_addr);
-            m_FPM.EnableAutoOnEvent(true, (int)this.Handle);
-            }
         }
 
         AsistenciaLN asistencia = new AsistenciaLN();
@@ -51,7 +39,6 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
         List<sp_ListarDiaNoLaborablesResult> dnl;
         
         HuellaLN huella = new HuellaLN();
-        private SGFingerPrintManager m_FPM;
         List<sp_PersonalporCalendarioResult> personalporc;
         private string idcalendario;
 
@@ -65,7 +52,6 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
         {
             toolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             toolStripcmbcalendario.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            timer1.Start();
 
            //Cargar calendarios en combo
             var linq = (from lp in calendario.ListarCalendario() select lp).ToList();
@@ -80,7 +66,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
             dtidia.Value = DateTime.Now;
             CargarPersonalporCalendario(idcalendario);
 
-            MostrarPersonalDia(idcalendario,DateTime.Now);
+            MostrarPersonalDia(idcalendario,DateTime.Now,"");
 
             Meses = CultureInfo.CurrentCulture.DateTimeFormat.MonthNames;
             int cuentameses = Math.Abs((linq[0].FECHAINICIO.Month - linq[0].FECHAFIN.Month) + 12 * (linq[0].FECHAINICIO.Year - linq[0].FECHAFIN.Year));
@@ -98,9 +84,9 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
 
         }
 
-        private void MostrarAsistenciaMes(string idcalendario, DateTime fecha)
+        private void MostrarAsistenciaMes(string idcalendario, DateTime fecha,string valor)
         {
-            dgvasistenciames.DataSource = asistencia.ListarAsistenciasPersonalMes(idcalendario, fecha);
+            dgvasistenciames.DataSource = asistencia.ListarAsistenciasPersonalMes(idcalendario, fecha,valor);
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -111,7 +97,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-            if (toolStripcmbcalendario.SelectedIndex == -1 || dataGridViewX1.Rows.Count <= 0)
+            if (toolStripcmbcalendario.SelectedIndex == -1 || dataGridViewX1.Rows.Count <= 0 || dtidia.IsEmpty)
             {
                 MessageBoxEx.Show("Escoja un Calendario");
             }
@@ -122,8 +108,22 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
                 {
                     //do something
                     Asistencia temp = new Asistencia();
-                    temp.IdAsistencia = dataGridViewX1.CurrentRow.Cells[7].Value.ToString();
+                    temp.IdAsistencia = dataGridViewX1.CurrentRow.Cells[8].Value.ToString();
                     asistencia.EliminarAsistencia(temp);
+                    Faltas falt = new Faltas();
+                    falt.Cedula = dataGridViewX1.CurrentRow.Cells[6].Value.ToString();
+                    falt.Fecha = Convert.ToDateTime(dataGridViewX1.CurrentRow.Cells[4].Value.ToString());
+                    falt.IdCalendario = idcalendario;
+                    falt.Justificacion = false;
+                    string id;
+                    do
+                    {
+                        id = GenerarIdFalta();
+                        falt.IdFaltas = id;
+                    }
+                    while (faltas.ExisteFalta(id));
+                    faltas.InsertarFaltas(falt);
+                    MostrarPersonalDia(idcalendario,dtidia.Value,"");
                 }
                 else if (dialogResult == DialogResult.No)
                 {
@@ -131,6 +131,14 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
                     return;
                 }
             }
+        }
+
+        private string GenerarIdFalta()
+        {
+            Random ran = new Random();
+            int num = ran.Next(0000, 1000);
+            int num2 = ran.Next(000, 100);
+            return "F" + num.ToString() + num2.ToString();
         }
 
         private void toolStripcmbcalendario_SelectedIndexChanged(object sender, EventArgs e)
@@ -141,7 +149,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
                 idcalendario = temp.IDCALENDARIO;
                 CargarPersonalporCalendario(idcalendario);
                 dtidia.Value = DateTime.Now;
-                MostrarPersonalDia(idcalendario, dtidia.Value);
+                MostrarPersonalDia(idcalendario, dtidia.Value,"");
                 Meses = CultureInfo.CurrentCulture.DateTimeFormat.MonthNames;
                 int cuentameses = Math.Abs((temp.FECHAINICIO.Month - temp.FECHAFIN.Month) + 12 * (temp.FECHAINICIO.Year - temp.FECHAFIN.Year));
                 cmbmes.Items.Clear();
@@ -159,7 +167,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
 
         private void dtidia_ValueChanged(object sender, EventArgs e)
         {
-            MostrarPersonalDia(idcalendario,dtidia.Value);
+            MostrarPersonalDia(idcalendario,dtidia.Value,"");
         }
 
         private string GenerarIdAsistencia()
@@ -172,10 +180,10 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
             return idhuella;
         }
 
-        private void MostrarPersonalDia(string calendario, DateTime fecha)
+        private void MostrarPersonalDia(string calendario, DateTime fecha,string valor)
         {
             dataGridViewX1.Columns.Clear();
-            dataGridViewX1.DataSource = asistencia.ListarAsistenciaPersonal(idcalendario, fecha);
+            dataGridViewX1.DataSource = asistencia.ListarAsistenciaPersonal(idcalendario, fecha,valor);
             dataGridViewX1.Columns[4].Visible = false;
             dataGridViewX1.Columns[5].Visible = false;
             dataGridViewX1.Columns[6].Visible = false;
@@ -183,9 +191,9 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
             dataGridViewX1.Columns[8].Visible = false;
         }
 
-        private void MostrarPersonalAsistenciaRango(string idcalendario, DateTime fechainicio, DateTime fechafin)
+        private void MostrarPersonalAsistenciaRango(string idcalendario, DateTime fechainicio, DateTime fechafin,string valor)
         {
-            dgvasistenciarango.DataSource = asistencia.ListarAsistenciasPersonalRango(idcalendario, fechainicio, fechafin);
+            dgvasistenciarango.DataSource = asistencia.ListarAsistenciasPersonalRango(idcalendario, fechainicio, fechafin,valor);
         }
 
         private void CargarPersonalporCalendario(string idcalendario)
@@ -318,7 +326,42 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
 
         private void cmbmes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (toolStripcmbcalendario.SelectedIndex >= 0)
+            FiltrarAsistenciaMes("");
+        }
+
+        private void buttonX1_Click(object sender, EventArgs e)
+        {
+            FiltrarAsistenciaRango("");
+        }
+
+        private void FiltrarAsistenciaRango(string valor) 
+        {
+            if (toolStripcmbcalendario.SelectedIndex < 0)
+                MessageBoxEx.Show("Por favor escoja un Calendario..");
+            else
+            {
+                if (dtiinicio.IsEmpty || dtifin.IsEmpty)
+                    MessageBoxEx.Show("Seleccione un Rango de Fechas");
+                else
+                {
+                    MostrarPersonalAsistenciaRango(idcalendario, dtiinicio.Value, dtifin.Value,valor);
+                }
+            }
+        }
+
+        private void txtbuscar_TextChanged(object sender, EventArgs e)
+        {
+            MostrarPersonalDia(idcalendario, dtidia.Value, txtbuscar.Text);
+        }
+
+        private void txtbuscar2_TextChanged(object sender, EventArgs e)
+        {
+            FiltrarAsistenciaMes(txtbuscar2.Text);
+        }
+
+        private void FiltrarAsistenciaMes(string valor)
+        {
+            if (toolStripcmbcalendario.SelectedIndex >= 0 && cmbmes.SelectedIndex != -1)
             {
                 char[] delimiterChar = { ' ' };
                 string[] words = cmbmes.SelectedItem.ToString().Split(delimiterChar);
@@ -330,7 +373,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
                         break;
                 }
                 DateTime date = Convert.ToDateTime("1" + "/" + index.ToString() + "/" + words[1]);
-                MostrarAsistenciaMes(idcalendario, date);
+                MostrarAsistenciaMes(idcalendario, date, valor);
             }
             else
             {
@@ -338,20 +381,25 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
             }
         }
 
-        private void buttonX1_Click(object sender, EventArgs e)
+        private void txtbuscar3_TextChanged(object sender, EventArgs e)
         {
-            if (toolStripcmbcalendario.SelectedIndex < 0)
-                MessageBoxEx.Show("Por favor escoja un Calendario..");
+            FiltrarAsistenciaRango(txtbuscar3.Text);
+        }
+
+        private void superTabControl1_TabIndexChanged(object sender, EventArgs e)
+        {
+            if (superTabControl1.SelectedTabIndex != 0)
+            {
+                toolnuevo.Visible = false;
+                tooleliminar.Visible = false;
+            }
             else
             {
-                if (dtiinicio.IsEmpty || dtifin.IsEmpty)
-                    MessageBoxEx.Show("Seleccione un Rango de Fechas");
-                else
-                {
-                    MostrarPersonalAsistenciaRango(idcalendario, dtiinicio.Value, dtifin.Value);
-                }
+                toolnuevo.Visible = true;
+                tooleliminar.Visible = true;
             }
         }
+
     }
 }
 

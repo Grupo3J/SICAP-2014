@@ -51,6 +51,11 @@ namespace CapaInterfaz.ci_GestionReportes
 
         private void buttonX1_Click(object sender, EventArgs e)
         {
+            FiltrarFaltasRango("");
+        }
+
+        private void FiltrarFaltasRango(string valor)
+        {
             if (cmbcalendario.SelectedIndex < 0)
                 MessageBoxEx.Show("Por favor escoja un Calendario..");
             else
@@ -62,7 +67,7 @@ namespace CapaInterfaz.ci_GestionReportes
                     //MostrarPersonalFaltasRango(idcalendario, dtiinicio.Value, dtifin.Value);
                     try
                     {
-                        List<sp_PersonalporFaltaRangoResult> lp = reportes.PersonalporFaltaRango(idcalendario, dtiinicio.Value,dtifin.Value);
+                        List<sp_PersonalporFaltaRangoResult> lp = reportes.PersonalporFaltaRango(idcalendario, dtiinicio.Value, dtifin.Value,valor);
                         //MessageBox.Show(""+lp.Count);
                         ds.Clear();
                         foreach (sp_PersonalporFaltaRangoResult p in lp)
@@ -80,6 +85,11 @@ namespace CapaInterfaz.ci_GestionReportes
                     }
                 }
             }
+        }
+
+        private void textBoxX1_TextChanged(object sender, EventArgs e)
+        {
+            FiltrarFaltasRango(textBoxX1.Text);
         }
     }
 }

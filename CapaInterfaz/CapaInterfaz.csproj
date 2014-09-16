@@ -296,6 +296,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DSSeguridad.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ci_GestionReportes\frmReporteAsistencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionReportes\frmReporteAsistencia.Designer.cs">
+      <DependentUpon>frmReporteAsistencia.cs</DependentUpon>
+    </Compile>
     <Compile Include="ci_GestionReportes\frmReporteAsistenciaRango.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -313,6 +319,12 @@
     </Compile>
     <Compile Include="ci_GestionReportes\frmReporteAsistenciaMes.Designer.cs">
       <DependentUpon>frmReporteAsistenciaMes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ci_GestionReportes\frmReporteFalta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ci_GestionReportes\frmReporteFalta.Designer.cs">
+      <DependentUpon>frmReporteFalta.cs</DependentUpon>
     </Compile>
     <Compile Include="ci_GestionReportes\frmReporteFaltasDias.cs">
       <SubType>Form</SubType>
@@ -526,6 +538,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CRUsers.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionReportes\frmReporteAsistencia.resx">
+      <DependentUpon>frmReporteAsistencia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ci_GestionReportes\frmReporteAsistenciaRango.resx">
       <DependentUpon>frmReporteAsistenciaRango.cs</DependentUpon>
     </EmbeddedResource>
@@ -534,6 +549,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ci_GestionReportes\frmReporteAsistenciaMes.resx">
       <DependentUpon>frmReporteAsistenciaMes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ci_GestionReportes\frmReporteFalta.resx">
+      <DependentUpon>frmReporteFalta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ci_GestionReportes\frmReporteFaltasDias.resx">
       <DependentUpon>frmReporteFaltasDias.cs</DependentUpon>
@@ -688,6 +706,7 @@
     <None Include="Resources\buttonstart.png" />
     <None Include="Resources\buttonsucess.png" />
     <None Include="Resources\buttonwait.png" />
+    <None Include="Resources\huella.png" />
     <Content Include="Resources\images.jpg" />
     <Content Include="Resources\ima_administracion.png" />
     <Content Include="Resources\ima_reportes.jpg" />

@@ -30,6 +30,8 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.txtbuscar = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.dtidia = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.cmbcalendario = new DevComponents.DotNetBar.Controls.ComboBoxEx();
@@ -66,6 +68,9 @@
             this.groupPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupPanel1.ColorTable = DevComponents.DotNetBar.Controls.ePanelColorTable.Yellow;
+            this.groupPanel1.Controls.Add(this.txtbuscar);
+            this.groupPanel1.Controls.Add(this.labelX3);
             this.groupPanel1.Controls.Add(this.dtidia);
             this.groupPanel1.Controls.Add(this.labelX2);
             this.groupPanel1.Controls.Add(this.cmbcalendario);
@@ -78,12 +83,12 @@
             // 
             // 
             // 
-            this.groupPanel1.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.groupPanel1.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(243)))), ((int)(((byte)(178)))));
+            this.groupPanel1.Style.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(217)))), ((int)(((byte)(69)))));
             this.groupPanel1.Style.BackColorGradientAngle = 90;
-            this.groupPanel1.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.groupPanel1.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
             this.groupPanel1.Style.BorderBottomWidth = 1;
-            this.groupPanel1.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.groupPanel1.Style.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(147)))), ((int)(((byte)(17)))));
             this.groupPanel1.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
             this.groupPanel1.Style.BorderLeftWidth = 1;
             this.groupPanel1.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
@@ -93,7 +98,7 @@
             this.groupPanel1.Style.CornerDiameter = 4;
             this.groupPanel1.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
             this.groupPanel1.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
-            this.groupPanel1.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.groupPanel1.Style.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(0)))));
             this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             // 
             // 
@@ -105,6 +110,36 @@
             this.groupPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel1.TabIndex = 0;
             // 
+            // txtbuscar
+            // 
+            this.txtbuscar.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtbuscar.Border.Class = "TextBoxBorder";
+            this.txtbuscar.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtbuscar.DisabledBackColor = System.Drawing.Color.White;
+            this.txtbuscar.ForeColor = System.Drawing.Color.Black;
+            this.txtbuscar.Location = new System.Drawing.Point(509, 19);
+            this.txtbuscar.Name = "txtbuscar";
+            this.txtbuscar.PreventEnterBeep = true;
+            this.txtbuscar.Size = new System.Drawing.Size(100, 20);
+            this.txtbuscar.TabIndex = 5;
+            this.txtbuscar.TextChanged += new System.EventHandler(this.txtbuscar_TextChanged);
+            // 
+            // labelX3
+            // 
+            this.labelX3.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX3.Location = new System.Drawing.Point(457, 19);
+            this.labelX3.Name = "labelX3";
+            this.labelX3.Size = new System.Drawing.Size(46, 23);
+            this.labelX3.TabIndex = 4;
+            this.labelX3.Text = "Buscar:";
+            // 
             // dtidia
             // 
             // 
@@ -115,7 +150,7 @@
             this.dtidia.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.dtidia.ButtonDropDown.Visible = true;
             this.dtidia.IsPopupCalendarOpen = false;
-            this.dtidia.Location = new System.Drawing.Point(416, 19);
+            this.dtidia.Location = new System.Drawing.Point(293, 19);
             // 
             // 
             // 
@@ -156,11 +191,12 @@
             // 
             // labelX2
             // 
+            this.labelX2.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX2.Location = new System.Drawing.Point(382, 19);
+            this.labelX2.Location = new System.Drawing.Point(259, 19);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(28, 23);
             this.labelX2.TabIndex = 2;
@@ -172,7 +208,7 @@
             this.cmbcalendario.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmbcalendario.FormattingEnabled = true;
             this.cmbcalendario.ItemHeight = 14;
-            this.cmbcalendario.Location = new System.Drawing.Point(174, 19);
+            this.cmbcalendario.Location = new System.Drawing.Point(102, 19);
             this.cmbcalendario.Name = "cmbcalendario";
             this.cmbcalendario.Size = new System.Drawing.Size(121, 20);
             this.cmbcalendario.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -181,11 +217,12 @@
             // 
             // labelX1
             // 
+            this.labelX1.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.Location = new System.Drawing.Point(107, 19);
+            this.labelX1.Location = new System.Drawing.Point(35, 19);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(61, 23);
             this.labelX1.TabIndex = 0;
@@ -210,7 +247,6 @@
             this.ClientSize = new System.Drawing.Size(704, 441);
             this.Controls.Add(this.splitContainer1);
             this.DoubleBuffered = true;
-            this.ForeColor = System.Drawing.Color.Black;
             this.Name = "frmReporteFaltasDias";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reporte de Faltas por Día";
@@ -234,5 +270,7 @@
         private DevComponents.DotNetBar.Controls.ComboBoxEx cmbcalendario;
         private DevComponents.DotNetBar.LabelX labelX1;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtbuscar;
+        private DevComponents.DotNetBar.LabelX labelX3;
     }
 }

@@ -11,6 +11,7 @@ using CapaLogicaNegocio.cln_GestionPersonal;
 using CapaLogicaNegocio.cln_GestionAsistencia;
 using CapaDatos;
 using CapaEntidades.GestionAsistencia;
+using CapaLogicaNegocio.cln_GestionPlanificacion;
 
 namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
 {
@@ -25,7 +26,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
         public static string IdCalendario;
         PersonalLN personal = new PersonalLN();
         AsistenciaLN asistencia = new AsistenciaLN();
-
+        CalendarioLN calendario = new CalendarioLN();
         private void textBoxX4_TextChanged(object sender, EventArgs e)
         {
 
@@ -40,7 +41,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
         {
             if (cmbTipo.SelectedIndex == -1)
             {
-                MessageBox.Show("Por favor Escoja un Tipo de Personal..");
+                MessageBoxEx.Show("Por favor Escoja un Tipo de Personal..");
             }
             else
             {
@@ -96,22 +97,46 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
         private void buttonX1_Click(object sender, EventArgs e)
         {
             Asistencia temp = new Asistencia();
-            if (string.IsNullOrEmpty(txtcedula.Text) && string.IsNullOrEmpty(dtihorasalida.Text))
+            if (string.IsNullOrEmpty(txtcedula.Text) || dtifecha.IsEmpty || dtihoraentrada.IsEmpty || dtihorasalida.IsEmpty )
             {
-                MessageBox.Show("Ingrese los valores correspondientes...");
+                MessageBoxEx.Show("Ingrese los valores correspondientes...");
             }
             else
             {
-                temp.IdAsistencia = GenerarIdAsistencia();
+                string id;
+                do
+                {
+                    id = GenerarIdAsistencia();
+                    temp.IdAsistencia = id;
+                }
+                while (asistencia.existeAsistencia(id));
                 temp.IdCalendario = IdCalendario;
                 temp.Cedula = txtcedula.Text;
                 temp.FechaHoraEntrada = Convert.ToDateTime(dtifecha.Value.Date + dtihoraentrada.Value.TimeOfDay);
-                if (dtihorasalida.Enabled == true)
-                    temp.FechaHoraSalida = Convert.ToDateTime(dtifecha.Value.Date + dtihorasalida.Value.TimeOfDay);
-                else
-                    temp.FechaHoraSalida = Convert.ToDateTime(dtifecha.Value.Date + dtihoraentrada.Value.TimeOfDay);
-                asistencia.InsertarAsistencia(temp);
-                MessageBox.Show("Asistencia Ingresada");
+                temp.FechaHoraSalida = Convert.ToDateTime(dtifecha.Value.Date + dtihorasalida.Value.TimeOfDay);
+                temp.HoraMostrada = Convert.ToDateTime(dtifecha.Value.Date + dtihorasalida.Value.TimeOfDay);
+
+                var linq = (from lt in calendario.ListarCalendario() where lt.IDCALENDARIO == IdCalendario
+                               select lt).ToList();
+                if (dtihoraentrada.Value.TimeOfDay > linq[0].FECHAINICIO.AddMinutes(linq[0].RETRASO.Value).TimeOfDay) 
+                {
+                    MessageBoxEx.Show("La Fecha de Entrada Tiene que ser Menor a " + linq[0].FECHAINICIO.AddMinutes(linq[0].RETRASO.Value).TimeOfDay.ToString());
+                }
+                else if (dtihorasalida.Value.TimeOfDay > linq[0].FECHAFIN.TimeOfDay)
+                {
+                    temp.FechaHoraSalida = Convert.ToDateTime(dtifecha.Value.Date + linq[0].FECHAFIN.TimeOfDay);
+                    asistencia.InsertarAsistencia(temp);
+                    MessageBoxEx.Show("Asistencia Ingresada");
+                }
+                else if (dtihoraentrada.Value.TimeOfDay > dtihorasalida.Value.TimeOfDay)
+                {
+                    MessageBoxEx.Show("La Hora de Entrada debe ser menor a la de Salida");
+                }
+                else 
+                {    
+                    asistencia.InsertarAsistencia(temp);
+                    MessageBoxEx.Show("Asistencia Ingresada");
+                }
             }
         }
 
@@ -121,7 +146,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
                         where lt.CEDULA.Equals(txtcedula.Text)
                         select lt).ToList();
             if (linq.Count == 0)
-                MessageBox.Show("Ingrese una Cedula Válida");
+                MessageBoxEx.Show("Ingrese una Cedula Válida");
             else 
             {
                 txtcedula.Text = linq[0].CEDULA;

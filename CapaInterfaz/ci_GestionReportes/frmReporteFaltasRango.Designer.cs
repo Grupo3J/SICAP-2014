@@ -30,21 +30,23 @@ namespace CapaInterfaz.ci_GestionReportes
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.cmbcalendario = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.labelX2 = new DevComponents.DotNetBar.LabelX();
-            this.dtiinicio = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.labelX3 = new DevComponents.DotNetBar.LabelX();
-            this.dtifin = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
+            this.dtifin = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.labelX3 = new DevComponents.DotNetBar.LabelX();
+            this.dtiinicio = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.cmbcalendario = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.labelX4 = new DevComponents.DotNetBar.LabelX();
+            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.groupPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtiinicio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtifin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtiinicio)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -70,6 +72,9 @@ namespace CapaInterfaz.ci_GestionReportes
             this.groupPanel1.BackColor = System.Drawing.Color.White;
             this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupPanel1.ColorTable = DevComponents.DotNetBar.Controls.ePanelColorTable.Yellow;
+            this.groupPanel1.Controls.Add(this.textBoxX1);
+            this.groupPanel1.Controls.Add(this.labelX4);
             this.groupPanel1.Controls.Add(this.buttonX1);
             this.groupPanel1.Controls.Add(this.dtifin);
             this.groupPanel1.Controls.Add(this.labelX3);
@@ -85,12 +90,12 @@ namespace CapaInterfaz.ci_GestionReportes
             // 
             // 
             // 
-            this.groupPanel1.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.groupPanel1.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(243)))), ((int)(((byte)(178)))));
+            this.groupPanel1.Style.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(217)))), ((int)(((byte)(69)))));
             this.groupPanel1.Style.BackColorGradientAngle = 90;
-            this.groupPanel1.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.groupPanel1.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
             this.groupPanel1.Style.BorderBottomWidth = 1;
-            this.groupPanel1.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.groupPanel1.Style.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(147)))), ((int)(((byte)(17)))));
             this.groupPanel1.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
             this.groupPanel1.Style.BorderLeftWidth = 1;
             this.groupPanel1.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
@@ -100,7 +105,7 @@ namespace CapaInterfaz.ci_GestionReportes
             this.groupPanel1.Style.CornerDiameter = 4;
             this.groupPanel1.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
             this.groupPanel1.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
-            this.groupPanel1.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.groupPanel1.Style.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(0)))));
             this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             // 
             // 
@@ -112,115 +117,17 @@ namespace CapaInterfaz.ci_GestionReportes
             this.groupPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel1.TabIndex = 0;
             // 
-            // crystalReportViewer1
+            // buttonX1
             // 
-            this.crystalReportViewer1.ActiveViewIndex = -1;
-            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crystalReportViewer1.CachedPageNumberPerDoc = 10;
-            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(870, 489);
-            this.crystalReportViewer1.TabIndex = 0;
-            this.crystalReportViewer1.Load += new System.EventHandler(this.crystalReportViewer1_Load);
-            // 
-            // cmbcalendario
-            // 
-            this.cmbcalendario.DisplayMember = "Text";
-            this.cmbcalendario.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbcalendario.FormattingEnabled = true;
-            this.cmbcalendario.ItemHeight = 16;
-            this.cmbcalendario.Location = new System.Drawing.Point(109, 36);
-            this.cmbcalendario.Name = "cmbcalendario";
-            this.cmbcalendario.Size = new System.Drawing.Size(121, 22);
-            this.cmbcalendario.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cmbcalendario.TabIndex = 0;
-            this.cmbcalendario.SelectedIndexChanged += new System.EventHandler(this.cmbcalendario_SelectedIndexChanged);
-            // 
-            // labelX1
-            // 
-            // 
-            // 
-            // 
-            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.Location = new System.Drawing.Point(46, 36);
-            this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(57, 23);
-            this.labelX1.TabIndex = 1;
-            this.labelX1.Text = "Calendario";
-            // 
-            // labelX2
-            // 
-            // 
-            // 
-            // 
-            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX2.Location = new System.Drawing.Point(284, 36);
-            this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(75, 23);
-            this.labelX2.TabIndex = 2;
-            this.labelX2.Text = "Fecha Entrada";
-            // 
-            // dtiinicio
-            // 
-            // 
-            // 
-            // 
-            this.dtiinicio.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.dtiinicio.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dtiinicio.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
-            this.dtiinicio.ButtonDropDown.Visible = true;
-            this.dtiinicio.IsPopupCalendarOpen = false;
-            this.dtiinicio.Location = new System.Drawing.Point(365, 36);
-            // 
-            // 
-            // 
-            this.dtiinicio.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.dtiinicio.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dtiinicio.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
-            this.dtiinicio.MonthCalendar.ClearButtonVisible = true;
-            // 
-            // 
-            // 
-            this.dtiinicio.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.dtiinicio.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
-            this.dtiinicio.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.dtiinicio.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.dtiinicio.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.dtiinicio.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
-            this.dtiinicio.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dtiinicio.MonthCalendar.DisplayMonth = new System.DateTime(2014, 9, 1, 0, 0, 0, 0);
-            this.dtiinicio.MonthCalendar.MarkedDates = new System.DateTime[0];
-            this.dtiinicio.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.dtiinicio.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.dtiinicio.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
-            this.dtiinicio.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.dtiinicio.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dtiinicio.MonthCalendar.TodayButtonVisible = true;
-            this.dtiinicio.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
-            this.dtiinicio.Name = "dtiinicio";
-            this.dtiinicio.Size = new System.Drawing.Size(131, 22);
-            this.dtiinicio.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dtiinicio.TabIndex = 3;
-            // 
-            // labelX3
-            // 
-            // 
-            // 
-            // 
-            this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX3.Location = new System.Drawing.Point(513, 36);
-            this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(64, 23);
-            this.labelX3.TabIndex = 4;
-            this.labelX3.Text = "Fecha Salida";
+            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX1.Location = new System.Drawing.Point(745, 19);
+            this.buttonX1.Name = "buttonX1";
+            this.buttonX1.Size = new System.Drawing.Size(57, 23);
+            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.buttonX1.TabIndex = 6;
+            this.buttonX1.Text = "OK";
+            this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
             // 
             // dtifin
             // 
@@ -232,7 +139,7 @@ namespace CapaInterfaz.ci_GestionReportes
             this.dtifin.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.dtifin.ButtonDropDown.Visible = true;
             this.dtifin.IsPopupCalendarOpen = false;
-            this.dtifin.Location = new System.Drawing.Point(583, 36);
+            this.dtifin.Location = new System.Drawing.Point(596, 20);
             // 
             // 
             // 
@@ -270,17 +177,148 @@ namespace CapaInterfaz.ci_GestionReportes
             this.dtifin.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.dtifin.TabIndex = 5;
             // 
-            // buttonX1
+            // labelX3
             // 
-            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX1.Location = new System.Drawing.Point(732, 35);
-            this.buttonX1.Name = "buttonX1";
-            this.buttonX1.Size = new System.Drawing.Size(57, 23);
-            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX1.TabIndex = 6;
-            this.buttonX1.Text = "OK";
-            this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
+            this.labelX3.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX3.Location = new System.Drawing.Point(526, 20);
+            this.labelX3.Name = "labelX3";
+            this.labelX3.Size = new System.Drawing.Size(64, 23);
+            this.labelX3.TabIndex = 4;
+            this.labelX3.Text = "Fecha Salida";
+            // 
+            // dtiinicio
+            // 
+            // 
+            // 
+            // 
+            this.dtiinicio.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.dtiinicio.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dtiinicio.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
+            this.dtiinicio.ButtonDropDown.Visible = true;
+            this.dtiinicio.IsPopupCalendarOpen = false;
+            this.dtiinicio.Location = new System.Drawing.Point(378, 20);
+            // 
+            // 
+            // 
+            this.dtiinicio.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dtiinicio.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dtiinicio.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
+            this.dtiinicio.MonthCalendar.ClearButtonVisible = true;
+            // 
+            // 
+            // 
+            this.dtiinicio.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.dtiinicio.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
+            this.dtiinicio.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.dtiinicio.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.dtiinicio.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.dtiinicio.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
+            this.dtiinicio.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dtiinicio.MonthCalendar.DisplayMonth = new System.DateTime(2014, 9, 1, 0, 0, 0, 0);
+            this.dtiinicio.MonthCalendar.MarkedDates = new System.DateTime[0];
+            this.dtiinicio.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dtiinicio.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.dtiinicio.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
+            this.dtiinicio.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.dtiinicio.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dtiinicio.MonthCalendar.TodayButtonVisible = true;
+            this.dtiinicio.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
+            this.dtiinicio.Name = "dtiinicio";
+            this.dtiinicio.Size = new System.Drawing.Size(131, 22);
+            this.dtiinicio.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.dtiinicio.TabIndex = 3;
+            // 
+            // labelX2
+            // 
+            this.labelX2.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX2.Location = new System.Drawing.Point(297, 20);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(75, 23);
+            this.labelX2.TabIndex = 2;
+            this.labelX2.Text = "Fecha Entrada";
+            // 
+            // labelX1
+            // 
+            this.labelX1.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX1.Location = new System.Drawing.Point(59, 20);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.Size = new System.Drawing.Size(57, 23);
+            this.labelX1.TabIndex = 1;
+            this.labelX1.Text = "Calendario";
+            // 
+            // cmbcalendario
+            // 
+            this.cmbcalendario.DisplayMember = "Text";
+            this.cmbcalendario.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbcalendario.FormattingEnabled = true;
+            this.cmbcalendario.ItemHeight = 16;
+            this.cmbcalendario.Location = new System.Drawing.Point(122, 20);
+            this.cmbcalendario.Name = "cmbcalendario";
+            this.cmbcalendario.Size = new System.Drawing.Size(121, 22);
+            this.cmbcalendario.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cmbcalendario.TabIndex = 0;
+            this.cmbcalendario.SelectedIndexChanged += new System.EventHandler(this.cmbcalendario_SelectedIndexChanged);
+            // 
+            // crystalReportViewer1
+            // 
+            this.crystalReportViewer1.ActiveViewIndex = -1;
+            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer1.CachedPageNumberPerDoc = 10;
+            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.crystalReportViewer1.Name = "crystalReportViewer1";
+            this.crystalReportViewer1.Size = new System.Drawing.Size(870, 489);
+            this.crystalReportViewer1.TabIndex = 0;
+            this.crystalReportViewer1.Load += new System.EventHandler(this.crystalReportViewer1_Load);
+            // 
+            // labelX4
+            // 
+            this.labelX4.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX4.Location = new System.Drawing.Point(297, 58);
+            this.labelX4.Name = "labelX4";
+            this.labelX4.Size = new System.Drawing.Size(75, 23);
+            this.labelX4.TabIndex = 7;
+            this.labelX4.Text = "Buscar:";
+            // 
+            // textBoxX1
+            // 
+            this.textBoxX1.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.textBoxX1.Border.Class = "TextBoxBorder";
+            this.textBoxX1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.textBoxX1.DisabledBackColor = System.Drawing.Color.White;
+            this.textBoxX1.ForeColor = System.Drawing.Color.Black;
+            this.textBoxX1.Location = new System.Drawing.Point(378, 58);
+            this.textBoxX1.Name = "textBoxX1";
+            this.textBoxX1.PreventEnterBeep = true;
+            this.textBoxX1.Size = new System.Drawing.Size(131, 22);
+            this.textBoxX1.TabIndex = 8;
+            this.textBoxX1.TextChanged += new System.EventHandler(this.textBoxX1_TextChanged);
             // 
             // frmReporteFaltasRango
             // 
@@ -298,8 +336,8 @@ namespace CapaInterfaz.ci_GestionReportes
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.groupPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtiinicio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtifin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtiinicio)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -316,5 +354,7 @@ namespace CapaInterfaz.ci_GestionReportes
         private DevComponents.DotNetBar.LabelX labelX1;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cmbcalendario;
         private DevComponents.DotNetBar.ButtonX buttonX1;
+        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
+        private DevComponents.DotNetBar.LabelX labelX4;
     }
 }

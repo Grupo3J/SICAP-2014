@@ -30,7 +30,8 @@ namespace CapaInterfaz.ci_GestionReportes
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.txtbuscar = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.dtifin = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
@@ -38,6 +39,7 @@ namespace CapaInterfaz.ci_GestionReportes
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.cmbcalendario = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -70,6 +72,9 @@ namespace CapaInterfaz.ci_GestionReportes
             this.groupPanel1.BackColor = System.Drawing.Color.White;
             this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupPanel1.ColorTable = DevComponents.DotNetBar.Controls.ePanelColorTable.Yellow;
+            this.groupPanel1.Controls.Add(this.txtbuscar);
+            this.groupPanel1.Controls.Add(this.labelX4);
             this.groupPanel1.Controls.Add(this.buttonX1);
             this.groupPanel1.Controls.Add(this.dtifin);
             this.groupPanel1.Controls.Add(this.labelX3);
@@ -85,12 +90,12 @@ namespace CapaInterfaz.ci_GestionReportes
             // 
             // 
             // 
-            this.groupPanel1.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.groupPanel1.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(243)))), ((int)(((byte)(178)))));
+            this.groupPanel1.Style.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(217)))), ((int)(((byte)(69)))));
             this.groupPanel1.Style.BackColorGradientAngle = 90;
-            this.groupPanel1.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.groupPanel1.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
             this.groupPanel1.Style.BorderBottomWidth = 1;
-            this.groupPanel1.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.groupPanel1.Style.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(147)))), ((int)(((byte)(17)))));
             this.groupPanel1.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
             this.groupPanel1.Style.BorderLeftWidth = 1;
             this.groupPanel1.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
@@ -100,7 +105,7 @@ namespace CapaInterfaz.ci_GestionReportes
             this.groupPanel1.Style.CornerDiameter = 4;
             this.groupPanel1.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
             this.groupPanel1.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
-            this.groupPanel1.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.groupPanel1.Style.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(0)))));
             this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             // 
             // 
@@ -112,23 +117,41 @@ namespace CapaInterfaz.ci_GestionReportes
             this.groupPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel1.TabIndex = 0;
             // 
-            // crystalReportViewer1
+            // txtbuscar
             // 
-            this.crystalReportViewer1.ActiveViewIndex = -1;
-            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crystalReportViewer1.CachedPageNumberPerDoc = 10;
-            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(819, 429);
-            this.crystalReportViewer1.TabIndex = 0;
+            this.txtbuscar.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtbuscar.Border.Class = "TextBoxBorder";
+            this.txtbuscar.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtbuscar.DisabledBackColor = System.Drawing.Color.White;
+            this.txtbuscar.ForeColor = System.Drawing.Color.Black;
+            this.txtbuscar.Location = new System.Drawing.Point(388, 64);
+            this.txtbuscar.Name = "txtbuscar";
+            this.txtbuscar.PreventEnterBeep = true;
+            this.txtbuscar.Size = new System.Drawing.Size(132, 22);
+            this.txtbuscar.TabIndex = 15;
+            this.txtbuscar.TextChanged += new System.EventHandler(this.txtbuscar_TextChanged);
+            // 
+            // labelX4
+            // 
+            this.labelX4.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX4.Location = new System.Drawing.Point(307, 64);
+            this.labelX4.Name = "labelX4";
+            this.labelX4.Size = new System.Drawing.Size(75, 23);
+            this.labelX4.TabIndex = 14;
+            this.labelX4.Text = "Buscar: ";
             // 
             // buttonX1
             // 
             this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX1.Location = new System.Drawing.Point(721, 37);
+            this.buttonX1.Location = new System.Drawing.Point(735, 22);
             this.buttonX1.Name = "buttonX1";
             this.buttonX1.Size = new System.Drawing.Size(57, 23);
             this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -146,7 +169,7 @@ namespace CapaInterfaz.ci_GestionReportes
             this.dtifin.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.dtifin.ButtonDropDown.Visible = true;
             this.dtifin.IsPopupCalendarOpen = false;
-            this.dtifin.Location = new System.Drawing.Point(572, 38);
+            this.dtifin.Location = new System.Drawing.Point(586, 23);
             // 
             // 
             // 
@@ -186,11 +209,12 @@ namespace CapaInterfaz.ci_GestionReportes
             // 
             // labelX3
             // 
+            this.labelX3.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
             this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX3.Location = new System.Drawing.Point(502, 38);
+            this.labelX3.Location = new System.Drawing.Point(516, 23);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(64, 23);
             this.labelX3.TabIndex = 11;
@@ -206,7 +230,7 @@ namespace CapaInterfaz.ci_GestionReportes
             this.dtiinicio.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.dtiinicio.ButtonDropDown.Visible = true;
             this.dtiinicio.IsPopupCalendarOpen = false;
-            this.dtiinicio.Location = new System.Drawing.Point(354, 38);
+            this.dtiinicio.Location = new System.Drawing.Point(368, 23);
             // 
             // 
             // 
@@ -246,11 +270,12 @@ namespace CapaInterfaz.ci_GestionReportes
             // 
             // labelX2
             // 
+            this.labelX2.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX2.Location = new System.Drawing.Point(273, 38);
+            this.labelX2.Location = new System.Drawing.Point(287, 23);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(75, 23);
             this.labelX2.TabIndex = 9;
@@ -258,11 +283,12 @@ namespace CapaInterfaz.ci_GestionReportes
             // 
             // labelX1
             // 
+            this.labelX1.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.Location = new System.Drawing.Point(35, 38);
+            this.labelX1.Location = new System.Drawing.Point(22, 23);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(57, 23);
             this.labelX1.TabIndex = 8;
@@ -274,12 +300,24 @@ namespace CapaInterfaz.ci_GestionReportes
             this.cmbcalendario.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmbcalendario.FormattingEnabled = true;
             this.cmbcalendario.ItemHeight = 16;
-            this.cmbcalendario.Location = new System.Drawing.Point(98, 38);
+            this.cmbcalendario.Location = new System.Drawing.Point(85, 23);
             this.cmbcalendario.Name = "cmbcalendario";
             this.cmbcalendario.Size = new System.Drawing.Size(121, 22);
             this.cmbcalendario.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cmbcalendario.TabIndex = 7;
             this.cmbcalendario.SelectedIndexChanged += new System.EventHandler(this.cmbcalendario_SelectedIndexChanged);
+            // 
+            // crystalReportViewer1
+            // 
+            this.crystalReportViewer1.ActiveViewIndex = -1;
+            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer1.CachedPageNumberPerDoc = 10;
+            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.crystalReportViewer1.Name = "crystalReportViewer1";
+            this.crystalReportViewer1.Size = new System.Drawing.Size(819, 429);
+            this.crystalReportViewer1.TabIndex = 0;
             // 
             // frmReporteAsistenciaRango
             // 
@@ -316,5 +354,7 @@ namespace CapaInterfaz.ci_GestionReportes
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.LabelX labelX1;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cmbcalendario;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtbuscar;
+        private DevComponents.DotNetBar.LabelX labelX4;
     }
 }
