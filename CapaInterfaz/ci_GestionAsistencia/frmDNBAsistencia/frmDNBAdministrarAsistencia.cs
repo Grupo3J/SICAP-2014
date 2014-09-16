@@ -52,9 +52,6 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
         
         HuellaLN huella = new HuellaLN();
         private SGFingerPrintManager m_FPM;
-        private int m_ImageWidth;
-        private int m_ImageHeight;
-        private Byte[] arrayHuella1;
         List<sp_PersonalporCalendarioResult> personalporc;
         private string idcalendario;
 
@@ -68,7 +65,6 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
         {
             toolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             toolStripcmbcalendario.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            labelX2.Text = DateTime.Now.ToLongTimeString();
             timer1.Start();
 
            //Cargar calendarios en combo
@@ -100,97 +96,6 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
             if (!permiso.Escritura) { toolStrip1.Items.Remove(toolnuevo); }
             if (!permiso.Eliminacion) { toolStrip1.Items.Remove(tooleliminar); }
 
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            labelX2.Text = DateTime.Now.ToLongTimeString(); 
-        }
-
-        protected override void WndProc(ref Message message)
-        {
-            if (message.Msg == (int)SGFPMMessages.DEV_AUTOONEVENT)
-            {
-                if (message.WParam.ToInt32() == (Int32)SGFPMAutoOnEvent.FINGER_ON)
-                {
-                    //StatusBar.Text = "Device Message: Finger On";
-                    bool matched = false;
-                    List<sp_ListarHuellaCedulaResult> list;
-                    foreach (sp_PersonalporCalendarioResult temp in personalporc)
-                    {
-                        if (matched == true)
-                            break;
-                        list = huella.ListarHuella(temp.CEDULA);
-                        foreach (sp_ListarHuellaCedulaResult huell in list)
-                        {
-                            if (MatchTemplate(huell.DATAHUELLA1.ToArray(), huell.DATAHUELLA2.ToArray()))
-                            {
-                                matched = true;
-                                AsistenciaperReader(temp.CEDULA);
-                                break;
-                            }
-                        }
-                    }
-                    if (matched == false) 
-                    {
-                        AutoClosingMessageBox.Show("Huella No Encontrada", "Administracion de Huellas", 1000);                       
-                    }
-                      
-                }
-                else if (message.WParam.ToInt32() == (Int32)SGFPMAutoOnEvent.FINGER_OFF)
-                {
-                    //StatusBar.Text = "Device Message: Finger Off";
-                    //MessageBox.Show("Here");
-                }
-            }
-            
-            base.WndProc(ref message);
-        }
-
-        private void AsistenciaperReader(string cedula)
-        {
-            Asistencia temp = new Asistencia();
-            temp.IdAsistencia = GenerarIdAsistencia();
-            temp.FechaHoraEntrada = DateTime.Now;
-            temp.FechaHoraSalida = DateTime.Now;
-            temp.IdCalendario = idcalendario;
-            temp.Cedula = cedula;
-
-            if (asistencia.ContarAsistenciaPersonal(cedula, DateTime.Now, idcalendario) > 0)
-            {
-                var linq = asistencia.AsistenciaPersonalDia(cedula, DateTime.Now, idcalendario);
-                if (linq.FECHAHORASALIDA == linq.FECHAHORAENTRADA)
-                {
-                    //ModificarAsistenciaFechaHoraSalida
-                    temp.FechaHoraSalida = DateTime.Now;
-                    temp.IdAsistencia = linq.IDASISTENCIA;
-                    asistencia.ModificarAsistenciaPersonal(temp);
-                }
-                else
-                {
-                    AutoClosingMessageBox.Show("Ya se ha Ingresado Asistencia","Administrar Asistencia",700);
-                }
-            }
-            else 
-            {
-                //Imgresar FAlta Normal
-                if (imprevistos.ContarImprevisto(cedula, DateTime.Now, idcalendario) == 0)
-                {
-                    asistencia.InsertarAsistencia(temp);
-                    onePing();
-                }                
-                else
-                {
-                AutoClosingMessageBox.Show("Existe un Imprevisto en esta Fecha\nRevise Administracion de Imprevistos","Administrar Asistencia",2000);
-                }   
-                 
-            }
-            
-            MostrarPersonalDia(idcalendario, DateTime.Now);
-            var cont = faltas.ContarFaltaPersonalDia(cedula, DateTime.Now, idcalendario);
-            if (cont > 0)
-                faltas.ELiminarFaltaPersonalDia(idcalendario, DateTime.Now, cedula);
-            
         }
 
         private void MostrarAsistenciaMes(string idcalendario, DateTime fecha)
@@ -265,53 +170,6 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
 
             string idhuella = "A" + num.ToString() + num2.ToString();
             return idhuella;
-        }
-
-        private bool MatchTemplate(byte[] m_RegMin1, byte[] m_RegMin2)
-        {
-            Int32 iError;// = m_FPM.OpenDevice(port_addr);
-            //Obtener Informacion del dispositivo inicializado
-            SGFPMDeviceInfoParam pInfo = new SGFPMDeviceInfoParam();
-            iError = m_FPM.GetDeviceInfo(pInfo);
-            if (iError == (Int32)SGFPMError.ERROR_NONE)
-            {
-                // This should be done GetDeviceInfo();
-                m_ImageWidth = pInfo.ImageWidth;
-                m_ImageHeight = pInfo.ImageHeight;
-            }
-            Byte[] fp_image = new Byte[m_ImageWidth * m_ImageHeight];
-            SGFPMSecurityLevel secu_level = SGFPMSecurityLevel.NORMAL; // Adjust this value according to application type
-            bool matched1 = false;
-            bool matched2 = false;
-            //Step 1: Capture Image
-            Int32 timeout = 1300;
-            Int32 quality = 80;
-            //Convierte el huella en una imagen y la presenta en un picturebox
-            iError = m_FPM.GetImageEx(fp_image, timeout, 0, quality);
-            //Ajusta el brillo a 70
-            iError = m_FPM.SetBrightness(70);
-            Int32 max_template_size = 0;
-            //Obtiene el maximo tamaño que posee el buffer.
-            m_FPM.GetMaxTemplateSize(ref max_template_size);
-            arrayHuella1 = new Byte[max_template_size];
-            // Step 2: Create Template
-            m_FPM.CreateTemplate(fp_image, arrayHuella1);
-            // Step 3: Match for verificatation against registered template- m_RegMin1, m_RegMin2
-            iError = m_FPM.MatchTemplate(m_RegMin1, arrayHuella1, secu_level, ref matched1);
-            iError = m_FPM.MatchTemplate(m_RegMin2, arrayHuella1, secu_level, ref matched2);
-
-            if (iError == (Int32)SGFPMError.ERROR_NONE)
-            {
-                if (matched1 & matched2)
-                    return true;
-                else
-                    return false;
-            }
-            else
-            {
-                AutoClosingMessageBox.Show("Error: " + iError.ToString(),"Secugen U20",800);
-                return false;
-            }
         }
 
         private void MostrarPersonalDia(string calendario, DateTime fecha)
@@ -456,11 +314,6 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
                     e.RenderParts = DevComponents.Editors.DateTimeAdv.eDayPaintParts.None;
                 }
             }
-        }
-
-        public void onePing()
-        {
-            SystemSounds.Exclamation.Play();
         }
 
         private void cmbmes_SelectedIndexChanged(object sender, EventArgs e)

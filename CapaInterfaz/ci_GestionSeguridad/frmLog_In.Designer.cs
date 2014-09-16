@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            DevComponents.DotNetBar.Controls.ClockStyleData clockStyleData1 = new DevComponents.DotNetBar.Controls.ClockStyleData();
+            DevComponents.DotNetBar.Controls.ColorData colorData1 = new DevComponents.DotNetBar.Controls.ColorData();
+            DevComponents.DotNetBar.Controls.ColorData colorData2 = new DevComponents.DotNetBar.Controls.ColorData();
+            DevComponents.DotNetBar.Controls.ColorData colorData3 = new DevComponents.DotNetBar.Controls.ColorData();
+            DevComponents.DotNetBar.Controls.ClockHandStyleData clockHandStyleData1 = new DevComponents.DotNetBar.Controls.ClockHandStyleData();
+            DevComponents.DotNetBar.Controls.ColorData colorData4 = new DevComponents.DotNetBar.Controls.ColorData();
+            DevComponents.DotNetBar.Controls.ColorData colorData5 = new DevComponents.DotNetBar.Controls.ColorData();
+            DevComponents.DotNetBar.Controls.ClockHandStyleData clockHandStyleData2 = new DevComponents.DotNetBar.Controls.ClockHandStyleData();
+            DevComponents.DotNetBar.Controls.ColorData colorData6 = new DevComponents.DotNetBar.Controls.ColorData();
+            DevComponents.DotNetBar.Controls.ClockHandStyleData clockHandStyleData3 = new DevComponents.DotNetBar.Controls.ClockHandStyleData();
+            DevComponents.DotNetBar.Controls.ColorData colorData7 = new DevComponents.DotNetBar.Controls.ColorData();
+            DevComponents.DotNetBar.Controls.ColorData colorData8 = new DevComponents.DotNetBar.Controls.ColorData();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLog_In));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            DevComponents.DotNetBar.Controls.ClockStyleData clockStyleData3 = new DevComponents.DotNetBar.Controls.ClockStyleData();
-            DevComponents.DotNetBar.Controls.ColorData colorData17 = new DevComponents.DotNetBar.Controls.ColorData();
-            DevComponents.DotNetBar.Controls.ColorData colorData18 = new DevComponents.DotNetBar.Controls.ColorData();
-            DevComponents.DotNetBar.Controls.ColorData colorData19 = new DevComponents.DotNetBar.Controls.ColorData();
-            DevComponents.DotNetBar.Controls.ClockHandStyleData clockHandStyleData7 = new DevComponents.DotNetBar.Controls.ClockHandStyleData();
-            DevComponents.DotNetBar.Controls.ColorData colorData20 = new DevComponents.DotNetBar.Controls.ColorData();
-            DevComponents.DotNetBar.Controls.ColorData colorData21 = new DevComponents.DotNetBar.Controls.ColorData();
-            DevComponents.DotNetBar.Controls.ClockHandStyleData clockHandStyleData8 = new DevComponents.DotNetBar.Controls.ClockHandStyleData();
-            DevComponents.DotNetBar.Controls.ColorData colorData22 = new DevComponents.DotNetBar.Controls.ColorData();
-            DevComponents.DotNetBar.Controls.ClockHandStyleData clockHandStyleData9 = new DevComponents.DotNetBar.Controls.ClockHandStyleData();
-            DevComponents.DotNetBar.Controls.ColorData colorData23 = new DevComponents.DotNetBar.Controls.ColorData();
-            DevComponents.DotNetBar.Controls.ColorData colorData24 = new DevComponents.DotNetBar.Controls.ColorData();
             this.label6 = new System.Windows.Forms.Label();
             this.Acceder = new DevComponents.DotNetBar.ButtonX();
             this.label5 = new System.Windows.Forms.Label();
@@ -54,25 +54,27 @@
             this.txtLogin = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtClave = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
+            this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.cmbcalendario = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.dataGridViewX1 = new System.Windows.Forms.DataGridView();
             this.analogClockControl1 = new DevComponents.DotNetBar.Controls.AnalogClockControl();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.cmbcalendario = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.panelEx1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelEx2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label6
@@ -235,22 +237,11 @@
             this.panelEx1.TabIndex = 38;
             this.panelEx1.ThemeAware = true;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.pictureBox1.ForeColor = System.Drawing.Color.Black;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(136, 113);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 34;
-            this.pictureBox1.TabStop = false;
-            // 
             // panelEx2
             // 
             this.panelEx2.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx2.Controls.Add(this.labelX2);
             this.panelEx2.Controls.Add(this.groupPanel1);
             this.panelEx2.Controls.Add(this.dataGridViewX1);
             this.panelEx2.Controls.Add(this.analogClockControl1);
@@ -268,180 +259,10 @@
             this.panelEx2.TabIndex = 40;
             this.panelEx2.ThemeAware = true;
             // 
-            // dataGridViewX1
-            // 
-            this.dataGridViewX1.AllowUserToAddRows = false;
-            this.dataGridViewX1.AllowUserToDeleteRows = false;
-            this.dataGridViewX1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridViewX1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewX1.Location = new System.Drawing.Point(275, 190);
-            this.dataGridViewX1.MultiSelect = false;
-            this.dataGridViewX1.Name = "dataGridViewX1";
-            this.dataGridViewX1.ReadOnly = true;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LemonChiffon;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightGreen;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewX1.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewX1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewX1.Size = new System.Drawing.Size(437, 238);
-            this.dataGridViewX1.TabIndex = 31;
-            // 
-            // analogClockControl1
-            // 
-            this.analogClockControl1.AutomaticMode = true;
-            this.analogClockControl1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.analogClockControl1.ClockStyle = DevComponents.DotNetBar.Controls.eClockStyles.Custom;
-            colorData17.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
-            colorData17.BorderWidth = 0.01F;
-            colorData17.BrushSBSScale = 1F;
-            colorData17.BrushType = DevComponents.DotNetBar.Controls.eBrushTypes.Linear;
-            colorData17.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            colorData17.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(152)))), ((int)(((byte)(152)))));
-            clockStyleData3.BezelColor = colorData17;
-            colorData18.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
-            colorData18.BorderWidth = 0.01F;
-            colorData18.BrushSBSScale = 1F;
-            colorData18.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
-            colorData18.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
-            clockStyleData3.CapColor = colorData18;
-            colorData19.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(145)))), ((int)(((byte)(161)))));
-            colorData19.BorderWidth = 0.01F;
-            colorData19.BrushAngle = 45F;
-            colorData19.BrushSBSScale = 1F;
-            colorData19.BrushType = DevComponents.DotNetBar.Controls.eBrushTypes.Linear;
-            colorData19.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(204)))), ((int)(((byte)(213)))));
-            colorData19.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            clockStyleData3.FaceColor = colorData19;
-            clockStyleData3.GlassAngle = -20;
-            colorData20.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
-            colorData20.BorderWidth = 0.01F;
-            colorData20.BrushSBSScale = 1F;
-            colorData20.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
-            colorData20.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
-            clockHandStyleData7.HandColor = colorData20;
-            clockHandStyleData7.Length = 0.55F;
-            clockHandStyleData7.Width = 0.015F;
-            clockStyleData3.HourHandStyle = clockHandStyleData7;
-            colorData21.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            colorData21.BorderWidth = 0.01F;
-            colorData21.BrushSBSScale = 1F;
-            colorData21.BrushType = DevComponents.DotNetBar.Controls.eBrushTypes.Linear;
-            colorData21.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(142)))), ((int)(((byte)(154)))));
-            colorData21.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(142)))), ((int)(((byte)(154)))));
-            clockStyleData3.LargeTickColor = colorData21;
-            colorData22.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
-            colorData22.BorderWidth = 0.01F;
-            colorData22.BrushSBSScale = 1F;
-            colorData22.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
-            colorData22.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
-            clockHandStyleData8.HandColor = colorData22;
-            clockHandStyleData8.Length = 0.8F;
-            clockHandStyleData8.Width = 0.01F;
-            clockStyleData3.MinuteHandStyle = clockHandStyleData8;
-            clockStyleData3.NumberFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            colorData23.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
-            colorData23.BorderWidth = 0.01F;
-            colorData23.BrushSBSScale = 1F;
-            colorData23.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
-            colorData23.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
-            clockHandStyleData9.HandColor = colorData23;
-            clockHandStyleData9.HandStyle = DevComponents.DotNetBar.Controls.eHandStyles.Style2;
-            clockHandStyleData9.Length = 0.8F;
-            clockHandStyleData9.Width = 0.005F;
-            clockStyleData3.SecondHandStyle = clockHandStyleData9;
-            colorData24.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            colorData24.BorderWidth = 0.01F;
-            colorData24.BrushSBSScale = 1F;
-            colorData24.BrushType = DevComponents.DotNetBar.Controls.eBrushTypes.Linear;
-            colorData24.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(142)))), ((int)(((byte)(154)))));
-            colorData24.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(142)))), ((int)(((byte)(154)))));
-            clockStyleData3.SmallTickColor = colorData24;
-            clockStyleData3.Style = DevComponents.DotNetBar.Controls.eClockStyles.Custom;
-            this.analogClockControl1.ClockStyleData = clockStyleData3;
-            this.analogClockControl1.ForeColor = System.Drawing.Color.Black;
-            this.analogClockControl1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.analogClockControl1.Location = new System.Drawing.Point(394, 11);
-            this.analogClockControl1.Name = "analogClockControl1";
-            this.analogClockControl1.Size = new System.Drawing.Size(173, 173);
-            this.analogClockControl1.TabIndex = 1;
-            this.analogClockControl1.Text = "analogClockControl1";
-            this.analogClockControl1.TimeZone = null;
-            this.analogClockControl1.Value = new System.DateTime(2014, 9, 13, 11, 45, 49, 979);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::CapaInterfaz.Properties.Resources.images;
-            this.pictureBox4.Location = new System.Drawing.Point(72, 182);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(107, 113);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 36;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.ForeColor = System.Drawing.Color.Black;
-            this.pictureBox3.Image = global::CapaInterfaz.Properties.Resources.buttonstart;
-            this.pictureBox3.Location = new System.Drawing.Point(159, 80);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(56, 56);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 35;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.ForeColor = System.Drawing.Color.Black;
-            this.pictureBox2.Location = new System.Drawing.Point(53, 59);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 108);
-            this.pictureBox2.TabIndex = 34;
-            this.pictureBox2.TabStop = false;
-            // 
-            // labelX1
-            // 
-            this.labelX1.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.ForeColor = System.Drawing.Color.Black;
-            this.labelX1.Location = new System.Drawing.Point(22, 14);
-            this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(75, 23);
-            this.labelX1.TabIndex = 33;
-            this.labelX1.Text = "Calendario: ";
-            // 
-            // cmbcalendario
-            // 
-            this.cmbcalendario.DisplayMember = "Text";
-            this.cmbcalendario.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbcalendario.ForeColor = System.Drawing.Color.Black;
-            this.cmbcalendario.FormattingEnabled = true;
-            this.cmbcalendario.ItemHeight = 14;
-            this.cmbcalendario.Location = new System.Drawing.Point(114, 17);
-            this.cmbcalendario.Name = "cmbcalendario";
-            this.cmbcalendario.Size = new System.Drawing.Size(121, 20);
-            this.cmbcalendario.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cmbcalendario.TabIndex = 32;
-            this.cmbcalendario.SelectedIndexChanged += new System.EventHandler(this.cmbcalendario_SelectedIndexChanged);
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(14, 310);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(221, 95);
-            this.listBox1.TabIndex = 37;
-            // 
             // groupPanel1
             // 
-            this.groupPanel1.BackColor = System.Drawing.Color.White;
-            this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
+            this.groupPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.groupPanel1.CanvasColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.groupPanel1.ColorTable = DevComponents.DotNetBar.Controls.ePanelColorTable.Yellow;
             this.groupPanel1.Controls.Add(this.listBox1);
@@ -485,6 +306,214 @@
             this.groupPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel1.TabIndex = 50;
             // 
+            // listBox1
+            // 
+            this.listBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.listBox1.ForeColor = System.Drawing.Color.Black;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(14, 310);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(221, 95);
+            this.listBox1.TabIndex = 37;
+            // 
+            // cmbcalendario
+            // 
+            this.cmbcalendario.DisplayMember = "Text";
+            this.cmbcalendario.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbcalendario.ForeColor = System.Drawing.Color.Black;
+            this.cmbcalendario.FormattingEnabled = true;
+            this.cmbcalendario.ItemHeight = 14;
+            this.cmbcalendario.Location = new System.Drawing.Point(114, 17);
+            this.cmbcalendario.Name = "cmbcalendario";
+            this.cmbcalendario.Size = new System.Drawing.Size(121, 20);
+            this.cmbcalendario.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cmbcalendario.TabIndex = 32;
+            this.cmbcalendario.SelectedIndexChanged += new System.EventHandler(this.cmbcalendario_SelectedIndexChanged);
+            // 
+            // labelX1
+            // 
+            this.labelX1.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX1.ForeColor = System.Drawing.Color.Black;
+            this.labelX1.Location = new System.Drawing.Point(22, 14);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.Size = new System.Drawing.Size(75, 23);
+            this.labelX1.TabIndex = 33;
+            this.labelX1.Text = "Calendario: ";
+            // 
+            // dataGridViewX1
+            // 
+            this.dataGridViewX1.AllowUserToAddRows = false;
+            this.dataGridViewX1.AllowUserToDeleteRows = false;
+            this.dataGridViewX1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewX1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewX1.Location = new System.Drawing.Point(275, 242);
+            this.dataGridViewX1.MultiSelect = false;
+            this.dataGridViewX1.Name = "dataGridViewX1";
+            this.dataGridViewX1.ReadOnly = true;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LemonChiffon;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightGreen;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewX1.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewX1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewX1.Size = new System.Drawing.Size(437, 186);
+            this.dataGridViewX1.TabIndex = 31;
+            // 
+            // analogClockControl1
+            // 
+            this.analogClockControl1.AutomaticMode = true;
+            this.analogClockControl1.BackColor = System.Drawing.Color.Transparent;
+            this.analogClockControl1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.analogClockControl1.ClockStyle = DevComponents.DotNetBar.Controls.eClockStyles.Custom;
+            colorData1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            colorData1.BorderWidth = 0.01F;
+            colorData1.BrushSBSScale = 1F;
+            colorData1.BrushType = DevComponents.DotNetBar.Controls.eBrushTypes.Linear;
+            colorData1.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            colorData1.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(152)))), ((int)(((byte)(152)))));
+            clockStyleData1.BezelColor = colorData1;
+            colorData2.BorderColor = System.Drawing.Color.Black;
+            colorData2.BorderWidth = 0.01F;
+            colorData2.BrushSBSScale = 1F;
+            colorData2.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
+            colorData2.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
+            clockStyleData1.CapColor = colorData2;
+            clockStyleData1.FaceBackgroundImage = global::CapaInterfaz.Properties.Resources.relojfondo;
+            colorData3.BorderColor = System.Drawing.Color.Black;
+            colorData3.BorderWidth = 0.01F;
+            colorData3.BrushAngle = 45F;
+            colorData3.BrushSBSScale = 1F;
+            colorData3.BrushType = DevComponents.DotNetBar.Controls.eBrushTypes.Linear;
+            colorData3.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(204)))), ((int)(((byte)(213)))));
+            colorData3.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            clockStyleData1.FaceColor = colorData3;
+            clockStyleData1.GlassAngle = -20;
+            colorData4.BorderColor = System.Drawing.Color.Black;
+            colorData4.BorderWidth = 0.01F;
+            colorData4.BrushSBSScale = 1F;
+            colorData4.Color1 = System.Drawing.Color.Black;
+            colorData4.Color2 = System.Drawing.Color.Black;
+            clockHandStyleData1.HandColor = colorData4;
+            clockHandStyleData1.Length = 0.55F;
+            clockHandStyleData1.Width = 0.015F;
+            clockStyleData1.HourHandStyle = clockHandStyleData1;
+            colorData5.BorderColor = System.Drawing.Color.Black;
+            colorData5.BorderWidth = 0.01F;
+            colorData5.BrushSBSScale = 1F;
+            colorData5.BrushType = DevComponents.DotNetBar.Controls.eBrushTypes.Linear;
+            colorData5.Color1 = System.Drawing.Color.Black;
+            colorData5.Color2 = System.Drawing.Color.Black;
+            clockStyleData1.LargeTickColor = colorData5;
+            colorData6.BorderColor = System.Drawing.Color.Black;
+            colorData6.BorderWidth = 0.01F;
+            colorData6.BrushSBSScale = 1F;
+            colorData6.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
+            colorData6.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
+            clockHandStyleData2.HandColor = colorData6;
+            clockHandStyleData2.Length = 0.8F;
+            clockHandStyleData2.Width = 0.01F;
+            clockStyleData1.MinuteHandStyle = clockHandStyleData2;
+            clockStyleData1.NumberColor = System.Drawing.Color.Black;
+            clockStyleData1.NumberFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            colorData7.BorderColor = System.Drawing.Color.Crimson;
+            colorData7.BorderWidth = 0.01F;
+            colorData7.BrushSBSScale = 1F;
+            colorData7.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
+            colorData7.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(127)))), ((int)(((byte)(138)))));
+            clockHandStyleData3.HandColor = colorData7;
+            clockHandStyleData3.HandStyle = DevComponents.DotNetBar.Controls.eHandStyles.Style2;
+            clockHandStyleData3.Length = 0.8F;
+            clockHandStyleData3.Width = 0.005F;
+            clockStyleData1.SecondHandStyle = clockHandStyleData3;
+            colorData8.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            colorData8.BorderWidth = 0.01F;
+            colorData8.BrushSBSScale = 1F;
+            colorData8.BrushType = DevComponents.DotNetBar.Controls.eBrushTypes.Linear;
+            colorData8.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(142)))), ((int)(((byte)(154)))));
+            colorData8.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(142)))), ((int)(((byte)(154)))));
+            clockStyleData1.SmallTickColor = colorData8;
+            clockStyleData1.Style = DevComponents.DotNetBar.Controls.eClockStyles.Custom;
+            this.analogClockControl1.ClockStyleData = clockStyleData1;
+            this.analogClockControl1.ForeColor = System.Drawing.Color.Black;
+            this.analogClockControl1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.analogClockControl1.IndicatorStyle = DevComponents.DotNetBar.Controls.eClockIndicatorStyles.Numbers;
+            this.analogClockControl1.Location = new System.Drawing.Point(389, 38);
+            this.analogClockControl1.Name = "analogClockControl1";
+            this.analogClockControl1.Size = new System.Drawing.Size(198, 198);
+            this.analogClockControl1.TabIndex = 1;
+            this.analogClockControl1.Text = "analogClockControl1";
+            this.analogClockControl1.TimeZone = null;
+            this.analogClockControl1.Value = new System.DateTime(2014, 9, 13, 11, 45, 49, 979);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.ForeColor = System.Drawing.Color.Black;
+            this.pictureBox3.Image = global::CapaInterfaz.Properties.Resources.buttonstart;
+            this.pictureBox3.Location = new System.Drawing.Point(159, 80);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(56, 56);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 35;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.pictureBox4.ForeColor = System.Drawing.Color.Black;
+            this.pictureBox4.Image = global::CapaInterfaz.Properties.Resources.images;
+            this.pictureBox4.Location = new System.Drawing.Point(72, 182);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(107, 113);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 36;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.ForeColor = System.Drawing.Color.Black;
+            this.pictureBox2.Location = new System.Drawing.Point(53, 59);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(100, 108);
+            this.pictureBox2.TabIndex = 34;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.pictureBox1.ForeColor = System.Drawing.Color.Black;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(136, 113);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 34;
+            this.pictureBox1.TabStop = false;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // labelX2
+            // 
+            // 
+            // 
+            // 
+            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX2.Location = new System.Drawing.Point(537, 9);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(181, 23);
+            this.labelX2.TabIndex = 51;
+            this.labelX2.Text = "labelX2";
+            // 
             // frmLog_In
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -502,13 +531,13 @@
             this.Load += new System.EventHandler(this.frmLog_In_Load);
             this.panelEx1.ResumeLayout(false);
             this.panelEx1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelEx2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -537,5 +566,7 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.ListBox listBox1;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
+        private DevComponents.DotNetBar.LabelX labelX2;
+        private System.Windows.Forms.Timer timer1;
     }
 }

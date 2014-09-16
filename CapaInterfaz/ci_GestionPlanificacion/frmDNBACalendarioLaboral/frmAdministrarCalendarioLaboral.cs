@@ -88,5 +88,10 @@ namespace CapaInterfaz.ci_GestionPlanificacion.frmDNBAdministrarCalendarioLab
         public Usuarios user { get; set; }
 
         public Permisos permiso { get; set; }
+
+        private void toolmodificar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

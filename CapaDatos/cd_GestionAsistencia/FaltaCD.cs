@@ -217,7 +217,7 @@ namespace CapaDatos.cd_GestionAsistencia
             }
         }
 
-        public static void EliminarFaltaPersonalDia(string IdCalendario,DateTime Fecha,string cedula) 
+        public static List<FALTAS> ObtenerFaltaPersonalDia(string cedula, DateTime Fecha, string IdCalendario)
         {
             CapaDatosDataContext DB;
             try
@@ -231,21 +231,33 @@ namespace CapaDatos.cd_GestionAsistencia
                                     && (pa.FECHA.Day == Fecha.Day)
                                     && pa.CEDULA == cedula
                                 select pa).ToList();
-                    FALTAS temp = new FALTAS
-                    {
-                        IDFALTA = linq[0].IDFALTA,
-                        FECHA = linq[0].FECHA,
-                        IDCALENDARIO = linq[0].IDCALENDARIO,
-                        CEDULA = linq[0].CEDULA,
-                        JUSTIFICACION = linq[0].JUSTIFICACION
-                    };
-                    DB.FALTAS.DeleteOnSubmit(temp);
+                    return linq;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new CapaDatosExcepciones("Error al Obtener Falta de Personal por Dia", ex);
+            }
+            finally
+            {
+                DB = null;
+            }
+        }
+
+        public static void EliminarFaltaPersonalDia(string IdCalendario,DateTime Fecha,string cedula) 
+        {
+            CapaDatosDataContext DB;
+            try
+            {
+                using (DB = new CapaDatosDataContext())
+                {
+                    DB.sp_EliminarFaltaPersonalDia(IdCalendario,Fecha,cedula);
                     DB.SubmitChanges();
                 }
             }
             catch (Exception ex)
             {
-                throw new CapaDatosExcepciones("Error al Contar Falta de Personal por Dia", ex);
+                throw new CapaDatosExcepciones("Error al Contar Falta de Personal por Dia",ex);
             }
             finally
             {

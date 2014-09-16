@@ -80,14 +80,27 @@ namespace CapaInterfaz.ci_GestionSeguridad
                 if (!cmbcalendario.Items.Contains(temp.NOMBRE))
                     cmbcalendario.Items.Add(temp.NOMBRE);
             }
+            labelX2.Text = DateTime.Now.ToLongDateString(); 
+            timer1.Start();
         }
 
         private void AsistenciaperReader(string cedula)
         {
-            Asistencia temp = new Asistencia();
+            try
+            {
+                Asistencia temp = new Asistencia();
+            string id;
+            do
+            {
+                id = GenerarIdAsistencia();
+                temp.IdAsistencia = id;
+            }
+            while (asistencia.existeAsistencia(id));
             temp.IdAsistencia = GenerarIdAsistencia();
-            temp.FechaHoraEntrada = DateTime.Now;
-            temp.FechaHoraSalida = DateTime.Now;
+            DateTime now = DateTime.Now;
+            temp.FechaHoraEntrada = now;
+            temp.FechaHoraSalida = now;
+            temp.HoraMostrada = now;
             temp.IdCalendario = idcalendario;
             temp.Cedula = cedula;
 
@@ -97,7 +110,19 @@ namespace CapaInterfaz.ci_GestionSeguridad
                 if (linq.FECHAHORASALIDA == linq.FECHAHORAENTRADA)
                 {
                     //ModificarAsistenciaFechaHoraSalida
-                    temp.FechaHoraSalida = DateTime.Now;
+                    var calen = (from lt in calendario.ListarCalendario() where lt.IDCALENDARIO == idcalendario 
+                               select lt).ToList();
+                    temp.HoraMostrada = DateTime.Now;
+                    if (DateTime.Now.TimeOfDay > calen[0].FECHAFIN.TimeOfDay)
+                    {
+                        temp.FechaHoraSalida = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, calen[0].FECHAFIN.Hour, calen[0].FECHAFIN.Minute, calen[0].FECHAFIN.Second);
+                    }
+                    else 
+                    {
+                        temp.FechaHoraSalida = DateTime.Now;
+                    }
+
+                        
                     temp.IdAsistencia = linq.IDASISTENCIA;
                     asistencia.ModificarAsistenciaPersonal(temp);
                     listBox1.Items.Add("---Registrando Salida con Exito");
@@ -114,9 +139,21 @@ namespace CapaInterfaz.ci_GestionSeguridad
                 //Imgresar Asistencia Normal
                 if (imprevistos.ContarImprevisto(cedula, DateTime.Now, idcalendario) == 0)
                 {
-                    asistencia.InsertarAsistencia(temp);
-                    onePing(0);
-                    listBox1.Items.Add("---Registrando Entrada con Exito");
+                    var calen = (from lt in calendario.ListarCalendario() where lt.IDCALENDARIO == idcalendario 
+                               select lt).ToList();
+                    DateTime hora =  calen[0].FECHAINICIO;
+                    hora.AddMinutes(calen[0].RETRASO.Value);
+                    if (DateTime.Now.TimeOfDay > hora.TimeOfDay)
+                    {
+                        onePing(1);
+                        listBox1.Items.Add("---Termino Hora de Registro de Entrada");
+                    }
+                    else 
+                    {
+                        asistencia.InsertarAsistencia(temp);
+                        onePing(0);
+                        listBox1.Items.Add("---Registrando Entrada con Exito");
+                    }
                 }
                 else
                 {
@@ -127,13 +164,25 @@ namespace CapaInterfaz.ci_GestionSeguridad
                 }
             }
 
+            }
+            catch(Exception)
+            {
+            }
+            
             MostrarPersonalDia(idcalendario, DateTime.Now);
-            var cont = faltas.ContarFaltaPersonalDia(cedula, DateTime.Now, idcalendario);
-            if (cont > 0)
-                faltas.ELiminarFaltaPersonalDia(idcalendario, DateTime.Now, cedula);
-            pictureBox4.Image = CapaInterfaz.Properties.Resources.images;
-            Thread.Sleep(2000);
-            pictureBox4.Refresh();
+            try 
+            {
+                var cont = faltas.ContarFaltaPersonalDia(cedula, DateTime.Now, idcalendario);
+                if (cont > 0)
+                    faltas.ELiminarFaltaPersonalDia(idcalendario, DateTime.Now, cedula);
+                pictureBox4.Image = CapaInterfaz.Properties.Resources.images;
+                Thread.Sleep(2000);
+                pictureBox4.Refresh();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Este: "+ex.Message + ex.StackTrace);
+            }
         }
 
         protected override void WndProc(ref Message message)
@@ -145,7 +194,7 @@ namespace CapaInterfaz.ci_GestionSeguridad
                     try 
                     {
                         ////StatusBar.Text = "Device Message: Finger On";
-                        listBox1.Items.Add("::. Event Finger Placed");
+                        //listBox1.Items.Add("::. Event Finger Placed");
                         pictureBox3.Image = CapaInterfaz.Properties.Resources.buttonwait;
                         pictureBox3.Refresh();
                         bool matched = false;
@@ -183,9 +232,9 @@ namespace CapaInterfaz.ci_GestionSeguridad
                         }
                         //AutoClosingMessageBox.Show("Dedo Aqui :)","Hehehe",100);
                     }
-                    catch(Exception)
+                    catch(Exception ex)
                     {
-                        MessageBox.Show("Seleccione un Calendario..");
+                        MessageBox.Show("Seleccione un Calendario.."+ex.Message+ex.StackTrace);
                     }
                 }
                 else if (message.WParam.ToInt32() == (Int32)SGFPMAutoOnEvent.FINGER_OFF)
@@ -193,7 +242,7 @@ namespace CapaInterfaz.ci_GestionSeguridad
                     //StatusBar.Text = "Device Message: Finger Off";
                     //MessageBox.Show("Here");
                     //AutoClosingMessageBox.Show("Dedo se fue :(", "Hehehe", 100);
-                    listBox1.Items.Add("::. Event Finger Removed");
+                    //listBox1.Items.Add("::. Event Finger Removed");
                     pictureBox3.Image = CapaInterfaz.Properties.Resources.buttonstart;
                     this.listBox1.SelectedIndex = this.listBox1.Items.Count - 1;
                 }
@@ -375,8 +424,66 @@ namespace CapaInterfaz.ci_GestionSeguridad
             try 
             {
                 personalporc = calendario.PersonalporCalendario(idcalendario);
+                foreach(sp_PersonalporCalendarioResult temp in personalporc)
+                {
+                    if (asistencia.ContarAsistenciaPersonal(temp.CEDULA, DateTime.Now, idcalendario) == 0) 
+                    {
+                        if (imprevistos.ContarImprevisto(temp.CEDULA, DateTime.Now, idcalendario) == 0)
+                        {
+                            if (faltas.ContarFaltaPersonalDia(temp.CEDULA, DateTime.Now, idcalendario) == 0)
+                            {
+                                Faltas falt = new Faltas();
+                                string id;
+                                do
+                                {
+                                    id = GenerarIdAsistencia();
+                                    falt.IdFaltas = id;
+                                }
+                                while (faltas.ExisteFalta(id));
+                                falt.Cedula = temp.CEDULA;
+                                falt.Fecha = DateTime.Now;
+                                falt.IdCalendario = idcalendario;
+                                falt.Justificacion = false;
+                                faltas.InsertarFaltas(falt);
+                            }
+                        }
+                        else 
+                        {
+                            if (faltas.ContarFaltaPersonalDia(temp.CEDULA, DateTime.Now, idcalendario) == 0)
+                            {
+                                Faltas falt = new Faltas();
+                                string id;
+                                do
+                                {
+                                    id = GenerarIdAsistencia();
+                                    falt.IdFaltas = id;
+                                }
+                                while (faltas.ExisteFalta(id));
+                                falt.Cedula = temp.CEDULA;
+                                falt.Fecha = DateTime.Now;
+                                falt.IdCalendario = idcalendario;
+                                falt.Justificacion = true;
+                                faltas.InsertarFaltas(falt);
+                            }
+                            else 
+                            {
+                                Faltas falt = new Faltas();
+                                FALTAS f = faltas.ObtenerFaltaPersonalDia(temp.CEDULA,DateTime.Now,idcalendario)[0];
+                                falt.IdFaltas = f.IDFALTA;
+                                falt.IdCalendario = f.IDCALENDARIO;
+                                falt.Fecha = f.FECHA;
+                                falt.Cedula = f.CEDULA;
+                                falt.Justificacion = true;
+                                faltas.ModificarFaltasJustificacion(falt);
+                            }
+                        }
+                    }
+                }
             }
-            catch(Exception){}
+            catch(Exception ex)
+            {
+                MessageBoxEx.Show(ex.Message + ex.StackTrace);
+            }
         }
 
         ~frmLog_In() 
@@ -416,6 +523,28 @@ namespace CapaInterfaz.ci_GestionSeguridad
                 this.Show();
             }
         }
+
+        private string GenerarIdImprevisto()
+        {
+            Random ran = new Random();
+            int num = ran.Next(0000, 1000);
+            int num2 = ran.Next(000, 100);
+            return "I" + num.ToString() + num2.ToString();
+        }
+
+        private string GenerarIdFalta()
+        {
+            Random ran = new Random();
+            int num = ran.Next(0000, 1000);
+            int num2 = ran.Next(000, 100);
+            return "F" + num.ToString() + num2.ToString();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            labelX2.Text = DateTime.Now.ToLongDateString(); 
+        }
+
     }
 }
 

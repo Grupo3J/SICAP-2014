@@ -34,6 +34,7 @@ namespace CapaInterfaz.ci_GestionPlanificacion.frmDNBACalendarioLaboral
                     this.errorProvider1.Clear();
                     if (this.textDescripcion.Text == "") { errorProvider1.SetError(textDescripcion, "Ingrese descripción"); return; }
                     if (this.comboNombre.SelectedIndex == -1) { errorProvider1.SetError(comboNombre, "Seleccione un nombre de calendario laboral"); return; }
+                    if (this.txtretraso.Text == "") { errorProvider1.SetError(txtretraso, "Ingrese un Tiempo de Retraso"); return; } 
             
             try
             {
@@ -41,8 +42,12 @@ namespace CapaInterfaz.ci_GestionPlanificacion.frmDNBACalendarioLaboral
                 c.IdCalendario = CLN.GenerarIdCalendario();
                 c.Nombre = comboNombre.SelectedItem.ToString();
                 c.Descripcion = textDescripcion.Text;
-                c.FechaInicio = dateTimePInicio.Value;
-                c.FechaFin = dateTimePFin.Value;
+                DateTime fechaini = dateTimePInicio.Value;
+                DateTime fechafin = dateTimePFin.Value;
+                //c.FechaInicio = dateTimePInicio.Value.Add(TimeSpan.Parse(dtihoraentrada.Value.TimeOfDay.ToString()));
+                c.FechaInicio = new DateTime(fechaini.Year,fechaini.Month,fechaini.Day,dtihoraentrada.Value.Hour,dtihoraentrada.Value.Minute,dtihoraentrada.Value.Second);
+                c.FechaFin = new DateTime(fechafin.Year, fechafin.Month, fechafin.Day, dtihorafin.Value.Hour, dtihorafin.Value.Minute, dtihorafin.Value.Second);
+                c.Retraso = int.Parse(txtretraso.Text);
 
                 DateTime ini = dateTimePInicio.Value;
                 DateTime fin = dateTimePFin.Value;
@@ -58,7 +63,7 @@ namespace CapaInterfaz.ci_GestionPlanificacion.frmDNBACalendarioLaboral
                 if ((ts2 > 0) || (differenceInDays <= 365))
                 {
                     DialogResult dialog;
-                    dialog = MessageBox.Show("La Fecha Inicio debe ser mayor a la Fecha Actual " + "\n" + "y la Fecha Final debe ser mayor a la Fecha Inicio con un año mínimo", "Informacion del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    dialog = MessageBoxEx.Show("La Fecha Inicio debe ser mayor a la Fecha Actual " + "\n" + "y la Fecha Final debe ser mayor a la Fecha Inicio con un año mínimo", "Informacion del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {

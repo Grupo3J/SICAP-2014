@@ -80,6 +80,7 @@ namespace CapaInterfaz.ci_GestionPlanificacion.frmDNBAdministrarCalendarioLab
             this.toolmodificar.Name = "toolmodificar";
             this.toolmodificar.Size = new System.Drawing.Size(78, 22);
             this.toolmodificar.Text = "Modificar";
+            this.toolmodificar.Click += new System.EventHandler(this.toolmodificar_Click);
             // 
             // tooleliminar
             // 

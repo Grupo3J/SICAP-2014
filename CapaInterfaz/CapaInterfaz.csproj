@@ -692,6 +692,7 @@
     <Content Include="Resources\ima_administracion.png" />
     <Content Include="Resources\ima_reportes.jpg" />
     <Content Include="Resources\personal.png" />
+    <None Include="Resources\relojfondo.png" />
     <Content Include="Resources\SICAPLOGO.png" />
     <Content Include="Resources\buscar1.png" />
   </ItemGroup>

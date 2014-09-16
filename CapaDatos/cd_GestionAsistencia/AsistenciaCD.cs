@@ -45,7 +45,8 @@ namespace CapaDatos.cd_GestionAsistencia
                 p.IdCalendario = not.IdCalendario;
                 p.FechaHoraEntrada = not.FechaHoraEntrada;
                 p.FechaHoraSalida = not.FechaHoraSalida;
-                bd.sp_RegistrarAsistencia(p.IdAsistencia, p.IdCalendario, p.Cedula, p.FechaHoraEntrada,p.FechaHoraSalida);
+                p.HoraMostrada = not.HoraMostrada;
+                bd.sp_RegistrarAsistencia(p.IdAsistencia, p.IdCalendario, p.Cedula, p.FechaHoraEntrada,p.FechaHoraSalida,p.HoraMostrada);
                 bd.SubmitChanges();
             }
             catch (CapaDatosExcepciones ex)
@@ -71,7 +72,8 @@ namespace CapaDatos.cd_GestionAsistencia
                 //p.IdCalendario = not.IdCalendario;
                 //p.FechaHoraEntrada = not.FechaHoraEntrada;
                 p.FechaHoraSalida = not.FechaHoraSalida;
-                bd.sp_ModificarAsistenciaFechaFinal(p.IdAsistencia, p.FechaHoraSalida);
+                p.HoraMostrada = not.HoraMostrada;
+                bd.sp_ModificarAsistenciaFechaFinal(p.IdAsistencia, p.FechaHoraSalida,p.HoraMostrada);
                 bd.SubmitChanges();
             }
             catch (CapaDatosExcepciones ex)

@@ -17,6 +17,7 @@ namespace CapaEntidades.GestionAsistencia
     public class Asistencia
     {
 
+        private DateTime horaMostrada;
         private DateTime fechaHoraEntrada;
         private DateTime fechaHoraSalida;
         private string idAsistencia;
@@ -100,6 +101,12 @@ namespace CapaEntidades.GestionAsistencia
         {
             get { return cedula; }
             set { cedula = value; }
+        }
+
+        public DateTime HoraMostrada
+        {
+            get { return horaMostrada; }
+            set { horaMostrada = value; }
         }
     }
 }//end Asistencia

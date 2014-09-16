@@ -21,8 +21,9 @@ namespace CapaDatos.cd_GestionPlanificacion
                 c.Descripcion = cal.Descripcion;
                 c.FechaInicio = cal.FechaInicio;
                 c.FechaFin = cal.FechaFin;
-                
-                bd.sp_RegistrarCalendario(c.IdCalendario, c.Nombre, c.Descripcion, c.FechaInicio, c.FechaFin);
+                c.Retraso = cal.Retraso;
+
+                bd.sp_RegistrarCalendario(c.IdCalendario, c.Nombre, c.Descripcion, c.FechaInicio, c.FechaFin,c.Retraso);
                 bd.SubmitChanges();
 
             }
@@ -187,8 +188,9 @@ namespace CapaDatos.cd_GestionPlanificacion
                 c.Descripcion = cal.Descripcion;
                 c.FechaInicio = cal.FechaInicio;
                 c.FechaFin = cal.FechaFin;
+                c.Retraso = c.Retraso;
 
-                bd.sp_ModificarCalendario(c.IdCalendario, c.Nombre, c.Descripcion, c.FechaInicio, c.FechaFin);
+                bd.sp_ModificarCalendario(c.IdCalendario, c.Nombre, c.Descripcion, c.FechaInicio, c.FechaFin,c.Retraso);
                 bd.SubmitChanges();
 
             }

@@ -266,7 +266,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
             Random ran = new Random();
             int num = ran.Next(0000, 1000);
             int num2 = ran.Next(000, 100);
-            return "I" + num.ToString() + num2.ToString();
+            return "F" + num.ToString() + num2.ToString();
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)
@@ -315,22 +315,22 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-            if (dgvfaltasdia.Rows.Count > 0)
-            {
-                DialogResult dialogResult = MessageBox.Show("Deseea Eliminar la Falta\n", "Administración de Faltas", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    //do something
-                    faltas.EliminarFaltaId(dgvfaltasdia.CurrentRow.Cells[0].Value.ToString());
-                    MostrarFaltasDia(idcalendario,dtidia.Value);
-                }
-                else if (dialogResult == DialogResult.No)
-                {
-                    //do something else
-                    return;
-                }
-
-            }
+            MessageBoxEx.Show("Para eliminar una falta\nIngrese una Asistencia ese día");
+            //if (dgvfaltasdia.Rows.Count > 0)
+            //{
+            //    DialogResult dialogResult = MessageBox.Show("Deseea Eliminar la Falta\n", "Administración de Faltas", MessageBoxButtons.YesNo);
+            //    if (dialogResult == DialogResult.Yes)
+            //    {
+            //        //do something
+            //        faltas.EliminarFaltaId(dgvfaltasdia.CurrentRow.Cells[0].Value.ToString());
+            //        MostrarFaltasDia(idcalendario,dtidia.Value);
+            //    }
+            //    else if (dialogResult == DialogResult.No)
+            //    {
+            //        //do something else
+            //        return;
+            //    }
+            //}
         }
 
         private void dtidia_MonthCalendar_PaintLabel(object sender, DevComponents.Editors.DateTimeAdv.DayPaintEventArgs e)

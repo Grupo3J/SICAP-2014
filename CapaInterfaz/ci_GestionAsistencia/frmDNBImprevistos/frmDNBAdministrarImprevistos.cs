@@ -109,9 +109,10 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
 
                     }
                     while (imprevisto.ExisteImprevisto(id));
-                    
-                    imp.FechaInicio = impr.dtifechainicio.Value.Add(TimeSpan.Parse(impr.dtihoraentrada.Value.TimeOfDay.ToString()));
-                    imp.FechaFinal = impr.dtifechainicio.Value.Add(TimeSpan.Parse(impr.dtihorafin.Value.TimeOfDay.ToString()));
+
+                    DateTime fechaini = impr.dtifechainicio.Value;
+                    imp.FechaInicio = new DateTime(fechaini.Year, fechaini.Month, fechaini.Day, impr.dtihoraentrada.Value.Hour, impr.dtihoraentrada.Value.Minute, impr.dtihoraentrada.Value.Second);
+                    imp.FechaFinal = new DateTime(fechaini.Year, fechaini.Month, fechaini.Day, impr.dtihoraentrada.Value.Hour, impr.dtihoraentrada.Value.Minute, impr.dtihoraentrada.Value.Second);
                     imp.Descripcion = impr.textBoxX1.Text;
 
                     
@@ -284,8 +285,9 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
                     try
                     {
                         imp.IdImprevisto = dgvimprevistos.CurrentRow.Cells[0].Value.ToString();
-                        imp.FechaInicio = impr.dtifechainicio.Value.Add(TimeSpan.Parse(impr.dtihoraentrada.Value.TimeOfDay.ToString()));
-                        imp.FechaFinal = impr.dtifechainicio.Value.Add(TimeSpan.Parse(impr.dtihorafin.Value.TimeOfDay.ToString()));
+                        DateTime fechaini = impr.dtifechainicio.Value;
+                        imp.FechaInicio = new DateTime(fechaini.Year, fechaini.Month, fechaini.Day, impr.dtihoraentrada.Value.Hour, impr.dtihoraentrada.Value.Minute, impr.dtihoraentrada.Value.Second);
+                        imp.FechaFinal = new DateTime(fechaini.Year, fechaini.Month, fechaini.Day, impr.dtihoraentrada.Value.Hour, impr.dtihoraentrada.Value.Minute, impr.dtihoraentrada.Value.Second);
                         imp.Descripcion = impr.textBoxX1.Text;
                         string personas = "No se puede agregar un Imprevisto a las Siguientes Personas:\n";
                         int i = 0;

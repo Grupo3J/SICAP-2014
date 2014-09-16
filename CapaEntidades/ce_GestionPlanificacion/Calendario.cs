@@ -22,6 +22,7 @@ namespace CapaEntidades.GestionPlanificacion
         private DateTime fechaInicio;
         private string idCalendario;
         private string nombre;
+        private int retraso;
         public DiasNoLaborables m_DiasNoLaborables;
         public DiasAdicionales m_DiasAdicionales;
 
@@ -48,7 +49,7 @@ namespace CapaEntidades.GestionPlanificacion
         /// <param name="idCalendario"></param>
         /// <param name="fechafin"></param>
         /// <param name="fechainicio"></param>
-        public Calendario(string nombre, string descripcion, string idCalendario, DateTime fechafin, DateTime fechainicio)
+        public Calendario(string nombre, string descripcion, string idCalendario, DateTime fechafin, DateTime fechainicio,int retraso)
         {
 
         }
@@ -111,6 +112,12 @@ namespace CapaEntidades.GestionPlanificacion
             {
                 nombre = value;
             }
+        }
+
+        public int Retraso
+        {
+            get { return retraso; }
+            set { retraso = value; }
         }
 
     }

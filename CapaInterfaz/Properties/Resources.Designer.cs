@@ -263,6 +263,16 @@ namespace CapaInterfaz.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap relojfondo {
+            get {
+                object obj = ResourceManager.GetObject("relojfondo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap SICAPLOGO {
             get {
                 object obj = ResourceManager.GetObject("SICAPLOGO", resourceCulture);

@@ -111,18 +111,26 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
 
                 Huella h = new Huella();
 
-                h.IdHuella = HLN.GenerarIdHuella();
-                h.DataHuella1 = arrayHuella1;
-                h.DataHuella2 = arrayHuella2;
-                h.Cedula = textCedula.Text;
-                h.Nombre = comboNombresDedos.SelectedItem.ToString();
-                h.Imagen = ImageToByte(pictureFoto.Image);
+                if (selacthuella == false)
+                {
+                    MessageBoxEx.Show("Cargue una huella");
+                }
+                else {
+                    h.IdHuella = HLN.GenerarIdHuella();
+                    h.DataHuella1 = arrayHuella1;
+                    h.DataHuella2 = arrayHuella2;
+                    h.Cedula = textCedula.Text;
+                    h.Nombre = comboNombresDedos.SelectedItem.ToString();
+                    h.Imagen = ImageToByte(pictureFoto.Image);
+                    PLN.InsertarPersonalVoid(p);
+                    HLN.InsertarHuellaSinReturn(h);
+                    PLN.InsertarPersonalCalendarioVoid(textCedula.Text, lista[datico]);
 
-                PLN.InsertarPersonalVoid(p);
-                HLN.InsertarHuellaSinReturn(h);
-                PLN.InsertarPersonalCalendarioVoid(textCedula.Text, lista[datico]);
+                    MessageBoxEx.Show("Persona registrada con éxito");
+                }
+               
+
                 
-                MessageBoxEx.Show("Persona registrada con éxito");
                 
             }
             catch (Exception er){
@@ -188,10 +196,12 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
         }
 
         //metodo para capturar huella
+        bool selacthuella;
         public void Inicializar()
         {
             try
             {
+                selacthuella = false;
                 //Tipo de Secugen Fingerprint reader utilizado 
                 SGFPMDeviceName device_name = SGFPMDeviceName.DEV_FDU05;
                 //Inicializar SGFingerPrintManager para que cargue el driver del dispositivo utilizado
@@ -245,6 +255,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
                 if (er.Equals("0"))
                 {
                     MessageBox.Show("Lectura de huella exitosa");
+                    selacthuella = true;
                 }
                 else
                 {
