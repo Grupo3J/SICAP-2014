@@ -15,6 +15,7 @@ using System.Drawing;
 using System.Linq;
 using System.Media;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -99,25 +100,30 @@ namespace CapaInterfaz.ci_GestionSeguridad
                     temp.FechaHoraSalida = DateTime.Now;
                     temp.IdAsistencia = linq.IDASISTENCIA;
                     asistencia.ModificarAsistenciaPersonal(temp);
+                    listBox1.Items.Add("---Registrando Salida con Exito");
                 }
                 else
                 {
                     //AutoClosingMessageBox.Show("Ya se ha Ingresado Asistencia", "Administrar Asistencia", 700);
+                    listBox1.Items.Add("---Ya ha Registrado Asistencia");
                     onePing(1);
                 }
             }
             else
             {
-                //Imgresar FAlta Normal
+                //Imgresar Asistencia Normal
                 if (imprevistos.ContarImprevisto(cedula, DateTime.Now, idcalendario) == 0)
                 {
                     asistencia.InsertarAsistencia(temp);
                     onePing(0);
+                    listBox1.Items.Add("---Registrando Entrada con Exito");
                 }
                 else
                 {
                     //AutoClosingMessageBox.Show("Existe un Imprevisto en esta Fecha\nRevise Administracion de Imprevistos", "Administrar Asistencia", 2000);
                     onePing(1);
+                    listBox1.Items.Add("---Existe un Imprevisto en esta Fecha");
+                    listBox1.Items.Add("---Revise Administración de Imprevistos");
                 }
             }
 
@@ -125,7 +131,9 @@ namespace CapaInterfaz.ci_GestionSeguridad
             var cont = faltas.ContarFaltaPersonalDia(cedula, DateTime.Now, idcalendario);
             if (cont > 0)
                 faltas.ELiminarFaltaPersonalDia(idcalendario, DateTime.Now, cedula);
-
+            pictureBox4.Image = CapaInterfaz.Properties.Resources.images;
+            Thread.Sleep(2000);
+            pictureBox4.Refresh();
         }
 
         protected override void WndProc(ref Message message)
@@ -137,6 +145,9 @@ namespace CapaInterfaz.ci_GestionSeguridad
                     try 
                     {
                         ////StatusBar.Text = "Device Message: Finger On";
+                        listBox1.Items.Add("::. Event Finger Placed");
+                        pictureBox3.Image = CapaInterfaz.Properties.Resources.buttonwait;
+                        pictureBox3.Refresh();
                         bool matched = false;
                         if (cmbcalendario.SelectedIndex!=-1 ) 
                         {
@@ -151,6 +162,11 @@ namespace CapaInterfaz.ci_GestionSeguridad
                                     if (MatchTemplate(huell.DATAHUELLA1.ToArray(), huell.DATAHUELLA2.ToArray()))
                                     {
                                         matched = true;
+                                        listBox1.Items.Add(temp.NOMBRE+" "+temp.APELLIDO+" - "+DateTime.Now.ToShortTimeString());
+                                        pictureBox4.Image = Utilities.convertByteToImage(temp.DATAFOTO.ToArray());
+                                        pictureBox4.Refresh();
+                                        pictureBox3.Image = CapaInterfaz.Properties.Resources.buttonsucess;
+                                        pictureBox3.Refresh();
                                         AsistenciaperReader(temp.CEDULA);
                                         break;
                                     }
@@ -160,6 +176,9 @@ namespace CapaInterfaz.ci_GestionSeguridad
                             {
                                 //AutoClosingMessageBox.Show("Huella No Encontrada", "Administracion de Huellas", 1000);
                                 onePing(1);
+                                listBox1.Items.Add("::.Huella no Encontrada");
+                                pictureBox3.Image = CapaInterfaz.Properties.Resources.buttonfailed;
+                                pictureBox3.Refresh();
                             }
                         }
                         //AutoClosingMessageBox.Show("Dedo Aqui :)","Hehehe",100);
@@ -174,6 +193,9 @@ namespace CapaInterfaz.ci_GestionSeguridad
                     //StatusBar.Text = "Device Message: Finger Off";
                     //MessageBox.Show("Here");
                     //AutoClosingMessageBox.Show("Dedo se fue :(", "Hehehe", 100);
+                    listBox1.Items.Add("::. Event Finger Removed");
+                    pictureBox3.Image = CapaInterfaz.Properties.Resources.buttonstart;
+                    this.listBox1.SelectedIndex = this.listBox1.Items.Count - 1;
                 }
             }
 
@@ -194,7 +216,7 @@ namespace CapaInterfaz.ci_GestionSeguridad
         {
             Int32 iError;
             Byte[] fp_image = new Byte[m_ImageWidth * m_ImageHeight];
-            SGFPMSecurityLevel secu_level = SGFPMSecurityLevel.LOWEST; // Adjust this value according to application type
+            SGFPMSecurityLevel secu_level = SGFPMSecurityLevel.NORMAL; // Adjust this value according to application type
             bool matched1 = false;
             bool matched2 = false;
             //Convierte el huella en una imagen y la presenta en un picturebox

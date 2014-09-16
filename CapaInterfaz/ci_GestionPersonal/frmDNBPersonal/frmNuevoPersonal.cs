@@ -217,7 +217,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
                     m_ImageHeight = pInfo.ImageHeight;
                 }                
                 Byte[] fp_image = new Byte[m_ImageWidth * m_ImageHeight];
-                SGFPMSecurityLevel secu_level = SGFPMSecurityLevel.LOWEST; // Adjust this value according to application type
+                SGFPMSecurityLevel secu_level = SGFPMSecurityLevel.NORMAL; // Adjust this value according to application type
                 //Convierte el huella en una imagen y la presenta en un picturebox
                 iError = m_FPM.GetImage(fp_image);
                 if (iError == (Int32)SGFPMError.ERROR_NONE)

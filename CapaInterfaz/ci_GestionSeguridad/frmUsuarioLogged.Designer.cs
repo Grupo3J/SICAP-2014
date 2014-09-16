@@ -84,9 +84,9 @@
             this.radialMenu1.ImeMode = System.Windows.Forms.ImeMode.AlphaFull;
             this.radialMenu1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.raidalhome,
-            this.raidallogout,
+            this.raidalmiperfil,
             this.raidalacercade,
-            this.raidalmiperfil});
+            this.raidallogout});
             this.radialMenu1.Location = new System.Drawing.Point(584, 75);
             this.radialMenu1.Name = "radialMenu1";
             this.radialMenu1.Size = new System.Drawing.Size(28, 28);

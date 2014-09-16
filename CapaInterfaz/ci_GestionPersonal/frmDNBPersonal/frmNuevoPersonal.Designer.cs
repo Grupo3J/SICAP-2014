@@ -423,11 +423,11 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             // 
             // comboItem14
             // 
-            this.comboItem14.Text = "Hombre";
+            this.comboItem14.Text = "Masculino";
             // 
             // comboItem15
             // 
-            this.comboItem15.Text = "Mujer";
+            this.comboItem15.Text = "Femenino";
             // 
             // pictureFoto
             // 
