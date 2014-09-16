@@ -122,14 +122,14 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             textCargo.Text = car;
             textTitulo.Text = tit;
             textCorreo.Text = corr;
-            if ((sex.Equals('H')) || (sex.Equals('h')))
+            if ((sex.Equals('M')) || (sex.Equals('m')))
             {
-                comboSexo.Text = "Hombre";
+                comboSexo.Text = "Masculino";
             }
             else {
-                if ((sex.Equals('M')) || (sex.Equals('m')))
+                if ((sex.Equals('F')) || (sex.Equals('f')))
                 {
-                    comboSexo.Text = "Mujer";
+                    comboSexo.Text = "Femenino";
                 }
             }
             textCiudad.Text = ciu;

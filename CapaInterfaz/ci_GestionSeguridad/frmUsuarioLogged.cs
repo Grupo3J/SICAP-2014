@@ -69,33 +69,40 @@ namespace CapaInterfaz.ci_GestionSeguridad
                 if (j == raidalhome)
                 {
                     paretn.Hide();
-                    frmSICAP2014 child = (frmSICAP2014)Children;
-                    child.Show();
+                    Children.Show();
                 }
                 if (j == raidallogout)
                 {
-                    //OPTION = "OK";
-                    //this.Close();
+                    frmLog_In padr = (frmLog_In)paretn;
+                    paretn.Hide();
+                    padr.Return("LOGOUT");
+                    paretn.Show();
                 }
                 if (j == raidalacercade)
                 {
+                    frmLog_In padr = (frmLog_In)paretn;
+                    padr.Hide();
                     ci_GestionAyuda.frmAcercaDe acercade = new ci_GestionAyuda.frmAcercaDe();
-                    frmSICAP2014 child = (frmSICAP2014)Children;
-                    child.groupPanel1.Text = "Acerca de";
-                    child.addPanel(acercade);
-                    child.Show(); 
+                    frmSICAP2014 child2 = (frmSICAP2014)padr.Children;
+                    child2.groupPanel1.Text = "Acerca de";
+                    child2.addPanel(acercade);
+                    child2.Show(); 
                 }
                 if (j == raidalmiperfil)
                 {
-                    //frmMiPerfil perfil = new frmMiPerfil();
-                    //perfil.llenaruser(user);
-                    //addPanel(perfil);
-                    //groupPanel1.Text = "Mi Perfil ";
+                    frmLog_In padr = (frmLog_In)paretn;
+                    padr.Hide();
+                    frmMiPerfil perfil = new frmMiPerfil();
+                    frmSICAP2014 child2 = (frmSICAP2014)padr.Children;
+                    perfil.llenaruser(child2.user);
+                    child2.addPanel(perfil);
+                    child2.groupPanel1.Text = "Mi Perfil ";
+                    child2.Show();
                 }
             }
             catch (Exception)
             {
-
+                
             }
         }
 

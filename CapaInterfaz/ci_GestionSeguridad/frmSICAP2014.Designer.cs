@@ -321,7 +321,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "SICAP 2014 ";
             this.TransparencyKey = System.Drawing.Color.LightGray;
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formclosed);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmSICAP2014_FormClosing);
             this.Load += new System.EventHandler(this.frmSICAP2014_Load);
             this.groupPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

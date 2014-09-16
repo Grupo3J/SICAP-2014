@@ -25,6 +25,12 @@ namespace CapaInterfaz.ci_GestionSeguridad
     public partial class frmSICAP2014 : DevComponents.DotNetBar.Metro.MetroAppForm
     {
         private Form owner;
+
+        public Form Owner1
+        {
+            get { return owner; }
+            set { owner = value; }
+        }
         UsuariosLN USLN = new UsuariosLN();
         RecursoLN RCLN = new RecursoLN();
         public Usuarios user = new Usuarios();
@@ -36,8 +42,8 @@ namespace CapaInterfaz.ci_GestionSeguridad
         public frmSICAP2014(Form owner)
         {
             InitializeComponent();
-            this.owner = owner;
-            frmLog_In princp = (frmLog_In)owner;
+            Owner1 = owner;
+            frmLog_In princp = (frmLog_In)Owner1;
             princp.Children = this;
         }
 
@@ -386,21 +392,22 @@ namespace CapaInterfaz.ci_GestionSeguridad
            
         }
 
-        private void formclosed(object sender, FormClosedEventArgs e)
+        private void frmSICAP2014_FormClosing(object sender, FormClosingEventArgs e)
         {
+
             if (OPTION == "LOGOUT")
             {
                 frmLog_In fo = (frmLog_In)owner;
-                fo.Return();
+                fo.Return("LOGOUT");            
             }
             else 
             {
+                e.Cancel = true;
                 OPTION = "EXIT";
                 this.Hide();
                 frmLog_In fo = (frmLog_In)owner;
-                fo.Return();
+                fo.Return("EXIT");      
             }
-                
         }
 
 

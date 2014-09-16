@@ -379,15 +379,14 @@ namespace CapaInterfaz.ci_GestionSeguridad
             picBox.Refresh();
         }
 
-        public void Return() 
+        public void Return(string command) 
         {
-            frmSICAP2014 fp = (frmSICAP2014)children;
-            if (fp.OPTION == "EXIT")
+            if (command == "EXIT")
             {
                 this.Show();
                 txtLogin.Focus();
             }
-            if (fp.OPTION == "LOGOUT")
+            if (command == "LOGOUT")
             {
                 panelEx1.Controls.RemoveByKey("fh");
                 Discovered();
