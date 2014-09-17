@@ -22,7 +22,7 @@ namespace CapaInterfaz.ci_GestionAyuda
         {
             
             webBrowser1.AllowWebBrowserDrop = false;
-            //webBrowser1.Url=new Uri("file:///C:/Users/HERNAN/Desktop/manual/index.htm");
+            webBrowser1.Url = new Uri("file:///C:/Users/JORGE-TORRES/Source/Repos/SICAP-2014/CapaInterfaz/Resources/Manual%20de%20Usuario.pdf");
             //webBrowser1.Url = new Uri("httcom/"); para web
            // webBrowser1.Url = new Uri("C:\\Users\\HERNAN\\SkyDrive\\UNIVERSIDAD\\MODULOS\\REDACCION DE INFORMES\\portafolio\\manual de usuario.pdf");
       

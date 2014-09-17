@@ -68,7 +68,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             this.toolStripButton5});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(704, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(804, 25);
             this.toolStrip1.TabIndex = 12;
             this.toolStrip1.Text = "toolStrip1";
             this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
@@ -170,16 +170,16 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             // 
             // groupPanel1
             // 
-            this.groupPanel1.BackColor = System.Drawing.Color.White;
+            this.groupPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.groupPanel1.ColorTable = DevComponents.DotNetBar.Controls.ePanelColorTable.Yellow;
             this.groupPanel1.Controls.Add(this.dataGridViewX1);
             this.groupPanel1.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupPanel1.Location = new System.Drawing.Point(18, 127);
+            this.groupPanel1.Location = new System.Drawing.Point(12, 110);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(680, 303);
+            this.groupPanel1.Size = new System.Drawing.Size(780, 320);
             // 
             // 
             // 
@@ -226,7 +226,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             this.dataGridViewX1.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewX1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewX1.Size = new System.Drawing.Size(668, 274);
+            this.dataGridViewX1.Size = new System.Drawing.Size(768, 291);
             this.dataGridViewX1.TabIndex = 29;
             this.dataGridViewX1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewX1_CellMouseClick);
             // 
@@ -234,7 +234,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(704, 442);
+            this.ClientSize = new System.Drawing.Size(804, 442);
             this.Controls.Add(this.groupPanel1);
             this.Controls.Add(this.labelXDatos);
             this.Controls.Add(this.pictureBox1);
@@ -272,7 +272,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
         private DevComponents.DotNetBar.LabelX labelXDatos;
         private System.Windows.Forms.ToolStripButton toolStripButton5;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
-        private System.Windows.Forms.DataGridView dataGridViewX1;
+        public System.Windows.Forms.DataGridView dataGridViewX1;
 
     }
 }

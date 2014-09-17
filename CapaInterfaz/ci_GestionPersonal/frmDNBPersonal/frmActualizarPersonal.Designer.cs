@@ -124,7 +124,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             this.comboCalendario.Name = "comboCalendario";
             this.comboCalendario.Size = new System.Drawing.Size(121, 22);
             this.comboCalendario.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.comboCalendario.TabIndex = 78;
+            this.comboCalendario.TabIndex = 6;
             // 
             // textDireccion
             // 
@@ -141,7 +141,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             this.textDireccion.Name = "textDireccion";
             this.textDireccion.PreventEnterBeep = true;
             this.textDireccion.Size = new System.Drawing.Size(423, 22);
-            this.textDireccion.TabIndex = 75;
+            this.textDireccion.TabIndex = 11;
             this.textDireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textDireccion_KeyPress);
             // 
             // textCiudad
@@ -158,7 +158,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             this.textCiudad.Name = "textCiudad";
             this.textCiudad.PreventEnterBeep = true;
             this.textCiudad.Size = new System.Drawing.Size(271, 22);
-            this.textCiudad.TabIndex = 74;
+            this.textCiudad.TabIndex = 10;
             this.textCiudad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textCiudad_KeyPress);
             // 
             // textCorreo
@@ -175,7 +175,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             this.textCorreo.Name = "textCorreo";
             this.textCorreo.PreventEnterBeep = true;
             this.textCorreo.Size = new System.Drawing.Size(423, 22);
-            this.textCorreo.TabIndex = 73;
+            this.textCorreo.TabIndex = 9;
             this.textCorreo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textCorreo_KeyPress);
             this.textCorreo.Validated += new System.EventHandler(this.textCorreo_Validated);
             // 
@@ -193,7 +193,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             this.textTelefono.Name = "textTelefono";
             this.textTelefono.PreventEnterBeep = true;
             this.textTelefono.Size = new System.Drawing.Size(170, 22);
-            this.textTelefono.TabIndex = 72;
+            this.textTelefono.TabIndex = 8;
             this.textTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textTelefono_KeyPress);
             // 
             // textCargo
@@ -210,7 +210,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             this.textCargo.Name = "textCargo";
             this.textCargo.PreventEnterBeep = true;
             this.textCargo.Size = new System.Drawing.Size(423, 22);
-            this.textCargo.TabIndex = 71;
+            this.textCargo.TabIndex = 7;
             this.textCargo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textCargo_KeyPress);
             // 
             // comboTipo
@@ -229,7 +229,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             this.comboTipo.Name = "comboTipo";
             this.comboTipo.Size = new System.Drawing.Size(170, 22);
             this.comboTipo.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.comboTipo.TabIndex = 70;
+            this.comboTipo.TabIndex = 5;
             // 
             // comboItem12
             // 
@@ -261,7 +261,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             this.textTitulo.Name = "textTitulo";
             this.textTitulo.PreventEnterBeep = true;
             this.textTitulo.Size = new System.Drawing.Size(423, 22);
-            this.textTitulo.TabIndex = 69;
+            this.textTitulo.TabIndex = 4;
             this.textTitulo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textTitulo_KeyPress);
             // 
             // textApellidos
@@ -278,7 +278,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             this.textApellidos.Name = "textApellidos";
             this.textApellidos.PreventEnterBeep = true;
             this.textApellidos.Size = new System.Drawing.Size(271, 22);
-            this.textApellidos.TabIndex = 68;
+            this.textApellidos.TabIndex = 2;
             this.textApellidos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textApellidos_KeyPress);
             // 
             // textNombres
@@ -295,7 +295,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             this.textNombres.Name = "textNombres";
             this.textNombres.PreventEnterBeep = true;
             this.textNombres.Size = new System.Drawing.Size(271, 22);
-            this.textNombres.TabIndex = 67;
+            this.textNombres.TabIndex = 1;
             this.textNombres.TextChanged += new System.EventHandler(this.textNombres_TextChanged);
             this.textNombres.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textNombres_KeyPress);
             // 
@@ -313,15 +313,15 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             this.comboSexo.Name = "comboSexo";
             this.comboSexo.Size = new System.Drawing.Size(170, 22);
             this.comboSexo.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.comboSexo.TabIndex = 66;
+            this.comboSexo.TabIndex = 3;
             // 
             // comboItem14
             // 
-            this.comboItem14.Text = "Hombre";
+            this.comboItem14.Text = "Masculino";
             // 
             // comboItem15
             // 
-            this.comboItem15.Text = "Mujer";
+            this.comboItem15.Text = "Femenino";
             // 
             // textCedula
             // 
@@ -338,7 +338,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             this.textCedula.Name = "textCedula";
             this.textCedula.PreventEnterBeep = true;
             this.textCedula.Size = new System.Drawing.Size(170, 22);
-            this.textCedula.TabIndex = 64;
+            this.textCedula.TabIndex = 0;
             this.textCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textCedula_KeyPress);
             this.textCedula.Validated += new System.EventHandler(this.textCedula_Validated);
             // 

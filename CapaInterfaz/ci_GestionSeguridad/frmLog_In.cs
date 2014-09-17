@@ -429,7 +429,6 @@ namespace CapaInterfaz.ci_GestionSeguridad
             if (e.KeyCode == Keys.Enter)
             {
                 verificaeingresa();
-
             }
         }
 
@@ -632,6 +631,11 @@ namespace CapaInterfaz.ci_GestionSeguridad
             {
                 return false;
             }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
         }
 
     }

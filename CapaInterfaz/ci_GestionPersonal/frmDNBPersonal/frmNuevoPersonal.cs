@@ -129,7 +129,8 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
                     PLN.InsertarPersonalVoid(p);
                     HLN.InsertarHuellaSinReturn(h);
                     PLN.InsertarPersonalCalendarioVoid(textCedula.Text, lista[datico]);
-
+                    frmAdministrarPersonal frm = (frmAdministrarPersonal)Owner1;
+                    frm.dataGridViewX1.DataSource = PLN.ListarPersonal("");
                     MessageBoxEx.Show("Persona registrada con éxito");
                 }
                

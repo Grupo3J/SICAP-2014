@@ -167,7 +167,7 @@ namespace CapaInterfaz.ci_GestionSeguridad
                         // 
                         metroTileItemjh.Name = subm.IDMODULO;// "metroTileItem2  jh";
                         
-                        metroTileItemjh.TitleText = subm.IDMODULO;// "Texto de titulo";
+                       // metroTileItemjh.TitleText = subm.IDMODULO;// "Texto de titulo";
                        // metroTileItemjh.Image = global::dedonetbar.Properties.Resources.IMG00244;
                         metroTileItemjh.ItemAlignment = DevComponents.DotNetBar.eItemAlignment.Center;
                         metroTileItemjh.TileColor = colores[con];//.DotNetBar.Metro.eMetroTileColor.Default;
@@ -308,7 +308,7 @@ namespace CapaInterfaz.ci_GestionSeguridad
             //CapaInterfaz.Properties.Resources.
            // global::.Properties.Resources.IMG00244
             //Process.Start("C:\\Users\\HERNAN\\SkyDrive\\UNIVERSIDAD\\MODULOS\\REDACCION DE INFORMES\\portafolio\\chm.chm");
-            string ruta = Application.StartupPath.Replace("bin\\Debug", "Resources\\SICAP.chm");
+            string ruta = Application.StartupPath.Replace("bin\\Debug", "Resources\\Manual.chm");
            
             Process.Start(ruta);
         }

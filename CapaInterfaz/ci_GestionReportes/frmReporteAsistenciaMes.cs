@@ -31,7 +31,7 @@ namespace CapaInterfaz.ci_GestionReportes
 
         private void cmbcalendario_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbcalendario.SelectedIndex >= 0 && cmbmes.SelectedIndex != -1)
+            if (cmbcalendario.SelectedIndex >= 0)
             {
                 sp_ListarCalendarioResult temp = calendario.ListarCalendario()[cmbcalendario.SelectedIndex];
                 idcalendario = temp.IDCALENDARIO;

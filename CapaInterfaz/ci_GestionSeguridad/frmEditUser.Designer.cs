@@ -100,7 +100,7 @@
             this.label19.AutoSize = true;
             this.label19.BackColor = System.Drawing.Color.Transparent;
             this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Location = new System.Drawing.Point(372, 244);
+            this.label19.Location = new System.Drawing.Point(386, 243);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(23, 13);
             this.label19.TabIndex = 45;
@@ -344,7 +344,7 @@
             // 
             this.txtlogin.BackColor = System.Drawing.Color.White;
             this.txtlogin.ForeColor = System.Drawing.Color.Black;
-            this.txtlogin.Location = new System.Drawing.Point(426, 276);
+            this.txtlogin.Location = new System.Drawing.Point(426, 272);
             this.txtlogin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtlogin.MaxLength = 16;
             this.txtlogin.Name = "txtlogin";
@@ -394,7 +394,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(372, 280);
+            this.label4.Location = new System.Drawing.Point(372, 275);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 13);
             this.label4.TabIndex = 11;
@@ -425,6 +425,7 @@
             // groupPanel1
             // 
             this.groupPanel1.BackColor = System.Drawing.Color.White;
+            this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.groupPanel1.ColorTable = DevComponents.DotNetBar.Controls.ePanelColorTable.Yellow;
             this.groupPanel1.Controls.Add(this.cmbTipo);
@@ -515,19 +516,19 @@
             // 
             // doccontratado
             // 
-            this.doccontratado.Text = "DOCENTE CONTRATADO";
+            this.doccontratado.Text = "Doc. Contratado";
             // 
             // docnombramiento
             // 
-            this.docnombramiento.Text = "DOCENTE NOMBRAMIENTO";
+            this.docnombramiento.Text = "Doc. Nombramiento";
             // 
             // docservicio
             // 
-            this.docservicio.Text = "SERVICIO";
+            this.docservicio.Text = "Per. Servicio";
             // 
             // docadministrativo
             // 
-            this.docadministrativo.Text = "ADMINISTRATIVO";
+            this.docadministrativo.Text = "Per. Administrativo";
             // 
             // btncancelar
             // 
@@ -560,9 +561,9 @@
             this.pict_foto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pict_foto.ForeColor = System.Drawing.Color.Black;
             this.pict_foto.Image = global::CapaInterfaz.Properties.Resources.images;
-            this.pict_foto.Location = new System.Drawing.Point(426, 53);
+            this.pict_foto.Location = new System.Drawing.Point(443, 53);
             this.pict_foto.Name = "pict_foto";
-            this.pict_foto.Size = new System.Drawing.Size(164, 165);
+            this.pict_foto.Size = new System.Drawing.Size(147, 131);
             this.pict_foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pict_foto.TabIndex = 22;
             this.pict_foto.TabStop = false;

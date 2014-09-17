@@ -54,7 +54,7 @@ namespace CapaInterfaz.ci_GestionPlanificacion.frmDNBAdministrarCalendarioLab
             this.toolStripButton4});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(704, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(804, 25);
             this.toolStrip1.TabIndex = 7;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -108,7 +108,7 @@ namespace CapaInterfaz.ci_GestionPlanificacion.frmDNBAdministrarCalendarioLab
             this.groupPanel1.Controls.Add(this.dataGridViewX1);
             this.groupPanel1.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupPanel1.Location = new System.Drawing.Point(12, 70);
+            this.groupPanel1.Location = new System.Drawing.Point(57, 71);
             this.groupPanel1.Name = "groupPanel1";
             this.groupPanel1.Size = new System.Drawing.Size(680, 350);
             // 
@@ -164,7 +164,7 @@ namespace CapaInterfaz.ci_GestionPlanificacion.frmDNBAdministrarCalendarioLab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(704, 442);
+            this.ClientSize = new System.Drawing.Size(804, 442);
             this.Controls.Add(this.groupPanel1);
             this.Controls.Add(this.toolStrip1);
             this.DoubleBuffered = true;

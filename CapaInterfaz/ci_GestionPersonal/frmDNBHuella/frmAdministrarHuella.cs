@@ -118,6 +118,10 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBHuella
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
             dataGridViewX1.DataSource = hln.ListarHuella(cedula);
+            dataGridViewX1.Columns[2].Visible = false;
+            dataGridViewX1.Columns[3].Visible = false;
+            dataGridViewX1.Columns[5].Visible = false;
+
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)
@@ -209,6 +213,9 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBHuella
         {
             
             dataGridViewX1.DataSource = hln.ListarHuella(cedula);
+            dataGridViewX1.Columns[2].Visible = false;
+            dataGridViewX1.Columns[3].Visible = false;
+            dataGridViewX1.Columns[5].Visible = false;
             //Inicializar SGFingerPrintManager para que cargue el driver del dispositivo utilizado
             m_FPM.Init(device_name);
         }

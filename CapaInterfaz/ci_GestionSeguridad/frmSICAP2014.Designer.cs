@@ -221,7 +221,7 @@
             this.radialmiperfil,
             this.radialacercade,
             this.radialcerrarsesion});
-            this.radialMenu1.Location = new System.Drawing.Point(863, 106);
+            this.radialMenu1.Location = new System.Drawing.Point(852, 110);
             this.radialMenu1.Name = "radialMenu1";
             this.radialMenu1.Size = new System.Drawing.Size(28, 28);
             this.radialMenu1.Symbol = "";
@@ -268,7 +268,7 @@
             this.lblnameuser.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lblnameuser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblnameuser.ForeColor = System.Drawing.Color.Black;
-            this.lblnameuser.Location = new System.Drawing.Point(720, 55);
+            this.lblnameuser.Location = new System.Drawing.Point(709, 59);
             this.lblnameuser.Name = "lblnameuser";
             this.lblnameuser.Size = new System.Drawing.Size(168, 25);
             this.lblnameuser.TabIndex = 12;
@@ -284,7 +284,7 @@
             this.lblrol.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lblrol.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblrol.ForeColor = System.Drawing.Color.Black;
-            this.lblrol.Location = new System.Drawing.Point(724, 77);
+            this.lblrol.Location = new System.Drawing.Point(713, 81);
             this.lblrol.Name = "lblrol";
             this.lblrol.Size = new System.Drawing.Size(168, 25);
             this.lblrol.TabIndex = 13;
@@ -296,7 +296,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.pictureBox1.ForeColor = System.Drawing.Color.Black;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(898, 48);
+            this.pictureBox1.Location = new System.Drawing.Point(887, 52);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(90, 87);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

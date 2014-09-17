@@ -32,6 +32,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
             this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonX4 = new DevComponents.DotNetBar.ButtonX();
             this.buttonX3 = new DevComponents.DotNetBar.ButtonX();
             this.cmbTipo = new DevComponents.DotNetBar.Controls.ComboBoxEx();
@@ -49,13 +50,12 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.dtifecha = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtihorasalida)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtihoraentrada)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtifecha)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonX1
@@ -66,7 +66,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
             this.buttonX1.Name = "buttonX1";
             this.buttonX1.Size = new System.Drawing.Size(75, 23);
             this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX1.TabIndex = 0;
+            this.buttonX1.TabIndex = 7;
             this.buttonX1.Text = "Guardar";
             this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
             // 
@@ -78,7 +78,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
             this.buttonX2.Name = "buttonX2";
             this.buttonX2.Size = new System.Drawing.Size(75, 23);
             this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX2.TabIndex = 1;
+            this.buttonX2.TabIndex = 8;
             this.buttonX2.Text = "Regresar";
             this.buttonX2.Click += new System.EventHandler(this.buttonX2_Click);
             // 
@@ -133,6 +133,14 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
             this.groupPanel1.TabIndex = 2;
             this.groupPanel1.Text = "Datos  de Personal";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(360, 7);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(145, 148);
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
             // buttonX4
             // 
             this.buttonX4.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -167,7 +175,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(148, 22);
             this.cmbTipo.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cmbTipo.TabIndex = 4;
+            this.cmbTipo.TabIndex = 0;
             // 
             // txtcargo
             // 
@@ -360,7 +368,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
             this.dtihorasalida.Name = "dtihorasalida";
             this.dtihorasalida.Size = new System.Drawing.Size(145, 22);
             this.dtihorasalida.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dtihorasalida.TabIndex = 5;
+            this.dtihorasalida.TabIndex = 6;
             // 
             // dtihoraentrada
             // 
@@ -410,7 +418,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
             this.dtihoraentrada.Name = "dtihoraentrada";
             this.dtihoraentrada.Size = new System.Drawing.Size(145, 22);
             this.dtihoraentrada.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dtihoraentrada.TabIndex = 4;
+            this.dtihoraentrada.TabIndex = 5;
             // 
             // labelX7
             // 
@@ -482,7 +490,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
             this.dtifecha.Name = "dtifecha";
             this.dtifecha.Size = new System.Drawing.Size(120, 22);
             this.dtifecha.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dtifecha.TabIndex = 1;
+            this.dtifecha.TabIndex = 4;
             // 
             // labelX5
             // 
@@ -495,14 +503,6 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
             this.labelX5.Size = new System.Drawing.Size(58, 23);
             this.labelX5.TabIndex = 0;
             this.labelX5.Text = "Fecha";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(360, 7);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(145, 148);
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
             // 
             // frmDNBEditAsistencia
             // 
@@ -520,11 +520,11 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
             this.Text = "Editar Asistencia";
             this.Load += new System.EventHandler(this.frmDNBEditAsistencia_Load);
             this.groupPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtihorasalida)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtihoraentrada)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtifecha)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

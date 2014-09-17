@@ -120,7 +120,7 @@ namespace CapaInterfaz.ci_GestionReportes
             this.txtbuscar.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtbuscar.DisabledBackColor = System.Drawing.Color.White;
             this.txtbuscar.ForeColor = System.Drawing.Color.Black;
-            this.txtbuscar.Location = new System.Drawing.Point(373, 50);
+            this.txtbuscar.Location = new System.Drawing.Point(628, 32);
             this.txtbuscar.Name = "txtbuscar";
             this.txtbuscar.PreventEnterBeep = true;
             this.txtbuscar.Size = new System.Drawing.Size(129, 22);
@@ -134,7 +134,7 @@ namespace CapaInterfaz.ci_GestionReportes
             // 
             // 
             this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX3.Location = new System.Drawing.Point(292, 50);
+            this.labelX3.Location = new System.Drawing.Point(581, 32);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(75, 23);
             this.labelX3.TabIndex = 8;
@@ -147,7 +147,7 @@ namespace CapaInterfaz.ci_GestionReportes
             // 
             // 
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX2.Location = new System.Drawing.Point(182, 16);
+            this.labelX2.Location = new System.Drawing.Point(60, 29);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(62, 23);
             this.labelX2.TabIndex = 7;
@@ -159,7 +159,7 @@ namespace CapaInterfaz.ci_GestionReportes
             this.cmbcalendario.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmbcalendario.FormattingEnabled = true;
             this.cmbcalendario.ItemHeight = 16;
-            this.cmbcalendario.Location = new System.Drawing.Point(250, 19);
+            this.cmbcalendario.Location = new System.Drawing.Point(128, 32);
             this.cmbcalendario.Name = "cmbcalendario";
             this.cmbcalendario.Size = new System.Drawing.Size(121, 22);
             this.cmbcalendario.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -172,7 +172,7 @@ namespace CapaInterfaz.ci_GestionReportes
             this.cmbmes.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmbmes.FormattingEnabled = true;
             this.cmbmes.ItemHeight = 16;
-            this.cmbmes.Location = new System.Drawing.Point(508, 19);
+            this.cmbmes.Location = new System.Drawing.Point(378, 32);
             this.cmbmes.Name = "cmbmes";
             this.cmbmes.Size = new System.Drawing.Size(121, 22);
             this.cmbmes.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -186,9 +186,9 @@ namespace CapaInterfaz.ci_GestionReportes
             // 
             // 
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.Location = new System.Drawing.Point(451, 16);
+            this.labelX1.Location = new System.Drawing.Point(336, 29);
             this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(51, 23);
+            this.labelX1.Size = new System.Drawing.Size(36, 23);
             this.labelX1.TabIndex = 5;
             this.labelX1.Text = "Mes";
             // 

@@ -89,11 +89,11 @@ namespace CapaLogicaNegocio.cln_GestionSeguridad
                     //InsertarDataRow(sql.IDMODULO + "4", item.IDMODULO, "EDITAR");
                     //InsertarDataRow(item.IDMODULO + "5", item.IDMODULO, "BUSCAR");
 
-                    InsertarDataRow(sql.IDMODULO + "A", item.IDMODULO, "LECTURA");
+                    
                     InsertarDataRow(sql.IDMODULO + "B", item.IDMODULO, "INSERTAR");
-                    InsertarDataRow(sql.IDMODULO + "C", item.IDMODULO, "ELIMINAR");
-                    InsertarDataRow(sql.IDMODULO + "D", item.IDMODULO, "EDITAR");
-                    InsertarDataRow(sql.IDMODULO + "E", item.IDMODULO, "BUSCAR");
+                    InsertarDataRow(sql.IDMODULO + "C", item.IDMODULO, "EDITAR");
+                    InsertarDataRow(sql.IDMODULO + "D", item.IDMODULO, "ELIMINAR");
+                    
                     
                 }
                 catch (Exception)
@@ -186,10 +186,7 @@ namespace CapaLogicaNegocio.cln_GestionSeguridad
                         if (sqli.Count() > 0)
                         {
                             var sql = sqli.Single();
-                            if (nomb == "LECTURA")
-                            {
-                                nuevoNodo.Checked = sql.LECTURA;
-                            }
+                           
 
                             if (nomb == "INSERTAR")
                             {
@@ -203,10 +200,7 @@ namespace CapaLogicaNegocio.cln_GestionSeguridad
                             {
                                 nuevoNodo.Checked = sql.MODIFICACION;
                             }
-                            if (nomb == "BUSCAR")
-                            {
-                                nuevoNodo.Checked = sql.BUSQUEDA;
-                            }
+                           
                         
                         }
                         

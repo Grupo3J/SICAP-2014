@@ -17,7 +17,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
 {
     public partial class frmActualizarPersonal : DevComponents.DotNetBar.Metro.MetroForm
     {
-        public frmActualizarPersonal(Personal p)
+        public frmActualizarPersonal(Personal p,Form owner)
         {           
             ced = p.Cedula;
             nom = p.Nombre;
@@ -33,6 +33,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             fot = p.DataFoto;
 
             InitializeComponent();
+            Owner1 = owner;
         }
 
         //private SGFingerPrintManager m_FPM;
@@ -67,7 +68,13 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
         CalendarioLN CLN = new CalendarioLN();
         PersonalLN PLN = new PersonalLN();
         HuellaLN HLN = new HuellaLN();
+        private Form owner;
 
+        public Form Owner1
+        {
+            get { return owner; }
+            set { owner = value; }
+        }
 
         private void cargarComboCalendario()
         {
@@ -222,7 +229,8 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
                     valor = 2;
                     PLN.ModificarPersonalVoid(p, valor);
                     MessageBoxEx.Show("Actualización de datos con éxito");
-
+                    frmAdministrarPersonal frm = (frmAdministrarPersonal)Owner1;
+                    frm.dataGridViewX1.DataSource = PLN.ListarPersonal("");
 
                 }
             }

@@ -70,8 +70,7 @@ namespace CapaInterfaz.ci_GestionSeguridad
                 //per.Busqueda = tem.Nodes[4].Checked;
                 Permisos pertem = PELN.getPermisoByidmodNombreRol(modidmodulo, comboBox1.SelectedItem.ToString());
                 
-                pertem.Escritura = tem.Nodes[0].Checked;
-                
+                pertem.Escritura = tem.Nodes[0].Checked;                
                 pertem.Modificacion = tem.Nodes[1].Checked;
                 pertem.Eliminacion = tem.Nodes[2].Checked;
                 PELN.modificar(pertem);

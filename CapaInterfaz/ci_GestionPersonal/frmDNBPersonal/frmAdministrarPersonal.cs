@@ -50,6 +50,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             if (!permiso.Modificacion) { toolStrip1.Items.Remove(toolmodificar); }
             
             dataGridViewX1.DataSource = PLN.ListarPersonal("");
+            dataGridViewX1.Columns[11].Visible = false;
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -61,6 +62,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
             dataGridViewX1.DataSource = PLN.ListarPersonal("");
+            dataGridViewX1.Columns[11].Visible = false;
         }
 
         private void textBuscar_TextChanged(object sender, EventArgs e)
@@ -94,7 +96,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
 
 
             }
-            catch (Exception er) { 
+            catch (Exception) { 
             
             }
             
@@ -199,7 +201,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             //string calendario = PLN.ExtraerNombreCalendarioCedula(p.Cedula);
             //MessageBox.Show("calendario: "+calendario);
 
-            frmActualizarPersonal FRMAP = new frmActualizarPersonal(p);
+            frmActualizarPersonal FRMAP = new frmActualizarPersonal(p,this);
             FRMAP.Show();
         }
 

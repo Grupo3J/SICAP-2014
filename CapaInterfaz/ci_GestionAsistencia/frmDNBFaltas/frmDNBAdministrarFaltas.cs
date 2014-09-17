@@ -453,7 +453,47 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBFaltas
 
         private void txtbuscar_TextChanged(object sender, EventArgs e)
         {
-                
+            if (toolStripcmbcalendario.SelectedIndex != -1 || dtidia.IsEmpty == false)
+                MostrarFaltasDia(idcalendario,dtidia.Value,txtbuscar.Text);
+            else
+                MessageBoxEx.Show("Error en Calendario o Fecha");
+        }
+
+        private void txtbuscarmes_TextChanged(object sender, EventArgs e)
+        {
+            if (toolStripcmbcalendario.SelectedIndex >= 0 && cmbmes.SelectedIndex != -1)
+            {
+                char[] delimiterChar = { ' ' };
+                string[] words = cmbmes.SelectedItem.ToString().Split(delimiterChar);
+                int index = 0;
+                foreach (var temp in Meses)
+                {
+                    index++;
+                    if (words[0].Equals(temp))
+                        break;
+                }
+                DateTime date = Convert.ToDateTime("1" + "/" + index.ToString() + "/" + words[1]);
+                MostrarFaltasMes(idcalendario, date, txtbuscarrango.Text);
+            }
+            else
+            {
+                MessageBoxEx.Show("Por favor escoja un Calendario");
+            }
+        }
+
+        private void txtbuscarrango_TextChanged(object sender, EventArgs e)
+        {
+            if (toolStripcmbcalendario.SelectedIndex < 0)
+                MessageBoxEx.Show("Por favor escoja un Calendario..");
+            else
+            {
+                if (dtiinicio.IsEmpty || dtifin.IsEmpty)
+                    MessageBoxEx.Show("Seleccione un Rango de Fechas");
+                else
+                {
+                    MostrarPersonalFaltasRango(idcalendario, dtiinicio.Value, dtifin.Value, txtbuscarrango.Text);
+                }
+            }
         }
     }
 }

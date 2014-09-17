@@ -400,6 +400,11 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBAsistencia
             }
         }
 
+        private void dataGridViewX1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
     }
 }
 

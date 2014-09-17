@@ -53,7 +53,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
             this.toolStripLabel1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(704, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(804, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -103,7 +103,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.groupPanel1.Controls.Add(this.dgvimprevistos);
             this.groupPanel1.DisabledBackColor = System.Drawing.Color.Empty;
-            this.groupPanel1.Location = new System.Drawing.Point(12, 65);
+            this.groupPanel1.Location = new System.Drawing.Point(55, 64);
             this.groupPanel1.Name = "groupPanel1";
             this.groupPanel1.Size = new System.Drawing.Size(680, 341);
             // 
@@ -159,7 +159,7 @@ namespace CapaInterfaz.ci_GestionAsistencia.frmDNBImprevistos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(704, 442);
+            this.ClientSize = new System.Drawing.Size(804, 442);
             this.Controls.Add(this.groupPanel1);
             this.Controls.Add(this.toolStrip1);
             this.DoubleBuffered = true;
