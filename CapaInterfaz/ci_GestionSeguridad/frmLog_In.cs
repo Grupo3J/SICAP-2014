@@ -37,7 +37,7 @@ namespace CapaInterfaz.ci_GestionSeguridad
         PersonalLN personal = new PersonalLN();
         HuellaLN huella = new HuellaLN();
         ImprevistoLN imprevistos = new ImprevistoLN();
-        private SGFingerPrintManager m_FPM;
+        private SGFingerPrintManager m_FPM = new SGFingerPrintManager();
         private int m_ImageWidth;
         private int m_ImageHeight;
         private Byte[] arrayHuella1;
@@ -353,6 +353,20 @@ namespace CapaInterfaz.ci_GestionSeguridad
             Acceder.Visible = false;
         }
 
+        public void DesactivarAsistencia() 
+        {
+            m_FPM.EnableAutoOnEvent(true,0);
+            m_FPM.CloseDevice();
+        }
+
+        public void ActivarAsistencia()
+        {
+            //Escoge el Puerto en el que se ejecuta el dispositivo
+            Int32 port_addr = (Int32)SGFPMPortAddr.USB_AUTO_DETECT;
+            Int32 iError = m_FPM.OpenDevice(port_addr);
+            m_FPM.EnableAutoOnEvent(true,(int)this.Handle);
+        }
+
         private void Discovered() 
         {
             label1.Visible = true;
@@ -421,23 +435,24 @@ namespace CapaInterfaz.ci_GestionSeguridad
 
         private void cmbcalendario_SelectedIndexChanged(object sender, EventArgs e)
         {
+            m_FPM.CloseDevice();
             if (cmbcalendario.SelectedIndex >= 0)
             {
                 sp_ListarCalendarioResult temp = calendario.ListarCalendario()[cmbcalendario.SelectedIndex];
                 idcalendario = temp.IDCALENDARIO;
                 CargarPersonalporCalendario(idcalendario);
                 MostrarPersonalDia(idcalendario, DateTime.Now);
+                da = (from lt in diasadic.ListarDiasAdicionales() where lt.IDCALENDARIO == idcalendario select lt).ToList();
+                dnl = (from lt in diasnolab.ListarDiasNoLaborables() where lt.IDCALENDARIO == idcalendario select lt).ToList();
             }
             else
                 MessageBoxEx.Show("Por favor escoja un Calendario");
-            da = (from lt in diasadic.ListarDiasAdicionales() where lt.IDCALENDARIO == idcalendario select lt).ToList();
-            dnl = (from lt in diasnolab.ListarDiasNoLaborables() where lt.IDCALENDARIO == idcalendario select lt).ToList();
+            
             if (CompararFechaPlus(DateTime.Now) == false)
             {
                 //Tipo de Secugen Fingerprint reader utilizado 
                 SGFPMDeviceName device_name = SGFPMDeviceName.DEV_FDU05;
                 //Inicializar SGFingerPrintManager para que cargue el driver del dispositivo utilizado
-                m_FPM = new SGFingerPrintManager();
                 m_FPM.Init(device_name);
                 //Escoge el Puerto en el que se ejecuta el dispositivo
                 Int32 port_addr = (Int32)SGFPMPortAddr.USB_AUTO_DETECT;

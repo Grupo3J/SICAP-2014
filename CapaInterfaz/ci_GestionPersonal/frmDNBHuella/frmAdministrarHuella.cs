@@ -14,22 +14,34 @@ using CapaDatos.cd_GestionPersonal;
 using System.IO;
 using CapaLogicaNegocio;
 using CapaEntidades.GestionSeguridad;
+using CapaInterfaz.ci_GestionPersonal.frmDNBPersonal;
+using CapaInterfaz.ci_GestionSeguridad;
+using System.Threading;
 
 
 namespace CapaInterfaz.ci_GestionPersonal.frmDNBHuella
 {
     public partial class frmAdministrarHuella : DevComponents.DotNetBar.Metro.MetroForm
     {
-        public frmAdministrarHuella(string ced)
+        public frmAdministrarHuella(string ced,Form owner)
         {
             cedula = ced;
             InitializeComponent();
+            Owner1 = owner;
         }
         Validaciones VAL = new Validaciones();
         HuellaLN hln = new HuellaLN();
+        private Form owner;
 
+        public Form Owner1
+        {
+            get { return owner; }
+            set { owner = value; }
+        }
         private string cedula;
-        private SGFingerPrintManager m_FPM;
+        private SGFingerPrintManager m_FPM= new SGFingerPrintManager();
+        //Tipo de Secugen Fingerprint reader utilizado 
+        SGFPMDeviceName device_name = SGFPMDeviceName.DEV_FDU05;
         private int m_ImageWidth;
         private int m_ImageHeight;
         private Byte[] arrayHuella1;
@@ -40,32 +52,12 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBHuella
 
         }
 
-        private void buttonXCargarHuella_Click(object sender, EventArgs e)
-        {
-            try
-            {
-
-
-                Inicializar();
-
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error, no se ha encontrado el disposito biométrico.");
-            }
-            
-        }
-
         //metodo para capturar la huella
         public void Inicializar()
         {
             try
             {
-                //Tipo de Secugen Fingerprint reader utilizado 
-                SGFPMDeviceName device_name = SGFPMDeviceName.DEV_FDU05;
-                //Inicializar SGFingerPrintManager para que cargue el driver del dispositivo utilizado
-                m_FPM = new SGFingerPrintManager();
-                m_FPM.Init(device_name);
+                Thread.Sleep(2000);
                 //Escoge el Puerto en el que se ejecuta el dispositivo
                 Int32 port_addr = (Int32)SGFPMPortAddr.USB_AUTO_DETECT;
                 Int32 iError = m_FPM.OpenDevice(port_addr);
@@ -217,7 +209,8 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBHuella
         {
             
             dataGridViewX1.DataSource = hln.ListarHuella(cedula);
-            
+            //Inicializar SGFingerPrintManager para que cargue el driver del dispositivo utilizado
+            m_FPM.Init(device_name);
         }
 
         private void dataGridViewX1_CursorChanged(object sender, EventArgs e)
@@ -265,7 +258,13 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBHuella
 
         private void buttonXCargarHuella_Click_1(object sender, EventArgs e)
         {
+            frmAdministrarPersonal frm = (frmAdministrarPersonal)Owner1;
+            frmLog_In fr = (frmLog_In)frm.Owner1;
+            fr.DesactivarAsistencia();
+            Thread.Sleep(2000);
             Inicializar();
+            Thread.Sleep(2000);
+            fr.ActivarAsistencia();
         }
 
         private void toolStripButton5_Click(object sender, EventArgs e)

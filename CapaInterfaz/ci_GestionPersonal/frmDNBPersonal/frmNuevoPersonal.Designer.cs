@@ -704,6 +704,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
             this.pictureHuella.Location = new System.Drawing.Point(42, 73);
             this.pictureHuella.Name = "pictureHuella";
             this.pictureHuella.Size = new System.Drawing.Size(97, 104);
+            this.pictureHuella.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureHuella.TabIndex = 83;
             this.pictureHuella.TabStop = false;
             // 

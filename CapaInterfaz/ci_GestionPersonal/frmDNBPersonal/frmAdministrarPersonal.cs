@@ -26,6 +26,13 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
 
         PersonalLN PLN = new PersonalLN();
         CalendarioLN CLN = new CalendarioLN();
+        private Form owner = new Form();
+
+        public Form Owner1
+        {
+            get { return owner; }
+            set { owner = value; }
+        }
 
         private void buttonItem1_Click(object sender, EventArgs e)
         {
@@ -47,7 +54,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            frmNuevoPersonal FRMNP = new frmNuevoPersonal();
+            frmNuevoPersonal FRMNP = new frmNuevoPersonal(this);
             FRMNP.Show();
         }
 
@@ -166,7 +173,7 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
             string cedula = dataGridViewX1.CurrentRow.Cells[0].Value.ToString();
-            frmAdministrarHuella FRMAH = new frmAdministrarHuella(cedula);
+            frmAdministrarHuella FRMAH = new frmAdministrarHuella(cedula,this);
             FRMAH.Show();
         }
 

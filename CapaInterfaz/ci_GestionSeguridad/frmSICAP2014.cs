@@ -19,6 +19,7 @@ using DevComponents.DotNetBar.Controls;
 using SecuGen.FDxSDKPro.Windows;
 using System.IO;
 using System.Diagnostics;
+using CapaInterfaz.ci_GestionPersonal.frmDNBPersonal;
 
 namespace CapaInterfaz.ci_GestionSeguridad
 {
@@ -251,6 +252,11 @@ namespace CapaInterfaz.ci_GestionSeguridad
                 PermisosLN PERLN = new PermisosLN();//En todos los formularios
                 methodInfo.Invoke(myObject, new Object[] { (user), PERLN.getPermisoBycednommbremodulo(user.Cedula, op) });
                 addPanel(myObject);
+                if (myObject.Name == "frmAdministrarPersonal") 
+                {
+                    frmAdministrarPersonal temp = (frmAdministrarPersonal)myObject;
+                    temp.Owner1 = this.Owner1;
+                }
                 groupPanel1.Text = op;
                 groupPanel1.BackColor = System.Drawing.Color.White;
                 groupPanel1.ColorTable = (ePanelColorTable)((MetroTileItem)sender).TileColor;

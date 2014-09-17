@@ -1,9 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Linq;
 using System.Windows.Forms;
 using DevComponents.DotNetBar;
@@ -11,20 +8,21 @@ using CapaEntidades.GestionPersonal;
 using CapaLogicaNegocio.cln_GestionPersonal;
 using CapaLogicaNegocio.cln_GestionPlanificacion;
 using SecuGen.FDxSDKPro.Windows;
-using CapaDatos.cd_GestionPlanificacion;
 using CapaLogicaNegocio;
+using CapaInterfaz.ci_GestionSeguridad;
+using System.Threading;
 
 
-using CapaDatos.cd_GestionPersonal;
 
 
 namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
 {
     public partial class frmNuevoPersonal : DevComponents.DotNetBar.Metro.MetroForm
     {
-        public frmNuevoPersonal()
+        public frmNuevoPersonal(Form owner)
         {
             InitializeComponent();
+            Owner1 = owner;
         }
 
         private SGFingerPrintManager m_FPM;
@@ -32,7 +30,13 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
         private int m_ImageHeight;
         private Byte[] arrayHuella1;
         private Byte[] arrayHuella2;
+        private Form owner;
 
+        public Form Owner1
+        {
+            get { return owner; }
+            set { owner = value; }
+        }
         PersonalLN PLN = new PersonalLN();
         HuellaLN HLN = new HuellaLN();
 
@@ -254,18 +258,18 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
 
                 if (er.Equals("0"))
                 {
-                    MessageBox.Show("Lectura de huella exitosa");
+                    AutoClosingMessageBox.Show("Lectura de huella exitosa","Administración de Huellas",1500);
                     selacthuella = true;
                 }
                 else
                 {
-                    MessageBox.Show("Error en la lectura de su huella....Por favor inténtelo otras vez");
+                    AutoClosingMessageBox.Show("Error en la lectura de su huella....Por favor inténtelo otras vez","Administración de Huellas",1500);
                 }
                 m_FPM.CloseDevice();
             }
             catch (Exception)
             {
-                MessageBoxEx.Show("No se encuentra el dispositivo bómétrico...Por favor verifique su conexión.");
+               AutoClosingMessageBox.Show("No se encuentra el dispositivo bómétrico...Por favor verifique su conexión.","Administración de Huellas",1500);
             }
 
         }
@@ -279,9 +283,13 @@ namespace CapaInterfaz.ci_GestionPersonal.frmDNBPersonal
         {
             try
             {
-
-
+                frmAdministrarPersonal frm = (frmAdministrarPersonal)Owner1;
+                frmLog_In f = (frmLog_In)frm.Owner1;
+                f.DesactivarAsistencia();
+                Thread.Sleep(2000);
                 Inicializar();
+                Thread.Sleep(2000);
+                f.ActivarAsistencia();
                 
             }
             catch (Exception)
